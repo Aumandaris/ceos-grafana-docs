@@ -1,0 +1,16 @@
+{
+    "cSpell.language": ",es",
+    "cSpell.words": [
+        "Autenticación",
+        "Grafana",
+        "Jaeger",
+        "Loki",
+        "Prometheus",
+        "ceos",
+        "docs",
+    ],
+    "cSpell.ignoreWords": [
+        "ascii",
+        "table"
+    ]
+}
