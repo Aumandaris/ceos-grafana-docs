@@ -12,5 +12,6 @@
     "cSpell.ignoreWords": [
         "ascii",
         "table"
-    ]
+    ],
+    "cSpell.enabled": false
 }
