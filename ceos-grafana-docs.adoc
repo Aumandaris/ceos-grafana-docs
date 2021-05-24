@@ -213,7 +213,7 @@ Ahora que tiene una lista seleccionada de consultas, cree tableros para represen
 
 La siguiente imagen muestra un tablero con tres paneles que muestran algunas métricas del sistema.
 
-image:extracted-media\media\image1.png[https://grafana.com/static/img/docs/getting-started/simple_grafana_prom_dashboard.png,width=624,height=319]
+image:media\image1.png[https://grafana.com/static/img/docs/getting-started/simple_grafana_prom_dashboard.png,width=624,height=319]
 
 === Series de tiempo
 
@@ -233,7 +233,7 @@ Los datos de temperatura como este son un ejemplo de lo que llamamos una _serie 
 
 Las tablas son útiles cuando desea identificar medidas individuales pero dificultan ver el panorama general. Una visualización más común para las series de tiempo es el _gráfico_, que en su lugar coloca cada medición a lo largo de un eje de tiempo. Las representaciones visuales como el gráfico facilitan el descubrimiento de patrones y características de los datos que de otro modo serían difíciles de ver.
 
-image:extracted-media\media\image2.png[https://grafana.com/static/img/docs/example_graph.png,width=624,height=159]
+image:media\image2.png[https://grafana.com/static/img/docs/example_graph.png,width=624,height=159]
 
 Los datos de temperatura como el del ejemplo están lejos de ser el único ejemplo de una serie de tiempo. Otros ejemplos de series de tiempo son:
 
@@ -347,7 +347,7 @@ ____
 
 Con los datos de series de tiempo, los datos a menudo contienen más de una serie y son un conjunto de multiples series de tiempo. Muchas fuentes de datos de Grafana admiten este tipo de datos.
 
-image:extracted-media\media\image3.png[https://grafana.com/static/img/docs/example_graph_multi_dim.png,width=624,height=280]
+image:media\image3.png[https://grafana.com/static/img/docs/example_graph_multi_dim.png,width=624,height=280]
 
 El caso común es emitir una única consulta para una medición con una o más propiedades adicionales como dimensiones. Por ejemplo, consultar una medición de temperatura junto con una propiedad de ubicación. En este caso, se devuelven varias series desde esa única consulta y cada serie tiene una ubicación única como dimensión.
 
@@ -909,13 +909,13 @@ El valor por *predeterminado* es el tema de noche o el tema seleccionado en un n
 
 Aquí hay un ejemplo del tema oscuro.
 
-image:extracted-media\media\image4.png[Dark theme example,width=624,height=119]
+image:media\image4.png[Dark theme example,width=624,height=119]
 
 *Claro*
 
 Aquí hay un ejemplo del tema de claro.
 
-image:extracted-media\media\image5.png[Light theme example,width=624,height=118]
+image:media\image5.png[Light theme example,width=624,height=118]
 
 ====== Cambiar el tema de la interfaz de usuario del servidor
 
@@ -2937,7 +2937,7 @@ Grafana muestra todas las cuentas de usuario en el servidor, enumeradas en orden
 * *Estado del administrador del servidor:* si la cuenta de usuario tiene configurada la opción de *administrador de Grafana*, se muestra un icono de escudo.
 * *Estado de la cuenta:* si la cuenta está deshabilitada, se muestra la etiqueta *Deshabilitada*.
 
-image:extracted-media\media\image6.png[Server Admin user list,width=624,height=281]
+image:media\image6.png[Server Admin user list,width=624,height=281]
 
 ====== Ver detalles de la cuenta de usuario
 
@@ -2959,25 +2959,25 @@ Esta sección de la cuenta contiene información básica del usuario. Los usuari
 * Nombre de usuario
 * Contraseña
 
-image:extracted-media\media\image7.png[Server Admin user information section,width=624,height=224]
+image:media\image7.png[Server Admin user information section,width=624,height=224]
 
 *Permisos*
 
 Esto indica si la cuenta de usuario tiene la marca de administrador de Grafana aplicada o no. Si es *Sí*, entonces el usuario es un administrador de Grafana Server.
 
-image:extracted-media\media\image8.png[Server Admin Permissions section,width=624,height=80]
+image:media\image8.png[Server Admin Permissions section,width=624,height=80]
 
 *Organizaciones*
 
 Esta sección enumera las organizaciones a las que pertenece la cuenta de usuario y los roles que desempeñan dentro de cada organización.
 
-image:extracted-media\media\image9.png[Server Admin Organizations section,width=624,height=130]
+image:media\image9.png[Server Admin Organizations section,width=624,height=130]
 
 *Sesiones*
 
 Vea las sesiones recientes en las que el usuario inició sesión, incluso cuándo inició sesión e información sobre el sistema con el que inició sesión. Puede forzar cierres de sesión si es necesario.
 
-image:extracted-media\media\image10.png[Server Admin Sessions section,width=624,height=125]
+image:media\image10.png[Server Admin Sessions section,width=624,height=125]
 
 ====== Agregar una cuenta de usuario
 
@@ -3141,7 +3141,7 @@ Grafana muestra todas las organizaciones configuradas en el servidor, enumeradas
 * *ID:* el número de identificación de la organización.
 * *Nombre:* el nombre de la organización.
 
-image:extracted-media\media\image11.png[Server Admin organization list,width=624,height=277]
+image:media\image11.png[Server Admin organization list,width=624,height=277]
 
 ====== Crear organización
 
@@ -3176,7 +3176,7 @@ Retire permanentemente a una organización de su servidor Grafana.
 
 Los Administradores de servidor de Grafana pueden realizar algunas tareas de administración de organizaciones que son casi idénticas a las tareas de administración de la organización, solo se acceden desde una ruta de menú diferente.
 
-image:extracted-media\media\image12.png[Server admin Edit Organization,width=624,height=316]
+image:media\image12.png[Server admin Edit Organization,width=624,height=316]
 
 *Ver miembros y roles de la organización*
 
@@ -3237,7 +3237,7 @@ Grafana muestra todas las cuentas de usuario en el servidor, enumeradas en orden
 * *Visto:* Hace cuánto tiempo el usuario ha iniciado sesión. Si nunca se han iniciado sesión, entonces se muestra el tiempo más largo predeterminado (10 años).
 * *Rol:* el rol de la organización actualmente asignado al usuario.
 
-image:extracted-media\media\image13.png[Org Admin user list,width=624,height=294]
+image:media\image13.png[Org Admin user list,width=624,height=294]
 
 ===== Gestionar invitaciones de la organización
 
@@ -3260,13 +3260,13 @@ Invite o agregue una cuenta de usuario existente a su organización.
 ** *No:* al usuario no se envía una invitación, pero pueden iniciar sesión en el servidor Grafana con el correo electrónico o el nombre de usuario que ingresó.
 . Haga clic en *Enviar*.
 
-image:extracted-media\media\image14.png[Invite User,width=624,height=384]
+image:media\image14.png[Invite User,width=624,height=384]
 
 ====== Ver invitaciones pendientes
 
 Revise las invitaciones de usuarios que fueron invitados, pero no han iniciado sesión.
 
-image:extracted-media\media\image15.png[Pending Invites button,width=624,height=62]
+image:media\image15.png[Pending Invites button,width=624,height=62]
 
 *Nota:* El botón solo es visible si hay invitaciones sin respuesta.
 
@@ -3289,7 +3289,7 @@ ____
 
 Grafana muestra una lista de invitaciones pendientes. Si es necesario, puede usar el campo de búsqueda para filtrar la lista.
 
-image:extracted-media\media\image16.png[Pending Invites list,width=624,height=209]
+image:media\image16.png[Pending Invites list,width=624,height=209]
 
 ====== Cancelar la invitación
 
@@ -3361,11 +3361,11 @@ Vea la lista completa de equipos en su organización Grafana.
 
 ====== Vista del administrador de la organización
 
-image:extracted-media\media\image17.png[Team list,width=624,height=243]
+image:media\image17.png[Team list,width=624,height=243]
 
 ====== Vista de administrador del equipo
 
-image:extracted-media\media\image18.png[Team list,width=624,height=248]
+image:media\image18.png[Team list,width=624,height=248]
 
 ===== Cree un equipo
 
@@ -3394,7 +3394,7 @@ Agregue una cuenta de usuario existente a un equipo.
 . Haga clic en *Agregar al equipo*.
 . Repita el proceso para agregar más miembros al equipo.
 
-image:extracted-media\media\image19.png[Add team member,width=624,height=265]
+image:media\image19.png[Add team member,width=624,height=265]
 
 ===== Eliminar a un miembro del equipo
 
@@ -3416,7 +3416,7 @@ Cambiar los niveles de permiso de los miembros del equipo.
 * En la lista de miembros del equipo, busque y haga clic en la cuenta de usuario que desea cambiar. Puede utilizar el campo de búsqueda para filtrar la lista si es necesario.
 * Haga clic en la lista *Permisos* y luego haga clic en el nuevo nivel de permiso de usuario.
 
-image:extracted-media\media\image20.png[Change team member permissions,width=624,height=247]
+image:media\image20.png[Change team member permissions,width=624,height=247]
 
 ===== Eliminar un equipo
 
@@ -3633,7 +3633,7 @@ Este tema explica cómo otorgar permisos a carpetas y tableros específicos.
 
 Para obtener más información sobre cómo denegar el acceso a ciertos usuarios de Grafana, consulte Restricción del acceso.
 
-image:extracted-media\media\image21.png[Folder permissions,width=624,height=277]
+image:media\image21.png[Folder permissions,width=624,height=277]
 
 ===== Niveles de permisos
 
@@ -3779,24 +3779,24 @@ Antes de poder crear su primer tablero, debe agregar su fuente de datos.
 [arabic]
 . Mueva el cursor al engranaje del menú lateral que le mostrará el menú de configuración. Si el menú lateral no está visible, haga clic en el icono de Grafana en la esquina superior izquierda. Haga clic en *Configuración* > *Fuentes de datos* en el menú lateral y se lo dirigirá a la página de fuentes de datos donde puede agregar y editar fuentes de datos. También puede hacer clic en el engranaje.
 
-image:extracted-media\media\image22.png[https://grafana.com/static/img/docs/v52/sidemenu-datasource.png,width=540,height=310]
+image:media\image22.png[https://grafana.com/static/img/docs/v52/sidemenu-datasource.png,width=540,height=310]
 
 [arabic, start=2]
 . Mueva el cursor al icono de engranaje en el menú lateral que mostrará las opciones de configuración.
 
-image:extracted-media\media\image23.png[https://grafana.com/static/img/docs/v75/sidemenu-datasource-7-5.png,width=170,height=212]
+image:media\image23.png[https://grafana.com/static/img/docs/v75/sidemenu-datasource-7-5.png,width=170,height=212]
 
 [arabic, start=3]
 . Haga clic en *Fuentes de datos*. Se abre la página de fuentes de datos que muestra una lista de fuentes de datos configuradas previamente para la instancia de Grafana.
 . Haga clic en *Agregar fuente de datos* para ver una lista de todas las fuentes de datos admitidas.
 
-image:extracted-media\media\image24.png[https://grafana.com/static/img/docs/v75/add-data-source-7-5.png,width=624,height=603]
+image:media\image24.png[https://grafana.com/static/img/docs/v75/add-data-source-7-5.png,width=624,height=603]
 
 [arabic, start=5]
 . Busque una fuente de datos específica ingresando el nombre en el cuadro de diálogo de búsqueda. O puede desplazarse por las fuentes de datos admitidas agrupadas en series de tiempo, registro, rastreo y otras categorías.
 . Mueva el cursor sobre la fuente de datos que desea agregar.
 
-image:extracted-media\media\image25.png[https://grafana.com/static/img/docs/v75/select-data-source-7-5.png,width=624,height=99]
+image:media\image25.png[https://grafana.com/static/img/docs/v75/select-data-source-7-5.png,width=624,height=99]
 
 [arabic, start=7]
 . Haga clic en *Seleccionar*. Se abre la página de configuración de la fuente de datos.
@@ -3846,11 +3846,11 @@ Cada campo derivado consta de:
 
 Puede usar una sección de depuración para ver qué extraen sus campos y cómo se interpola la URL. Haga clic en *Mostrar mensaje de registro de ejemplo* para mostrar el área de texto donde puede ingresar un mensaje de registro.
 
-image:extracted-media\media\image26.png[Screenshot of the derived fields debugging,width=624,height=262]
+image:media\image26.png[Screenshot of the derived fields debugging,width=624,height=262]
 
 El nuevo campo con el enlace que se muestra en los detalles del registro:
 
-image:extracted-media\media\image27.png[Detected fields link in Explore,width=624,height=239]
+image:media\image27.png[Detected fields link in Explore,width=624,height=239]
 
 ===== Editor de consultas Loki
 
@@ -3874,7 +3874,7 @@ Con el navegador de registros de Loki, puede navegar fácilmente a través de su
 . Elija los valores para las etiquetas seleccionadas. El navegador de registros admite la creación de facetas y, por lo tanto, solo muestra posibles combinaciones de etiquetas.
 . Elija el tipo de consulta: consulta de registros o consulta de métricas de tasa. Además, también puede validar selector.
 
-image:extracted-media\media\image28.png[Screenshot of the derived fields debugging,width=624,height=524]
+image:media\image28.png[Screenshot of the derived fields debugging,width=624,height=524]
 
 ===== Consultando con Loki
 
@@ -4271,11 +4271,11 @@ url: 'http://localhost:3000/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Ja
 
 Grafana 7.4 y versiones posteriores tienen la capacidad de mostrar datos ejemplares junto con una métrica tanto en Explorar como en Tableros. Los ejemplares son una forma de asociar metadatos de cardinalidad más alta de un evento específico con datos de series temporales tradicionales.
 
-image:extracted-media\media\image29.png[Screenshot showing the detail window of an Exemplar,width=624,height=285]
+image:media\image29.png[Screenshot showing the detail window of an Exemplar,width=624,height=285]
 
 Configure Ejemplares en la configuración de la fuente de datos agregando enlaces externos o internos.
 
-image:extracted-media\media\image30.png[Screenshot of the Exemplars configuration,width=624,height=217]
+image:media\image30.png[Screenshot of the Exemplars configuration,width=624,height=217]
 
 == Paneles
 
@@ -4289,7 +4289,7 @@ Existe una amplia variedad de opciones de estilo y formato para cada panel. Los 
 
 Puede arrastrar y soltar paneles haciendo clic y manteniendo presionado el título del panel, luego arrastrándolo a su nueva ubicación. También puede cambiar el tamaño de los paneles fácilmente haciendo clic en los iconos (-) y (+).
 
-image:extracted-media\media\image31.gif[image,width=623,height=211]
+image:media\image31.gif[image,width=623,height=211]
 
 ===== Consejos y atajos
 
@@ -4312,7 +4312,7 @@ Los paneles le permiten mostrar sus datos de forma visual. Este tema lo guía a 
 . Navegue hasta el tablero al que desea agregar un panel.
 . Haga clic en el icono *Agregar panel*.
 
-image:extracted-media\media\image32.png[https://grafana.com/static/img/docs/panels/add-panel-icon-7-0.png,width=68,height=52]
+image:media\image32.png[https://grafana.com/static/img/docs/panels/add-panel-icon-7-0.png,width=68,height=52]
 
 [arabic, start=3]
 . Haga clic en *Agregar un panel vacío*.
@@ -4323,7 +4323,7 @@ Grafana crea un panel de gráficos vacío con su fuente de datos predeterminada 
 
 Si bien no es obligatorio, le recomendamos que agregue un título y una descripción útiles a su panel. Puede utilizar variables que haya definido en cualquiera de los campos, pero no variables globales.
 
-image:extracted-media\media\image33.png[https://grafana.com/static/img/docs/panels/panel-settings-7-0.png,width=500,height=381]
+image:media\image33.png[https://grafana.com/static/img/docs/panels/panel-settings-7-0.png,width=500,height=381]
 
 *Título del panel:* el texto ingresado en este campo se muestra en la parte superior de su panel en el editor de paneles y en el tablero.
 
@@ -4366,7 +4366,7 @@ Nuestro tutorial de conceptos básicos de Grafana es un excelente lugar para com
 
 Esta página describe las partes del editor de paneles de Grafana y enlaces a donde puede encontrar más información.
 
-image:extracted-media\media\image34.png[https://grafana.com/static/img/docs/panel-editor/panel-editor-7-0.png,width=624,height=358]
+image:media\image34.png[https://grafana.com/static/img/docs/panel-editor/panel-editor-7-0.png,width=624,height=358]
 
 ===== Abra el editor de paneles
 
@@ -4380,7 +4380,7 @@ Hay varias formas de acceder al editor del panel, también llamado pantalla *Edi
 
 Arrastre para cambiar el tamaño de las secciones del editor de paneles. Si el panel lateral se vuelve demasiado estrecho, las pestañas Panel, Campo y Anulaciones cambian a una lista desplegable.
 
-image:extracted-media\media\image35.gif[https://grafana.com/static/img/docs/panel-editor/resize-panel-editor-panels-7-0.gif,width=624,height=415]
+image:media\image35.gif[https://grafana.com/static/img/docs/panel-editor/resize-panel-editor-panels-7-0.gif,width=624,height=415]
 
 ===== Partes del editor de paneles
 
@@ -4390,7 +4390,7 @@ Esta sección describe las partes de la pantalla del editor del panel y un poco 
 
 La sección de encabezado enumera el nombre del tablero en el que se encuentra el panel y algunos comandos del tablero. También puede hacer clic en la flecha *Regresar* para regresar al tablero.
 
-image:extracted-media\media\image36.png[https://grafana.com/static/img/docs/panel-editor/edit-panel-header-7-0.png,width=624,height=26]
+image:media\image36.png[https://grafana.com/static/img/docs/panel-editor/edit-panel-header-7-0.png,width=624,height=26]
 
 En el lado derecho del encabezado se encuentran las siguientes opciones:
 
@@ -4403,7 +4403,7 @@ En el lado derecho del encabezado se encuentran las siguientes opciones:
 
 La sección de vista previa de visualización contiene opciones de visualización, controles de rango de tiempo, la vista previa de visualización y (si corresponde) el título del panel, los ejes y la leyenda.
 
-image:extracted-media\media\image37.png[https://grafana.com/static/img/docs/panel-editor/visualization-preview-7-0.png,width=624,height=157]
+image:media\image37.png[https://grafana.com/static/img/docs/panel-editor/visualization-preview-7-0.png,width=624,height=157]
 
 * *Rellenar:* la vista previa de visualización llenará el espacio disponible en la parte de vista previa. Si cambia el ancho del panel lateral o la altura del panel inferior, la visualización se adaptará para llenar cualquier espacio disponible.
 * *Ajustar:* la vista previa de visualización llenará el espacio disponible pero conservará la relación de aspecto del panel.
@@ -4414,7 +4414,7 @@ image:extracted-media\media\image37.png[https://grafana.com/static/img/docs/pane
 
 La sección contiene pestañas donde ingresa consultas, transforma sus datos y crea reglas de alerta (si corresponde).
 
-image:extracted-media\media\image38.png[https://grafana.com/static/img/docs/panel-editor/data-section-7-0.png,width=624,height=170]
+image:media\image38.png[https://grafana.com/static/img/docs/panel-editor/data-section-7-0.png,width=624,height=170]
 
 * *Pestaña Consultar:* seleccione su fuente de datos e ingrese las consultas aquí. Para obtener más información, consulte Consultas.
 * *Pestaña Transformar:* aplique transformaciones de datos. Para obtener más información, consulte Transformaciones.
@@ -4476,11 +4476,11 @@ Debido a la diferencia entre los lenguajes de consulta, las fuentes de datos pue
 
 ====== Editor de consultas de InfluxDB
 
-image:extracted-media\media\image39.png[https://grafana.com/static/img/docs/queries/influxdb-query-editor-7-2.png,width=624,height=257]
+image:media\image39.png[https://grafana.com/static/img/docs/queries/influxdb-query-editor-7-2.png,width=624,height=257]
 
 ====== Editor de consultas de Prometheus (PromQL)
 
-image:extracted-media\media\image40.png[https://grafana.com/static/img/docs/queries/prometheus-query-editor-7-4.png,width=624,height=137]
+image:media\image40.png[https://grafana.com/static/img/docs/queries/prometheus-query-editor-7-4.png,width=624,height=137]
 
 ===== Sintaxis de la consulta
 
@@ -4506,13 +4506,13 @@ La pestaña Consultar consta de los siguientes elementos:
 * Lista de editores de consultas
 * Expresiones
 
-image:extracted-media\media\image41.png[https://grafana.com/static/img/docs/queries/query-editor-7-2.png,width=624,height=169]
+image:media\image41.png[https://grafana.com/static/img/docs/queries/query-editor-7-2.png,width=624,height=169]
 
 ====== Selector de fuente de datos
 
 El selector de fuente de datos es una lista desplegable. Haga clic en él para seleccionar una fuente de datos que haya agregado. Cuando crea un panel, Grafana selecciona automáticamente su fuente de datos predeterminada. Para obtener más información sobre cómo agregar fuentes de datos, consulte Agregar una fuente de datos.
 
-image:extracted-media\media\image42.png[https://grafana.com/static/img/docs/queries/data-source-selector-7-0.png,width=554,height=1236]
+image:media\image42.png[https://grafana.com/static/img/docs/queries/data-source-selector-7-0.png,width=554,height=1236]
 
 Además de las fuentes de datos que ha configurado en su Grafana, hay tres fuentes de datos especiales disponibles:
 
@@ -4526,7 +4526,7 @@ Además de las fuentes de datos que ha configurado en su Grafana, hay tres fuent
 
 Haga clic en *Opciones de consulta* junto al selector de fuente de datos para ver la configuración de la fuente de datos seleccionada. Los cambios que realice aquí solo afectarán a las consultas realizadas en este panel.
 
-image:extracted-media\media\image43.png[https://grafana.com/static/img/docs/queries/data-source-options-7-0.png,width=624,height=143]
+image:media\image43.png[https://grafana.com/static/img/docs/queries/data-source-options-7-0.png,width=624,height=143]
 
 Grafana establece valores predeterminados que se muestran en texto gris oscuro. Los cambios se muestran en texto blanco. Para devolver un campo a la configuración predeterminada, elimine el texto blanco del campo.
 
@@ -4577,11 +4577,11 @@ Usted puede:
 [cols=",",options="header",]
 |===
 |Icono |Descripción
-|image:extracted-media\media\image44.png[https://grafana.com/static/img/docs/queries/query-editor-help-7-4.png,width=56,height=58] |Alternar la ayuda del editor de consultas. Si es compatible con la fuente de datos, haga clic en este icono para mostrar información sobre cómo utilizar el editor de consultas o proporcionar acceso rápido a consultas comunes.
-|image:extracted-media\media\image45.png[https://grafana.com/static/img/docs/queries/duplicate-query-icon-7-0.png,width=56,height=58] |Copie una consulta. La duplicación de consultas es útil cuando se trabaja con varias consultas complejas que son similares y desea experimentar con diferentes variantes o realizar modificaciones menores.
-|image:extracted-media\media\image46.png[https://grafana.com/static/img/docs/queries/hide-query-icon-7-0.png,width=56,height=58] |Ocultar una consulta. Grafana no envía consultas ocultas a la fuente de datos.
-|image:extracted-media\media\image47.png[https://grafana.com/static/img/docs/queries/remove-query-icon-7-0.png,width=56,height=58] |Eliminar una consulta. La eliminación de una consulta la elimina de forma permanente, pero a veces puede recuperar las consultas eliminadas volviendo a las versiones del panel guardadas anteriormente.
-|image:extracted-media\media\image48.png[https://grafana.com/static/img/docs/queries/query-drag-icon-7-2.png,width=26,height=29] |Reordenar consultas. Cambie el orden de las consultas haciendo clic y manteniendo presionado el ícono de arrastrar, luego arrastre las consultas donde lo desee. El orden de los resultados refleja el orden de las consultas, por lo que a menudo puede ajustar sus resultados visuales según el orden de las consultas.
+|image:media\image44.png[https://grafana.com/static/img/docs/queries/query-editor-help-7-4.png,width=56,height=58] |Alternar la ayuda del editor de consultas. Si es compatible con la fuente de datos, haga clic en este icono para mostrar información sobre cómo utilizar el editor de consultas o proporcionar acceso rápido a consultas comunes.
+|image:media\image45.png[https://grafana.com/static/img/docs/queries/duplicate-query-icon-7-0.png,width=56,height=58] |Copie una consulta. La duplicación de consultas es útil cuando se trabaja con varias consultas complejas que son similares y desea experimentar con diferentes variantes o realizar modificaciones menores.
+|image:media\image46.png[https://grafana.com/static/img/docs/queries/hide-query-icon-7-0.png,width=56,height=58] |Ocultar una consulta. Grafana no envía consultas ocultas a la fuente de datos.
+|image:media\image47.png[https://grafana.com/static/img/docs/queries/remove-query-icon-7-0.png,width=56,height=58] |Eliminar una consulta. La eliminación de una consulta la elimina de forma permanente, pero a veces puede recuperar las consultas eliminadas volviendo a las versiones del panel guardadas anteriormente.
+|image:media\image48.png[https://grafana.com/static/img/docs/queries/query-drag-icon-7-2.png,width=26,height=29] |Reordenar consultas. Cambie el orden de las consultas haciendo clic y manteniendo presionado el ícono de arrastrar, luego arrastre las consultas donde lo desee. El orden de los resultados refleja el orden de las consultas, por lo que a menudo puede ajustar sus resultados visuales según el orden de las consultas.
 |===
 
 ====== Expresiones
@@ -4807,7 +4807,7 @@ ____
 ____
 Esta siguiente transformación actúa sobre el conjunto de resultados devuelto por la transformación anterior.
 
-image:extracted-media\media\image49.png[https://grafana.com/static/img/docs/transformations/transformations-7-0.png,width=624,height=137]
+image:media\image49.png[https://grafana.com/static/img/docs/transformations/transformations-7-0.png,width=624,height=137]
 ____
 
 ====== Eliminar una transformación
@@ -4818,7 +4818,7 @@ Para eliminar una transformación que ya no es necesaria, haga clic en el icono 
 
 Para ver los conjuntos de resultados de entrada y salida de la transformación, haga clic en el icono de error (bicho) en el lado derecho de la fila de transformación, Grafana muestra la vista de depuración de transformación debajo de la fila de transformación.
 
-image:extracted-media\media\image50.png[https://grafana.com/static/img/docs/transformations/debug-transformations-7-0.png,width=624,height=314]
+image:media\image50.png[https://grafana.com/static/img/docs/transformations/debug-transformations-7-0.png,width=624,height=314]
 
 ==== Tipos y opciones de transformación
 
@@ -4954,15 +4954,15 @@ En el siguiente ejemplo, eliminé el campo Mín. de los resultados.
 
 Aquí está la tabla de consulta original. (Se trata de datos de transmisión, por lo que los números cambian con el tiempo y entre capturas de pantalla).
 
-image:extracted-media\media\image51.png[https://grafana.com/static/img/docs/transformations/filter-name-table-before-7-0.png,width=624,height=178]
+image:media\image51.png[https://grafana.com/static/img/docs/transformations/filter-name-table-before-7-0.png,width=624,height=178]
 
 Aquí está la tabla después de que apliqué la transformación para eliminar el campo Mín.
 
-image:extracted-media\media\image52.png[https://grafana.com/static/img/docs/transformations/filter-name-table-after-7-0.png,width=624,height=274]
+image:media\image52.png[https://grafana.com/static/img/docs/transformations/filter-name-table-after-7-0.png,width=624,height=274]
 
 Aquí está la misma consulta usando una visualización de Estadísticas.
 
-image:extracted-media\media\image53.png[https://grafana.com/static/img/docs/transformations/filter-name-stat-after-7-0.png,width=624,height=248]
+image:media\image53.png[https://grafana.com/static/img/docs/transformations/filter-name-stat-after-7-0.png,width=624,height=248]
 
 ====== Filtrar datos por consulta
 
@@ -4972,7 +4972,7 @@ Grafana muestra las letras de identificación de la consulta en texto gris oscur
 
 En el siguiente ejemplo, el panel tiene tres consultas (A, B, C). Eliminé la consulta B de la visualización.
 
-image:extracted-media\media\image54.png[https://grafana.com/static/img/docs/transformations/filter-by-query-stat-example-7-0.png,width=624,height=227]
+image:media\image54.png[https://grafana.com/static/img/docs/transformations/filter-by-query-stat-example-7-0.png,width=624,height=227]
 
 *Nota:* esta transformación no está disponible para Graphite porque esta fuente de datos no admite la correlación de datos devueltos con consultas.
 
@@ -4990,7 +4990,7 @@ Grafana muestra una lista de campos devueltos por la consulta. Usted puede:
 
 En el siguiente ejemplo, oculté el campo de valor y renombré Máx. y Mín.
 
-image:extracted-media\media\image55.png[https://grafana.com/static/img/docs/transformations/organize-fields-stat-example-7-0.png,width=624,height=299]
+image:media\image55.png[https://grafana.com/static/img/docs/transformations/organize-fields-stat-example-7-0.png,width=624,height=299]
 
 ====== Unir por campo (unión externa)
 
@@ -5000,11 +5000,11 @@ Esta transformación es especialmente útil si desea combinar consultas para pod
 
 En el siguiente ejemplo, tengo una consulta de plantilla que muestra datos de series de tiempo de varios servidores en una visualización de tabla. Solo puedo ver los resultados de una consulta a la vez.
 
-image:extracted-media\media\image56.png[https://grafana.com/static/img/docs/transformations/join-fields-before-7-0.png,width=624,height=283]
+image:media\image56.png[https://grafana.com/static/img/docs/transformations/join-fields-before-7-0.png,width=624,height=283]
 
 Apliqué una transformación para unir los resultados de la consulta usando el campo de tiempo. Ahora puedo ejecutar cálculos, combinar y organizar los resultados en esta nueva tabla.
 
-image:extracted-media\media\image57.png[https://grafana.com/static/img/docs/transformations/join-fields-after-7-0.png,width=624,height=323]
+image:media\image57.png[https://grafana.com/static/img/docs/transformations/join-fields-after-7-0.png,width=624,height=323]
 
 ====== Agregar campo desde cálculo
 
@@ -5021,7 +5021,7 @@ Utilice esta transformación para agregar un nuevo campo calculado a partir de o
 
 En el siguiente ejemplo, agregué dos campos juntos y los llamé Suma.
 
-image:extracted-media\media\image58.png[https://grafana.com/static/img/docs/transformations/add-field-from-calc-stat-example-7-0.png,width=624,height=325]
+image:media\image58.png[https://grafana.com/static/img/docs/transformations/add-field-from-calc-stat-example-7-0.png,width=624,height=325]
 
 ====== Etiquetas a campos
 
@@ -5309,11 +5309,11 @@ Puede especificar una expresión regular, que solo se aplica a las coincidencias
 
 En el siguiente ejemplo, eliminamos el prefijo de los tipos de eventos. En la imagen anterior, puede ver que todo tiene el prefijo system.
 
-image:extracted-media\media\image59.png[https://grafana.com/static/img/docs/transformations/rename-by-regex-before-7-3.png,width=624,height=133]
+image:media\image59.png[https://grafana.com/static/img/docs/transformations/rename-by-regex-before-7-3.png,width=624,height=133]
 
 Con la transformación aplicada, puede ver que nos queda solo el resto de la cadena.
 
-image:extracted-media\media\image60.png[https://grafana.com/static/img/docs/transformations/rename-by-regex-after-7-3.png,width=624,height=244]
+image:media\image60.png[https://grafana.com/static/img/docs/transformations/rename-by-regex-after-7-3.png,width=624,height=244]
 
 === Compartir los resultados de la consulta
 
@@ -5746,7 +5746,7 @@ Para seleccionar una unidad personalizada ingrese la unidad y seleccione la últ
 
 También puede pegar un emoji nativo en el selector de unidades y seleccionarlo como una unidad personalizada:
 
-image:extracted-media\media\image61.png[Custom unit emoji,width=389,height=403]
+image:media\image61.png[Custom unit emoji,width=389,height=403]
 
 *Unidades de cuerda*
 
@@ -5756,7 +5756,7 @@ En ocasiones, Grafana puede ser demasiado agresivo al analizar cadenas y mostrar
 
 *Nota:* solo disponible en Grafana 7.3+.
 
-image:extracted-media\media\image62.png[Color scheme,width=624,height=584]
+image:media\image62.png[Color scheme,width=624,height=584]
 
 La opción de combinación de colores define cómo Grafana colorea series o campos. Aquí hay varios modos que funcionan de manera muy diferente y su utilidad depende en gran medida de la visualización que haya seleccionado actualmente.
 
@@ -5820,17 +5820,17 @@ Use Cmd/Ctrl+clic en la etiqueta de la serie para ocultar la serie aislada y qui
 
 *Nota:* esta opción es persistente cuando guarda el tablero.
 
-image:extracted-media\media\image63.png[Toggle series visibility,width=624,height=282]
+image:media\image63.png[Toggle series visibility,width=624,height=282]
 
 Esto crea una anulación del sistema que oculta las otras series. Puede ver esta anulación en la pestaña Anulaciones. Si elimina la anulación, se quita la alternancia.
 
-image:extracted-media\media\image64.png[Series toggle override example,width=600,height=208]
+image:media\image64.png[Series toggle override example,width=600,height=208]
 
 ====== Cambiar el color de la serie
 
 Haga clic en el icono de la serie (línea de color al lado de la etiqueta de la serie) en la leyenda para cambiar el color de la serie seleccionada.
 
-image:extracted-media\media\image65.png[Change legend series color,width=624,height=249]
+image:media\image65.png[Change legend series color,width=624,height=249]
 
 ==== Panel de lista de alertas
 
@@ -5838,7 +5838,7 @@ image:extracted-media\media\image65.png[Change legend series color,width=624,hei
 
 El Panel de la lista de alertas le permite mostrar las alertas de su tablero. Puede configurar la lista para mostrar el estado actual o los cambios de estado recientes. Puede leer más acerca de las alertas en Descripción general de las alertas.
 
-image:extracted-media\media\image66.png[https://grafana.com/static/img/docs/v45/alert-list-panel.png,width=624,height=147]
+image:media\image66.png[https://grafana.com/static/img/docs/v45/alert-list-panel.png,width=624,height=147]
 
 Utilice esta configuración para refinar su visualización.
 
@@ -5885,7 +5885,7 @@ El indicador de barra simplifica sus datos al reducir cada campo a un solo valor
 
 Este panel puede mostrar uno o más medidores de barra dependiendo de cuántas series, filas o columnas devuelva su consulta.
 
-image:extracted-media\media\image67.png[Stat panel,width=624,height=218]
+image:media\image67.png[Stat panel,width=624,height=218]
 
 ====== Opciones de campo y datos
 
@@ -5919,7 +5919,7 @@ Utilice las siguientes opciones para refinar su visualización:
 
 El panel de lista de tableros le permite mostrar enlaces dinámicos a otros tableros. La lista se puede configurar para usar tableros marcados con estrellas, tableros visualizados recientemente, una consulta de búsqueda y etiquetas de panel.
 
-image:extracted-media\media\image68.png[https://grafana.com/static/img/docs/v45/dashboard-list-panels.png,width=624,height=171]
+image:media\image68.png[https://grafana.com/static/img/docs/v45/dashboard-list-panels.png,width=624,height=171]
 
 En cada carga del tablero, este panel consulta la lista de tableros, proporcionando siempre los resultados más actualizados.
 
@@ -5951,7 +5951,7 @@ Estas opciones solo se aplican si se selecciona la opción *Buscar*.
 
 Indicador es un panel de valor único que puede repetir un indicador para cada serie, columna o fila.
 
-image:extracted-media\media\image69.png[https://grafana.com/static/img/docs/v66/gauge_panel_cover.png,width=624,height=170]
+image:media\image69.png[https://grafana.com/static/img/docs/v66/gauge_panel_cover.png,width=624,height=170]
 
 ====== Opciones de campo y datos
 
@@ -6280,7 +6280,7 @@ Las regiones de tiempo le permiten resaltar ciertas regiones de tiempo del gráf
 
 La visualización del Panel mapa de calor le permite ver histogramas a lo largo del tiempo. Para obtener más información sobre histogramas, consulte Introducción a los histogramas y mapas de calor.
 
-image:extracted-media\media\image70.jpeg[https://grafana.com/static/img/docs/v43/heatmap_panel_cover.jpg,width=624,height=62]
+image:media\image70.jpeg[https://grafana.com/static/img/docs/v43/heatmap_panel_cover.jpg,width=624,height=62]
 
 ====== Opciones de ejes
 
@@ -6375,7 +6375,7 @@ La visualización del panel de registros muestra líneas de registro de fuentes 
 
 *Nota:* El panel Registros solo está disponible en Grafana v6.4 +.
 
-image:extracted-media\media\image71.png[https://grafana.com/static/img/docs/v64/logs-panel.png,width=624,height=208]
+image:media\image71.png[https://grafana.com/static/img/docs/v64/logs-panel.png,width=624,height=208]
 
 El panel de registros muestra el resultado de las consultas que se ingresaron en la pestaña Consulta. Los resultados de varias consultas se combinan y ordenan por tiempo. Puede desplazarse dentro del panel si la fuente de datos devuelve más líneas de las que se pueden mostrar a la vez.
 
@@ -6410,7 +6410,7 @@ Introduzca la URL de un RSS en el campo URL de la sección Visualización. Este 
 
 El _Gráfico de nodo_ puede visualizar gráficos o redes dirigidos. Utiliza un diseño de fuerza dirigida para posicionar de manera efectiva los nodos de modo que pueda ayudar a mostrar mapas de infraestructura complejos, jerarquías o diagramas de ejecución.
 
-image:extracted-media\media\image72.png[Node graph panel,width=624,height=331]
+image:media\image72.png[Node graph panel,width=624,height=331]
 
 ====== Requerimientos de datos
 
@@ -6431,7 +6431,7 @@ Por lo general, los nodos muestran dos valores estadísticos dentro del nodo y d
 
 Por ejemplo, puede tener el porcentaje de errores representado por la parte roja del círculo. Se pueden mostrar detalles adicionales en un menú contextual cuando se muestra al hacer clic en el nodo. También puede haber enlaces adicionales en el menú contextual que pueden apuntar a otras partes de Grafana o cualquier enlace externo.
 
-image:extracted-media\media\image73.gif[Node graph navigation,width=624,height=415]
+image:media\image73.gif[Node graph navigation,width=624,height=415]
 
 *Bordes*
 
@@ -6510,7 +6510,7 @@ Campos opcionales:
 
 El gráfico circular muestra series reducidas, o valores en una serie, de una o más consultas, según se relacionan entre sí, en forma de porciones de un pastel. La longitud del arco, el área y el ángulo central de un corte son proporcionales al valor de los cortes, ya que se relaciona con la suma de todos los valores. Este tipo de gráfico se utiliza mejor cuando desea una comparación rápida de un pequeño conjunto de valores en una forma estéticamente agradable.
 
-image:extracted-media\media\image74.png[Pie chart panel,width=624,height=277]
+image:media\image74.png[Pie chart panel,width=624,height=277]
 
 ====== Opciones de campo y datos
 
@@ -6553,11 +6553,11 @@ Seleccione el estilo de visualización del gráfico circular.
 
 *_Tarta_*
 
-image:extracted-media\media\image75.png[Pie type chart,width=396,height=396]
+image:media\image75.png[Pie type chart,width=396,height=396]
 
 *_Rosquilla_*
 
-image:extracted-media\media\image76.png[Donut type chart,width=395,height=394]
+image:media\image76.png[Donut type chart,width=395,height=394]
 
 *_Etiquetas_*
 
@@ -6571,7 +6571,7 @@ Las etiquetas se muestran en blanco sobre el cuerpo del gráfico. Es posible que
 
 El siguiente ejemplo muestra un gráfico circular con las etiquetas de *Nombre* y *Porcentaje*.
 
-image:extracted-media\media\image77.png[Pie chart labels,width=400,height=398]
+image:media\image77.png[Pie chart labels,width=400,height=398]
 
 *Modo de la leyenda*
 
@@ -6601,7 +6601,7 @@ Seleccione valores para mostrar en la leyenda. Puede seleccionar más de uno.
 
 El Panel de estadísticas muestra un valor de estadística grande con un minigráfico de gráficos opcional. Puede controlar el color de fondo o el valor mediante umbrales.
 
-image:extracted-media\media\image78.png[Stat panel,width=624,height=95]
+image:media\image78.png[Stat panel,width=624,height=95]
 
 *Nota:* Este panel reemplaza al panel Singlestat, que quedó obsoleto en Grafana 7.0.
 
@@ -6614,7 +6614,7 @@ Puede utilizar el *Modo texto* para controlar si el texto se muestra o no.
 
 Captura de pantalla de ejemplo:
 
-image:extracted-media\media\image79.png[Stat panel,width=624,height=277]
+image:media\image79.png[Stat panel,width=624,height=277]
 
 ====== Opciones de campo y datos
 
@@ -6665,7 +6665,7 @@ Utilice las siguientes opciones para refinar su visualización:
 
 El panel de la tabla es muy flexible y admite múltiples modos para series de tiempo y para tablas, anotaciones y datos JSON sin procesar. Este panel también proporciona opciones de formato de fecha, formato de valor y coloración.
 
-image:extracted-media\media\image80.png[Table visualization,width=624,height=213]
+image:media\image80.png[Table visualization,width=624,height=213]
 
 ====== Opciones de campo y datos
 
@@ -6683,7 +6683,7 @@ Las visualizaciones de tablas le permiten aplicar:
 * *Orden ascendente / descendente:* haga clic en el título de una columna para cambiar el orden de clasificación de predeterminado a descendente a ascendente. Cada vez que hace clic, el orden de clasificación cambia a la siguiente opción del ciclo. Solo puede ordenar por una columna a la vez.
 
 ____
-image:extracted-media\media\image81.png[Sort descending,width=400,height=147]
+image:media\image81.png[Sort descending,width=400,height=147]
 ____
 
 * Las opciones de campo de la tabla le permiten cambiar las opciones de campo, como el ancho de columna, la alineación y el modo de visualización de celda.
@@ -6731,31 +6731,31 @@ De forma predeterminada, Grafana elige automáticamente la configuración de pan
 
 Si se establecen umbrales, el texto del campo se muestra en el color de umbral apropiado.
 
-image:extracted-media\media\image82.png[Color text,width=400,height=118]
+image:media\image82.png[Color text,width=400,height=118]
 
 *_Fondo de color (degradado o sólido)_*
 
 Si se establecen umbrales, el fondo del campo se muestra en el color de umbral apropiado.
 
-image:extracted-media\media\image83.png[Color background,width=398,height=107]
+image:media\image83.png[Color background,width=398,height=107]
 
 *_Medidor de gradiente_*
 
 Los niveles de umbral definen un gradiente.
 
-image:extracted-media\media\image84.png[Gradient gauge,width=398,height=133]
+image:media\image84.png[Gradient gauge,width=398,height=133]
 
 *_Indicador LCD_*
 
 El medidor se divide en pequeñas celdas que están encendidas o apagadas.
 
-image:extracted-media\media\image85.png[LCD gauge,width=400,height=169]
+image:media\image85.png[LCD gauge,width=400,height=169]
 
 *_Vista JSON_*
 
 Muestra el valor formateado como código. Si un valor es un objeto, la vista JSON que permite navegar por el objeto JSON aparecerá al pasar el mouse.
 
-image:extracted-media\media\image86.png[JSON view,width=398,height=113]
+image:media\image86.png[JSON view,width=398,height=113]
 
 *_Imagen_*
 
@@ -6787,13 +6787,13 @@ Si activa el *Filtro de columna* en las Opciones de la tabla, puede filtrar las 
 
 Aparece un icono de filtro junto al título de cada columna.
 
-image:extracted-media\media\image87.png[Column filtering turned on,width=512,height=99]
+image:media\image87.png[Column filtering turned on,width=512,height=99]
 
 *Filtrar valores de columna*
 
 Para filtrar valores de columna, haga clic en el icono de filtro (embudo) junto al título de una columna. Grafana muestra las opciones de filtro para esa columna.
 
-image:extracted-media\media\image88.png[Filter column values,width=390,height=500]
+image:media\image88.png[Filter column values,width=390,height=500]
 
 Haga clic en la casilla de verificación junto a los valores que desea mostrar. Ingrese texto en el campo de búsqueda en la parte superior para mostrar esos valores en la pantalla para que pueda seleccionarlos en lugar de desplazarse para encontrarlos.
 
@@ -6801,7 +6801,7 @@ Haga clic en la casilla de verificación junto a los valores que desea mostrar. 
 
 Las columnas con filtros aplicados tienen un embudo azul junto al título.
 
-image:extracted-media\media\image89.png[Filtered column,width=162,height=193]
+image:media\image89.png[Filtered column,width=162,height=193]
 
 Para eliminar el filtro, haga clic en el icono de embudo azul y luego haga clic en *Borrar filtro*.
 
@@ -6903,35 +6903,35 @@ Elija cómo Grafana interpola la línea de la serie. Las capturas de pantalla a 
 
 _Lineal_
 
-image:extracted-media\media\image90.png[Linear interpolation icon,width=142,height=65]
+image:media\image90.png[Linear interpolation icon,width=142,height=65]
 
 Los puntos están unidos por líneas rectas.
 
-image:extracted-media\media\image91.png[Linear interpolation example,width=624,height=137]
+image:media\image91.png[Linear interpolation example,width=624,height=137]
 
 _Suave_
 
-image:extracted-media\media\image92.png[Smooth interpolation icon,width=143,height=65]
+image:media\image92.png[Smooth interpolation icon,width=143,height=65]
 
 Los puntos están unidos por líneas curvas que dan como resultado transiciones suaves entre puntos.
 
-image:extracted-media\media\image93.png[Smooth interpolation example,width=624,height=135]
+image:media\image93.png[Smooth interpolation example,width=624,height=135]
 
 _Paso antes_
 
-image:extracted-media\media\image94.png[Step before interpolation icon,width=144,height=68]
+image:media\image94.png[Step before interpolation icon,width=144,height=68]
 
 La línea se muestra como pasos entre puntos. Los puntos se representan al final del paso.
 
-image:extracted-media\media\image95.png[Step before interpolation example,width=624,height=138]
+image:media\image95.png[Step before interpolation example,width=624,height=138]
 
 _Paso después_
 
-image:extracted-media\media\image96.png[Step after interpolation icon,width=144,height=68]
+image:media\image96.png[Step after interpolation icon,width=144,height=68]
 
 La línea se muestra como pasos entre puntos. Los puntos se representan al comienzo del paso.
 
-image:extracted-media\media\image97.png[Step after interpolation example,width=624,height=131]
+image:media\image97.png[Step after interpolation example,width=624,height=131]
 
 *_Ancho de línea_*
 
@@ -6939,11 +6939,11 @@ Establezca el grosor de la línea de la serie, de 0 a 10 píxeles.
 
 Grosor de línea establecido en 1:
 
-image:extracted-media\media\image98.png[Line thickness 1 example,width=624,height=164]
+image:media\image98.png[Line thickness 1 example,width=624,height=164]
 
 Grosor de línea establecido en 7:
 
-image:extracted-media\media\image99.png[Line thickness 7 example,width=624,height=164]
+image:media\image99.png[Line thickness 7 example,width=624,height=164]
 
 *_Opacidad de relleno_*
 
@@ -6951,11 +6951,11 @@ Establezca la opacidad del relleno de la serie, de 0 a 100 por ciento.
 
 Opacidad de relleno establecida en 20:
 
-image:extracted-media\media\image100.png[Fill opacity 20 example,width=624,height=163]
+image:media\image100.png[Fill opacity 20 example,width=624,height=163]
 
 Opacidad de relleno establecida en 95:
 
-image:extracted-media\media\image101.png[Fill opacity 95 example,width=624,height=158]
+image:media\image101.png[Fill opacity 95 example,width=624,height=158]
 
 *_Modo de gradiente_*
 
@@ -6967,19 +6967,19 @@ _Ninguno_
 
 Sin relleno degradado. Ésta es la configuración predeterminada.
 
-image:extracted-media\media\image102.png[Gradient mode none example,width=624,height=158]
+image:media\image102.png[Gradient mode none example,width=624,height=158]
 
 _Opacidad_
 
 La transparencia del gradiente se calcula en función de los valores del eje y. La opacidad del relleno aumenta con los valores del eje Y.
 
-image:extracted-media\media\image103.png[Gradient mode opacity example,width=624,height=161]
+image:media\image103.png[Gradient mode opacity example,width=624,height=161]
 
 _Tono_
 
 El color degradado se genera en función del tono del color de la línea.
 
-image:extracted-media\media\image104.png[Gradient mode hue example,width=624,height=159]
+image:media\image104.png[Gradient mode hue example,width=624,height=159]
 
 *_Estilo de línea_*
 
@@ -6991,7 +6991,7 @@ _Sólido_
 
 Muestra una línea sólida. Ésta es la configuración predeterminada.
 
-image:extracted-media\media\image105.png[Line style solid example,width=624,height=157]
+image:media\image105.png[Line style solid example,width=624,height=157]
 
 _Guión_
 
@@ -6999,15 +6999,15 @@ Muestre una línea discontinua. Cuando elige esta opción, aparece una lista par
 
 Espaciado de guiones establecido en 10, 10 (predeterminado):
 
-image:extracted-media\media\image106.png[Line style dashed 10, 10 example,width=624,height=157]
+image:media\image106.png[Line style dashed 10, 10 example,width=624,height=157]
 
 Espaciado de guiones establecido en 10, 30:
 
-image:extracted-media\media\image107.png[Line style dashed 10, 30 example,width=624,height=161]
+image:media\image107.png[Line style dashed 10, 30 example,width=624,height=161]
 
 Espaciado de guiones establecido en 40, 10:
 
-image:extracted-media\media\image108.png[Line style dashed 40, 10 example,width=624,height=157]
+image:media\image108.png[Line style dashed 40, 10 example,width=624,height=157]
 
 _Puntos_
 
@@ -7015,11 +7015,11 @@ Muestra líneas de puntos. Cuando elige esta opción, aparece una lista para que
 
 Espaciado de puntos establecido en 0, 10 (predeterminado):
 
-image:extracted-media\media\image109.png[Line style dots 0, 10 example,width=624,height=155]
+image:media\image109.png[Line style dots 0, 10 example,width=624,height=155]
 
 Espaciado de puntos establecido en 0, 30:
 
-image:extracted-media\media\image110.png[Line style dots 0, 30 example,width=624,height=157]
+image:media\image110.png[Line style dots 0, 30 example,width=624,height=157]
 
 *_Valores nulos_*
 
@@ -7029,13 +7029,13 @@ _Brechas_
 
 Si hay una brecha en la serie, la línea en el gráfico se romperá y mostrará la brecha.
 
-image:extracted-media\media\image111.png[Null values gaps example,width=624,height=264]
+image:media\image111.png[Null values gaps example,width=624,height=264]
 
 _Conectado_
 
 Si hay un espacio en la serie, la línea saltará el espacio y se conectará al siguiente valor no nulo.
 
-image:extracted-media\media\image112.png[Null values connected example,width=624,height=259]
+image:media\image112.png[Null values connected example,width=624,height=259]
 
 *_Mostrar puntos_*
 
@@ -7055,17 +7055,17 @@ Establezca el tamaño de los puntos, de 1 a 40 píxeles de diámetro.
 
 Tamaño de punto establecido en 4:
 
-image:extracted-media\media\image113.png[Show points point size 4 example,width=624,height=146]
+image:media\image113.png[Show points point size 4 example,width=624,height=146]
 
 Tamaño de punto establecido en 10:
 
-image:extracted-media\media\image114.png[Show points point size 10 example,width=624,height=145]
+image:media\image114.png[Show points point size 10 example,width=624,height=145]
 
 _Nunca_
 
 Nunca muestre los puntos.
 
-image:extracted-media\media\image115.png[Show points point never example,width=624,height=148]
+image:media\image115.png[Show points point never example,width=624,height=148]
 
 *Rellene debajo hasta*
 
@@ -7080,7 +7080,7 @@ Rellena el área entre dos series. En la pestaña Anulaciones:
 
 Serie A rellenada hasta la serie B:
 
-image:extracted-media\media\image116.png[Fill below to example,width=624,height=140]
+image:media\image116.png[Fill below to example,width=624,height=140]
 
 *Ejemplos de gráficos de líneas*
 
@@ -7090,17 +7090,17 @@ A continuación se muestran algunos ejemplos de gráficos de líneas para darle 
 
 Este es un gráfico con diferentes estilos de línea y colores aplicados a cada serie y relleno de cero.
 
-image:extracted-media\media\image117.png[Various line styles example,width=624,height=252]
+image:media\image117.png[Various line styles example,width=624,height=252]
 
 *_Ejemplo de modos de interpolación_*
 
-image:extracted-media\media\image118.png[Interpolation modes example,width=624,height=381]
+image:media\image118.png[Interpolation modes example,width=624,height=381]
 
 *_Ejemplo de Rellene debajo hasta_*
 
 Este gráfico muestra tres series: Min, Max y Valor. Las series Min y Max tienen el *Ancho de línea* establecido en 0. Max tiene una anulación de *Rellene debajo hasta* establecido en Min, que llena el área entre Max y Min con el color de línea Max.
 
-image:extracted-media\media\image119.png[Fill below example,width=624,height=252]
+image:media\image119.png[Fill below example,width=624,height=252]
 
 ===== Graficar series de tiempo como barras
 
@@ -7134,27 +7134,27 @@ Establece la posición de la barra relativa a un punto de datos. En los ejemplos
 
 _Antes_
 
-image:extracted-media\media\image120.png[Bar alignment before icon,width=114,height=67]
+image:media\image120.png[Bar alignment before icon,width=114,height=67]
 
 La barra se dibuja antes del punto. El punto se coloca en la esquina posterior de la barra.
 
-image:extracted-media\media\image121.png[Bar alignment before example,width=624,height=182]
+image:media\image121.png[Bar alignment before example,width=624,height=182]
 
 _Centrar_
 
-image:extracted-media\media\image122.png[Bar alignment center icon,width=114,height=68]
+image:media\image122.png[Bar alignment center icon,width=114,height=68]
 
 La barra se dibuja alrededor del punto. El punto se coloca en el centro de la barra. Este es el predeterminado.
 
-image:extracted-media\media\image123.png[Bar alignment center,width=624,height=183]
+image:media\image123.png[Bar alignment center,width=624,height=183]
 
 _Después_
 
-image:extracted-media\media\image124.png[Bar alignment after icon,width=115,height=66]
+image:media\image124.png[Bar alignment after icon,width=115,height=66]
 
 La barra se dibuja después del punto. El punto se coloca en la esquina principal de la barra.
 
-image:extracted-media\media\image125.png[Bar alignment after,width=624,height=184]
+image:media\image125.png[Bar alignment after,width=624,height=184]
 
 *_Ancho de línea_*
 
@@ -7162,11 +7162,11 @@ Establezca el grosor de los contornos de la barra de líneas, de 0 a 10 píxeles
 
 Grosor de línea establecido en 1:
 
-image:extracted-media\media\image126.png[Line thickness 1 example,width=624,height=192]
+image:media\image126.png[Line thickness 1 example,width=624,height=192]
 
 Grosor de línea establecido en 7:
 
-image:extracted-media\media\image127.png[Line thickness 7 example,width=624,height=188]
+image:media\image127.png[Line thickness 7 example,width=624,height=188]
 
 *_Opacidad de relleno_*
 
@@ -7174,11 +7174,11 @@ Establezca la opacidad del relleno de la barra, de 0 a 100 por ciento. En los ej
 
 Opacidad de relleno establecida en 20:
 
-image:extracted-media\media\image128.png[Fill opacity 20 example,width=624,height=188]
+image:media\image128.png[Fill opacity 20 example,width=624,height=188]
 
 Opacidad de relleno establecida en 95:
 
-image:extracted-media\media\image129.png[Fill opacity 95 example,width=624,height=190]
+image:media\image129.png[Fill opacity 95 example,width=624,height=190]
 
 *_Modo de gradiente_*
 
@@ -7190,19 +7190,19 @@ _Ninguno_
 
 Sin relleno degradado. Ésta es la configuración predeterminada.
 
-image:extracted-media\media\image130.png[Gradient mode none example,width=624,height=184]
+image:media\image130.png[Gradient mode none example,width=624,height=184]
 
 _Opacidad_
 
 La transparencia del gradiente se calcula en función de los valores del eje y. La opacidad del relleno aumenta con los valores del eje Y.
 
-image:extracted-media\media\image131.png[Gradient mode opacity example,width=624,height=187]
+image:media\image131.png[Gradient mode opacity example,width=624,height=187]
 
 Tono
 
 El color degradado se genera en función del tono del color de la línea.
 
-image:extracted-media\media\image132.png[Gradient mode hue example,width=624,height=186]
+image:media\image132.png[Gradient mode hue example,width=624,height=186]
 
 *_Mostrar puntos_*
 
@@ -7222,17 +7222,17 @@ Establezca el tamaño de los puntos, de 1 a 40 píxeles de diámetro.
 
 Tamaño de punto establecido en 6:
 
-image:extracted-media\media\image133.png[Show points point size 6 example,width=624,height=184]
+image:media\image133.png[Show points point size 6 example,width=624,height=184]
 
 Tamaño de punto establecido en 20:
 
-image:extracted-media\media\image134.png[Show points point size 20 example,width=624,height=186]
+image:media\image134.png[Show points point size 20 example,width=624,height=186]
 
 _Nunca_
 
 Nunca muestre los puntos.
 
-image:extracted-media\media\image135.png[Show points point never example,width=624,height=182]
+image:media\image135.png[Show points point never example,width=624,height=182]
 
 *Ejemplos de gráficos de barras*
 
@@ -7240,7 +7240,7 @@ A continuación se muestran algunos ejemplos de gráficos de barras para darle i
 
 *_Gradiente de tono_*
 
-image:extracted-media\media\image136.png[Bars with hue gradient example,width=403,height=303]
+image:media\image136.png[Bars with hue gradient example,width=403,height=303]
 
 ===== Graficar series de tiempo como puntos
 
@@ -7274,15 +7274,15 @@ Establezca el tamaño de los puntos, de 1 a 40 píxeles de diámetro.
 
 Tamaño de punto establecido en 6:
 
-image:extracted-media\media\image137.png[Show points point size 6 example,width=624,height=169]
+image:media\image137.png[Show points point size 6 example,width=624,height=169]
 
 Tamaño de punto establecido en 20:
 
-image:extracted-media\media\image138.png[Show points point size 20 example,width=624,height=170]
+image:media\image138.png[Show points point size 20 example,width=624,height=170]
 
 Tamaño de punto establecido en 35:
 
-image:extracted-media\media\image139.png[Show points point size 35 example,width=624,height=174]
+image:media\image139.png[Show points point size 35 example,width=624,height=174]
 
 ===== Cambiar visualización de eje
 
@@ -7313,25 +7313,25 @@ Grafana asigna automáticamente el eje Y a la serie. Cuando hay dos o más serie
 
 Muestra todos los ejes Y en el lado izquierdo.
 
-image:extracted-media\media\image140.png[Left Y-axis example,width=624,height=193]
+image:media\image140.png[Left Y-axis example,width=624,height=193]
 
 *_Derecha_*
 
 Muestre todos los ejes Y en el lado derecho.
 
-image:extracted-media\media\image141.png[Right Y-axis example,width=624,height=200]
+image:media\image141.png[Right Y-axis example,width=624,height=200]
 
 *_Oculto_*
 
 Ocultar los ejes Y
 
-image:extracted-media\media\image142.png[Hidden Y-axis example,width=624,height=177]
+image:media\image142.png[Hidden Y-axis example,width=624,height=177]
 
 *Etiqueta*
 
 Establece una etiqueta de texto en el eje Y.
 
-image:extracted-media\media\image143.png[Label example,width=624,height=212]
+image:media\image143.png[Label example,width=624,height=212]
 
 Si tiene más de un eje Y, puede asignar etiquetas diferentes en la pestaña Anular.
 
@@ -7349,7 +7349,7 @@ Los ajustes *mínimos suaves* y *máximos suaves* pueden evitar que los puntos s
 
 Puede establecer opciones estándar min/max para definir límites estrictos del eje Y. Para obtener más información, consulte Opciones de campo estándar.
 
-image:extracted-media\media\image144.png[Label example,width=624,height=210]
+image:media\image144.png[Label example,width=624,height=210]
 
 *Escala*
 
@@ -7524,7 +7524,7 @@ Un _tablero_ es un conjunto de uno o más paneles organizados y dispuestos en un
 
 ==== Interfaz de usuario del tablero
 
-image:extracted-media\media\image145.png[https://grafana.com/static/img/docs/v50/dashboard_annotated.png,width=624,height=265]
+image:media\image145.png[https://grafana.com/static/img/docs/v50/dashboard_annotated.png,width=624,height=265]
 
 [arabic]
 . Alejar rango de tiempo
@@ -7537,7 +7537,7 @@ image:extracted-media\media\image145.png[https://grafana.com/static/img/docs/v50
 
 Haga clic en el enlace nuevo Tablero en el lado derecho del selector de Tablero. Ahora tiene un Tablero en blanco.
 
-image:extracted-media\media\image146.png[https://grafana.com/static/img/docs/v50/top_nav_annotated.png,width=624,height=99]
+image:media\image146.png[https://grafana.com/static/img/docs/v50/top_nav_annotated.png,width=624,height=99]
 
 La imagen de arriba muestra el encabezado superior de un Tablero.
 
@@ -7608,7 +7608,7 @@ Utilice la función de filas repetidas para crear o eliminar dinámicamente fila
 
 ==== Anotaciones
 
-image:extracted-media\media\image147.png[https://grafana.com/static/img/docs/v46/annotations.png,width=624,height=245]
+image:media\image147.png[https://grafana.com/static/img/docs/v46/annotations.png,width=624,height=245]
 
 Las anotaciones proporcionan una forma de marcar puntos en el gráfico con eventos enriquecidos. Cuando pasa el cursor sobre una anotación, puede obtener la descripción del evento y las etiquetas del evento. El campo de texto puede incluir enlaces a otros sistemas con más detalle.
 
@@ -7636,13 +7636,13 @@ Puede crear nuevas consultas de anotaciones que obtengan anotaciones del almacé
 
 En Grafana v5.3 +, es posible utilizar variables de plantilla en la consulta de etiquetas. Entonces, si tiene un tablero que muestra estadísticas para diferentes servicios y una variable de plantilla que dicta qué servicios mostrar, ahora puede usar la misma variable de plantilla en su consulta de anotaciones para mostrar solo anotaciones para esos servicios.
 
-image:extracted-media\media\image148.png[https://grafana.com/static/img/docs/v53/annotation_tag_filter_variable.png,width=624,height=307]
+image:media\image148.png[https://grafana.com/static/img/docs/v53/annotation_tag_filter_variable.png,width=624,height=307]
 
 ===== Consultar otras fuentes de datos
 
 Los eventos de anotación se obtienen mediante consultas de anotación. Para agregar una nueva consulta de anotación a un tablero, abra el menú de configuración del tablero y luego seleccione Anotaciones. Esto abrirá la vista de configuración de anotaciones del tablero. Para crear una nueva consulta de anotación, presione el botón Nuevo.
 
-image:extracted-media\media\image149.png[https://grafana.com/static/img/docs/v50/annotation_new_query.png,width=624,height=234]
+image:media\image149.png[https://grafana.com/static/img/docs/v50/annotation_new_query.png,width=624,height=234]
 
 Especifique un nombre para la consulta de anotación. Este nombre se le da a la palanca (casilla de verificación) que le permitirá habilitar/deshabilitar la visualización de eventos de anotación de esta consulta. Por ejemplo, puede tener dos consultas de anotación denominadas Implementaciones e Interrupciones. La palanca le permitirá decidir qué anotaciones mostrar.
 
@@ -7668,7 +7668,7 @@ En la página Crear Carpeta, ingrese un nombre único para la carpeta y luego ha
 
 ===== Administrar tableros
 
-image:extracted-media\media\image150.png[https://grafana.com/static/img/docs/v50/manage_dashboard_menu.png,width=205,height=329]
+image:media\image150.png[https://grafana.com/static/img/docs/v50/manage_dashboard_menu.png,width=205,height=329]
 
 Hay una nueva página Administrar Tableros donde puede realizar una variedad de tareas:
 
@@ -7702,7 +7702,7 @@ Grafana escala automáticamente los tableros a cualquier resolución, lo que los
 
 Puede acceder a la función Lista de reproducción desde el menú lateral de Grafana, en el submenú Tableros.
 
-image:extracted-media\media\image151.png[https://grafana.com/static/img/docs/v50/playlist.png,width=624,height=451]
+image:media\image151.png[https://grafana.com/static/img/docs/v50/playlist.png,width=624,height=451]
 
 ===== Crear una lista de reproducción
 
@@ -7931,7 +7931,7 @@ ____
 
 Los tableros se pueden buscar por el nombre del tablero, filtrar por una (o muchas) etiquetas o filtrar por estado destacado. Se accede a la búsqueda del tablero a través del selector de tablero, disponible en el área de navegación superior del tablero. La búsqueda del tablero también se puede abrir usando el atajo F.
 
-image:extracted-media\media\image152.png[https://grafana.com/static/img/docs/v50/dashboard_search_annotated.png,width=624,height=474]
+image:media\image152.png[https://grafana.com/static/img/docs/v50/dashboard_search_annotated.png,width=624,height=474]
 
 [arabic]
 . *Barra de búsqueda:* la barra de búsqueda le permite ingresar cualquier cadena y buscar en la base de datos y en los tableros basados ​​en archivos en tiempo real.
@@ -8014,7 +8014,7 @@ Aquí hay unos ejemplos:
 
 El tablero y los controles de tiempo del panel tienen una interfaz de usuario (UI) común.
 
-image:extracted-media\media\image153.png[https://grafana.com/static/img/docs/time-range-controls/common-time-controls-7-0.png,width=452,height=76]
+image:media\image153.png[https://grafana.com/static/img/docs/time-range-controls/common-time-controls-7-0.png,width=452,height=76]
 
 Las opciones se definen a continuación.
 
@@ -8024,11 +8024,11 @@ El rango de tiempo actual, también llamado _selector de tiempo_, muestra el ran
 
 Pase el cursor sobre el campo para ver las marcas de tiempo exactas en el rango y su fuente (como el navegador local).
 
-image:extracted-media\media\image154.png[https://grafana.com/static/img/docs/time-range-controls/time-picker-7-0.png,width=262,height=223]
+image:media\image154.png[https://grafana.com/static/img/docs/time-range-controls/time-picker-7-0.png,width=262,height=223]
 
 Haga clic en el rango de tiempo actual para cambiar el rango de tiempo. Puede cambiar la hora actual utilizando un rango de tiempo relativo, como los últimos 15 minutos, o un rango de tiempo absoluto, como 2020-05-14 00:00:00 to 2020-05-15 23:59:59.
 
-image:extracted-media\media\image155.png[https://grafana.com/static/img/docs/time-range-controls/change-current-time-range-7-0.png,width=624,height=471]
+image:media\image155.png[https://grafana.com/static/img/docs/time-range-controls/change-current-time-range-7-0.png,width=624,height=471]
 
 ====== Rango de tiempo relativo
 
@@ -8100,7 +8100,7 @@ El rango de tiempo de un tablero se puede controlar proporcionando los siguiente
 
 La generación de informes le permite generar archivos PDF desde cualquiera de sus paneles y enviarlos a las partes interesadas según un cronograma.
 
-image:extracted-media\media\image156.png[https://grafana.com/static/img/docs/enterprise/reports_list.png,width=624,height=207]
+image:media\image156.png[https://grafana.com/static/img/docs/enterprise/reports_list.png,width=624,height=207]
 
 Los informes solo están disponibles en Grafana Enterprise, v6.4 o posterior. Para obtener más información, consulte Reportes en Grafana Enterprise.
 
@@ -8110,7 +8110,7 @@ Los informes solo están disponibles en Grafana Enterprise, v6.4 o posterior. Pa
 
 Siempre que guarde una versión de su tablero, se guarda una copia de esa versión para que las versiones anteriores de su tablero nunca se pierdan. Una lista de estas versiones está disponible ingresando a la configuración del tablero y luego seleccionando "Versiones" en el menú del lado izquierdo.
 
-image:extracted-media\media\image157.png[https://grafana.com/static/img/docs/v50/dashboard_versions_list.png,width=624,height=312]
+image:media\image157.png[https://grafana.com/static/img/docs/v50/dashboard_versions_list.png,width=624,height=312]
 
 La función de historial de versiones del tablero le permite comparar y restaurar versiones del tablero guardadas previamente.
 
@@ -8118,11 +8118,11 @@ La función de historial de versiones del tablero le permite comparar y restaura
 
 Para comparar dos versiones del tablero, seleccione las dos versiones de la lista que desea comparar. Una vez seleccionado, se podrá hacer clic en el botón "Comparar versiones". Haga clic en el botón para ver la diferencia entre las dos versiones.
 
-image:extracted-media\media\image158.png[https://grafana.com/static/img/docs/v50/dashboard_versions_select.png,width=624,height=312]
+image:media\image158.png[https://grafana.com/static/img/docs/v50/dashboard_versions_select.png,width=624,height=312]
 
 Al hacer clic en el botón, accederá a la vista de diferencias. De forma predeterminada, verá un resumen textual de los cambios, como en la imagen a continuación.
 
-image:extracted-media\media\image159.png[https://grafana.com/static/img/docs/v50/dashboard_versions_diff_basic.png,width=624,height=312]
+image:media\image159.png[https://grafana.com/static/img/docs/v50/dashboard_versions_diff_basic.png,width=624,height=312]
 
 Si desea ver las diferencias del JSON sin procesar que representa su tablero, también puede hacerlo haciendo clic en el botón "Ver diferencias JSON" en la parte inferior.
 
@@ -8132,7 +8132,7 @@ Si desea restaurar a la versión con la que se diferencia, puede hacerlo haciend
 
 Si necesita restaurar a una versión del tablero previamente guardada, puede hacerlo haciendo clic en el botón "Restaurar" a la derecha de una fila en la lista de versiones del tablero o haciendo clic en el botón "Restaurar a la versión <x>" que aparece en la vista de diferencias. Al hacer clic en el botón, aparecerá la siguiente ventana emergente que le pedirá que confirme la restauración.
 
-image:extracted-media\media\image160.png[https://grafana.com/static/img/docs/v50/dashboard_versions_restore.png,width=624,height=312]
+image:media\image160.png[https://grafana.com/static/img/docs/v50/dashboard_versions_restore.png,width=624,height=312]
 
 Después de restaurar a una versión anterior, se creará una nueva versión que contiene los mismos datos exactos que la versión anterior, solo que con un número de versión diferente. Esto se indica en la “columna Notas” de la fila de la nueva versión del tablero. Esto se hace simplemente para garantizar que las versiones anteriores del tablero no se vean afectadas por el cambio.
 
@@ -8148,7 +8148,7 @@ Los tableros se exportan en formato Grafana JSON y contienen todo lo que necesit
 
 Se accede a la función de exportación en la ventana de compartir que se abre haciendo clic en el botón de compartir en el menú del tablero.
 
-image:extracted-media\media\image161.png[https://grafana.com/static/img/docs/export/export-modal.png,width=624,height=210]
+image:media\image161.png[https://grafana.com/static/img/docs/export/export-modal.png,width=624,height=210]
 
 ====== Hacer un tablero portátil
 
@@ -8160,7 +8160,7 @@ Una variable de plantilla del tipo Constant se ocultará automáticamente en el 
 
 Para importar un tablero, haga clic en el icono + en el menú lateral y luego haga clic en *Importar*.
 
-image:extracted-media\media\image162.png[https://grafana.com/static/img/docs/v70/import_step1.png,width=624,height=403]
+image:media\image162.png[https://grafana.com/static/img/docs/v70/import_step1.png,width=624,height=403]
 
 Desde aquí puede cargar un archivo JSON de tablero, pegar una URL de tablero de Grafana.com o pegar el texto JSON del tablero directamente en el área de texto.
 
@@ -8170,7 +8170,7 @@ En el paso 2 del proceso de importación, Grafana le permitirá cambiar el nombr
 
 Encuentre tableros para aplicaciones de servidor comunes en Grafana.com/dashboards.
 
-image:extracted-media\media\image163.png[https://grafana.com/static/img/docs/v50/gcom_dashboard_list.png,width=624,height=361]
+image:media\image163.png[https://grafana.com/static/img/docs/v50/gcom_dashboard_list.png,width=624,height=361]
 
 ===== Importar y compartir con Grafana 2.xo 3.0
 
@@ -8649,7 +8649,7 @@ Para compartir un tablero:
 . Vaya a la página de inicio de su instancia de Grafana.
 . Haga clic en el icono de compartir en la navegación superior. Se abre el cuadro de diálogo para compartir y muestra la pestaña Vínculo.
 
-image:extracted-media\media\image164.png[Dashboard share direct link,width=624,height=318]
+image:media\image164.png[Dashboard share direct link,width=624,height=318]
 
 ===== Usar enlace directo
 
@@ -8667,7 +8667,7 @@ Una instantánea del tablero comparte públicamente un tablero interactivo. Graf
 
 Puede publicar instantáneas en su instancia local o en snapshot.raintank.io. Este último es un servicio gratuito proporcionado por Grafana Labs que le permite publicar instantáneas del tablero en una instancia externa de Grafana. Se siguen aplicando las mismas reglas: cualquiera que tenga el enlace puede verlo. Puede establecer un tiempo de vencimiento si desea que se elimine la instantánea después de un cierto período de tiempo.
 
-image:extracted-media\media\image165.png[Dashboard share snapshot,width=624,height=487]
+image:media\image165.png[Dashboard share snapshot,width=624,height=487]
 
 Para publicar una instantánea:
 
@@ -8681,7 +8681,7 @@ En caso de que haya creado una instantánea por error, haga clic en *eliminar in
 
 Los trableros de Grafana se pueden exportar e importar fácilmente. Para obtener más información, consulte Exportar e importar tablero.
 
-image:extracted-media\media\image166.png[Export,width=624,height=166]
+image:media\image166.png[Export,width=624,height=166]
 
 === Compartir un panel
 
@@ -8695,7 +8695,7 @@ Para compartir un panel:
 . Haga clic en el título de un panel para abrir el menú del panel.
 . Haga clic en *Compartir*. Se abre el cuadro de diálogo para compartir y muestra la pestaña Vínculo.
 
-image:extracted-media\media\image167.png[Panel share direct link,width=624,height=348]
+image:media\image167.png[Panel share direct link,width=624,height=348]
 
 ===== Usar enlace directo
 
@@ -8728,7 +8728,7 @@ Una instantánea del panel comparte un panel interactivo públicamente. Grafana 
 
 Puede publicar instantáneas en su instancia local o en snapshot.raintank.io. Este último es un servicio gratuito proporcionado por Raintank, que le permite publicar instantáneas del tablero en una instancia externa de Grafana. Opcionalmente, puede establecer un tiempo de vencimiento si desea que la instantánea se elimine después de un cierto período de tiempo.
 
-image:extracted-media\media\image168.png[Panel share snapshot,width=624,height=475]
+image:media\image168.png[Panel share snapshot,width=624,height=475]
 
 Para publicar una instantánea:
 
@@ -8743,7 +8743,7 @@ Si creó una instantánea por error, haga clic en *eliminar instantánea* para e
 
 Puede incrustar un panel mediante un iframe en otro sitio web. A menos que se habilite el permiso de acceso anónimo, el espectador debe iniciar sesión en Grafana para ver el gráfico.
 
-image:extracted-media\media\image169.png[Panel share embed,width=624,height=349]
+image:media\image169.png[Panel share embed,width=624,height=349]
 
 A continuación, se muestra un ejemplo del código HTML:
 
@@ -8751,7 +8751,7 @@ A continuación, se muestra un ejemplo del código HTML:
 
 El resultado es un gráfico Grafana interactivo incrustado en un iframe:
 
-image:extracted-media\media\image170.png[image,width=624,height=290]
+image:media\image170.png[image,width=624,height=290]
 
 == Explorar
 
@@ -8779,7 +8779,7 @@ Haga clic en el icono Explorar en la barra de menú.
 ____
 
 ____
-image:extracted-media\media\image171.png[Screenshot of the new Explore Icon,width=146,height=271]
+image:media\image171.png[Screenshot of the new Explore Icon,width=146,height=271]
 ____
 
 [arabic, start=2]
@@ -8791,7 +8791,7 @@ ____
 
 Alternativamente, para comenzar con una consulta existente en un panel, elija la opción Explorar en el menú Panel. Esto abre una pestaña Explorar con la consulta del panel y le permite modificar o iterar en la consulta fuera de su tablero.
 
-image:extracted-media\media\image172.png[Screenshot of the new Explore option in the panel menu,width=624,height=213]
+image:media\image172.png[Screenshot of the new Explore option in the panel menu,width=624,height=213]
 
 [arabic, start=3]
 . {blank}
@@ -8816,7 +8816,7 @@ Para abrir la vista dividida:
 
 Es posible seleccionar otra fuente de datos para la nueva consulta que, por ejemplo, le permite comparar la misma consulta para dos servidores diferentes o comparar el entorno de ensayo con el entorno de producción.
 
-image:extracted-media\media\image173.png[Screenshot of Explore option in the panel menu,width=624,height=292]
+image:media\image173.png[Screenshot of Explore option in the panel menu,width=624,height=292]
 
 En la vista dividida, los selectores de tiempo de ambos paneles se pueden vincular (si cambia uno, el otro también se cambia) haciendo clic en uno de los botones de sincronización de tiempo adjuntos a los selectores de tiempo. La vinculación de selectores de tiempo ayuda a mantener sincronizadas las horas de inicio y finalización de las consultas de vista dividida. Garantiza que esté mirando el mismo intervalo de tiempo en ambos paneles divididos.
 
@@ -8828,7 +8828,7 @@ Para ayudar a acelerar los flujos de trabajo que implican cambiar regularmente d
 
 Una vez que haya navegado a Explorar, debería ver un botón "Atrás" en la barra de herramientas Explorar. Simplemente haga clic en él para volver al tablero de origen. Para traer al tablero los cambios que realice en Explorar, haga clic en la flecha junto al botón para mostrar un elemento de menú "Volver al panel con cambios".
 
-image:extracted-media\media\image174.png[Screenshot of the expanded explore return dropdown,width=328,height=67]
+image:media\image174.png[Screenshot of the expanded explore return dropdown,width=328,height=67]
 
 === Compartir enlace acortado
 
@@ -8842,7 +8842,7 @@ La función Compartir enlace abreviado le permite crear URL más pequeñas y sen
 
 Para ayudar con la depuración de consultas, Explorar le permite investigar solicitudes y respuestas de consultas, así como estadísticas de consultas, a través del inspector de Consultas. Esta funcionalidad es similar a la pestaña Estadísticas y la pestaña Consulta del inspector de paneles.
 
-image:extracted-media\media\image175.png[Screenshot of the query inspector button in Explore,width=624,height=94]
+image:media\image175.png[Screenshot of the query inspector button in Explore,width=624,height=94]
 
 ===== Historial de consultas
 
@@ -8924,7 +8924,7 @@ La primera versión de Explorar presenta una experiencia de consulta personaliza
 
 En el lado izquierdo del campo de consulta, haga clic en *Métricas* para abrir el Explorador de Métricas. Esto muestra un menú jerárquico con métricas agrupadas por su prefijo. Por ejemplo, todas las métricas de Alertmanager se agrupan bajo el prefijo alertmanager. Este es un buen punto de partida si solo desea explorar qué métricas están disponibles.
 
-image:extracted-media\media\image176.png[Screenshot of the new Explore option in the panel menu,width=624,height=247]
+image:media\image176.png[Screenshot of the new Explore option in the panel menu,width=624,height=247]
 
 ====== Campo de consulta
 
@@ -9028,7 +9028,7 @@ Cada fila de registro tiene un área extensible con sus etiquetas y campos detec
 
 Al utilizar los campos derivados, puede convertir cualquier parte de un mensaje de registro en un enlace interno o externo. El enlace creado es visible como un botón junto al campo Detectado en la vista Detalles del registro.
 
-image:extracted-media\media\image27.png[Detected fields link in Explore,width=624,height=239]
+image:media\image27.png[Detected fields link in Explore,width=624,height=239]
 
 ====== Alternar campos detectados
 
@@ -9036,7 +9036,7 @@ image:extracted-media\media\image27.png[Detected fields link in Explore,width=62
 
 Si sus registros están estructurados en json o logfmt, puede mostrar u ocultar los campos detectados. Expanda una línea de registro y luego haga clic en el icono del ojo para mostrar u ocultar campos.
 
-image:extracted-media\media\image177.gif[Toggling detected fields in Explore,width=624,height=351]
+image:media\image177.gif[Toggling detected fields in Explore,width=624,height=351]
 
 ===== Características específicas de Loki
 
@@ -9064,7 +9064,7 @@ Haga clic en el botón *En vivo* en la barra de herramientas Explorar para cambi
 
 Mientras esté en la vista Seguimiento en vivo, los nuevos registros vendrán desde la parte inferior de la pantalla y tendrán un fondo de contraste que se desvanecerá para que pueda realizar un seguimiento de las novedades. Haga clic en el botón *Pausa* o desplácese por la vista de registros para pausar el seguimiento en vivo y explorar registros anteriores sin interrupción. Haga clic en el botón *Reanudar* para reanudar el seguimiento en vivo o haga clic en el botón *Detener* para salir del seguimiento en vivo y volver a la vista de exploración estándar.
 
-image:extracted-media\media\image178.gif[Explore Live tailing in action,width=624,height=436]
+image:media\image178.gif[Explore Live tailing in action,width=624,height=436]
 
 === Rastreo en Explorar
 
@@ -9081,11 +9081,11 @@ Las fuentes de datos admitidas son:
 
 Para obtener información sobre cómo configurar consultas para las fuentes de datos enumeradas anteriormente, consulte la documentación de la fuente de datos específica.
 
-image:extracted-media\media\image179.png[Screenshot of the trace view,width=624,height=192]
+image:media\image179.png[Screenshot of the trace view,width=624,height=192]
 
 ===== Encabezado
 
-image:extracted-media\media\image180.png[Screenshot of the trace view header,width=624,height=66]
+image:media\image180.png[Screenshot of the trace view header,width=624,height=66]
 
 * Título del encabezado: muestra el nombre del intervalo raíz y el ID de seguimiento.
 * Buscar: resalta los intervalos que contienen el texto buscado.
@@ -9093,13 +9093,13 @@ image:extracted-media\media\image180.png[Screenshot of the trace view header,wid
 
 ===== Minimapa
 
-image:extracted-media\media\image181.png[Screenshot of the trace view minimap,width=624,height=69]
+image:media\image181.png[Screenshot of the trace view minimap,width=624,height=69]
 
 Muestra la vista condensada o la línea de tiempo de seguimiento. Arrastre el mouse sobre el minimapa para hacer zoom en un rango de tiempo más pequeño. El zoom también actualizará la línea de tiempo principal, por lo que es fácil ver intervalos más cortos. Al pasar el cursor sobre el minimapa, cuando se hace zoom, se mostrará el botón Restablecer selección que restablece el zoom.
 
 ===== Linea de tiempo
 
-image:extracted-media\media\image182.png[Screenshot of the trace view timeline,width=624,height=149]
+image:media\image182.png[Screenshot of the trace view timeline,width=624,height=149]
 
 Muestra la lista de tramos dentro del seguimiento. Cada fila de tramo consta de estos componentes:
 
@@ -9112,7 +9112,7 @@ Al hacer clic en cualquier parte de la fila del intervalo, se muestran los detal
 
 ===== Detalles del tramo
 
-image:extracted-media\media\image183.png[Screenshot of the trace view span details,width=624,height=311]
+image:media\image183.png[Screenshot of the trace view span details,width=624,height=311]
 
 * Nombre de la operación
 * Metadatos de extensión
@@ -9126,7 +9126,7 @@ image:extracted-media\media\image183.png[Screenshot of the trace view span detai
 
 Puede navegar desde un tramo en una vista de seguimiento directamente a los registros relevantes para ese tramo. Esto está disponible para las fuentes de datos Tempo, Jaeger y Zipkin en este momento. su documentación relevante para obtener instrucciones sobre cómo configurar esta función.
 
-image:extracted-media\media\image184.png[Screenshot of the trace view in Explore with icon next to the spans,width=624,height=385]
+image:media\image184.png[Screenshot of the trace view in Explore with icon next to the spans,width=624,height=385]
 
 Haga clic en el icono del documento para abrir una vista dividida en Explorar con la fuente de datos configurada y consultar los registros relevantes para el intervalo.
 
@@ -9369,7 +9369,7 @@ Este tema explica cómo puede utilizar etiquetas de consulta de alerta en notifi
 . Consulte las etiquetas de consulta de alerta en el nombre de la regla de alerta y/o en el campo del mensaje de notificación de alerta utilizando la sintaxis $\{Label}.
 . Haga clic en *Guardar* en la esquina superior derecha para guardar la regla de alerta y el tablero.
 
-image:extracted-media\media\image185.png[Alerting notification template,width=624,height=539]
+image:media\image185.png[Alerting notification template,width=624,height=539]
 
 === Crear alertas
 
@@ -9377,7 +9377,7 @@ image:extracted-media\media\image185.png[Alerting notification template,width=62
 
 Las alertas de Grafana le permiten adjuntar reglas a los paneles de su tablero. Cuando guarda el tablero, Grafana extrae las reglas de alerta en un almacenamiento de reglas de alerta separado y las programa para su evaluación.
 
-image:extracted-media\media\image186.gif[Alerting overview,width=624,height=475]
+image:media\image186.gif[Alerting overview,width=624,height=475]
 
 En la pestaña Alerta del panel de gráficos, puede configurar la frecuencia con la que se debe evaluar la regla de alerta y las condiciones que deben cumplirse para que la alerta cambie de estado y active sus notificaciones.
 
@@ -9416,11 +9416,11 @@ Por lo general, siempre es una buena idea usar esta configuración, ya que a men
 
 A continuación, puede ver una línea de tiempo de ejemplo de una alerta utilizando la configuración For. A las ~16:04, el estado de alerta cambia a Pending y después de 4 minutos cambia a Alerting, que es cuando se envían las notificaciones de alerta. Una vez que la serie vuelve a la normalidad, la regla de alerta vuelve a estar OK.
 
-image:extracted-media\media\image187.png[Alerting For,width=624,height=179]
+image:media\image187.png[Alerting For,width=624,height=179]
 
 ====== Condiciones
 
-image:extracted-media\media\image188.png[Alerting Conditions,width=624,height=312]
+image:media\image188.png[Alerting Conditions,width=624,height=312]
 
 Actualmente, el único tipo de condición que existe es una condición de Query que le permite especificar una letra de consulta, un rango de tiempo y una función de agregación.
 
@@ -9522,7 +9522,7 @@ Puede hacer varias cosas mientras ve las alertas.
 
 Si las alertas no se comportan como esperaba, aquí hay algunos pasos que puede seguir para solucionar problemas y averiguar qué está fallando.
 
-image:extracted-media\media\image189.png[Test Rule,width=624,height=360]
+image:media\image189.png[Test Rule,width=624,height=360]
 
 El primer nivel de resolución de problemas que puede hacer es hacer clic en *Probar Regla*. Obtendrá un resultado que puede expandir hasta el punto en que pueda ver los datos sin procesar que se devolvieron de su consulta.
 
@@ -9623,11 +9623,11 @@ Puntos y radio de 3 puntos para resaltar dónde están realmente presentes los p
 
 El *valor Nulo* se establece en *conectado*.
 
-image:extracted-media\media\image190.png[https://grafana.com/static/img/docs/troubleshooting/grafana_null_connected.png,width=624,height=252]
+image:media\image190.png[https://grafana.com/static/img/docs/troubleshooting/grafana_null_connected.png,width=624,height=252]
 
 En este gráfico, configuramos el gráfico para mostrar barras en lugar de líneas y establecemos el *valor Nulo* para graficar *nulo como cero*. Hay una gran diferencia en las imágenes.
 
-image:extracted-media\media\image191.png[https://grafana.com/static/img/docs/troubleshooting/grafana_null_zero.png,width=624,height=250]
+image:media\image191.png[https://grafana.com/static/img/docs/troubleshooting/grafana_null_zero.png,width=624,height=250]
 
 === Habilitar diagnósticos
 
