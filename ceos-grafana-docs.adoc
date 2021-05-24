@@ -725,11 +725,11 @@ Le recomendamos que haga una copia de seguridad de algunas cosas en caso de que 
 
 Antes de actualizar, puede ser una buena idea hacer una copia de seguridad de su base de datos de Grafana. Esto asegurará que siempre pueda volver a su versión anterior. Durante el inicio, Grafana migrará automáticamente el esquema de la base de datos (si hay cambios o tablas nuevas). A veces, esto puede causar problemas si luego desea cambiar a una versión anterior.
 
-======= sqlite
+*sqlite*
 
 Si usa sqlite, solo necesita hacer una copia de seguridad de su archivo grafana.db. Normalmente se encuentra en /var/lib/grafana/grafana.db en sistemas Unix. Si no está seguro de qué base de datos utiliza y dónde está almacenada, consulte el archivo de configuración de grafana. Si instaló grafana en una ubicación personalizada utilizando un tar / zip binario, generalmente se encuentra en <grafana_install_dir> / data.
 
-======= mysql
+*mysql*
 
 backup:
 
@@ -739,7 +739,7 @@ restore:
 
 > mysql -u root -p grafana < grafana_backup.sql
 
-======= postgres
+*postgres*
 
 backup:
 
@@ -815,7 +815,7 @@ Algunas tareas requieren ciertos permisos. Para obtener más información sobre 
 
 Los administradores del servidor de Grafana y los administradores de la organización pueden cambiar los nombres de las organizaciones.
 
-======= Cambiar el nombre de la organización como administrador del servidor de grafana
+*Cambiar el nombre de la organización como administrador del servidor de grafana*
 
 Siga estas instrucciones si es administrador del servidor de Grafana.
 
@@ -826,7 +826,7 @@ Siga estas instrucciones si es administrador del servidor de Grafana.
 . En *Nombre*, ingrese el nuevo nombre de la organización.
 . Haga clic en *Actualizar*.
 
-======= Cambiar el nombre de la organización como administrador de la organización
+*Cambiar el nombre de la organización como administrador de la organización*
 
 Si es administrador de una organización, siga estos pasos:
 
@@ -901,17 +901,17 @@ Algunas tareas requieren ciertos permisos. Para obtener más información sobre 
 
 El tema afecta la forma en que Grafana muestra gráficos, menús y otros elementos de la interfaz de usuario.
 
-======= Predeterminado
+*Predeterminado*
 
 El valor por *predeterminado* es el tema de noche o el tema seleccionado en un nivel superior. Por ejemplo, si un administrador de la organización estableció el tema de *Claro*, entonces ese es el predeterminado para todos los equipos de esa organización.
 
-======= Oscuro
+*Oscuro*
 
 Aquí hay un ejemplo del tema oscuro.
 
 image:extracted-media\media\image4.png[Dark theme example,width=624,height=119]
 
-======= Claro
+*Claro*
 
 Aquí hay un ejemplo del tema de claro.
 
@@ -973,14 +973,14 @@ El tablero de inicio es el primer tablero que ve un usuario cuando inicia sesió
 
 Los usuarios con la marca de administrador de servidor de Grafana en su cuenta o acceso al archivo de configuración pueden definir un archivo JSON para usar como tablero de inicio para todos los usuarios en el servidor.
 
-======= [Opcional] Convierta un tablero existente en un archivo JSON
+*[Opcional] Convierta un tablero existente en un archivo JSON*
 
 [arabic]
 . Navegue a la página del tablero que desea utilizar como tablero de inicio.
 . Haga clic en el icono *Compartir tablero* junto al título del tablero.
 . En la pestaña Exportar, haga clic en *Guardar en archivo*. Grafana convierte el tablero en un archivo JSON y lo guarda localmente.
 
-======= Utilice un archivo JSON como tablero de inicio
+*Utilice un archivo JSON como tablero de inicio*
 
 [arabic]
 . Guarde su archivo JSON en algún lugar al que Grafana pueda acceder. Por ejemplo, en la carpeta data de Grafana.
@@ -2143,8 +2143,6 @@ Para obtener más información sobre la función de Alertas en Grafana, consulte
 
 Configúrelo en false para deshabilitar el motor de alertas y ocultar las alertas en la interfaz de usuario de Grafana. El valor predeterminado es true.
 
-====== 
-
 ====== execute_alerts
 
 Desactiva la ejecución de reglas de alerta, pero las alertas siguen estando visibles en la interfaz de usuario de Grafana.
@@ -2500,8 +2498,6 @@ Indique a la instancia del navegador sin cabeza que utilice un idioma predetermi
 ====== rendering_viewport_device_scale_factor
 
 Indique a la instancia del navegador sin cabeza que utilice un factor de escala de dispositivo predeterminado cuando no lo proporcione Grafana, p. Ej. al renderizar la imagen del panel de alerta. El valor predeterminado es 1. El uso de un valor más alto producirá imágenes más detalladas (DPI más alto), pero requiere más espacio en disco para almacenar una imagen.
-
-====== 
 
 ====== rendering_ignore_https_errors
 
@@ -2954,7 +2950,7 @@ Ver todos los detalles asociados con una cuenta de usuario específica.
 
 Cada cuenta de usuario contiene las siguientes secciones.
 
-======= Información del usuario
+*Información del usuario*
 
 Esta sección de la cuenta contiene información básica del usuario. Los usuarios pueden cambiar los valores en estos campos por su propia cuenta.
 
@@ -2965,19 +2961,19 @@ Esta sección de la cuenta contiene información básica del usuario. Los usuari
 
 image:extracted-media\media\image7.png[Server Admin user information section,width=624,height=224]
 
-======= Permisos
+*Permisos*
 
 Esto indica si la cuenta de usuario tiene la marca de administrador de Grafana aplicada o no. Si es *Sí*, entonces el usuario es un administrador de Grafana Server.
 
 image:extracted-media\media\image8.png[Server Admin Permissions section,width=624,height=80]
 
-======= Organizaciones
+*Organizaciones*
 
 Esta sección enumera las organizaciones a las que pertenece la cuenta de usuario y los roles que desempeñan dentro de cada organización.
 
 image:extracted-media\media\image9.png[Server Admin Organizations section,width=624,height=130]
 
-======= Sesiones
+*Sesiones*
 
 Vea las sesiones recientes en las que el usuario inició sesión, incluso cuándo inició sesión e información sobre el sistema con el que inició sesión. Puede forzar cierres de sesión si es necesario.
 
@@ -3001,7 +2997,7 @@ El usuario puede cambiar toda esta información después de iniciar sesión. Par
 
 Cambie la información o la configuración en una cuenta de usuario individual.
 
-======= Editar la información del usuario
+*Editar la información del usuario*
 
 Edite la información de una cuenta de usuario existente, incluido el nombre, correo electrónico, nombre de usuario y contraseña.
 
@@ -3010,7 +3006,7 @@ Edite la información de una cuenta de usuario existente, incluido el nombre, co
 . En la sección Información del usuario, haga clic en *Editar* junto al campo que desea cambiar.
 . Ingrese el nuevo valor y luego haga clic en *Guardar*.
 
-======= Cambiar la contraseña en una cuenta de usuario
+*Cambiar la contraseña en una cuenta de usuario*
 
 Los usuarios pueden cambiar sus propias contraseñas, pero los administradores del servidor también pueden cambiar las contraseñas de los usuarios.
 
@@ -3019,7 +3015,7 @@ Los usuarios pueden cambiar sus propias contraseñas, pero los administradores d
 . En la sección Información del usuario, haga clic en *Editar* junto al campo *Contraseña*.
 . Ingrese el nuevo valor y luego haga clic en *Guardar*. Grafana requiere un valor de al menos cuatro caracteres en este campo.
 
-======= Eliminar una cuenta de usuario
+*Eliminar una cuenta de usuario*
 
 Elimina permanentemente una cuenta de usuario del servidor.
 
@@ -3028,11 +3024,11 @@ Elimina permanentemente una cuenta de usuario del servidor.
 . Haga clic en *Eliminar usuario*.
 . Haga clic en *Eliminar usuario* para confirmar la acción.
 
-======= Habilitar o deshabilitar una cuenta de usuario
+*Habilitar o deshabilitar una cuenta de usuario*
 
 Active o desactive temporalmente el acceso a la cuenta, pero no elimine la cuenta del servidor.
 
-======= Deshabilitar cuenta de usuario
+*Deshabilitar cuenta de usuario*
 
 Evite que un usuario inicie sesión con esta cuenta, pero no elimine la cuenta. Puede desactivar una cuenta si un colega se toma un año sabático.
 
@@ -3041,7 +3037,7 @@ Evite que un usuario inicie sesión con esta cuenta, pero no elimine la cuenta. 
 . Haga clic en *Desactivar usuario*.
 . Haga clic en *Deshabilitar usuario* para confirmar la acción.
 
-======= Habilitar una cuenta de usuario
+*Habilitar una cuenta de usuario*
 
 Reactivar una cuenta de usuario deshabilitada.
 
@@ -3102,7 +3098,7 @@ Vea cuándo un usuario inició sesión por última vez e información sobre cóm
 
 Si sospecha que una cuenta de usuario está comprometida o ya no está autorizada para acceder al servidor de Grafana, puede forzar el cierre de sesión de la cuenta.
 
-======= Forzar el cierre de sesión de un dispositivo
+*Forzar el cierre de sesión de un dispositivo*
 
 Cierre la cuenta de usuario de un dispositivo específico que haya iniciado sesión en Grafana.
 
@@ -3112,7 +3108,7 @@ Cierre la cuenta de usuario de un dispositivo específico que haya iniciado sesi
 . Haga clic en *Forzar cierre de sesión* junto a la entrada de la sesión que desea cerrar sesión en Grafana.
 . Haga clic en *Confirmar cierre de sesión*.
 
-======= Forzar el cierre de sesión de todos los dispositivos
+*Forzar el cierre de sesión de todos los dispositivos*
 
 Cierre la cuenta de usuario de todos los dispositivos que estén conectados a Grafana.
 
@@ -3182,7 +3178,7 @@ Los Administradores de servidor de Grafana pueden realizar algunas tareas de adm
 
 image:extracted-media\media\image12.png[Server admin Edit Organization,width=624,height=316]
 
-======= Ver miembros y roles de la organización
+*Ver miembros y roles de la organización*
 
 Consulte qué cuentas de usuario están asignadas a la organización y sus roles asignados.
 
@@ -3192,14 +3188,14 @@ Consulte qué cuentas de usuario están asignadas a la organización y sus roles
 . Haga clic en el nombre de la organización para la que desea ver a los miembros.
 . Desplácese hasta la sección de Usuarios de la organización. Las cuentas de usuario se muestran en orden alfabético.
 
-======= Cambiar el nombre de la organización
+*Cambiar el nombre de la organización*
 
 [arabic]
 . Haga clic en el nombre de la organización que desea editar.
 . En el campo *Nombre*, escriba el nombre de la nueva organización.
 . Haga clic en *Actualizar*.
 
-======= Cambiar el rol de un miembro de la organización
+*Cambiar el rol de un miembro de la organización*
 
 Cambie el rol de un miembro de la organización asignado a una cuenta de usuario que está asignada la organización que está editando.
 
@@ -3472,37 +3468,16 @@ Grafana registra sus sesiones en cada instancia de Grafana. Puede revisar esta s
 
 * Vaya a la pestaña Preferencias. Pase el cursor sobre el icono de usuario en la esquina inferior izquierda de la pantalla y luego haga clic en *Preferencias*.
 * Desplácese hacia abajo hasta la sección Sesiones. Grafana muestra lo siguiente:
-
 [arabic]
-. {blank}
-+
-____
-*Visto por última vez:* cuánto tiempo hace que inició sesión.
-____
-. {blank}
-+
-____
-*Conectado:* la fecha en que inició sesión en la instancia actual de Grafana.
-____
-. {blank}
-+
-____
-*Dirección IP:* la dirección IP desde la que inició sesión.
-____
-. {blank}
-+
-____
-*Navegador y sistema operativo:* el navegador web y el sistema operativo utilizados para iniciar sesión en Grafana.
-____
-. {blank}
-+
-____
+. *Visto por última vez:* cuánto tiempo hace que inició sesión.
+. *Conectado:* la fecha en que inició sesión en la instancia actual de Grafana.
+. *Dirección IP:* la dirección IP desde la que inició sesión.
+. *Navegador y sistema operativo:* el navegador web y el sistema operativo utilizados para iniciar sesión en Grafana.
 Si es un administrador de Grafana para la instancia, puede revocar una sesión haciendo clic en el icono rojo de cierre de sesión en la fila de la sesión.
-____
 
-==== Cambia su contraseña
+==== Cambie su contraseña
 
-===== Cambia su contraseña de Grafana
+===== Cambie su contraseña de Grafana
 
 Puede cambiar su contraseña de Grafana en la pestaña Cambiar contraseña.
 
@@ -5066,7 +5041,7 @@ Esto daría como resultado una tabla como esta:
 |2020-07-07 11:34:20 |Servidor B |UE |2
 |===
 
-======= Nombre del campo de valor
+*Nombre del campo de valor*
 
 Si seleccionó Servidor como el Nombre del campo valor, obtendría un campo por cada valor de la etiqueta Servidor.
 
@@ -5076,7 +5051,7 @@ Si seleccionó Servidor como el Nombre del campo valor, obtendría un campo por 
 |2020-07-07 11:34:20 |UE |1 |2
 |===
 
-======= Comportamiento de fusión
+*Comportamiento de fusión*
 
 La transformación de etiquetas a campos es internamente dos transformaciones separadas. El primero actúa sobre series únicas y extrae etiquetas a los campos. El segundo es la transformación de fusión que une todos los resultados en una sola tabla. La transformación de fusión intenta unirse en todos los campos coincidentes. Este paso de combinación es obligatorio y no se puede desactivar.
 
@@ -5757,7 +5732,7 @@ Ingrese lo que Grafana debe mostrar si el valor del campo está vacío o es nulo
 
 Le permite elegir qué unidad debe usar un campo. Haga clic en el campo *Unidad*, luego profundice hasta encontrar la unidad que desea. La unidad que seleccione se aplica a todos los campos excepto al tiempo.
 
-======= Unidades personalizadas
+*Unidades personalizadas*
 
 Puede utilizar el menú desplegable de unidades para especificar también unidades personalizadas, prefijos o sufijos personalizados y formatos de fecha y hora.
 
@@ -5773,7 +5748,7 @@ También puede pegar un emoji nativo en el selector de unidades y seleccionarlo 
 
 image:extracted-media\media\image61.png[Custom unit emoji,width=389,height=403]
 
-======= Unidades de cuerda
+*Unidades de cuerda*
 
 En ocasiones, Grafana puede ser demasiado agresivo al analizar cadenas y mostrarlas como números. Para hacer que Grafana muestre la cadena original, cree una anulación de campo y agregue una propiedad de unidad con la unidad de string.
 
@@ -5952,7 +5927,7 @@ En cada carga del tablero, este panel consulta la lista de tableros, proporciona
 
 Utilice estas opciones para refinar su visualización.
 
-======= Opciones
+*Opciones*
 
 * *Destacados:* muestra los tableros marcados con estrellas en orden alfabético.
 * *Visualizados recientemente:* muestra los tableros visualizados recientemente en orden alfabético.
@@ -5960,7 +5935,7 @@ Utilice estas opciones para refinar su visualización.
 * *Mostrar encabezados:* la selección de la lista elegida (Destacados, Visto recientemente, Buscar) se muestra como un encabezado.
 * *Elementos máximos:* establece el número máximo de elementos a listar por sección. Por ejemplo, si deja esto en el valor predeterminado de 10 y muestra los tableros Destacados y Vistos recientemente, el panel mostrará hasta 20 tableros en total, diez en cada sección.
 
-======= Buscar
+*Buscar*
 
 Estas opciones solo se aplican si se selecciona la opción *Buscar*.
 
@@ -6029,7 +6004,7 @@ Utilice esta configuración para refinar su visualización.
 * *Radio de punto:* controla el tamaño de los puntos.
 * *Umbrales de alerta:* muestra los umbrales de alerta y las regiones en el panel.
 
-======= Apilamiento y valor nulo
+*Apilamiento y valor nulo*
 
 * *Pila:* cada serie se apila una encima de otra.
 * *Porcentaje:* disponible cuando se selecciona *Pila*. Cada serie se extrae como un porcentaje del total de todas las series.
@@ -6040,7 +6015,7 @@ Utilice esta configuración para refinar su visualización.
 
 *Nota:* Si está monitoreando la carga de la CPU de un servidor y la carga alcanza el 100%, entonces el servidor se bloqueará y el agente que envía las estadísticas no podrá recopilar la estadística de carga. Esto conduce a una brecha en las métricas y tener el valor predeterminado como nulo significa que Grafana mostrará las brechas e indicará que algo está mal. Si está configurado como conectado, sería fácil perder esta señal.
 
-======= Información sobre herramientas flotante
+*Información sobre herramientas flotante*
 
 Utilice esta configuración para cambiar la apariencia de la información sobre herramientas que aparece cuando pasa el cursor sobre la visualización del gráfico.
 
@@ -6059,7 +6034,7 @@ Las anulaciones de series permiten que una serie en un panel de gráficos se rep
 
 Puede agregar varias modificaciones de series.
 
-======= Agregar una anulación de serie
+*Agregar una anulación de serie*
 
 [arabic]
 . {blank}
@@ -6192,7 +6167,7 @@ ____
 
 Utilice estas opciones para controlar la pantalla de ejes en la visualización.
 
-======= Y izquierdo/Y derecho
+*Y izquierdo/Y derecho*
 
 Las opciones son idénticas para ambos ejes Y.
 
@@ -6204,12 +6179,12 @@ Las opciones son idénticas para ambos ejes Y.
 * *Decimales:* define cuántos decimales se muestran para el valor Y. (auto predeterminado)
 * *Etiqueta:* la etiqueta del eje Y. (defecto "")
 
-======= Ejes Y
+*Ejes Y*
 
 * *Alinear:* seleccione esta opción para alinear los ejes Y izquierdo y derecho por valor. (predeterminado sin marcar/falso)
 * *Nivel:* disponible cuando se selecciona *Alinear*. Valor que se utilizará para la alineación de los ejes Y izquierdo y derecho, comenzando desde Y=0. (predeterminado 0)
 
-======= Eje X
+*Eje X*
 
 * {blank}
 +
@@ -6266,14 +6241,14 @@ ____
 
 Utilice esta configuración para refinar cómo aparece la leyenda en su visualización.
 
-======= Opciones
+*Opciones*
 
 * *Mostrar:* desmarque para ocultar la leyenda. (por defecto marcado/verdadero)
 * *Como tabla:* marque para mostrar la leyenda en la tabla. (por defecto marcado/verdadero)
 * *A la derecha:* marque para mostrar la leyenda a la derecha.
 * *Ancho:* disponible cuando se selecciona *A la derecha*. Introduzca el ancho mínimo de la leyenda en píxeles.
 
-======= Valores
+*Valores*
 
 Se pueden mostrar valores adicionales junto a los nombres de las leyendas:
 
@@ -6288,14 +6263,14 @@ Grafana calcula los valores de la leyenda en el lado del cliente y dependen del 
 
 Por ejemplo, si traza una tasa como solicitudes/segundo, probablemente esté usando el promedio como un agregador, entonces el Total en la leyenda no representará el número total de solicitudes. Es solo la suma de todos los puntos de datos recibidos por Grafana.
 
-======= Ocultar serie
+*Ocultar serie*
 
 Ocultar series cuando todos los valores de una serie de una consulta de métricas tienen un valor específico.
 
 * *Con solo nulos:* Valor nulo (predeterminado sin marcar)
 * *Con solo ceros:* Valo =cero (predeterminado sin marcar)
 
-======= Regiones de tiempo
+*Regiones de tiempo*
 
 Las regiones de tiempo le permiten resaltar ciertas regiones de tiempo del gráfico para que sea más fácil ver, por ejemplo, los fines de semana, el horario comercial y / o las horas libres. Todas las regiones horarias configuradas se refieren a la hora UTC.
 
@@ -6311,7 +6286,7 @@ image:extracted-media\media\image70.jpeg[https://grafana.com/static/img/docs/v43
 
 Utilice esta configuración para ajustar cómo se muestran los ejes en su visualización.
 
-======= Eje Y
+*Eje Y*
 
 * *Unidad:* la unidad de visualización para el valor del eje Y
 * *Escala:* la escala que se utilizará para el valor del eje Y.
@@ -6324,7 +6299,7 @@ Utilice esta configuración para ajustar cómo se muestran los ejes en su visual
 * *Y-Max:* el valor Y máximo (auto predeterminado).
 * *Decimales:* número de decimales para representar los valores del eje Y (auto predeterminado).
 
-======= Cubos
+*Cubos*
 
 *Nota:* Si el formato de los datos son *Cubos de series temporales*, esta sección no estará disponible.
 
@@ -6334,15 +6309,15 @@ Utilice esta configuración para ajustar cómo se muestran los ejes en su visual
 * *Cubos del eje X:* número de cubos en los que se dividirá el eje X.
 * *Tamaño:* tamaño de cada cubo del eje X. Número o intervalo de tiempo (10s, 5m, 1h, etc.). Intervalos admitidos: ms, s, m, h, d, w, M, y. Esta opción tiene prioridad sobre los *Cubos del Eje X*.
 
-======= Atado al cubo
+*Atado al cubo*
 
 Cuando el Formato de datos es Cubos de series temporales, la fuente de datos devuelve series con nombres que representan el límite del cubo. Pero según la fuente de datos, un límite puede ser superior o inferior. Esta opción permite ajustar un tipo de límite. Si se configura Auto, se elegirá una opción enlazada en función del tipo de fuente de datos de los paneles.
 
-======= Tamaño del cubo
+*Tamaño del cubo*
 
 Grafana utiliza las opciones de tamaño y recuento de cubos para calcular el tamaño de cada celda en el mapa de calor. Puede definir el tamaño del cubo por recuento (el primer cuadro de entrada) o especificando un intervalo de tamaño. Para el eje Y, el intervalo de tamaño es solo un valor, pero para el cubo X puede especificar un intervalo de tiempo en la entrada Tamaño, por ejemplo, el rango de tiempo 1h. Esto hará que las celdas tengan 1 hora de ancho en el eje X.
 
-======= Formato de datos
+*Formato de datos*
 
 Elija una opción en la lista *Formato*.
 
@@ -6353,7 +6328,7 @@ Elija una opción en la lista *Formato*.
 
 Utilice esta configuración para refinar su visualización.
 
-======= Colores
+*Colores*
 
 El espectro de colores controla el mapeo entre el recuento de valores (en cada cubo) y el color asignado a cada cubo. El color más a la izquierda del espectro representa el recuento mínimo y el color del lado derecho representa el recuento máximo. Algunos esquemas de color se invierten automáticamente cuando se usa el tema de día.
 
@@ -6369,24 +6344,24 @@ También puede cambiar el modo de color a Opacidad. En este caso, el color no ca
 ** *espectro:* valor del cubo representado por el color de la celda.
 *** *Esquema:* si el modo es *espectro*, seleccione un esquema de color.
 
-======= Escala de colores
+*Escala de colores*
 
 De forma predeterminada, Grafana calcula los colores de las celdas en función de los valores mínimos y máximos de los cubos. Con Min y Max puede sobrescribir esos valores. Piense en un valor de cubo como un eje Z y Min y Max como Z-Min y Z-Max respectivamente.
 
 * *Min:* valor mínimo que se utiliza para el cálculo del color de la celda. Si el valor del cubo es menor que Min, entonces se asigna al color "mínimo". El valor predeterminado es el valor mínimo de la serie.
 * *Max:* valor máximo que se utiliza para el cálculo del color de la celda. Si el valor del depósito es mayor que Max, entonces se asigna al color "máximo". El valor predeterminado es el valor máximo de la serie.
 
-======= Leyenda
+*Leyenda*
 
 Elija si desea mostrar la leyenda del mapa de calor en la visualización o no.
 
-======= Cubos
+*Cubos*
 
 * *Ocultar cero:* no dibuje celdas con valores cero.
 * *Espacio:* espacio en píxeles entre celdas. El valor predeterminado es 1 píxel.
 * *Redondo:* redondez de la celda en píxeles. El valor predeterminado es 0.
 
-======= Información sobre herramientas
+*Información sobre herramientas*
 
 * *Mostrar información sobre herramientas:* muestra información sobre herramientas de mapa de calor.
 * *Histograma:* muestra el histograma del eje Y en la información sobre herramientas. El histograma representa la distribución de los valores del cubo para la marca de tiempo específica.
@@ -6410,7 +6385,7 @@ Para limitar el número de líneas renderizadas, puede usar la configuración de
 
 Para los registros donde se especifica una etiqueta de *nivel*, usamos el valor de la etiqueta para determinar el nivel del registro y actualizar el color en consecuencia. Si el registro no tiene una etiqueta de nivel especificada, analizamos el registro para averiguar si su contenido coincide con alguna de las expresiones admitidas (consulte a continuación para obtener más información). El nivel de registro siempre está determinado por la primera coincidencia. En caso de que Grafana no pueda determinar un nivel de registro, se visualizará con un nivel de registro *desconocido*. Consulte los niveles de registro admitidos y las asignaciones de abreviaturas y expresiones de nivel de registro.
 
-======= Opciones de pantalla
+*Opciones de pantalla*
 
 Utilice esta configuración para refinar su visualización:
 
@@ -6448,7 +6423,7 @@ La visualización del Gráfico de nodos consta de _nodos_ y _bordes_.
 
 Tanto los nodos como los bordes pueden tener metadatos o estadísticas asociados. La fuente de datos define qué información y valores se muestran, por lo que diferentes fuentes de datos pueden mostrar diferentes tipos de valores o no mostrar algunos valores.
 
-======= Nodos
+*Nodos*
 
 *Nota:* En este momento, el gráfico de nodos solo puede mostrar 1500 nodos. Si se cruza este límite, aparecerá una advertencia en la esquina superior derecha.
 
@@ -6458,7 +6433,7 @@ Por ejemplo, puede tener el porcentaje de errores representado por la parte roja
 
 image:extracted-media\media\image73.gif[Node graph navigation,width=624,height=415]
 
-======= Bordes
+*Bordes*
 
 Los bordes también pueden mostrar estadísticas cuando se desplaza sobre el borde. De manera similar a los nodos, puede abrir un menú contextual con detalles y enlaces adicionales haciendo clic en el borde.
 
@@ -6468,11 +6443,11 @@ La primera fuente de datos que admite esta visualización es la fuente de datos 
 
 Puede desplazarse y acercar o alejar el gráfico de nodos.
 
-======= Desplazar
+*Desplazar*
 
 Puede desplazar la vista haciendo clic fuera de cualquier nodo o borde y arrastrando el mouse.
 
-======= Acercar o alejar
+*Acercar o alejar*
 
 Use los botones en la esquina superior izquierda o use la rueda del mouse, el panel táctil de desplazamiento, junto con la tecla Ctrl o Cmd para acercar o alejar.
 
@@ -6482,7 +6457,7 @@ Esta visualización necesita una forma específica de los datos que se devolver�
 
 La fuente de datos debe devolver dos marcos de datos, uno para los nodos y otro para los bordes, y también debe establecer frame.meta.preferredVisualisationType = 'nodeGraph' en ambos marcos de datos.
 
-======= Parámetros de nodo
+*Parámetros de nodo*
 
 Campos requeridos:
 
@@ -6505,7 +6480,7 @@ Campos opcionales:
 |detail__* |cadena/número |Cualquier campo con el prefijo detail__ se mostrará en el encabezado del menú contextual cuando se haga clic en el nodo. Utilice config.displayName para una etiqueta más legible por humanos.
 |===
 
-======= Parámetros de borde
+*Parámetros de borde*
 
 Campos requeridos:
 
@@ -6549,22 +6524,22 @@ Las visualizaciones de gráficos circulares le permiten aplicar:
 
 Utilice las siguientes opciones para refinar su visualización:
 
-======= Mostrar
+*Mostrar*
 
 Elija cuánta información mostrar.
 
 * *Calcular:* reduce cada valor a un solo valor por serie.
 * *Todos los valores:* muestra todos los valores de una única serie.
 
-======= Cálculo
+*Cálculo*
 
 Seleccione un cálculo para reducir cada serie cuando se haya seleccionado Calcular. Para obtener información sobre los cálculos disponibles, consulte la Lista de cálculos.
 
-======= Límite
+*Límite*
 
 Cuando se muestran todos los valores de una sola serie, esto limita el número de valores mostrados.
 
-======= Campos
+*Campos*
 
 Seleccione qué campo o campos mostrar en la visualización. Cada nombre de campo está disponible en la lista, o puede seleccionar una de las siguientes opciones:
 
@@ -6572,19 +6547,19 @@ Seleccione qué campo o campos mostrar en la visualización. Cada nombre de camp
 * *Todos los campos:* todos los campos que no se eliminan mediante transformaciones.
 * *Tiempo:* todos los campos con valores de tiempo.
 
-======= Tipo de gráfico circular
+*Tipo de gráfico circular*
 
 Seleccione el estilo de visualización del gráfico circular.
 
-======== Tarta
+*_Tarta_*
 
 image:extracted-media\media\image75.png[Pie type chart,width=396,height=396]
 
-======== Rosquilla
+*_Rosquilla_*
 
 image:extracted-media\media\image76.png[Donut type chart,width=395,height=394]
 
-======== Etiquetas
+*_Etiquetas_*
 
 Seleccione etiquetas para mostrar en el gráfico circular. Puede seleccionar más de una.
 
@@ -6598,7 +6573,7 @@ El siguiente ejemplo muestra un gráfico circular con las etiquetas de *Nombre* 
 
 image:extracted-media\media\image77.png[Pie chart labels,width=400,height=398]
 
-======= Modo de la leyenda
+*Modo de la leyenda*
 
 Utilice esta configuración para refinar cómo aparece la leyenda en su visualización.
 
@@ -6606,14 +6581,14 @@ Utilice esta configuración para refinar cómo aparece la leyenda en su visualiz
 * *Tabla:* muestra la leyenda como una tabla.
 * *Oculto:* oculta la leyenda.
 
-======= Colocación de la leyenda
+*Colocación de la leyenda*
 
 Elija dónde mostrar la leyenda.
 
 * *Abajo:* debajo del gráfico.
 * *Derecha:* a la derecha del gráfico.
 
-======= Valores de leyenda
+*Valores de leyenda*
 
 Seleccione valores para mostrar en la leyenda. Puede seleccionar más de uno.
 
@@ -6731,7 +6706,7 @@ Para obtener más información sobre cómo aplicar estas opciones, consulte:
 * Configurar todos los campos
 * Configurar campos específicos
 
-======= Alineación de columnas
+*Alineación de columnas*
 
 Elija cómo Grafana debe alinear el contenido de la celda:
 
@@ -6740,55 +6715,55 @@ Elija cómo Grafana debe alinear el contenido de la celda:
 * Centrar
 * Derecha
 
-======= Ancho de columna
+*Ancho de columna*
 
 De forma predeterminada, Grafana calcula automáticamente el ancho de la columna en función del contenido de la celda. En esta opción de campo, puede anular la configuración y definir el ancho de todas las columnas en píxeles.
 
 Por ejemplo, si ingresa 100 en el campo, cuando haga clic fuera del campo, todas las columnas se establecerán en 100 píxeles de ancho.
 
-======= Modo de visualización de celda
+*Modo de visualización de celda*
 
 De forma predeterminada, Grafana elige automáticamente la configuración de pantalla. Puede anular la configuración eligiendo una de las siguientes opciones para cambiar todos los campos.
 
 *Nota:* Si los configura en la pestaña Campo, los modos de visualización se aplicarán a todos los campos, incluido el campo de tiempo. Muchas opciones funcionarán mejor si las configura en la pestaña Anular.
 
-======== Texto en color
+*_Texto en color_*
 
 Si se establecen umbrales, el texto del campo se muestra en el color de umbral apropiado.
 
 image:extracted-media\media\image82.png[Color text,width=400,height=118]
 
-======== Fondo de color (degradado o sólido)
+*_Fondo de color (degradado o sólido)_*
 
 Si se establecen umbrales, el fondo del campo se muestra en el color de umbral apropiado.
 
 image:extracted-media\media\image83.png[Color background,width=398,height=107]
 
-======== Medidor de gradiente
+*_Medidor de gradiente_*
 
 Los niveles de umbral definen un gradiente.
 
 image:extracted-media\media\image84.png[Gradient gauge,width=398,height=133]
 
-======== Indicador LCD
+*_Indicador LCD_*
 
 El medidor se divide en pequeñas celdas que están encendidas o apagadas.
 
 image:extracted-media\media\image85.png[LCD gauge,width=400,height=169]
 
-======== Vista JSON
+*_Vista JSON_*
 
 Muestra el valor formateado como código. Si un valor es un objeto, la vista JSON que permite navegar por el objeto JSON aparecerá al pasar el mouse.
 
 image:extracted-media\media\image86.png[JSON view,width=398,height=113]
 
-======== Imagen
+*_Imagen_*
 
 Solo disponible en Grafana 7.3+
 
 Si tiene un valor de campo que es una URL de imagen o una imagen codificada en base64, puede configurar la tabla para que se muestre como una imagen.
 
-======= Filtro de columna
+*Filtro de columna*
 
 Nota: esta función está disponible en Grafana 7.2+.
 
@@ -6802,7 +6777,7 @@ Active esta opción para habilitar los filtros de campo de la tabla. Para obtene
 
 Si activa el *Filtro de columna* en las Opciones de la tabla, puede filtrar las opciones de la tabla.
 
-======= Activar el filtrado de columnas
+*Activar el filtrado de columnas*
 
 [arabic]
 . En Grafana, navegue hasta el tablero con la tabla con las columnas que desea filtrar.
@@ -6814,7 +6789,7 @@ Aparece un icono de filtro junto al título de cada columna.
 
 image:extracted-media\media\image87.png[Column filtering turned on,width=512,height=99]
 
-======= Filtrar valores de columna
+*Filtrar valores de columna*
 
 Para filtrar valores de columna, haga clic en el icono de filtro (embudo) junto al título de una columna. Grafana muestra las opciones de filtro para esa columna.
 
@@ -6822,7 +6797,7 @@ image:extracted-media\media\image88.png[Filter column values,width=390,height=50
 
 Haga clic en la casilla de verificación junto a los valores que desea mostrar. Ingrese texto en el campo de búsqueda en la parte superior para mostrar esos valores en la pantalla para que pueda seleccionarlos en lugar de desplazarse para encontrarlos.
 
-======= Borrar filtros de columna
+*Borrar filtros de columna*
 
 Las columnas con filtros aplicados tienen un embudo azul junto al título.
 
@@ -6867,7 +6842,7 @@ También puede usar las opciones de campo para crear diferentes tipos de gráfic
 
 *Nota:* Puede migrar las visualizaciones del Panel gráfico a Visualizaciones de series temporales. Para migrar, en la pestaña Panel, haga clic en Visualización de *serie temporal*. Grafana transfiere todas las configuraciones aplicables. (Mientras está en beta, la migración aún se está refinando. ¡Mejorará a medida que pase el tiempo!)
 
-======= Modo de información sobre herramientas
+*Modo de información sobre herramientas*
 
 Cuando pasa el cursor sobre el gráfico, Grafana puede mostrar información sobre herramientas. Elija cómo se comportan las descripciones emergentes.
 
@@ -6877,7 +6852,7 @@ Cuando pasa el cursor sobre el gráfico, Grafana puede mostrar información sobr
 
 *Nota:* Utilice una modificación para ocultar series individuales de la información sobre herramientas.
 
-======= Modo de la leyenda
+*Modo de la leyenda*
 
 Utilice esta configuración para refinar cómo aparece la leyenda en su visualización.
 
@@ -6885,14 +6860,14 @@ Utilice esta configuración para refinar cómo aparece la leyenda en su visualiz
 * *Tabla:* muestra la leyenda como una tabla.
 * *Oculto:* oculta la leyenda.
 
-======= Colocación de la leyenda
+*Colocación de la leyenda*
 
 Elija dónde mostrar la leyenda.
 
 * *Abajo:* debajo del gráfico.
 * *Derecha:* a la derecha del gráfico.
 
-======= Cálculos de leyenda
+*Cálculos de leyenda*
 
 Elija cuál de los cálculos estándar mostrar en la leyenda. Puedes tener más de uno.
 
@@ -6904,14 +6879,14 @@ Elija cuál de los cálculos estándar mostrar en la leyenda. Puedes tener más 
 
 Esta sección explica cómo utilizar las opciones del Campo Serie temporal para visualizar los datos de la serie temporal como líneas e ilustra lo que hacen las opciones.
 
-======= Crear el panel
+*Crear el panel*
 
 [arabic]
 . Agregue un panel. Seleccione la Visualización de serie temporal.
 . En el Editor de panel, haga clic en la pestaña *Campo*.
 . En Estilo, haga clic en *Líneas*.
 
-======= Estilizar las líneas
+*Estilizar las líneas*
 
 Utilice la siguiente configuración de campo para refinar su visualización.
 
@@ -6922,11 +6897,11 @@ Para obtener más información sobre cómo aplicar estas opciones, consulte:
 
 Algunas opciones de campo no afectarán la visualización hasta que haga clic fuera del cuadro de opción de campo que está editando o presione Entrar.
 
-======== Interpolación de línea
+*_Interpolación de línea_*
 
 Elija cómo Grafana interpola la línea de la serie. Las capturas de pantalla a continuación muestran los mismos datos mostrados con diferentes interpolaciones de líneas.
 
-========= Lineal
+_Lineal_
 
 image:extracted-media\media\image90.png[Linear interpolation icon,width=142,height=65]
 
@@ -6934,7 +6909,7 @@ Los puntos están unidos por líneas rectas.
 
 image:extracted-media\media\image91.png[Linear interpolation example,width=624,height=137]
 
-========= Suave
+_Suave_
 
 image:extracted-media\media\image92.png[Smooth interpolation icon,width=143,height=65]
 
@@ -6942,7 +6917,7 @@ Los puntos están unidos por líneas curvas que dan como resultado transiciones 
 
 image:extracted-media\media\image93.png[Smooth interpolation example,width=624,height=135]
 
-========= Paso antes
+_Paso antes_
 
 image:extracted-media\media\image94.png[Step before interpolation icon,width=144,height=68]
 
@@ -6950,7 +6925,7 @@ La línea se muestra como pasos entre puntos. Los puntos se representan al final
 
 image:extracted-media\media\image95.png[Step before interpolation example,width=624,height=138]
 
-========= Paso después
+_Paso después_
 
 image:extracted-media\media\image96.png[Step after interpolation icon,width=144,height=68]
 
@@ -6958,7 +6933,7 @@ La línea se muestra como pasos entre puntos. Los puntos se representan al comie
 
 image:extracted-media\media\image97.png[Step after interpolation example,width=624,height=131]
 
-======== Ancho de línea
+*_Ancho de línea_*
 
 Establezca el grosor de la línea de la serie, de 0 a 10 píxeles.
 
@@ -6970,7 +6945,7 @@ Grosor de línea establecido en 7:
 
 image:extracted-media\media\image99.png[Line thickness 7 example,width=624,height=164]
 
-======== Opacidad de relleno
+*_Opacidad de relleno_*
 
 Establezca la opacidad del relleno de la serie, de 0 a 100 por ciento.
 
@@ -6982,43 +6957,43 @@ Opacidad de relleno establecida en 95:
 
 image:extracted-media\media\image101.png[Fill opacity 95 example,width=624,height=158]
 
-======== Modo de gradiente
+*_Modo de gradiente_*
 
 Establece el modo del relleno degradado. El degradado de relleno se basa en el color de la línea. Para cambiar el color, use la opción de campo estándar de esquema de color.
 
 La apariencia del degradado está influenciada por la configuración de *Opacidad de relleno*. En las capturas de pantalla a continuación, la *Opacidad de relleno* se establece en 50.
 
-========= Ninguno
+_Ninguno_
 
 Sin relleno degradado. Ésta es la configuración predeterminada.
 
 image:extracted-media\media\image102.png[Gradient mode none example,width=624,height=158]
 
-========= Opacidad
+_Opacidad_
 
 La transparencia del gradiente se calcula en función de los valores del eje y. La opacidad del relleno aumenta con los valores del eje Y.
 
 image:extracted-media\media\image103.png[Gradient mode opacity example,width=624,height=161]
 
-========= Tono
+_Tono_
 
 El color degradado se genera en función del tono del color de la línea.
 
 image:extracted-media\media\image104.png[Gradient mode hue example,width=624,height=159]
 
-======== Estilo de línea
+*_Estilo de línea_*
 
 Establece el estilo de la línea. Para cambiar el color, use la opción de campo estándar de esquema de color.
 
 La apariencia del estilo de línea está influenciada por la configuración de *Ancho de línea* y *Opacidad de relleno*. En las capturas de pantalla a continuación, el *Ancho de línea* se establece en 3 y la *Opacidad de relleno* se establece en 20.
 
-========= Sólido
+_Sólido_
 
 Muestra una línea sólida. Ésta es la configuración predeterminada.
 
 image:extracted-media\media\image105.png[Line style solid example,width=624,height=157]
 
-========= Guión
+_Guión_
 
 Muestre una línea discontinua. Cuando elige esta opción, aparece una lista para que pueda seleccionar la longitud y el espacio (largo, espacio) para los guiones de línea.
 
@@ -7034,7 +7009,7 @@ Espaciado de guiones establecido en 40, 10:
 
 image:extracted-media\media\image108.png[Line style dashed 40, 10 example,width=624,height=157]
 
-========= Puntos
+_Puntos_
 
 Muestra líneas de puntos. Cuando elige esta opción, aparece una lista para que pueda seleccionar el espacio (longitud = 0, espacio) para el espaciado de puntos.
 
@@ -7046,35 +7021,35 @@ Espaciado de puntos establecido en 0, 30:
 
 image:extracted-media\media\image110.png[Line style dots 0, 30 example,width=624,height=157]
 
-======== Valores nulos
+*_Valores nulos_*
 
 Elija cómo se muestran los valores nulos (espacios en los datos) en el gráfico.
 
-========= Brechas
+_Brechas_
 
 Si hay una brecha en la serie, la línea en el gráfico se romperá y mostrará la brecha.
 
 image:extracted-media\media\image111.png[Null values gaps example,width=624,height=264]
 
-========= Conectado
+_Conectado_
 
 Si hay un espacio en la serie, la línea saltará el espacio y se conectará al siguiente valor no nulo.
 
 image:extracted-media\media\image112.png[Null values connected example,width=624,height=259]
 
-======== Mostrar puntos
+*_Mostrar puntos_*
 
 Elija cuándo deben mostrarse los puntos en el gráfico.
 
-========= Auto
+_Auto_
 
 Grafana decide automáticamente si muestra o no los puntos en función de la densidad de los datos. Si la densidad es baja, se muestran los puntos.
 
-========= Siempre
+_Siempre_
 
 Muestre los puntos sin importar cuán denso sea el conjunto de datos. Este ejemplo usa un *Ancho de línea* de 1 y 50 puntos de datos. Si el ancho de la línea es más grueso que el tamaño del punto, la línea oscurece los puntos.
 
-========== Tamaño de punto
+Tamaño de punto
 
 Establezca el tamaño de los puntos, de 1 a 40 píxeles de diámetro.
 
@@ -7086,13 +7061,13 @@ Tamaño de punto establecido en 10:
 
 image:extracted-media\media\image114.png[Show points point size 10 example,width=624,height=145]
 
-========= Nunca
+_Nunca_
 
 Nunca muestre los puntos.
 
 image:extracted-media\media\image115.png[Show points point never example,width=624,height=148]
 
-======= Rellene debajo hasta
+*Rellene debajo hasta*
 
 Esta opción solo está disponible en la pestaña Anulaciones.
 
@@ -7107,21 +7082,21 @@ Serie A rellenada hasta la serie B:
 
 image:extracted-media\media\image116.png[Fill below to example,width=624,height=140]
 
-======= Ejemplos de gráficos de líneas
+*Ejemplos de gráficos de líneas*
 
 A continuación se muestran algunos ejemplos de gráficos de líneas para darle ideas.
 
-======== Varios estilos de línea
+*_Varios estilos de línea_*
 
 Este es un gráfico con diferentes estilos de línea y colores aplicados a cada serie y relleno de cero.
 
 image:extracted-media\media\image117.png[Various line styles example,width=624,height=252]
 
-======== Ejemplo de modos de interpolación
+*_Ejemplo de modos de interpolación_*
 
 image:extracted-media\media\image118.png[Interpolation modes example,width=624,height=381]
 
-======== Ejemplo de Rellene debajo hasta
+*_Ejemplo de Rellene debajo hasta_*
 
 Este gráfico muestra tres series: Min, Max y Valor. Las series Min y Max tienen el *Ancho de línea* establecido en 0. Max tiene una anulación de *Rellene debajo hasta* establecido en Min, que llena el área entre Max y Min con el color de línea Max.
 
@@ -7135,14 +7110,14 @@ image:extracted-media\media\image119.png[Fill below example,width=624,height=252
 
 Esta sección explica cómo usar las opciones del campo Serie temporal para visualizar datos de series temporales como barras e ilustra lo que hacen las opciones.
 
-======= Crea el panel
+*Crea el panel*
 
 [arabic]
 . Agrega un panel. Seleccione la Visualización de serie temporal.
 . En el Editor de panel, haga clic en la pestaña *Campo*.
 . En Estilo, haga clic en *Barras*.
 
-======= Estilizar las barras
+*Estilizar las barras*
 
 Utilice la siguiente configuración de campo para refinar su visualización.
 
@@ -7153,11 +7128,11 @@ Para obtener más información sobre cómo aplicar estas opciones, consulte:
 
 Algunas opciones de campo no afectarán la visualización hasta que haga clic fuera del cuadro de opción de campo que está editando o presione Entrar.
 
-======== Alineación de barras
+*_Alineación de barras_*
 
 Establece la posición de la barra relativa a un punto de datos. En los ejemplos siguientes, *Mostrar puntos* se establece en *Siempre* para que sea más fácil ver la diferencia que hace esta configuración. Los puntos no cambian; las barras cambian en relación a los puntos.
 
-========= Antes
+_Antes_
 
 image:extracted-media\media\image120.png[Bar alignment before icon,width=114,height=67]
 
@@ -7165,7 +7140,7 @@ La barra se dibuja antes del punto. El punto se coloca en la esquina posterior d
 
 image:extracted-media\media\image121.png[Bar alignment before example,width=624,height=182]
 
-========= Centrar
+_Centrar_
 
 image:extracted-media\media\image122.png[Bar alignment center icon,width=114,height=68]
 
@@ -7173,7 +7148,7 @@ La barra se dibuja alrededor del punto. El punto se coloca en el centro de la ba
 
 image:extracted-media\media\image123.png[Bar alignment center,width=624,height=183]
 
-========= Después
+_Después_
 
 image:extracted-media\media\image124.png[Bar alignment after icon,width=115,height=66]
 
@@ -7181,7 +7156,7 @@ La barra se dibuja después del punto. El punto se coloca en la esquina principa
 
 image:extracted-media\media\image125.png[Bar alignment after,width=624,height=184]
 
-======== Ancho de línea
+*_Ancho de línea_*
 
 Establezca el grosor de los contornos de la barra de líneas, de 0 a 10 píxeles. La *Opacidad de relleno* se establece en 10 en los ejemplos siguientes.
 
@@ -7193,7 +7168,7 @@ Grosor de línea establecido en 7:
 
 image:extracted-media\media\image127.png[Line thickness 7 example,width=624,height=188]
 
-======== Opacidad de relleno
+*_Opacidad de relleno_*
 
 Establezca la opacidad del relleno de la barra, de 0 a 100 por ciento. En los ejemplos siguientes, el *Ancho de línea* se establece en 1.
 
@@ -7205,19 +7180,19 @@ Opacidad de relleno establecida en 95:
 
 image:extracted-media\media\image129.png[Fill opacity 95 example,width=624,height=190]
 
-======== Modo de gradiente
+*_Modo de gradiente_*
 
 Establece el modo del relleno degradado. El degradado de relleno se basa en el color de la línea. Para cambiar el color, use la opción estándar de campo de esquema de color.
 
 La apariencia del degradado está influenciada por la configuración de b. En las capturas de pantalla a continuación, la *Opacidad de relleno* se establece en 50.
 
-========= Ninguno
+_Ninguno_
 
 Sin relleno degradado. Ésta es la configuración predeterminada.
 
 image:extracted-media\media\image130.png[Gradient mode none example,width=624,height=184]
 
-========= Opacidad
+_Opacidad_
 
 La transparencia del gradiente se calcula en función de los valores del eje y. La opacidad del relleno aumenta con los valores del eje Y.
 
@@ -7229,19 +7204,19 @@ El color degradado se genera en función del tono del color de la línea.
 
 image:extracted-media\media\image132.png[Gradient mode hue example,width=624,height=186]
 
-======== Mostrar puntos
+*_Mostrar puntos_*
 
 Elija cuándo deben mostrarse los puntos en el gráfico
 
-========= Auto
+_Auto_
 
 Grafana decide automáticamente si muestra o no los puntos en función de la densidad de los datos. Si la densidad es baja, se muestran los puntos.
 
-========= Siempre
+_Siempre_
 
 Muestre los puntos sin importar cuán denso sea el conjunto de datos. Este ejemplo usa un *Ancho de línea* de 1. Si el ancho de línea es más grueso que el tamaño del punto, entonces la línea oscurece los puntos.
 
-========== Tamaño de punto
+Tamaño de punto
 
 Establezca el tamaño de los puntos, de 1 a 40 píxeles de diámetro.
 
@@ -7253,17 +7228,17 @@ Tamaño de punto establecido en 20:
 
 image:extracted-media\media\image134.png[Show points point size 20 example,width=624,height=186]
 
-========= Nunca
+_Nunca_
 
 Nunca muestre los puntos.
 
 image:extracted-media\media\image135.png[Show points point never example,width=624,height=182]
 
-======= Ejemplos de gráficos de barras
+*Ejemplos de gráficos de barras*
 
 A continuación se muestran algunos ejemplos de gráficos de barras para darle ideas.
 
-======== Gradiente de tono
+*_Gradiente de tono_*
 
 image:extracted-media\media\image136.png[Bars with hue gradient example,width=403,height=303]
 
@@ -7275,14 +7250,14 @@ image:extracted-media\media\image136.png[Bars with hue gradient example,width=40
 
 Esta sección explica cómo utilizar las Opciones del campo Serie temporal para visualizar datos de series temporales como puntos e ilustra lo que hacen las opciones.
 
-======= Crear el panel
+*Crear el panel*
 
 [arabic]
 . Agrega un panel. Seleccione la Visualización de serie temporal.
 . En el Editor de Panel, haga clic en la pestaña *Campo*.
 . En Estilo, haga clic en *Puntos*.
 
-======= Estilizar los puntos
+*Estilizar los puntos*
 
 Utilice la siguiente configuración de campo para refinar su visualización.
 
@@ -7293,7 +7268,7 @@ Para obtener más información sobre cómo aplicar estas opciones, consulte:
 
 Algunas opciones de campo no afectarán la visualización hasta que haga clic fuera del cuadro de opción de campo que está editando o presione Entrar.
 
-======== Tamaño de punto
+*_Tamaño de punto_*
 
 Establezca el tamaño de los puntos, de 1 a 40 píxeles de diámetro.
 
@@ -7326,33 +7301,33 @@ Para obtener más información sobre cómo aplicar estas opciones, consulte:
 
 Algunas opciones de campo no afectarán la visualización hasta que haga clic fuera del cuadro de opción de campo que está editando o presione Entrar.
 
-======= Ubicación
+*Ubicación*
 
 Seleccione la ubicación del eje Y.
 
-======== Auto
+*_Auto_*
 
 Grafana asigna automáticamente el eje Y a la serie. Cuando hay dos o más series con diferentes unidades, Grafana asigna el eje izquierdo a la primera unidad y el derecho a las siguientes unidades.
 
-======== Izquierda
+*_Izquierda_*
 
 Muestra todos los ejes Y en el lado izquierdo.
 
 image:extracted-media\media\image140.png[Left Y-axis example,width=624,height=193]
 
-======== Derecha
+*_Derecha_*
 
 Muestre todos los ejes Y en el lado derecho.
 
 image:extracted-media\media\image141.png[Right Y-axis example,width=624,height=200]
 
-======== Oculto
+*_Oculto_*
 
 Ocultar los ejes Y
 
 image:extracted-media\media\image142.png[Hidden Y-axis example,width=624,height=177]
 
-======= Etiqueta
+*Etiqueta*
 
 Establece una etiqueta de texto en el eje Y.
 
@@ -7360,13 +7335,13 @@ image:extracted-media\media\image143.png[Label example,width=624,height=212]
 
 Si tiene más de un eje Y, puede asignar etiquetas diferentes en la pestaña Anular.
 
-======= Ancho
+*Ancho*
 
 Establezca un ancho fijo del eje. De forma predeterminada, Grafana calcula dinámicamente el ancho de un eje.
 
 Al establecer el ancho del eje, los datos cuyos tipos de ejes son diferentes pueden compartir las mismas proporciones de visualización. Esto hace que sea más fácil comparar los datos de más de un gráfico porque los ejes no se desplazan ni se estiran en una proximidad visual entre sí.
 
-======= Mínimo suave y máximo suave
+*Mínimo suave y máximo suave*
 
 Configure una opción *mínimo suave* o *máximo suave* para un mejor control de los límites del eje Y. De forma predeterminada, Grafana establece el rango para el eje Y automáticamente según el conjunto de datos.
 
@@ -7376,15 +7351,15 @@ Puede establecer opciones estándar min/max para definir límites estrictos del 
 
 image:extracted-media\media\image144.png[Label example,width=624,height=210]
 
-======= Escala
+*Escala*
 
 Establezca la escala que se utilizará para los valores del eje Y.
 
-======== Lineal
+*_Lineal_*
 
 Utilice una escala dividida en partes iguales.
 
-======== Logarítmico
+*_Logarítmico_*
 
 Utilice una escala logarítmica. Cuando se elige esta opción, aparece una lista donde puede elegir escala logarítmica binaria (base 2) o común (base 10).
 
@@ -7482,19 +7457,19 @@ Entonces, si tiene números con etiquetas como \{host=web01} en $A y otro númer
 
 Los operadores lógicos y relacionales devuelven 0 para falso 1 para verdadero.
 
-======= Funciones matemáticas
+*Funciones matemáticas*
 
 Si bien la mayoría de las funciones existen en las propias operaciones de expresión, la operación matemática tiene algunas funciones similares a los operadores matemáticos o símbolos. Cuando las funciones pueden tomar números o series, se devolverá el mismo tipo que el argumento. Cuando es una serie, la operación se realiza por el valor de cada punto de la serie.
 
-======== abs
+*_abs_*
 
 abs devuelve el valor absoluto de su argumento, que puede ser un número o una serie. Por ejemplo abs(-1) o abs($ A).
 
-======== log
+*_log_*
 
 Log devuelve el logaritmo natural de de su argumento, que puede ser un número o una serie. Si el valor es menor que 0, se devuelve NaN. Por ejemplo, log(-1) o log($A).
 
-======== inf, nan y null
+*_inf, nan y null_*
 
 Las funciones inf, nan y null devuelven un solo valor del nombre. Existen principalmente para realizar pruebas. Ejemplo: null(). (Nota: inf siempre devuelve infinito positivo, probablemente debería cambiar esto para tomar un argumento para que pueda devolver infinito negativo).
 
@@ -7502,28 +7477,28 @@ Las funciones inf, nan y null devuelven un solo valor del nombre. Existen princi
 
 Reducir toma una o más series de tiempo devueltas por una consulta o una expresión y convierte cada serie en un solo número. Las etiquetas de la serie temporal se mantienen como etiquetas en cada número reducido generado.
 
-======= Campos:
+*Campos:*
 
 * *Función:* la función de reducción a utilizar
 * *Entrada:* la variable (refID (como A)) para volver a muestrear
 
-======= Funciones de reducción
+*Funciones de reducción*
 
 *Nota:* En el futuro planeamos agregar opciones para controlar el comportamiento vacío, NaN y nulo para las funciones de reducción.
 
-======== Contar
+*_Contar_*
 
 Contar devuelve el número de puntos de cada serie.
 
-======== Promediar
+*_Promediar_*
 
 La media devuelve el total de todos los valores de cada serie dividido por el número de puntos de esa serie. Si algún valor de la serie es nulo o nan, o si la serie está vacía, se devuelve NaN.
 
-======== Min y Max
+*_Min y Max_*
 
 Min y Max devuelven el valor más pequeño o más grande de la serie, respectivamente. Si algún valor de la serie es nulo o nan, o si la serie está vacía, se devuelve NaN.
 
-======== Sumar
+*_Sumar_*
 
 Sum devuelve el total de todos los valores de la serie. Si la serie tiene una longitud cero, la suma será 0. Si hay valores NaN o Null en la serie, se devuelve NaN.
 
@@ -7531,7 +7506,7 @@ Sum devuelve el total de todos los valores de la serie. Si la serie tiene una lo
 
 Volver a muestrear cambia las marcas de tiempo en cada serie de tiempo para tener un intervalo de tiempo coherente. El caso de uso principal es para que pueda volver a muestrear series de tiempo que no comparten las mismas marcas de tiempo para que se puedan realizar operaciones matemáticas entre ellas. Esto se puede hacer volviendo a muestrear cada una de las dos series, y luego en una Operación matemática haciendo referencia a las variables remuestreadas.
 
-======= Campos:
+*Campos:*
 
 * *Entrada:* la variable de datos de series de tiempo (refID (como A)) para volver a muestrear
 * *Volver a muestrear a:* la duración del tiempo para volver a muestrear, por ejemplo, 10s. Las unidades pueden ser s segundos, m para minutos, h para horas, d para días, w para semanas e y para años.
@@ -9449,7 +9424,7 @@ image:extracted-media\media\image188.png[Alerting Conditions,width=624,height=31
 
 Actualmente, el único tipo de condición que existe es una condición de Query que le permite especificar una letra de consulta, un rango de tiempo y una función de agregación.
 
-======= Ejemplo de condición de consulta
+*Ejemplo de condición de consulta*
 
 avg() OF query(A, 15m, now) IS BELOW 14
 
@@ -9461,7 +9436,7 @@ La consulta utilizada en una regla de alerta no puede contener variables de plan
 
 Planeamos agregar otros tipos de condiciones en el futuro, como Other Alert, donde puede incluir el estado de otra alerta en sus condiciones y Time of Day.
 
-======= Múltiples series
+*Múltiples series*
 
 Si una consulta devuelve varias series, la función de agregación y la verificación de umbral se evaluarán para cada serie. Lo que Grafana no hace actualmente es rastrear el estado de la regla de alerta *por serie*. Esto tiene implicaciones que se detallan en el escenario siguiente.
 
