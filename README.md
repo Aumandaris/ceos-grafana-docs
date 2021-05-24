@@ -1,6 +1,9 @@
 # ceos-grafana-docs
 
-## [Ver la Documentación de Grafana](https://aumandaris.github.io/ceos-grafana-docs/)
+## [Ir al servidor](https://aumandaris.github.io/ceos-grafana-docs/)
+
+## [Ir a la Documentación](ceos-grafana-docs.html)
+
 
 La versión para el público es el archivo HTML, el resto son para desarrollo y depuración.
 
@@ -20,4 +23,4 @@ La versión para el público es el archivo HTML, el resto son para desarrollo y 
 * Arreglar listas rotas
 * Arreglar palabras que van en monospace
 * Arreglar bloques de código
-* Arreglar las notas
+* Poner las notas dentro de bloques
