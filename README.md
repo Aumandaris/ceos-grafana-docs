@@ -1,9 +1,6 @@
 # ceos-grafana-docs
 
-## [Ir al servidor](https://aumandaris.github.io/ceos-grafana-docs/)
-
-## [Ir a la Documentación](ceos-grafana-docs.html)
-
+## [Ir a la Documentación](https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs.html)
 
 La versión para el público es el archivo HTML, el resto son para desarrollo y depuración.
 
