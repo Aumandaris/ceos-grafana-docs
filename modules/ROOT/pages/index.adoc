@@ -1,8 +1,8 @@
 = Documentación de Grafana
 
-Esta documentación es parala version estable más reciente (7.5.x) de Grafana.
+Esta documentación es para la version estable más reciente (7.5.x) de Grafana.
 
-= Instalar Grafana
+== Instalar Grafana
 
 ====
 xref:instalacion/instalar-en-windows.adoc[*Instalar en Windows*]

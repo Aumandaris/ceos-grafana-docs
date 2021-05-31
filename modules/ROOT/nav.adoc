@@ -1,7 +1,7 @@
 * xref:comenzando/comenzando.adoc[Comenzando]
 * xref:autenticacion/autenticacion.adoc[Autenticación]
 * xref:instalacion/instalacion.adoc[Instalación]
-* xref:administracion/instalacion.adoc[Instalación]
+* xref:administracion/administracion.adoc[Administración]
 * xref:administrar-usuarios/administrar-usuarios.adoc[Administrar usuarios]
 * xref:permisos/permisos.adoc[Permisos]
 * xref:fuentes-de-datos/fuentes-de-datos.adoc[Fuentes de datos]
