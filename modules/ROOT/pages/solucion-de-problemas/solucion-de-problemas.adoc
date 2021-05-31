@@ -1,0 +1,130 @@
+== Solución de problemas
+
+=== Solución de problemas
+
+Esta página enumera algunas herramientas y consejos para ayudar a solucionar problemas comunes de Grafana.
+
+==== Solucionar problemas con registros
+
+Si encuentra un error o problema, puede consultar el registro del servidor Grafana. Normalmente se encuentra en /var/log/grafana/grafana.log en sistemas Unix o en <grafana_install_dir>/data/log en otras plataformas e instalaciones manuales.
+
+Puede habilitar más registros cambiando el nivel de registro en el archivo de configuración de Grafana.
+
+Para obtener más información, consulte Habilitar el registro de depuración en la CLI de Grafana y la sección de registro en Configuración.
+
+==== Solucionar problemas de transformaciones
+
+El orden de las transformaciones importa. Si la salida de datos final de varias transformaciones parece incorrecta, intente cambiar el orden de transformación. Cada transformación transforma los datos devueltos por la transformación anterior, no los datos sin procesar originales.
+
+==== Preguntas frecuentes
+
+Consulte la sección de preguntas frecuentes en la página de la Comunidad de Grafana para obtener respuestas a las preguntas más frecuentes.
+
+=== Solucionar problemas de tableros
+
+==== Solucionar problemas de tableros
+
+Esta página proporciona información para resolver problemas comunes del tablero.
+
+===== El tablero está lento
+
+* ¿Está tratando de representar docenas (o cientos o miles) de series de tiempo en un gráfico? Esto puede hacer que el navegador se retrase y se sienta lento. Intente usar funciones como highestMax (en Graphite) para reducir la serie devuelta.
+* A veces, los nombres de las series pueden ser muy grandes. Esto provoca tamaños de respuesta más grandes. Intente utilizar un alias para reducir el tamaño de los nombres de las series devueltas.
+* ¿Está consultando muchas series de tiempo o durante un largo período de tiempo? Ambos pueden hacer que Grafana o su fuente de datos extraigan una gran cantidad de datos, lo que puede ralentizarlos.
+* Podría ser una gran carga en su infraestructura de red. Si la lentitud no es constante, este puede ser el problema.
+
+===== Problemas con la frecuencia de actualización del tablero
+
+De forma predeterminada, Grafana consulta su fuente de datos cada 30 segundos. Establecer una frecuencia de actualización baja en sus tableros ejerce una tensión innecesaria en el backend. En muchos casos, consultar esto con frecuencia no tiene sentido, porque los datos no se envían al sistema de manera que se puedan ver cambios.
+
+Recomendamos lo siguiente:
+
+* No habilite la actualización automática en tableros, paneles o variables a menos que lo necesite. Los usuarios pueden actualizar su navegador manualmente o puede establecer la frecuencia de actualización para un período de tiempo que tenga sentido (cada diez minutos, cada hora, etc.).
+* Si es necesario, configure la frecuencia de actualización en una vez por minuto. Nuevamente, los usuarios siempre pueden actualizar el tablero manualmente.
+* Si su tablero tiene un período de tiempo más largo (como una semana), entonces realmente no necesita una actualización automática.
+
+===== El manejo o la representación de datos nulos es incorrecto/confuso/extraño
+
+Algunas aplicaciones publican datos de forma intermitente; por ejemplo, solo publican una métrica cuando ocurre un evento. De forma predeterminada, los gráficos de Grafana conectan líneas entre los puntos de datos. Esto puede resultar muy engañoso.
+
+En la imagen de abajo hemos habilitado:
+
+Puntos y radio de 3 puntos para resaltar dónde están realmente presentes los puntos de datos.
+
+El *valor Nulo* se establece en *conectado*.
+
+image:media\image190.png[https://grafana.com/static/img/docs/troubleshooting/grafana_null_connected.png,width=624,height=252]
+
+En este gráfico, configuramos el gráfico para mostrar barras en lugar de líneas y establecemos el *valor Nulo* para graficar *nulo como cero*. Hay una gran diferencia en las imágenes.
+
+image:media\image191.png[https://grafana.com/static/img/docs/troubleshooting/grafana_null_zero.png,width=624,height=250]
+
+=== Habilitar diagnósticos
+
+==== Habilitar diagnósticos
+
+Puede configurar el proceso grafana-server para habilitar ciertos diagnósticos cuando se inicia. Esto puede resultar útil a la hora de investigar determinados problemas de rendimiento. _No_ se recomienda tener estos habilitados de forma predeterminada.
+
+===== Activar la creación de perfiles
+
+El grafana-server se puede iniciar con los argumentos -profile para habilitar la creación de perfiles y -profile-port para anular el puerto HTTP predeterminado (6060) donde los puntos finales de depuración pprof están disponibles, por ejemplo:
+
+./grafana-server -profile -profile-port=8080
+
+Tenga en cuenta que los puntos finales de depuración de pprof se sirven en un puerto diferente al del servidor HTTP de Grafana.
+
+Puede configurar o anular la configuración de creación de perfiles mediante variables de entorno:
+
+export GF_DIAGNOSTICS_PROFILING_ENABLED=true
+
+export GF_DIAGNOSTICS_PROFILING_PORT=8080
+
+Consulte el comando Go pprof para obtener más información sobre cómo recopilar y analizar datos de creación de perfiles.
+
+===== Usar seguimiento
+
+grafana-server se puede iniciar con los argumentos -tracing para habilitar el seguimiento y -tracing-file para anular el archivo de seguimiento predeterminado (trace.out) donde se escribe el resultado del rastreo. Por ejemplo:
+
+./grafana-server -tracing -tracing-file=/tmp/trace.out
+
+Puede configurar o anular la configuración de creación de perfiles mediante variables de entorno:
+
+export GF_DIAGNOSTICS_TRACING_ENABLED=true
+
+export GF_DIAGNOSTICS_TRACING_FILE=/tmp/trace.out
+
+Ver el seguimiento en un navegador web (Es necesario tener Go instalado):
+
+go tool trace <trace file>
+
+2019/11/24 22:20:42 Parsing trace...
+
+2019/11/24 22:20:42 Splitting trace...
+
+2019/11/24 22:20:42 Opening browser. Trace viewer is listening on http://127.0.0.1:39735
+
+Consulte Seguimiento de comandos Go para obtener más información sobre cómo analizar archivos de seguimiento.
+
+=== Solucionar problemas de consultas
+
+==== Solucionar problemas de consultas
+
+Esta página proporciona información para resolver problemas comunes del tablero.
+
+===== Obtengo resultados diferentes cuando reorganizo mis funciones
+
+El orden de las funciones es muy importante. Al igual que en matemáticas, el orden en que coloque sus funciones puede afectar el resultado.
+
+===== Inspeccione su solicitud de consulta y respuesta
+
+Los problemas más comunes están relacionados con la consulta y la respuesta de su fuente de datos. Incluso si parece un error o un problema de visualización en Grafana, casi siempre es un problema con la consulta de la fuente de datos o la respuesta de la fuente de datos. Empiece por inspeccionar la consulta y respuesta de su panel.
+
+Para obtener más información, consulte Inspeccionar un panel.
+
+===== Mi consulta es lenta
+
+¿Cuántos puntos de datos devuelve su consulta? Una consulta que devuelve muchos puntos de datos será lenta. Pruebe esto:
+
+* En las *Opciones de consulta*, limite los *Puntos de datos máximos* devueltos.
+* En *Opciones de consulta*, aumente el *Intervalo de tiempo mínimo*.
+* En su consulta, utilice una función group by.

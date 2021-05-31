@@ -1,0 +1,5 @@
+name: ceos-grafana-docs
+title: Documentación de Grafana
+version : '7.5.x'
+nav:
+- modules/ROOT/nav.adoc

@@ -1,0 +1,229 @@
+
+== Permisos
+
+=== Permisos
+
+Lo que puede hacer en Grafana está definido por los _permisos_ asociados con su cuenta de usuario.
+
+Hay tres tipos de permisos:
+
+* Permisos otorgados como Administrador de Servidor de Grafana
+* Permisos asociados con su rol en una organización
+* Permisos otorgados a una carpeta o tablero específico
+
+Se le pueden otorgar permisos basados ​​en:
+
+* Estado de Administrador de Servidor de Grafana.
+* Rol de la organización (Administrador, Editor o Espectador).
+* Permisos de carpeta o tablero asignados a su equipo (Administrador, Editor, Espectador).
+* Permisos de carpeta o panel asignados a su cuenta de usuario (Administrador, Editor, Espectador).
+* (Grafana Enterprise) Permisos de fuente de datos. Para obtener más información, consulte Permisos de fuentes de datos en Grafana Enterprise.
+* (Grafana Cloud) Grafana Cloud tiene roles adicionales. Para obtener más información, consulte los roles y permisos de Grafana Cloud.
+
+==== Rol de Administrador de Servidor de Grafana
+
+Los Administradores de Servidor de Grafana tienen habilitada la marca de *Administrador de Grafana* en su cuenta. Pueden acceder al menú *Administrador del Servidor* y realizar las siguientes tareas:
+
+* Gestionar usuarios y permisos.
+* Crear, editar y eliminar organizaciones.
+* Ver la configuración de todo el servidor que se establece en el archivo de Configuración.
+* Ver las estadísticas del servidor Grafana, incluidos los usuarios totales y las sesiones activas.
+* Actualizar el servidor a Grafana Enterprise.
+
+[NOTE]
+====
+Este rol no existe en Grafana Cloud.
+====
+
+==== Roles de organización
+
+Los usuarios pueden pertenecer a una o más organizaciones. La membresía de la organización de un usuario está vinculada a un rol que define lo que el usuario puede hacer en esa organización. Para obtener más información, consulte [Roles de la organización].
+
+==== Permisos de tablero y carpeta
+
+Los permisos de tablero y carpeta le permiten eliminar los permisos predeterminados basados ​​en roles para Editores y Espectadores y asignar permisos a usuarios y equipos específicos. Obtenga más información sobre los [Permisos de tablero y carpeta].
+
+==== Permisos de fuente de datos
+
+De forma predeterminada, cualquier usuario de esa organización puede consultar una fuente de datos en una organización. Por ejemplo, un usuario con el rol de Espectador aún puede emitir cualquier consulta posible a una fuente de datos, no solo aquellas consultas que existen en los tableros a los que tiene acceso.
+
+Los permisos de fuentes de datos le permiten cambiar los permisos predeterminados para las fuentes de datos y restringir los permisos de consulta a *Usuarios* y *Equipos* específicos. Para obtener más información, consulte [Permisos de fuentes de datos] en [Grafana Enterprise].
+
+=== Roles de organización
+
+==== Roles de organización
+
+Los usuarios pueden pertenecer a una o más organizaciones. La membresía de la organización de un usuario está vinculada a un rol que define lo que el usuario puede hacer en esa organización. Grafana admite varias _organizaciones_ para admitir una amplia variedad de modelos de implementación, incluido el uso de una sola instancia de Grafana para brindar servicio a múltiples organizaciones potencialmente no confiables.
+
+En la mayoría de los casos, Grafana se implementa con una sola organización.
+
+Cada organización puede tener una o más fuentes de datos.
+
+Todos los tableros son propiedad de una organización en particular.
+
+[NOTE]
+====
+La mayoría de las bases de datos métricas no proporcionan autenticación de series por usuario. Esto significa que las fuentes de datos de la organización y los tableros están disponibles para todos los usuarios de una organización en particular.
+====
+
+===== Comparar roles
+
+La siguiente tabla compara lo que puede hacer cada rol. Lea las secciones siguientes para obtener explicaciones más detalladas.
+
+[cols=",,,",options="header",]
+|===
+|  |Administrador |Editor |Espectador
+|Ver tableros |x |x |x
+|Añadir, editar, borrar tableros |x |x | 
+|Añadir, editar, borrar carpetas |x |x | 
+|Ver listas de reproducción |x |x |x
+|Crear, actualizar, borrar listas de reproducción |x |x | 
+|Acceder a Explorar |x |x | 
+|Añadir, editar, borrar fuentes de datos |x |  | 
+|Añadir y editar usuarios |x |  | 
+|Añadir y editar equipos |x |  | 
+|Cambiar configuración de organización |x |  | 
+|Cambiar configuración de equipo |x |  | 
+|Configurar complementos de aplicaciones |x |  | 
+|===
+
+===== Rol de administrador de la organización
+
+Puede hacer todo lo que esté dentro del alcance de la organización, Por ejemplo:
+
+* Puede agregar, editar y eliminar fuentes de datos.
+* Puede agregar y editar usuarios y equipos en su organización.
+* Puede agregar, editar y eliminar carpetas que contienen tableros para fuentes de datos asociadas con su organización. También pueden editar los permisos de las carpetas.
+* Puede configurar complementos de aplicaciones y configuraciones de organización.
+* Puede hacer todo lo que permita la función de Editor.
+
+===== Rol de editor
+
+[arabic]
+. Puede ver, agregar y editar tableros, paneles y reglas de alerta en tableros a los que tienen acceso. Esto se puede desactivar en carpetas y tableros específicos.
+. Puede agregar, editar y eliminar carpetas que contienen tableros para fuentes de datos asociadas con su organización. No pueden editar los permisos de la carpeta.
+. Puede crear, actualizar o eliminar listas de reproducción.
+. Puede acceder a Explorar.
+. Puede agregar, editar o eliminar canales de notificación de alerta.
+. No se pueden agregar, editar ni eliminar fuentes de datos.
+. No se pueden administrar otras organizaciones, usuarios y equipos.
+
+Este rol se puede cambiar con la configuración del servidor Grafana [editors_can_adminˋ. Si establece esto en true, los usuarios con el rol de Editor también pueden administrar tableros, carpetas y equipos que creen. Esto es especialmente útil para permitir que los equipos autoorganizados administren sus propios tableros.
+
+===== Rol de espectador
+
+* Puede ver cualquier tablero al que tengan acceso. Esto se puede desactivar en carpetas y tableros específicos.
+* No se puede agregar, editar ni eliminar fuentes de datos.
+* No se puede agregar, editar ni eliminar tableros o paneles.
+* No se puede crear, actualizar ni eliminar listas de reproducción.
+* No se puede agregar, editar ni eliminar canales de notificación de alerta.
+* No puede acceder a Explorar.
+* No puede administrar otras organizaciones, usuarios y equipos.
+
+Este rol se puede cambiar con la configuración del servidor Grafana [viewers_can_edit]. Si establece esto en true, los usuarios con el rol de Espectador pueden:
+
+* Realizar ediciones transitorias del tablero, lo que significa que pueden modificar paneles y consultas, pero no guardar los cambios ni crear nuevos tableros.
+* Acceder y usar [Explorar].
+
+Esto es especialmente útil para instalaciones públicas de Grafana donde desea que los usuarios anónimos puedan editar paneles y consultas, pero no guardar ni crear nuevos tableros.
+
+=== Permisos de tablero y carpeta
+
+==== Otorgar permisos de tablero y carpeta
+
+Puede asignar y eliminar permisos para roles de organización, usuarios y equipos para tableros y carpetas de tableros específicos.
+
+Este tema explica cómo otorgar permisos a carpetas y tableros específicos.
+
+Para obtener más información sobre cómo denegar el acceso a ciertos usuarios de Grafana, consulte [Restricción del acceso].
+
+image:media\image21.png[Folder permissions,width=624,height=277]
+
+===== Niveles de permisos
+
+Grafana tiene tres niveles de permisos que se pueden asignar. Estos permisos son independientes de los [roles de la organización].
+
+[arabic]
+. *Administrar:* puede crear, editar o eliminar tableros. Puede crear, editar y eliminar carpetas. También puede cambiar los permisos del tablero y de la carpeta.
+. *Editar:* puede crear y editar tableros. _No_ se pueden cambiar los permisos de la carpeta o el tablero, ni agregar, editar o eliminar carpetas.
+. *Ver:* solo puede ver tableros y carpetas existentes.
+
+===== Otorgar permisos de carpeta
+
+Los permisos de carpeta se aplican a la carpeta y a todos los tableros que contiene.
+
+* En la barra lateral, pase el mouse sobre el ícono *Tableros* (cuadrados) y luego haga clic en *Administrar*.
+* Pase el cursor del mouse sobre una carpeta y luego haga clic en *Ir a carpeta*.
+* Vaya a la pestaña *Permisos* y luego haga clic en *Agregar permiso*.
+* En *Agregar permiso para*, seleccione *Usuario*, *Equipo* o una de las opciones de rol.
+* En el segundo cuadro, seleccione el usuario o equipo para el que desea agregar permiso. Omita este paso si seleccionó un rol en el paso anterior.
+* En el tercer cuadro, seleccione el permiso que desea agregar.
+* Clic en *Guardar*.
+
+===== Otorgar permisos de tablero
+
+[arabic]
+. En la esquina superior derecha de su tablero, haga clic en el icono de engranaje para ir a la *Configuración del tablero*.
+. Vaya a la pestaña *Permisos* y luego haga clic en *Agregar permiso*.
+. En *Agregar permiso para*, seleccione *Usuario*, *Equipo* o una de las opciones de rol.
+. En el segundo cuadro, seleccione el usuario o equipo para el que desea agregar permiso. Omita este paso si seleccionó un rol en el paso anterior.
+. En el tercer cuadro, seleccione el permiso que desea agregar.
+. Clic en *Guardar*.
+
+===== Editar permisos
+
+Para cambiar los permisos existentes, navegue a la página de permisos como se describe arriba. En lugar de hacer clic en *Agregar permiso*, cambie o elimine los permisos ya asignados. Los cambios entran en vigor de inmediato.
+
+=== Restringir el acceso
+
+==== Restringir el acceso
+
+El permiso más alto siempre gana, por lo que si, por ejemplo, desea ocultar una carpeta o un tablero de otros, debe eliminar el permiso basado en el *Rol de la organización* de la Lista de Control de Acceso (ACL).
+
+[arabic]
+. No puede anular los permisos de los usuarios con el rol de Administrador de Organización. Los Administradores siempre tienen acceso a todo.
+. Un permiso más específico con un nivel de permiso más bajo no tendrá ningún efecto si existe una regla más general con un nivel de permiso más alto. Debe eliminar o reducir el nivel de permiso de la regla más general.
+
+A continuación, se muestran algunos ejemplos de cómo Grafana resuelve varios permisos.
+
+===== Ejemplo 1 (user1 tiene el Rol de Editor)
+
+Permisos para un tablero:
+
+[arabic]
+. Todos los que tengan el rol de Editor pueden editar
+. user1 puede ver
+
+Resultado: el ˋuser1ˋ tiene permiso de Edición, ya que siempre gana el permiso más alto.
+
+===== Ejemplo 2 (user1 tiene el Rol de Espectador y es miembro del team1)
+
+Permisos para un tablero:
+
+[arabic]
+. Todos los que tengan el rol de Espectador pueden ver
+. user1 puede Editar
+. team1 puede Administrar
+
+Resultado: el ˋuser1ˋ tiene permiso de Administrador, ya que siempre gana el permiso más alto.
+
+===== Ejemplo 3
+
+Permisos para un tablero:
+
+[arabic]
+. user1 puede administrar (heredado de la carpeta principal)
+. user1 puede editar
+
+Resultado: no puede anular a un permiso inferior. ˋuser1ˋ tiene permiso de Administrador, ya que siempre gana el permiso más alto.
+
+=== Permisos de fuente de datos
+
+==== Permisos de fuente de datos
+
+Los permisos de fuente de datos le permiten restringir el acceso de los usuarios para consultar una fuente de datos. Para cada fuente de datos hay una página de permisos que le permite habilitar permisos y restringir los permisos de consulta a usuarios y equipos específicos.
+
+[NOTE]
+====
+Los permisos de la fuente de datos solo están disponibles en Grafana Enterprise. Para obtener más información, consulte Permisos de fuentes de datos en Grafana Enterprise.
+====

@@ -13,5 +13,6 @@
         "ascii",
         "table"
     ],
-    "cSpell.enabled": false
+    "cSpell.enabled": false,
+    "editor.tabSize": 2
 }

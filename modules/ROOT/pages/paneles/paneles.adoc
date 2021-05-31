@@ -1,0 +1,3239 @@
+
+== Paneles
+
+=== Descripción general del panel
+
+El _panel_ es el componente básico de visualización en Grafana. Cada panel tiene un editor de consultas específico para la fuente de datos seleccionada en el panel. El editor de consultas le permite extraer la visualización perfecta para mostrar en el panel.
+
+Existe una amplia variedad de opciones de estilo y formato para cada panel. Los paneles se pueden arrastrar, soltar y reorganizar en el tablero. También se pueden cambiar de tamaño.
+
+==== Mover paneles
+
+Puede arrastrar y soltar paneles haciendo clic y manteniendo presionado el título del panel, luego arrastrándolo a su nueva ubicación. También puede cambiar el tamaño de los paneles fácilmente haciendo clic en los iconos (-) y (+).
+
+image:media\image31.gif[image,width=623,height=211]
+
+===== Consejos y atajos
+
+* Haga clic en el título del gráfico y, en el menú desplegable, duplique rápidamente el panel.
+* Haga clic en el icono de color de la leyenda para cambiar el color de una serie o el eje y.
+* Haga clic en el nombre de la serie en la leyenda para ocultar la serie.
+* Ctrl/Shift/Meta + clic en el nombre de la leyenda para ocultar otras series.
+* Pase el cursor sobre un panel y presione e para abrir el editor de paneles.
+* Pase el cursor sobre un panel y presione v para abrir el panel en la vista de pantalla completa.
+
+=== Agregar un panel
+
+==== Agregar un panel
+
+Los paneles le permiten mostrar sus datos de forma visual. Este tema lo guía a través de los pasos más básicos para crear un panel.
+
+===== Agregar un panel a un tablero
+
+[arabic]
+. Navegue hasta el tablero al que desea agregar un panel.
+. Haga clic en el icono *Agregar panel*.
+
+image:media\image32.png[https://grafana.com/static/img/docs/panels/add-panel-icon-7-0.png,width=68,height=52]
+
+[arabic, start=3]
+. Haga clic en *Agregar un panel vacío*.
+
+Grafana crea un panel de gráficos vacío con su fuente de datos predeterminada seleccionada.
+
+===== Editar la configuración del panel
+
+Si bien no es obligatorio, le recomendamos que agregue un título y una descripción útiles a su panel. Puede utilizar variables que haya definido en cualquiera de los campos, pero no variables globales.
+
+image:media\image33.png[https://grafana.com/static/img/docs/panels/panel-settings-7-0.png,width=500,height=381]
+
+*Título del panel:* el texto ingresado en este campo se muestra en la parte superior de su panel en el editor de paneles y en el tablero.
+
+*Descripción:* el texto ingresado en este campo se muestra en una información sobre herramientas en la esquina superior izquierda del panel. Escriba una descripción del panel y los datos que está mostrando. Imagínese que se lo está explicando a un nuevo usuario dentro de seis meses, cuando ya no esté fresco en su mente. Los futuros editores (posiblemente usted mismo) se lo agradecerán.
+
+===== Escribe una consulta
+
+Cada panel necesita al menos una consulta para mostrar una visualización. Las consultas se escriben en la pestaña Consulta del editor de paneles. Para obtener más información sobre la pestaña Consulta, vea Consultas.
+
+[arabic]
+. Elija una fuente de datos. En la primera línea de la pestaña Consulta, haga clic en la lista desplegable para ver todas las fuentes de datos disponibles. Esta lista incluye todas las fuentes de datos que agregó. Consulte Agregar una fuente de datos si necesita instrucciones.
+. Escriba o cree una consulta en el lenguaje de consulta de su fuente de datos. Las opciones variarán. Consulte la documentación de su fuente de datos específica para conocer las pautas específicas.
+
+===== Elija un tipo de visualización
+
+En la sección Visualización de la pestaña Panel, haga clic en un tipo de visualización. Grafana muestra una vista previa de los resultados de su consulta con esa visualización aplicada.
+
+Para obtener más información sobre visualizaciones individuales, consulte Visualizaciones.
+
+===== Aplicar cambios y guardar
+
+Guarde el tablero. Presione Ctrl/Cmd+S o haga clic en *Guardar* en la esquina superior derecha de la pantalla.
+
+Sus opciones varían según los cambios que haya realizado y si se trata de un tablero nuevo o no. Le recomendamos que agregue una nota para describir sus cambios antes de hacer clic en *Guardar*. Las notas son muy útiles si necesita revertir el tablero a una versión anterior.
+
+===== ¿Qué sigue?
+
+Nuestro tutorial de conceptos básicos de Grafana es un excelente lugar para comenzar, o puede obtener más información sobre Grafana leyendo uno de los temas de documentación vinculados a continuación:
+
+* Obtenga más información sobre las opciones del editor de paneles.
+* Agregue más consultas.
+* Transforme sus datos.
+* Configure cómo se muestran sus resultados en la visualización.
+* Si hizo un panel gráfico, configure una alerta.
+* Cree plantillas y variables.
+
+=== Editor de paneles
+
+==== Editor de paneles
+
+Esta página describe las partes del editor de paneles de Grafana y enlaces a donde puede encontrar más información.
+
+image:media\image34.png[https://grafana.com/static/img/docs/panel-editor/panel-editor-7-0.png,width=624,height=358]
+
+===== Abra el editor de paneles
+
+Hay varias formas de acceder al editor del panel, también llamado pantalla *Editar panel*, _modo de edición_ o _modo de edición de panel_:
+
+* Haga clic en el icono *Agregar panel* en la parte superior de la pantalla y luego haga clic en *Agregar nuevo panel*. El nuevo panel se abre en el editor de paneles. Para obtener instrucciones detalladas sobre cómo agregar un panel, consulte Agregar un panel.
+* Haga clic en el título de un panel existente y luego haga clic en *Editar*. El panel se abre en modo de edición.
+* Haga clic en cualquier lugar de un panel existente y luego presione *e* en su teclado. El panel se abre en modo de edición.
+
+===== Cambiar el tamaño de las secciones del editor del panel
+
+Arrastre para cambiar el tamaño de las secciones del editor de paneles. Si el panel lateral se vuelve demasiado estrecho, las pestañas Panel, Campo y Anulaciones cambian a una lista desplegable.
+
+image:media\image35.gif[https://grafana.com/static/img/docs/panel-editor/resize-panel-editor-panels-7-0.gif,width=624,height=415]
+
+===== Partes del editor de paneles
+
+Esta sección describe las partes de la pantalla del editor del panel y un poco sobre los campos, opciones o tareas asociadas con cada parte. Algunas secciones de esta página enlazan con páginas en las que las secciones o tareas están documentadas de forma más completa.
+
+====== Encabezamiento
+
+La sección de encabezado enumera el nombre del tablero en el que se encuentra el panel y algunos comandos del tablero. También puede hacer clic en la flecha *Regresar* para regresar al tablero.
+
+image:media\image36.png[https://grafana.com/static/img/docs/panel-editor/edit-panel-header-7-0.png,width=624,height=26]
+
+En el lado derecho del encabezado se encuentran las siguientes opciones:
+
+* *Icono de configuración del panel (engranaje):* haga clic para acceder a la configuración del tablero.
+* *Descartar:* descarta todos los cambios que ha realizado en el panel desde la última vez que guardó el tablero.
+* *Guardar:* guarda el tablero, incluidos todos los cambios que ha realizado en el editor de paneles.
+* *Aplicar:* aplica los cambios que realizó y luego cierra el editor del panel, lo que lo regresa al tablero. Tendrá que guardar el tablero para conservar los cambios aplicados.
+
+====== Vista previa de visualización
+
+La sección de vista previa de visualización contiene opciones de visualización, controles de rango de tiempo, la vista previa de visualización y (si corresponde) el título del panel, los ejes y la leyenda.
+
+image:media\image37.png[https://grafana.com/static/img/docs/panel-editor/visualization-preview-7-0.png,width=624,height=157]
+
+* *Rellenar:* la vista previa de visualización llenará el espacio disponible en la parte de vista previa. Si cambia el ancho del panel lateral o la altura del panel inferior, la visualización se adaptará para llenar cualquier espacio disponible.
+* *Ajustar:* la vista previa de visualización llenará el espacio disponible pero conservará la relación de aspecto del panel.
+* *Exacto:* la vista previa de visualización tendrá el tamaño exacto que el tamaño en el tablero. Si no hay suficiente espacio disponible, la visualización se reducirá conservando la relación de aspecto.
+* *Controles de rango de tiempo:* para obtener más información, consulte Controles de rango de tiempo.
+
+====== Sección de datos (panel inferior)
+
+La sección contiene pestañas donde ingresa consultas, transforma sus datos y crea reglas de alerta (si corresponde).
+
+image:media\image38.png[https://grafana.com/static/img/docs/panel-editor/data-section-7-0.png,width=624,height=170]
+
+* *Pestaña Consultar:* seleccione su fuente de datos e ingrese las consultas aquí. Para obtener más información, consulte Consultas.
+* *Pestaña Transformar:* aplique transformaciones de datos. Para obtener más información, consulte Transformaciones.
+* *Pestaña Alertar:* escriba reglas de alerta. Para obtener más información, consulte Crear alertas.
+
+====== Opciones de panel y campo (panel lateral)
+
+La sección contiene pestañas donde controlas casi todos los aspectos de cómo se visualizan tus datos. No todas las pestañas están disponibles para cada visualización.
+
+Las funciones de estas pestañas se documentan en los siguientes temas:
+
+* Agregar un panel describe la configuración básica del panel.
+* Las opciones de visualizaciones varían ampliamente. Se describen en el tema de visualización individual.
+* Las opciones de campo y anulaciones le permiten controlar casi todos los aspectos de su visualización, incluidas las unidades, las asignaciones de valores y los Umbrales.
+* Los Enlaces de panel y los Enlaces de datos le ayudan a conectar su visualización con otros recursos.
+
+=== Lista de cálculos
+
+==== Lista de cálculos
+
+Este tema enumera y define los cálculos utilizados en Grafana.
+
+Entre otros lugares, estos cálculos se utilizan en la pestaña Transformar y en las visualizaciones de indicador de barra, indicador y estadísticas.
+
+[cols=",",options="header",]
+|===
+|Calculo |Descripción
+|Todos los nulos |verdaderos cuando todos los valores son nulos
+|Todos los ceros |verdaderos cuando todos los valores son 0
+|Cuenta de cambios |número de veces que cambia el valor del campo
+|Cuenta |número de valores en un campo
+|Delta |cambio acumulado en el valor
+|Diferencia |diferencia entre el primer y último valor de un campo
+|Diferencia porcentual |porcentaje de cambio entre el primer y el último valor de un campo
+|Cuenta de distintos |número de valores únicos en un campo
+|Primero (no nulo) |primer, valor no-nulo en un campo
+|Max |valor máximo de un campo
+|Medio |valor medio de todos los valores de un campo
+|Min |valor mínimo de un campo
+|Min (por encima de cero) |valor mínimo y positivo de un campo
+|Rango |diferencia entre los valores máximo y mínimo de un campo
+|Paso |intervalo mínimo entre valores de un campo
+|Total |suma de todos los valores en un campo
+|===
+
+=== Consultas
+
+==== Consultas
+
+Las _consultas_ son la forma en que los paneles de Grafana se comunican con las fuentes de datos para obtener datos para la visualización. Una consulta es una pregunta escrita en el lenguaje de consulta utilizado por la fuente de datos. Grafana pregunta: "Oye, fuente de datos, ¿me enviarías estos datos organizados de esta manera?" Si la consulta está formada correctamente, la fuente de datos responde. La frecuencia con la que se envía la consulta a la fuente de datos y la cantidad de puntos de datos que se recopilan se pueden ajustar en las opciones de fuente de datos del panel.
+
+Grafana admite hasta 26 consultas por panel.
+
+===== Editores de consultas
+
+Los editores de consultas son formularios que le ayudan a redactar consultas. Dependiendo de su fuente de datos, el editor de consultas puede proporcionar autocompletado, nombres de métricas o sugerencias de variables.
+
+Debido a la diferencia entre los lenguajes de consulta, las fuentes de datos pueden tener editores de consultas que se ven diferentes. A continuación, se muestran dos ejemplos de editores de consultas:
+
+====== Editor de consultas de InfluxDB
+
+image:media\image39.png[https://grafana.com/static/img/docs/queries/influxdb-query-editor-7-2.png,width=624,height=257]
+
+====== Editor de consultas de Prometheus (PromQL)
+
+image:media\image40.png[https://grafana.com/static/img/docs/queries/prometheus-query-editor-7-4.png,width=624,height=137]
+
+===== Sintaxis de la consulta
+
+Las fuentes de datos tienen diferentes lenguajes de consulta y sintaxis para solicitar los datos. Aquí hay dos ejemplos de consultas:
+
+====== PostgreSQL
+
+SELECT hostname FROM host WHERE region IN($region)
+
+====== PromQL
+
+query_result(max_over_time(<metric>[$\{__range_s}s]) != <state>)
+
+Para obtener más información sobre cómo escribir una consulta para su fuente de datos, consulte la documentación específica de la fuente de datos de Grafana.
+
+===== Interfaz de usuario de la pestaña de consulta
+
+La pestaña Consultar consta de los siguientes elementos:
+
+* Selector de fuente de datos
+* Opciones de consulta
+* Botón del inspector de consultas
+* Lista de editores de consultas
+* Expresiones
+
+image:media\image41.png[https://grafana.com/static/img/docs/queries/query-editor-7-2.png,width=624,height=169]
+
+====== Selector de fuente de datos
+
+El selector de fuente de datos es una lista desplegable. Haga clic en él para seleccionar una fuente de datos que haya agregado. Cuando crea un panel, Grafana selecciona automáticamente su fuente de datos predeterminada. Para obtener más información sobre cómo agregar fuentes de datos, consulte Agregar una fuente de datos.
+
+image:media\image42.png[https://grafana.com/static/img/docs/queries/data-source-selector-7-0.png,width=554,height=1236]
+
+Además de las fuentes de datos que ha configurado en su Grafana, hay tres fuentes de datos especiales disponibles:
+
+* *Grafana:* una fuente de datos integrada que genera datos de recorridos aleatorios. Útil para probar visualizaciones y ejecutar experimentos.
+* *Mixta:* seleccione esta opción para consultar varias fuentes de datos en el mismo panel. Cuando se selecciona esta fuente de datos, Grafana le permite seleccionar una fuente de datos para cada nueva consulta que agregue.
+** La primera consulta utilizará la fuente de datos que se seleccionó antes de seleccionar *Mixta*.
+** No puede cambiar una consulta existente para utilizar la fuente de datos mixta.
+* *Tablero:* seleccione esta opción para usar un conjunto de resultados de otro panel en el mismo tablero.
+
+====== Opciones de consulta
+
+Haga clic en *Opciones de consulta* junto al selector de fuente de datos para ver la configuración de la fuente de datos seleccionada. Los cambios que realice aquí solo afectarán a las consultas realizadas en este panel.
+
+image:media\image43.png[https://grafana.com/static/img/docs/queries/data-source-options-7-0.png,width=624,height=143]
+
+Grafana establece valores predeterminados que se muestran en texto gris oscuro. Los cambios se muestran en texto blanco. Para devolver un campo a la configuración predeterminada, elimine el texto blanco del campo.
+
+Opciones de consulta de la fuente de datos del panel:
+
+* *Puntos de datos máximos:* si la fuente de datos lo admite, establece el número máximo de puntos de datos para cada serie devuelta. Si la consulta devuelve más puntos de datos que la configuración de puntos de datos máximos, la fuente de datos los consolida (reduce el número de puntos devueltos agregándolos por promedio o máximo u otra función).
+
+Hay dos razones principales para limitar el número de puntos, el rendimiento y suavizar la línea. El valor predeterminado es el ancho (o número de píxeles) del gráfico, ya que no tiene sentido tener más puntos de datos de los que puede mostrar el panel de gráficos.
+
+Con la transmisión de datos, el valor máximo de puntos de datos se usa para el búfer rodante. (La transmisión es un flujo continuo de datos y el almacenamiento en búfer es una forma de dividir la transmisión en partes). Loki transmite datos en el modo de seguimiento en vivo.
+
+* *Intervalo mínimo:* establece un límite mínimo para el intervalo calculado automáticamente, normalmente el intervalo mínimo de raspado. Si se guarda un punto de datos cada 15 segundos, no tiene sentido tener un intervalo inferior a ese. Otro caso de uso es establecerlo en un mínimo más alto que el intervalo de raspado para obtener consultas más detalladas y que funcionen bien.
+* *Intervalo:* el intervalo es un intervalo de tiempo que puede utilizar al agregar o agrupar puntos de datos por tiempo.
+
+____
+Grafana calcula automáticamente un intervalo apropiado y se puede utilizar como variable en consultas basadas en plantillas. La variable está en segundos: $__interval o en milisegundos: $__interval_ms. Por lo general, se usa en funciones de agregación como suma o promedio. Por ejemplo, una consulta de Prometheus usando la variable de intervalo: rate(http_requests_total[$__interval]).
+
+Este intervalo automático se calcula en función del ancho del gráfico. Si el usuario aleja mucho, el intervalo se vuelve mayor, lo que resulta en una agregación de grano más grueso, mientras que si el usuario acerca el zoom, el intervalo disminuye, lo que resulta en una agregación de grano más fino.
+
+Para obtener más información, consulte Variables globales.
+____
+
+* *Tiempo relativo:* puede anular el intervalo de tiempo relativo para paneles individuales, lo que hace que sean diferentes de lo que se selecciona en el selector de tiempo del tablero en la esquina superior derecha del tablero. Esto le permite mostrar métricas de diferentes períodos de tiempo o días en el mismo tablero.
+* *Cambio de tiempo:* la función de cambio de tiempo es otra forma de anular el rango de tiempo para paneles individuales. Solo funciona con rangos de tiempo relativos y le permite ajustar el rango de tiempo.
+
+____
+Por ejemplo, puede cambiar el intervalo de tiempo para que el panel sea dos horas antes que el selector de tiempo del tablero. Para obtener más información, consulte Controles de rango de tiempo.
+____
+
+* *Tiempo de espera de caché:* (este campo solo es visible si está disponible en su fuente de datos). Si su almacén de series de tiempo tiene un caché de consultas, esta opción puede anular el tiempo de espera de caché predeterminado. Especificado como un valor numérico en segundos.
+
+====== Botón del inspector de consultas
+
+Puede hacer clic en el *Inspector de consultas* para abrir la pestaña Consultar del inspector del panel, donde puede ver la solicitud de consulta enviada por el panel y la respuesta.
+
+Haga clic en *Actualizar* para ver el texto completo de la solicitud enviada por este panel al servidor.
+
+*Nota:* Debe agregar al menos una consulta antes de que el inspector de consultas pueda devolver resultados.
+
+Para obtener más información sobre el inspector de paneles, consulte Inspeccionar un panel.
+
+====== Lista de editores de consultas
+
+En la interfaz de usuario, las consultas se organizan en filas de consultas contraíbles. Cada fila de consulta contiene un editor de consultas y se identifica con una letra (A, B, C, etc.).
+
+Usted puede:
+
+[cols=",",options="header",]
+|===
+|Icono |Descripción
+|image:media\image44.png[https://grafana.com/static/img/docs/queries/query-editor-help-7-4.png,width=56,height=58] |Alternar la ayuda del editor de consultas. Si es compatible con la fuente de datos, haga clic en este icono para mostrar información sobre cómo utilizar el editor de consultas o proporcionar acceso rápido a consultas comunes.
+|image:media\image45.png[https://grafana.com/static/img/docs/queries/duplicate-query-icon-7-0.png,width=56,height=58] |Copie una consulta. La duplicación de consultas es útil cuando se trabaja con varias consultas complejas que son similares y desea experimentar con diferentes variantes o realizar modificaciones menores.
+|image:media\image46.png[https://grafana.com/static/img/docs/queries/hide-query-icon-7-0.png,width=56,height=58] |Ocultar una consulta. Grafana no envía consultas ocultas a la fuente de datos.
+|image:media\image47.png[https://grafana.com/static/img/docs/queries/remove-query-icon-7-0.png,width=56,height=58] |Eliminar una consulta. La eliminación de una consulta la elimina de forma permanente, pero a veces puede recuperar las consultas eliminadas volviendo a las versiones del panel guardadas anteriormente.
+|image:media\image48.png[https://grafana.com/static/img/docs/queries/query-drag-icon-7-2.png,width=26,height=29] |Reordenar consultas. Cambie el orden de las consultas haciendo clic y manteniendo presionado el ícono de arrastrar, luego arrastre las consultas donde lo desee. El orden de los resultados refleja el orden de las consultas, por lo que a menudo puede ajustar sus resultados visuales según el orden de las consultas.
+|===
+
+====== Expresiones
+
+Si su fuente de datos los admite, Grafana muestra el botón *Expresión* y muestra cualquier expresión existente en la lista del editor de consultas.
+
+Para obtener más información sobre expresiones, consulte Expresiones.
+
+=== Umbrales
+
+==== Umbrales
+
+Los umbrales establecen el color del texto del valor o del fondo según las condiciones que defina.
+
+Puede definir umbrales de dos formas:
+
+* Los umbrales *absolutos* se definen en función de un número. Por ejemplo, 80 en una escala de 1 a 150.
+* Los umbrales de *porcentaje* se definen en relación con el mínimo o el máximo. Por ejemplo, 80 por ciento.
+
+Puede aplicar umbrales a las siguientes visualizaciones:
+
+* Medidor de barra
+* Medidor
+* Grafico
+* Estadística
+* Tabla
+
+===== Umbrales predeterminados
+
+En las visualizaciones que lo admiten, Grafana establece valores de umbral predeterminados de:
+
+* 80 = rojo
+* Base = verde
+* Modo = Absoluto
+
+El valor *Base* representa menos infinito. Generalmente es el color "bueno".
+
+===== Agregar un umbral
+
+Puede agregar tantos umbrales a un panel como desee. Grafana clasifica automáticamente los umbrales del valor más alto al más bajo.
+
+*Nota:* estas instrucciones se aplican solo a las visualizaciones de estadísticas, medidores, medidores de barras y tablas.
+
+[arabic]
+. Navegue hasta el panel al que desea agregar un umbral.
+. Haga clic en la pestaña *Campo*.
+. Haga clic en *Agregar umbral*.
+. Grafana agrega un umbral con valores numéricos y de color sugeridos.
+. Acepte las recomendaciones o edite el nuevo umbral.
+* *Editar color:* haz clic en el punto de color que deseas cambiar y luego selecciona un nuevo color.
+* *Editar número:* haga clic en el número que desea cambiar y luego ingrese un nuevo número.
+* *Modo de umbrales:* haga clic en el modo para cambiarlo para todos los umbrales de este panel.
+. Haga clic en *Guardar* para guardar los cambios en el tablero.
+
+===== Agregar un umbral a un Panel de gráficos
+
+En la visualización del panel Gráfico, los umbrales le permiten agregar líneas o secciones arbitrarias al gráfico para que sea más fácil ver cuándo el gráfico cruza un umbral en particular.
+
+[arabic]
+. {blank}
++
+____
+Navegue hasta el panel de gráficos al que desea agregar un umbral.
+____
+. {blank}
++
+____
+En la pestaña Panel, haga clic en *Umbrales*.
+____
+. {blank}
++
+____
+Haga clic en *Agregar umbral*.
+____
+. {blank}
++
+____
+Complete todos los campos que desee. Solo se requieren los campos *T1*.
+____
+* {blank}
++
+____
+*T1:* ambos valores son necesarios para mostrar un umbral.
+____
+** {blank}
++
+____
+*lt* o *gt:* seleccione *lt* para menor que o *gt* para mayor que para indicar a qué se aplica el umbral.
+____
+** {blank}
++
+____
+*Valor:* ingrese un valor de umbral. Grafana dibuja una línea de umbral a lo largo del eje Y en ese valor.
+____
+* {blank}
++
+____
+*Color:* elija una condición que corresponda a un color o defina su propio color.
+____
+** {blank}
++
+____
+*personalizado:* define el color de relleno y el color de la línea.
+____
+** {blank}
++
+____
+*crítico:* el relleno y el color de la línea son rojos.
+____
+** {blank}
++
+____
+*advertencia:* el relleno y el color de la línea son amarillos.
+____
+** {blank}
++
+____
+*ok:* el relleno y el color de la línea son verdes.
+____
+* {blank}
++
+____
+*Relleno:* controla si se muestra el umbral de relleno.
+____
+* {blank}
++
+____
+*Línea:* controla si se muestra la línea de umbral.
+____
+* {blank}
++
+____
+*Eje Y:* elija *izquierda* o *derecha*.
+____
+. {blank}
++
+____
+Haga clic en *Guardar* para guardar los cambios en el tablero.
+____
+
+===== Eliminar un umbral
+
+[arabic]
+. Navegue hasta el panel al que desea agregar un umbral.
+. Haga clic en la pestaña *Campo*. (O pestaña *Panel* para un panel gráfico).
+. Haga clic en el icono de la papelera junto al umbral que desea eliminar.
+. Haga clic en *Guardar* para guardar los cambios en el tablero.
+
+=== Transformaciones
+
+==== Transformaciones
+
+Las transformaciones procesan el conjunto de resultados de una consulta antes de pasarla para su visualización. Le permiten cambiar el nombre de los campos, unir series de tiempo separadas, hacer cálculos en las consultas y más. Para los usuarios, con numerosos tableros o con un gran volumen de consultas, la capacidad de reutilizar el resultado de la consulta de un panel en otro panel puede ser una gran ganancia de rendimiento.
+
+Se puede acceder a la función de transformaciones desde la pestaña *Transformar* del editor del panel de Grafana.
+
+*Nota:* Transformaciones es una función beta de Grafana 7.0. Los temas de esta sección se actualizarán con frecuencia a medida que trabajemos en esta función.
+
+A veces, las transformaciones dan como resultado datos que no se pueden representar gráficamente. Cuando eso sucede, Grafana muestra una sugerencia en la visualización en la que puede hacer clic para cambiar a visualización de tabla. A menudo, esto le ayuda a comprender mejor lo que la transformación le está haciendo a sus datos.
+
+===== Orden de transformaciones
+
+En caso de que haya múltiples transformaciones, Grafana las aplica en la secuencia exacta en la que se enumeran. Cada transformación crea un nuevo conjunto de resultados que se pasa a la siguiente transformación en la canalización para su procesamiento.
+
+El orden en el que se aplican las transformaciones puede marcar una gran diferencia en el aspecto de sus resultados. Por ejemplo, si usa una transformación Reducir para condensar todos los resultados de una columna en un solo valor, entonces solo puede aplicar transformaciones a ese único valor.
+
+===== Prerrequisitos
+
+Antes de poder configurar y aplicar transformaciones:
+
+* Debe haber ingresado una consulta y haber devuelto datos de una fuente de datos. Para obtener más información sobre consultas, lea Consultas.
+* Debe haber elegido una visualización que respalde el resultado de su consulta y las transformaciones elegidas. Diferentes transformaciones pueden dar como resultado una estructura de datos que solo algunas visualizaciones pueden representar. Por ejemplo, la visualización de gráfico no puede mostrar datos reducidos (que resultan de la transformación Reducir). Si su visualización actual no le muestra lo que espera después de aplicar una transformación, cambie a la visualización de tabla para verificar el resultado. Para obtener más información sobre los diferentes tipos de visualizaciones, consulte:
+
+* Medidor de barra
+* Medidor
+* Grafico
+* Mapa de calor
+* Registro
+* Estadística
+* Tabla
+
+==== Aplicar una transformación
+
+===== Aplicar transformaciones
+
+Puede aplicar transformaciones desde la pestaña Transformar del editor de panel de Grafana, que se encuentra junto a la pestaña Consultas. Consulte también, Transformaciones de depuración.
+
+Para aplicar una transformación:
+
+[arabic]
+. {blank}
++
+____
+Navegue hasta el panel donde desea agregar una o más transformaciones.
+____
+. {blank}
++
+____
+Haga clic en el título del panel y luego en *Editar*.
+____
+. {blank}
++
+____
+Haga clic en la pestaña *Transformar*.
+____
+. {blank}
++
+____
+Haga clic en una transformación para seleccionarla.
+____
+
+____
+Se muestra una fila de transformación. Puede configurar las opciones de transformación aquí. Para obtener más información, consulte Tipos y opciones de transformación.
+____
+
+[arabic, start=5]
+. {blank}
++
+____
+Haga clic en *Agregar transformación* para aplicar otra transformación.
+____
+
+____
+Esta siguiente transformación actúa sobre el conjunto de resultados devuelto por la transformación anterior.
+
+image:media\image49.png[https://grafana.com/static/img/docs/transformations/transformations-7-0.png,width=624,height=137]
+____
+
+====== Eliminar una transformación
+
+Para eliminar una transformación que ya no es necesaria, haga clic en el icono de la papelera.
+
+====== Transformaciones de depuración
+
+Para ver los conjuntos de resultados de entrada y salida de la transformación, haga clic en el icono de error (bicho) en el lado derecho de la fila de transformación, Grafana muestra la vista de depuración de transformación debajo de la fila de transformación.
+
+image:media\image50.png[https://grafana.com/static/img/docs/transformations/debug-transformations-7-0.png,width=624,height=314]
+
+==== Tipos y opciones de transformación
+
+===== Tipos y opciones de transformación
+
+Grafana viene con las siguientes transformaciones:
+
+* Tipos y opciones de transformación
+** Reducir
+** Fusionar
+** Filtrar datos por nombre
+** Filtrar datos por consulta
+** Organizar campos
+** Unir por campo (unión externa)
+** Agregar campo del cálculo
+** Etiquetas para campos
+*** Nombre del campo de valor
+*** Comportamiento de fusión
+** Ordenar por
+** Agrupar por
+** Concatenar campos
+** Serie a filas
+** Filtrar datos por valor
+** Cambiar el nombre por expresiones regulares
+
+Siga leyendo para obtener descripciones detalladas de cada tipo de transformación y las opciones disponibles para cada una, así como sugerencias sobre cómo usarlas.
+
+====== Reducir
+
+La transformación _Reducir_ aplicará un cálculo a cada campo del marco y devolverá un valor único. Los campos de tiempo se eliminan al aplicar esta transformación.
+
+Considere la entrada:
+
+Consulta A:
+
+[cols=",,",options="header",]
+|===
+|Tiempo |Temperatura |Tiempo de Actividad
+|2020-07-07 11:34:20 |12.3 |256122
+|2020-07-07 11:24:20 |15.4 |1230233
+|===
+
+Consulta B:
+
+[cols=",,",options="header",]
+|===
+|Tiempo |AQI |Errores
+|2020-07-07 11:34:20 |6.5 |15
+|2020-07-07 11:24:20 |3.2 |5
+|===
+
+El transformador de reducción tiene dos modos:
+
+* *De serie a filas:* crea una fila para cada campo y una columna para cada cálculo.
+* *Reducir campos:* mantiene la estructura del marco existente, pero contrae cada campo en un solo valor.
+
+Por ejemplo, si utilizó el *Primer* y *Último* cálculo con una transformación de *Serie a filas*, el resultado sería:
+
+[cols=",,",options="header",]
+|===
+|Campo |Primero |Último
+|Temperatura |12.3 |15.4
+|Tiempo de Actividad |256122 |1230233
+|AQI |6.5 |3.2
+|Errores |15 |5
+|===
+
+*Reducir* *campos* con el *Último* cálculo dan como resultado dos marcos, cada uno con una fila:
+
+Consulta A:
+
+[cols=",",options="header",]
+|===
+|Temperatura |Tiempo de Actividad
+|15.4 |1230233
+|===
+
+Consulta B:
+
+[cols=",",options="header",]
+|===
+|AQI |Errores
+|3.2 |5
+|===
+
+====== Fusionar
+
+*Nota:* esta transformación está disponible en Grafana 7.1+.
+
+Utilice esta transformación para combinar el resultado de varias consultas en un solo resultado. Esto es útil cuando se usa la visualización de tabla. Los valores que se pueden combinar se combinan en la misma fila. Los valores se pueden combinar si los campos compartidos contienen los mismos datos. Para obtener información, consulte el panel Tabla.
+
+En el siguiente ejemplo, tenemos dos consultas que devuelven datos de tabla. Se visualiza como dos tablas separadas antes de aplicar la transformación.
+
+Consulta A:
+
+[cols=",,",options="header",]
+|===
+|Tiempo |Trabajo |Tiempo de Actividad
+|2020-07-07 11:34:20 |node |25260122
+|2020-07-07 11:24:20 |postgre |123001233
+|===
+
+Consulta B:
+
+[cols=",,",options="header",]
+|===
+|Tiempo |Trabajo |Errores
+|2020-07-07 11:34:20 |node |15
+|2020-07-07 11:24:20 |postgre |5
+|===
+
+Aquí está el resultado después de aplicar la transformación Fusionar.
+
+[cols=",,,",options="header",]
+|===
+|Tiempo |Trabajo |Errores |Tiempo de Actividad
+|2020-07-07 11:34:20 |node |15 |25260122
+|2020-07-07 11:24:20 |postgre |5 |123001233
+|===
+
+====== Filtrar datos por nombre
+
+Utilice esta transformación para eliminar partes de los resultados de la consulta.
+
+Grafana muestra el campo *Identificador*, seguido de los campos devueltos por su consulta.
+
+Puede aplicar filtros de dos formas:
+
+* Ingrese una expresión regular.
+* Haga clic en un campo para alternar el filtrado en ese campo. Los campos filtrados se muestran con texto gris oscuro, los campos sin filtrar tienen texto blanco.
+
+En el siguiente ejemplo, eliminé el campo Mín. de los resultados.
+
+Aquí está la tabla de consulta original. (Se trata de datos de transmisión, por lo que los números cambian con el tiempo y entre capturas de pantalla).
+
+image:media\image51.png[https://grafana.com/static/img/docs/transformations/filter-name-table-before-7-0.png,width=624,height=178]
+
+Aquí está la tabla después de que apliqué la transformación para eliminar el campo Mín.
+
+image:media\image52.png[https://grafana.com/static/img/docs/transformations/filter-name-table-after-7-0.png,width=624,height=274]
+
+Aquí está la misma consulta usando una visualización de Estadísticas.
+
+image:media\image53.png[https://grafana.com/static/img/docs/transformations/filter-name-stat-after-7-0.png,width=624,height=248]
+
+====== Filtrar datos por consulta
+
+Utilice esta transformación en paneles que tengan varias consultas, si desea ocultar una o más de las consultas.
+
+Grafana muestra las letras de identificación de la consulta en texto gris oscuro. Haga clic en un identificador de consulta para alternar el filtrado. Si la letra de la consulta es blanca, se muestran los resultados. Si la letra de consulta es oscura, los resultados están ocultos.
+
+En el siguiente ejemplo, el panel tiene tres consultas (A, B, C). Eliminé la consulta B de la visualización.
+
+image:media\image54.png[https://grafana.com/static/img/docs/transformations/filter-by-query-stat-example-7-0.png,width=624,height=227]
+
+*Nota:* esta transformación no está disponible para Graphite porque esta fuente de datos no admite la correlación de datos devueltos con consultas.
+
+====== Organizar campos
+
+Utilice esta transformación para cambiar el nombre, reordenar u ocultar los campos devueltos por la consulta.
+
+*Nota:* Esta transformación solo funciona en paneles con una única consulta. Si su panel tiene varias consultas, debe aplicar una transformación de Combinación externa o eliminar las consultas adicionales.
+
+Grafana muestra una lista de campos devueltos por la consulta. Usted puede:
+
+* Cambiar el orden de los campos colocando el cursor sobre un campo. El cursor se convierte en una mano y luego puede arrastrar el campo a su nuevo lugar.
+* Ocultar o mostrar un campo haciendo clic en el icono de ojo junto al nombre del campo.
+* Cambiar el nombre de los campos escribiendo un nuevo nombre en el cuadro *Cambiar nombre*.
+
+En el siguiente ejemplo, oculté el campo de valor y renombré Máx. y Mín.
+
+image:media\image55.png[https://grafana.com/static/img/docs/transformations/organize-fields-stat-example-7-0.png,width=624,height=299]
+
+====== Unir por campo (unión externa)
+
+Utilice esta transformación para unir varias series de tiempo a partir de un conjunto de resultados por campo.
+
+Esta transformación es especialmente útil si desea combinar consultas para poder calcular los resultados de los campos.
+
+En el siguiente ejemplo, tengo una consulta de plantilla que muestra datos de series de tiempo de varios servidores en una visualización de tabla. Solo puedo ver los resultados de una consulta a la vez.
+
+image:media\image56.png[https://grafana.com/static/img/docs/transformations/join-fields-before-7-0.png,width=624,height=283]
+
+Apliqué una transformación para unir los resultados de la consulta usando el campo de tiempo. Ahora puedo ejecutar cálculos, combinar y organizar los resultados en esta nueva tabla.
+
+image:media\image57.png[https://grafana.com/static/img/docs/transformations/join-fields-after-7-0.png,width=624,height=323]
+
+====== Agregar campo desde cálculo
+
+Utilice esta transformación para agregar un nuevo campo calculado a partir de otros dos campos. Cada transformación le permite agregar un nuevo campo.
+
+* *Modo:* seleccione un modo:
+** *Reducir fila:* aplique el cálculo seleccionado en cada fila de campos seleccionados de forma independiente.
+** *Opción binaria:* aplique operaciones matemáticas básicas (sumar, multiplicar, etc.) en valores en una sola fila de dos campos seleccionados.
+* *Nombre de campo:* seleccione los nombres de los campos que desea utilizar en el cálculo del nuevo campo.
+* *Cálculo:* si selecciona el modo *Reducir fila*, aparece el campo *Cálculo*. Haga clic en el campo para ver una lista de opciones de cálculo que puede utilizar para crear el nuevo campo. Para obtener información sobre los cálculos disponibles, consulte la Lista de cálculos.
+* *Operación:* si selecciona el modo de *Opción binaria*, aparecen los campos *Operación*. Estos campos le permiten realizar operaciones matemáticas básicas con valores en una sola fila de dos campos seleccionados. También puede utilizar valores numéricos para operaciones binarias.
+* *Alias:* (opcional) ingrese el nombre de su nuevo campo. Si lo deja en blanco, el nombre del campo coincidirá con el cálculo.
+* *Reemplazar todos los campos:* (Opcional) Seleccione esta opción si desea ocultar todos los demás campos y mostrar solo el campo calculado en la visualización.
+
+En el siguiente ejemplo, agregué dos campos juntos y los llamé Suma.
+
+image:media\image58.png[https://grafana.com/static/img/docs/transformations/add-field-from-calc-stat-example-7-0.png,width=624,height=325]
+
+====== Etiquetas a campos
+
+Esta transformación cambia los resultados de las series de tiempo que incluyen etiquetas o chapas en una estructura de tabla donde cada etiqueta se convierte en su propio campo.
+
+Dado un resultado de consulta de dos series de tiempo:
+
+* Serie 1: etiquetas Servidor = Servidor A, Centro de datos = UE
+* Serie 2: etiquetas Servidor = Servidor B, Centro de datos = UE
+
+Esto daría como resultado una tabla como esta:
+
+[cols=",,,",options="header",]
+|===
+|Tiempo |Servidor |Centro de Datos |Valor
+|2020-07-07 11:34:20 |Servidor A |UE |1
+|2020-07-07 11:34:20 |Servidor B |UE |2
+|===
+
+*Nombre del campo de valor*
+
+Si seleccionó Servidor como el Nombre del campo valor, obtendría un campo por cada valor de la etiqueta Servidor.
+
+[cols=",,,",options="header",]
+|===
+|Tiempo |Centro de Datos |Servidor A |Servidor B
+|2020-07-07 11:34:20 |UE |1 |2
+|===
+
+*Comportamiento de fusión*
+
+La transformación de etiquetas a campos es internamente dos transformaciones separadas. El primero actúa sobre series únicas y extrae etiquetas a los campos. El segundo es la transformación de fusión que une todos los resultados en una sola tabla. La transformación de fusión intenta unirse en todos los campos coincidentes. Este paso de combinación es obligatorio y no se puede desactivar.
+
+Para ilustrar esto, aquí hay un ejemplo en el que tiene dos consultas que devuelven series de tiempo sin etiquetas superpuestas.
+
+* Serie 1: etiquetas Server = ServidorA
+* Serie 2: etiquetas Centro de datos = UE
+
+Esto primero dará como resultado estas dos tablas:
+
+[cols=",,",options="header",]
+|===
+|Tiempo |Servidor |Valor
+|2020-07-07 11:34:20 |ServidorA |10
+|===
+
+[cols=",,",options="header",]
+|===
+|Tiempo |Centro de Datos |Valor
+|2020-07-07 11:34:20 |UE |20
+|===
+
+Después de fusionar:
+
+[cols=",,,",options="header",]
+|===
+|Tiempo |Servidor |Valor |Centro de Datos
+|2020-07-07 11:34:20 |ServidorA |10 |
+|2020-07-07 11:34:20 | |20 |UE
+|===
+
+====== Ordenar por
+
+*Nota:* esta transformación está disponible en Grafana 7.4+.
+
+Esta transformación ordenará cada cuadro por el campo configurado. Cuando se marca reverse, los valores regresarán en el orden opuesto.
+
+====== Agrupar por
+
+*Nota:* esta transformación está disponible en Grafana 7.2+.
+
+Esta transformación agrupa los datos por un valor de campo (columna) especificado y procesa los cálculos en cada grupo. Haga clic para ver una lista de opciones de cálculo. Para obtener información sobre los cálculos disponibles, consulte la Lista de cálculos.
+
+A continuación, se muestra un ejemplo de datos originales.
+
+[cols=",,,",options="header",]
+|===
+|Tiempo |ID del Servidor |Temperatura de la CPU |Estado del Servidor
+|2020-07-07 11:34:20 |servidor 1 |80 |Apagado
+|2020-07-07 11:34:20 |servidor 3 |62 |OK
+|2020-07-07 10:32:20 |servidor 2 |90 |Sobrecarga
+|2020-07-07 10:31:22 |servidor 3 |55 |OK
+|2020-07-07 09:30:57 |servidor 3 |62 |Reiniciando
+|2020-07-07 09:30:05 |servidor 2 |88 |OK
+|2020-07-07 09:28:06 |servidor 1 |80 |OK
+|2020-07-07 09:25:05 |servidor 2 |88 |OK
+|2020-07-07 09:23:07 |servidor 1 |86 |OK
+|===
+
+Esta transformación tiene dos pasos. Primero, especifica uno o varios campos para agrupar los datos. Esto agrupará todos los valores iguales de esos campos, como si los hubiera ordenado. Por ejemplo, si agrupamos por el campo ID de servidor, entonces agruparía los datos de esta manera:
+
+[cols=",,,",options="header",]
+|===
+|Tiempo |ID del Servidor |Temperatura de la CPU |Estado del Servidor
+|2020-07-07 11:34:20 |*servidor 1* |80 |Apagado
+|2020-07-07 09:28:06 |*servidor 1* |80 |OK
+|2020-07-07 09:23:07 |*servidor 1* |86 |OK
+|2020-07-07 10:32:20 |servidor 2 |90 |Sobrecarga
+|2020-07-07 09:30:05 |servidor 2 |88 |OK
+|2020-07-07 09:25:05 |servidor 2 |88 |OK
+|2020-07-07 11:34:20 |*servidor 3* |62 |OK
+|2020-07-07 10:31:22 |*servidor 3* |55 |OK
+|2020-07-07 09:30:57 |*servidor 3* |62 |Reinicio
+|===
+
+Todas las filas con el mismo valor de ID de servidor se agrupan.
+
+Después de elegir el campo por el que desea agrupar sus datos, puede agregar varios cálculos en los otros campos y aplicar el cálculo a cada grupo de filas. Por ejemplo, podríamos querer calcular la temperatura promedio de la CPU para cada uno de esos servidores. Entonces, podemos agregar el cálculo _promedio_ aplicado en el campo de temperatura de la CPU para obtener lo siguiente:
+
+[cols=",",options="header",]
+|===
+|ID del Servidor |Temperatura de la CPU (promedio)
+|servidor 1 |82
+|servidor 2 |88.6
+|servidor 3 |59.6
+|===
+
+Y podemos agregar más de un cálculo. Por ejemplo:
+
+* Para el campo Tiempo, podemos calcular el _Último_ valor, para saber cuándo se recibió el último punto de datos para cada servidor.
+* Para el campo Estado del Servidor, podemos calcular el _Último_ valor para saber cuál es el último valor de estado para cada servidor.
+* Para el campo Temperatura, también podemos calcular el _Último_ valor para saber cuál es la última temperatura monitoreada para cada servidor
+
+Entonces obtendríamos:
+
+[cols=",,,,",options="header",]
+|===
+|ID del Servidor |Temperatura de la CPU (promedio) |Temperatura de la CPU (última) |Hora (última) |Estado del Servidor (último)
+|servidor 1 |82 |80 |2020-07-07 11:34:20 |Apagado
+|servidor 2 |88.6 |90 |2020-07-07 10:32:20 |Sobrecarga
+|servidor 3 |59.6 |62 |2020-07-07 11:34:20 |OK
+|===
+
+Esta transformación le permite extraer información clave de su serie temporal y mostrarla de manera conveniente.
+
+====== Concatenar campos
+
+*Nota:* esta transformación está disponible en Grafana 7.3+.
+
+Esta transformación combina todos los campos de todos los cuadros en un resultado.
+
+Considere:
+
+Consulta A:
+
+[cols=",",options="header",]
+|===
+|Temperatura |Tiempo de Actividad
+|15.4 |1230233
+|===
+
+Consulta B:
+
+[cols=",",options="header",]
+|===
+|AQI |Errores
+|3.2 |5
+|===
+
+Después de concatenar los campos, el marco de datos sería:
+
+[cols=",,,",options="header",]
+|===
+|Temperatura |Tiempo de Actividad |AQI |Errores
+|15.4 |1230233 |3.2 |5
+|===
+
+====== Serie a filas
+
+*Nota:* esta transformación está disponible en Grafana 7.1+.
+
+Utilice esta transformación para combinar el resultado de varias consultas de datos de series de tiempo en un solo resultado. Esto es útil cuando se usa la visualización de tabla.
+
+El resultado de esta transformación contendrá tres columnas: Tiempo, Métrica y Valor. La columna Métrica se agrega para que pueda ver fácilmente desde qué consulta se origina la métrica. Personalice este valor definiendo Etiqueta en la consulta de origen.
+
+En el siguiente ejemplo, tenemos dos consultas que devuelven datos de series de tiempo. Se visualiza como dos tablas separadas antes de aplicar la transformación.
+
+Consulta A:
+
+[cols=",",options="header",]
+|===
+|Tiempo |Temperatura
+|2020-07-07 11:34:20 |25
+|2020-07-07 10:31:22 |22
+|2020-07-07 09:30:05 |19
+|===
+
+Consulta B:
+
+[cols=",",options="header",]
+|===
+|Tiempo |Humedad
+|2020-07-07 11:34:20 |24
+|2020-07-07 10:32:20 |29
+|2020-07-07 09:30:57 |33
+|===
+
+Este es el resultado después de aplicar la transformación Serie a filas.
+
+[cols=",,",options="header",]
+|===
+|Tiempo |Métrica |Valor
+|2020-07-07 11:34:20 |Temperatura |25
+|2020-07-07 11:34:20 |Humedad |22
+|2020-07-07 10:32:20 |Humedad |29
+|2020-07-07 10:31:22 |Temperatura |22
+|2020-07-07 09:30:57 |Humedad |33
+|2020-07-07 09:30:05 |Temperatura |19
+|===
+
+====== Filtrar datos por valor
+
+*Nota:* esta transformación está disponible en Grafana 7.4+.
+
+Esta transformación le permite filtrar sus datos directamente en Grafana y eliminar algunos puntos de datos del resultado de su consulta. Tiene la opción de incluir o excluir datos que coincidan con una o más condiciones que defina. Las condiciones se aplican en un campo seleccionado.
+
+Esta transformación es muy útil si su fuente de datos no filtra de forma nativa por valores. También puede usar esto para restringir los valores que se mostrarán si está usando una consulta compartida.
+
+Las condiciones disponibles para todos los campos son:
+
+* *Regex:* coincide con una expresión regular
+* *Is Null:* coincide si el valor es nulo
+* *Is Not Null:* coincide si el valor no es nulo
+* *Equal:* coincide si el valor es igual al valor especificado
+* *Different:* coincide si el valor es diferente al valor especificado
+
+Las condiciones disponibles para los campos numéricos son:
+
+* *Greater:* coincide si el valor es mayor que el valor especificado
+* *Lower:* coincide si el valor es inferior al valor especificado
+* *Greater or equal:* coincide si el valor es mayor o igual
+* *Lower or equal:* coincide si el valor es menor o igual
+* *Range:* hace coincidir un rango entre un mínimo y un máximo especificado, incluyendo el mínimo y el máximo
+
+Considere el siguiente conjunto de datos:
+
+[cols=",,",options="header",]
+|===
+|Tiempo |Temperatura |Altitud
+|2020-07-07 11:34:23 |32 |101
+|2020-07-07 11:34:22 |28 |125
+|2020-07-07 11:34:21 |26 |110
+|2020-07-07 11:34:20 |23 |98
+|2020-07-07 10:32:24 |31 |95
+|2020-07-07 10:31:22 |20 |85
+|2020-07-07 09:30:57 |19 |101
+|===
+
+Si *Incluye* los puntos de datos que tienen una temperatura inferior a 30 ° C, la configuración se verá de la siguiente manera:
+
+* Tipo de filtro: incluye (Include)
+* Condición: filas donde la Temperatura coincide por debajo de (Lower Than) 100
+
+Y obtendrá el siguiente resultado, donde solo se incluyen las temperaturas inferiores a 30 ° C:
+
+[cols=",,",options="header",]
+|===
+|Tiempo |Temperatura |Altitud
+|2020-07-07 11:34:22 |28 |125
+|2020-07-07 11:34:21 |26 |110
+|2020-07-07 11:34:20 |23 |98
+|2020-07-07 10:31:22 |20 |85
+|2020-07-07 09:30:57 |19 |101
+|===
+
+Puede agregar más de una condición al filtro. Por ejemplo, es posible que desee incluir los datos solo si la altitud es superior a 100. Para hacerlo, agregue esa condición a la siguiente configuración:
+
+* Tipo de filtro: incluye (Include) filas que coincidan con todas (Match All) las condiciones
+* Condición 1: filas donde la Temperatura coincide por debajo de (Lower) 30
+* Condición 2: filas en las que la Altitud coincide por encima de (Greater) 100
+
+Cuando tiene más de una condición, puede elegir si desea que la acción (incluir / excluir) se aplique en filas que *Coincidan con todos* (*Match all*) las condiciones o que *Coincidan* *con cualquiera* (*Match any*) de las condiciones que agregó.
+
+En el ejemplo anterior, elegimos *Coincidir con todos* (*Match all*) porque queríamos incluir las filas que tienen una temperatura inferior a 30 _Y_ una altitud superior a 100. Si quisiéramos incluir las filas que tienen una temperatura inferior a 30 _O_ una altitud superior a 100 en su lugar, entonces seleccionaríamos *Coincidir* *con cualquiera* (*Match any*). Esto incluiría la primera fila en los datos originales, que tiene una temperatura de 32 ° C (no coincide con la primera condición) pero una altitud de 101 (que coincide con la segunda condición), por lo que está incluida.
+
+Las condiciones que no son válidas o están configuradas de forma incompleta se ignoran.
+
+====== Cambiar el nombre por expresiones regulares
+
+*Nota:* esta transformación está disponible en Grafana 7.4+.
+
+Utilice esta transformación para cambiar el nombre de partes de los resultados de consulta utilizando una expresión regular y un patrón de reemplazo.
+
+Puede especificar una expresión regular, que solo se aplica a las coincidencias, junto con un patrón de reemplazo que admita referencias anteriores. Por ejemplo, imaginemos que está visualizando el uso de CPU por host y desea eliminar el nombre de dominio. Puede establecer la expresión regular en ([^\.]+)\..+ y el patrón de reemplazo en $1, web-01.example.com se convertiría en web-01.
+
+En el siguiente ejemplo, eliminamos el prefijo de los tipos de eventos. En la imagen anterior, puede ver que todo tiene el prefijo system.
+
+image:media\image59.png[https://grafana.com/static/img/docs/transformations/rename-by-regex-before-7-3.png,width=624,height=133]
+
+Con la transformación aplicada, puede ver que nos queda solo el resto de la cadena.
+
+image:media\image60.png[https://grafana.com/static/img/docs/transformations/rename-by-regex-after-7-3.png,width=624,height=244]
+
+=== Compartir los resultados de la consulta
+
+==== Compartir los resultados de la consulta entre paneles
+
+Grafana le permite usar el resultado de la consulta de un panel para cualquier otro panel en el tablero. Compartir los resultados de las consultas entre paneles reduce la cantidad de consultas realizadas a su fuente de datos, lo que puede mejorar el rendimiento de su tablero.
+
+La fuente de datos del Tablero le permite seleccionar un panel en su tablero que contiene las consultas para las que desea compartir los resultados. En lugar de enviar una consulta separada para cada panel, Grafana envía una consulta y otros paneles utilizan los resultados de la consulta para construir visualizaciones.
+
+Esta estrategia puede reducir drásticamente la cantidad de consultas que se realizan cuando, por ejemplo, tiene varios paneles que visualizan los mismos datos.
+
+Para compartir consultas de fuentes de datos con otro panel:
+
+[arabic]
+. Cree un tablero.
+. Agregue un panel al tablero.
+. Cambie el título a "Panel fuente". Utilizará este panel como fuente para los otros paneles. Defina la consulta o consultas que se compartirán. Si no tiene una fuente de datos disponible en este momento, puede usar la fuente de datos de *Grafana*, que devuelve una serie de tiempo aleatoria que puede usar para realizar pruebas.
+. Agregue un segundo panel y seleccione la fuente de datos del *Tablero* en el editor de consultas.
+. En la lista *Usar resultados de panel*, seleccione el primer panel que creó.
+
+Todas las consultas definidas en el panel de origen ahora están disponibles para el nuevo panel. Las consultas realizadas en el panel de origen se pueden compartir con varios paneles.
+
+Puede hacer clic en cualquiera de las consultas para ir al panel donde están definidas.
+
+=== Inspeccionar un panel
+
+==== Inspeccionar un panel
+
+*Nota:* esta documentación se refiere a una función que solo está disponible en Grafana 7.0+.
+
+El inspector de paneles lo ayuda a comprender y solucionar problemas de sus paneles. Puede inspeccionar los datos sin procesar de cualquier panel de Grafana, exportar esos datos a un archivo de valores separados por comas (CSV), ver solicitudes de consulta y exportar paneles y datos JSON.
+
+===== Interfaz de usuario del inspector de paneles
+
+El inspector del panel muestra Inspeccionar: en la parte superior del panel. Haga clic en la flecha de la esquina superior derecha para expandir o reducir el panel.
+
+El inspector del panel consta de cuatro pestañas:
+
+* *Pestaña Datos:* muestra los datos sin procesar devueltos por la consulta con las transformaciones aplicadas. Las opciones de campo, como anulaciones y asignaciones de valores, no se aplican de forma predeterminada.
+* *Pestaña Estadísticas:* muestra cuánto tiempo tarda la consulta y cuánto devuelve.
+* *Pestaña JSON:* le permite ver y copiar el JSON del panel, el JSON de datos del panel y el JSON de estructura del marco de datos. Esto es útil si está aprovisionando o administrando Grafana.
+* *Pestaña Consulta:* muestra las solicitudes enviadas al servidor cuando Grafana consulta la fuente de datos.
+
+*Nota:* No todos los tipos de paneles incluyen las cuatro pestañas. Por ejemplo, los paneles de lista del tablero no tienen datos sin procesar para inspeccionar, por lo que no muestran las pestañas Estadísticas, Datos o Consulta.
+
+===== Tareas del inspector de paneles
+
+Las tareas que puede realizar en el inspector de paneles se describen a continuación.
+
+====== Abra el inspector del panel
+
+Puede inspeccionar cualquier panel que pueda ver.
+
+[arabic]
+. En Grafana, navegue hasta el tablero que contiene el panel que desea inspeccionar.
+. Haga clic en el título del panel que desea inspeccionar y luego haga clic en *Inspeccionar*. O bien, coloque el cursor sobre el título del panel y luego presione *i*.
+
+El panel del inspector del panel se abre en el lado derecho de la pantalla.
+
+====== Inspeccionar los resultados de la consulta sin procesar
+
+Vea los resultados de la consulta sin procesar en una tabla. Estos son los datos devueltos por la consulta con las transformaciones aplicadas y antes de que el panel aplique opciones de campo o anulaciones de opciones de campo.
+
+[arabic]
+. {blank}
++
+____
+Abra el inspector del panel y luego haga clic en la pestaña *Datos* o en el menú del panel haga clic en *Inspeccionar > Datos*.
+____
+. {blank}
++
+____
+Si su panel contiene múltiples consultas o consultas múltiples nodos, entonces tiene opciones adicionales.
+____
+
+* {blank}
++
+____
+*Seleccionar resultado:* elija qué datos del conjunto de resultados desea ver.
+____
+* {blank}
++
+____
+*Transformar datos*
+____
+** {blank}
++
+____
+*Únir por tiempo:* vea los datos sin procesar de todas sus consultas a la vez, un conjunto de resultados por columna. Haga clic en el encabezado de una columna para reordenar los datos.
+____
+
+____
+Vea los resultados de la consulta sin procesar en una tabla con opciones de campo y anulaciones de opciones aplicadas:
+____
+
+[arabic]
+. {blank}
++
+____
+Abra la pestaña *Datos* en el inspector de paneles.
+____
+. {blank}
++
+____
+Haga clic en *Opciones de visualización de datos* encima de la tabla.
+____
+. {blank}
++
+____
+Haga clic en el botón de alternancia *Aplicar configuración de campo*.
+____
+
+====== Descargar resultados de consultas sin procesar como CSV
+
+Grafana genera un archivo CSV en la ubicación de descarga predeterminada de su navegador. Puede abrirlo en el visor de su elección.
+
+[arabic]
+. Abra el inspector de paneles.
+. Inspeccione los resultados de la consulta sin procesar como se describe arriba. Ajuste la configuración hasta que vea los datos sin procesar que desea exportar.
+. Haga clic en *Descargar CSV*.
+
+Para descargar un archivo CSV específicamente formateado para Excel, expanda el panel de *Opciones de datos* y habilite la opción *Descargar para Excel* antes de hacer clic en *Descargar CSV*.
+
+====== Inspeccionar el rendimiento de las consultas
+
+La pestaña Estadísticas muestra estadísticas que le indican cuánto tiempo tarda su consulta, cuántas consultas envía y la cantidad de filas devueltas. Esta información puede ayudarlo a solucionar problemas con sus consultas, especialmente si alguno de los números es inesperadamente alto o bajo.
+
+[arabic]
+. Abra el inspector de paneles.
+. Navega a la pestaña Estadísticas.
+
+Las estadísticas se muestran en formato de solo lectura.
+
+====== Ver modelo JSON del panel
+
+Explore y exporte paneles, datos de panel y modelos JSON de marco de datos.
+
+[arabic]
+. {blank}
++
+____
+Abra el inspector del panel y luego haga clic en la pestaña *JSON* o en el menú del panel haga clic en *Inspeccionar > Panel JSON*.
+____
+. {blank}
++
+____
+En Seleccionar fuente, elija una de las siguientes opciones:
+____
+* {blank}
++
+____
+*Panel JSON:* muestra un objeto JSON que representa el panel.
+____
+* {blank}
++
+____
+*Datos del panel:* muestra un objeto JSON que representa los datos que se pasaron al panel.
+____
+* {blank}
++
+____
+*Estructura de DataFrame*: muestra el conjunto de resultados sin procesar con las transformaciones, la configuración de campo y la configuración de anulaciones aplicadas.
+____
+. {blank}
++
+____
+Puede expandir o contraer partes del JSON para explorarlo, o puede hacer clic en *Copiar al portapapeles y* pegar el JSON en otra aplicación.
+____
+
+====== Ver solicitud y respuesta sin procesar a la fuente de datos
+
+[arabic]
+. Abra el inspector del panel y luego haga clic en la pestaña *Consulta* o, en el menú del panel, haga clic en *Inspeccionar > Consulta*.
+. Haga clic en *Actualizar*.
+
+Grafana envía una consulta al servidor para recopilar información y luego muestra el resultado. Ahora puede profundizar en partes específicas de la consulta, expandirla o contraerla, o copiar los datos al portapapeles para usarlos en otras aplicaciones.
+
+=== Opciones de campo y anulaciones
+
+==== Opciones de campo y anulaciones
+
+Esta sección explica qué son las opciones de campo y las anulaciones de campo en Grafana y cómo usarlas. También incluye ejemplos si necesita una idea de cómo esta función podría ser útil en el mundo real.
+
+El modelo de datos utilizado en Grafana, el marco de datos, es una estructura de tabla orientada a columnas que unifica tanto las series de tiempo como los resultados de las consultas de tabla. Cada columna dentro de esta estructura se llama _campo_. Un campo puede representar una sola serie temporal o una columna de tabla.
+
+Las opciones de campo le permiten cambiar cómo se muestran los datos en sus visualizaciones. Las opciones y anulaciones que aplica no cambian los datos, cambian la forma en que Grafana muestra los datos.
+
+===== Opciones de campo
+
+Las _opciones de campo_, tanto estándar como personalizadas, se pueden encontrar en la pestaña Campo en el editor de paneles. Los cambios en esta pestaña se aplican a todos los campos (es decir, series/columnas). Por ejemplo, si cambia la unidad a porcentaje, todos los campos con valores numéricos se muestran en porcentajes. Aprenda a aplicar una opción de campo en Configurar todos los campos.
+
+===== Anulaciones de campo
+
+Las _anulaciones de campo_ se pueden agregar en la pestaña Anulaciones en el editor de paneles. Allí puede agregar las mismas opciones que encuentra en la pestaña Campo, pero solo se aplican a campos específicos. Obtenga información sobre cómo aplicar una anulación en Configurar campos específicos.
+
+===== Opciones de campo disponibles y anulaciones
+
+Los tipos de opciones de campo son comunes tanto a las opciones de campo como a las anulaciones de campo. La única diferencia es si el cambio se aplicará a todos los campos (se aplicará en la pestaña Campo) o a un subconjunto de campos (se aplicará en la pestaña Anulaciones).
+
+[arabic]
+. Las opciones de campo estándar se aplican a todas las visualizaciones de panel que permiten transformaciones.
+. Opciones de campo de tabla, que solo se aplican a visualizaciones de tabla.
+
+===== Ejemplos
+
+A continuación, se muestran algunos ejemplos de cómo puede utilizar esta función:
+
+* Ejemplo de opción de campo
+* Ejemplo de anulación de campo
+
+==== Configurar todos los campos
+
+===== Configurar todos los campos
+
+Para cambiar la forma en que todos los campos muestran los datos, puede cambiar una opción en la pestaña Campo. En la pestaña Anulaciones, puede anular las opciones de campo para campos específicos.
+
+Por ejemplo, puede cambiar el número de lugares decimales que se muestran en todos los campos cambiando la opción *Decimales*. Para obtener más información sobre las opciones, consulte:
+
+* Opciones de campo estándar, se aplican a todas las visualizaciones que permiten transformaciones.
+* Opciones de campo de tabla, que solo se aplican a visualizaciones de panel de tabla.
+
+====== Cambiar una opción de campo
+
+Puede cambiar tantas opciones como desee.
+
+[arabic]
+. Navegue hasta el panel que desea editar, haga clic en el título del panel y luego haga clic en *Editar*.
+. Haga clic en la pestaña *Campo*.
+. Busque la opción que desea cambiar. Puede definir:
+
+* {blank}
++
+____
+Opciones de campo estándar, que se aplican a todas las visualizaciones de panel que permiten transformaciones.
+____
+* {blank}
++
+____
+Opciones de campo de tabla, que solo se aplican a visualizaciones de panel de tabla.
+____
+
+[arabic, start=4]
+. Agregue opciones agregando valores en los campos. Para devolver las opciones a los valores predeterminados, elimine el texto blanco en los campos.
+. Cuando termine, haga clic en *Guardar* para guardar todas las ediciones del panel en el tablero.
+
+====== Ejemplo de opción de campo
+
+Supongamos que nuestro conjunto de resultados es un marco de datos que consta de dos campos: tiempo y temperatura.
+
+[cols=",",options="header",]
+|===
+|tiempo |temperatura
+|2020-01-02 03:04:00 |45.0
+|2020-01-02 03:05:00 |47.0
+|2020-01-02 03:06:00 |48.0
+|===
+
+Cada campo (columna) de esta estructura puede tener aplicadas opciones de campo que alteran la forma en que se muestran sus valores. Esto significa que puede, por ejemplo, establecer la Unidad en Temperatura > Celsius, lo que da como resultado la siguiente tabla:
+
+[cols=",",options="header",]
+|===
+|tiempo |temperatura
+|2020-01-02 03:04:00 |45.0 ° C
+|2020-01-02 03:05:00 |47.0 ° C
+|2020-01-02 03:06:00 |48.0 ° C
+|===
+
+Mientras estamos en eso, el lugar decimal no agrega nada a esta pantalla. Puede cambiar los decimales de auto a cero (0), lo que da como resultado la siguiente tabla:
+
+[cols=",",options="header",]
+|===
+|tiempo |temperatura
+|2020-01-02 03:04:00 |45 ° C
+|2020-01-02 03:05:00 |47 ° C
+|2020-01-02 03:06:00 |48 ° C
+|===
+
+==== Configurar campos específicos
+
+===== Configurar campos específicos
+
+Las anulaciones le permiten cambiar la configuración de uno o más campos. Las opciones de campo para anulaciones son exactamente las mismas que las opciones de campo disponibles en una visualización en particular. La única diferencia es que usted elige a qué campos aplicarlos.
+
+Por ejemplo, puede cambiar el número de posiciones decimales que se muestran en todos los campos numéricos o columnas cambiando la opción *Decimales* para los *Campos con un tipo* que coincida con *Numérico*. Para obtener más información sobre las opciones, consulte:
+
+* Opciones de campo estándar, que se aplican a todas las visualizaciones de panel que permiten transformaciones.
+* Opciones de campo de tabla, que solo se aplican a visualizaciones de panel de tabla.
+
+====== Agregar una anulación de campo
+
+Puede anular tantas opciones de campo como desee.
+
+[arabic]
+. Navegue hasta el panel que desea editar, haga clic en el título del panel y luego haga clic en *Editar*.
+. Haga clic en la pestaña *Anulaciones*.
+. Haga clic en *Agregar una anulación para*.
+. Seleccione a qué campos se aplicará una regla de anulación:
+
+* *Campos con nombre:* seleccione un campo de la lista de todos los campos disponibles. Las propiedades que agrega a una regla con este selector solo se aplican a este único campo.
+* *Campos con expresión regular que coincida con el nombre:* especifique los campos para anularlos con una expresión regular. Las propiedades que agrega a una regla con este selector se aplican a todos los campos donde el nombre del campo coincide con la expresión regular.
+* *Campos con tipo:* seleccione campos por tipo, como cadena, numérico, etc. Las propiedades que agrega a una regla con este selector se aplican a todos los campos que coinciden con el tipo seleccionado.
+* *Campos devueltos por consulta:* seleccione todos los campos devueltos por una consulta específica, como A, B o C. Las propiedades que agregue a una regla con este selector se aplican a todos los campos devueltos por la consulta seleccionada.
+
+[arabic, start=5]
+. Haga clic en *Agregar propiedad de anulación*.
+. Seleccione la opción de campo que desea aplicar.
+
+* Opciones de campo estándar, que se aplican a todas las visualizaciones de panel que permiten transformaciones.
+* Opciones de campo de tabla, que solo se aplican a visualizaciones de panel de tabla.
+
+[arabic, start=7]
+. Ingrese opciones agregando valores en los campos. Para devolver las opciones a los valores predeterminados, elimine el texto blanco en los campos.
+. Continúe agregando anulaciones a este campo haciendo clic en *Agregar propiedad de anulación*, o puede hacer clic en *Agregar anulación* y seleccionar un campo diferente para agregar anulaciones.
+. Cuando termine, haga clic en *Guardar* para guardar todas las ediciones del panel en el tablero.
+
+====== Eliminar una anulación de campo
+
+[arabic]
+. Navegue hasta la pestaña Anulaciones que contiene la anulación que desea eliminar.
+. Haga clic en el icono de la papelera junto a la anulación.
+
+====== Ejemplo de anulación de campo
+
+Supongamos que nuestro conjunto de resultados es un marco de datos que consta de cuatro campos: tiempo, temperatura alta, temperatura baja y humedad.
+
+[cols=",,,",options="header",]
+|===
+|Tiempo |temperatura alta |temperatura baja |humedad
+|2020-01-02 03:04:00 |45.0 |30.0 |67
+|2020-01-02 03:05:00 |47.0 |34.0 |68
+|2020-01-02 03:06:00 |48.0 |31.0 |68
+|===
+
+Apliquemos las opciones de campo del ejemplo de opción de campo para aplicar la unidad Celsius y eliminar el lugar decimal. Esto da como resultado la siguiente tabla:
+
+[cols=",,,",options="header",]
+|===
+|tiempo |temperatura alta |temperatura baja |humedad
+|2020-01-02 03:04:00 |45 ° C |30 ° C |67 ° C
+|2020-01-02 03:05:00 |47 ° C |34 ° C |68 ° C
+|2020-01-02 03:06:00 |48 ° C |31 ° C |68 ° C
+|===
+
+Los campos de temperatura se ven bien, pero la humedad no tiene sentido. Podemos solucionar esto aplicando una anulación de la opción de campo al campo de humedad y cambiando la unidad a Misc > porcentaje (0-100). Esto da como resultado una tabla que tiene mucho más sentido:
+
+[cols=",,,",options="header",]
+|===
+|tiempo |temperatura alta |temperatura baja |humedad
+|2020-01-02 03:04:00 |45 ° C |30 ° C |67%
+|2020-01-02 03:05:00 |47 ° C |34 ° C |68%
+|2020-01-02 03:06:00 |48 ° C |31 ° C |68%
+|===
+
+==== Opciones de campo estándar
+
+===== Opciones de campo estándar
+
+Esta sección explica todas las opciones de campo disponibles. Se enumeran en orden alfabético.
+
+Puede aplicar opciones de campo estándar a la mayoría de los paneles integrados de Grafana. Algunos paneles antiguos y paneles comunitarios que no se han actualizado al nuevo modelo de datos y panel perderán todas o algunas de estas opciones de campo.
+
+La mayoría de las opciones de campo no afectarán la visualización hasta que haga clic fuera del cuadro de opción de campo que está editando o presione Entrar.
+
+Para obtener más información sobre cómo aplicar estas opciones, consulte:
+
+* Configurar todos los campos
+* Configurar campos específicos
+
+*Nota:* Trabajamos constantemente para agregar y expandir opciones para todas las visualizaciones, por lo que es posible que no todas las opciones estén disponibles para todas las visualizaciones.
+
+====== Decimales
+
+Número de decimales para representar el valor. Déjelo en blanco para que Grafana use el número de decimales proporcionado por la fuente de datos.
+
+Para cambiar esta configuración, escriba un número en el campo y luego haga clic fuera del campo o presione Entrar.
+
+====== Enlaces de datos
+
+Le permite controlar la URL a la que se vincula un valor o visualización.
+
+Para obtener más información e instrucciones, consulte Enlaces de datos.
+
+====== Nombre para mostrar
+
+Le permite establecer el título de visualización de todos los campos. Puede utilizar variables en el título del campo.
+
+Cuando se muestran múltiples estadísticas, campos o series, este campo controla el título en cada estadística. Puede usar expresiones como $\{__field.name} para usar solo el nombre de la serie o el nombre del campo en el título.
+
+Dado un campo con un nombre de Temp y etiquetas de \{“Loc”=“PBI”, “Sensor”=“3”}
+
+[cols=",,,",options="header",]
+|===
+|Expresión de la sintaxis |Ejemplo |Muestra |Explicación
+|$\{__field.displayName} |Igual que la sintaxis |Temp \{Loc="PBI", Sensor="3"} |Muestra el nombre del campo y las etiquetas en \{} si están presentes. Si solo hay una clave de etiqueta en la respuesta, entonces, para la parte de la etiqueta, Grafana muestra el valor de la etiqueta sin las llaves adjuntas.
+|$\{__field.name} |Igual que la sintaxis |Temp |Muestra el nombre del campo (sin etiquetas).
+|$\{__field.labels} |Igual que la sintaxis |Loc="PBI", Sensor="3" |Muestra las etiquetas sin el nombre.
+|$\{__field.labels.X} |$\{__field.labels.Loc} |PBI |Muestra el valor de la clave de etiqueta especificada.
+|$\{__field.labels.__values} |Igual que la sintaxis |PBI, 3 |Muestra los valores de las etiquetas separados por una coma (sin claves de etiqueta).
+|===
+
+Si el valor es una cadena vacía después de representar la expresión para un campo en particular, se usa el método de visualización predeterminado.
+
+====== Max
+
+Le permite establecer el valor máximo utilizado en los cálculos de umbral de porcentaje. Déjelo en blanco para el cálculo automático basado en todas las series y campos
+
+====== Min
+
+Le permite establecer el valor mínimo utilizado en los cálculos de umbral de porcentaje. Déjelo en blanco para el cálculo automático basado en todas las series y campos
+
+====== Sin valor
+
+Ingrese lo que Grafana debe mostrar si el valor del campo está vacío o es nulo.
+
+====== Unidad
+
+Le permite elegir qué unidad debe usar un campo. Haga clic en el campo *Unidad*, luego profundice hasta encontrar la unidad que desea. La unidad que seleccione se aplica a todos los campos excepto al tiempo.
+
+*Unidades personalizadas*
+
+Puede utilizar el menú desplegable de unidades para especificar también unidades personalizadas, prefijos o sufijos personalizados y formatos de fecha y hora.
+
+Para seleccionar una unidad personalizada ingrese la unidad y seleccione la última opción Custom: xxx en el menú desplegable.
+
+* suffix:<suffix> para la unidad personalizada que debe ir después del valor.
+* time:<format> Para formatos de fecha y hora personalizados, escriba, por ejemplo, time:YYYY-MM-DD. Consulte formatos para ver la sintaxis y las opciones del formato.
+* si:<base scale><unit characters> para unidades SI personalizadas. Por ejemplo: si: mF. Este es un poco más avanzado, ya que puede especificar tanto una unidad como la escala de datos de origen. Entonces, si sus datos de origen se representan como mili (miles de) algo, anteponga la unidad con ese carácter de escala SI.
+* count:<unit> para una unidad de conteo personalizada.
+* currency:<unit> para personalizar una unidad monetaria.
+
+También puede pegar un emoji nativo en el selector de unidades y seleccionarlo como una unidad personalizada:
+
+image:media\image61.png[Custom unit emoji,width=389,height=403]
+
+*Unidades de cuerda*
+
+En ocasiones, Grafana puede ser demasiado agresivo al analizar cadenas y mostrarlas como números. Para hacer que Grafana muestre la cadena original, cree una anulación de campo y agregue una propiedad de unidad con la unidad de string.
+
+====== Esquema de colores
+
+*Nota:* solo disponible en Grafana 7.3+.
+
+image:media\image62.png[Color scheme,width=624,height=584]
+
+La opción de combinación de colores define cómo Grafana colorea series o campos. Aquí hay varios modos que funcionan de manera muy diferente y su utilidad depende en gran medida de la visualización que haya seleccionado actualmente.
+
+*Color por valor* Además de derivar el color de los umbrales, también existen esquemas de color continuos (degradados). Útil para visualizaciones que colorean valores individuales. Por ejemplo, los paneles de estadísticas y el panel de la tabla. Los modos de color continuo utilizan el porcentaje de un valor relativo al mínimo y al máximo para interpolar un color.
+
+[cols=",",options="header",]
+|===
+|Modo de color |Descripción
+|*Un solo color* |Especifique un solo color, útil en una regla de anulación
+|*Desde umbrales* |Informa a Grafana para que tome el color del umbral de coincidencia
+|*Paleta clásica* |Grafana asignará color buscando un color en una paleta por índice de serie. Útil para gráficos y gráficos circulares y otras visualizaciones de datos categóricos
+|*Verde-Amarillo-Rojo (por valor)* |Esquema de color continuo
+|*Azul-Amarillo-Rojo (por valor)* |Esquema de color continuo
+|*Azules (por valor)* |Esquema de color continuo (fondo del panel a azul)
+|*Rojos (por valor)* |Esquema de color continuo (color de fondo del panel a azul)
+|*Verdes (por valor)* |Esquema de color continuo (color de fondo del panel a azul)
+|*Púrpura (por valor)* |Esquema de color continuo (color de fondo del panel a azul)
+|===
+
+====== Umbrales
+
+Los umbrales le permiten cambiar el color de un campo según el valor.
+
+Para obtener más información e instrucciones, consulte Umbrales.
+
+====== Mapeo de valor
+
+Le permite establecer reglas que traduzcan un valor de campo o rango de valores en texto explícito. Puede agregar más de un mapeo de valores.
+
+* *Tipo de asignación:* haga clic en una opción.
+** *Valor:* ingrese un valor. Si el valor del campo es mayor o igual que el valor, se muestra el *Texto*.
+** *Desde* y *Hasta:* ingrese un rango. Si el valor del campo está entre los valores del rango o es igual a ellos, se muestra el *Texto*.
+* *Texto:* texto que se muestra si se cumplen las condiciones en un campo. Este campo acepta variables.
+
+=== Visualizaciones
+
+==== Visualizaciones
+
+Grafana ofrece una variedad de visualizaciones para adaptarse a diferentes casos de uso. Esta sección de la documentación enumera las diferentes visualizaciones disponibles en Grafana y sus configuraciones de visualización únicas.
+
+Las opciones predeterminadas y sus opciones de visualización únicas se describen en las páginas de esta sección.
+
+Puede agregar más tipos de paneles con complementos.
+
+==== Opciones de leyenda del panel
+
+===== Leyenda
+
+Utilice la leyenda para ajustar cómo muestra una visualización la serie. Esta funcionalidad de leyenda solo se aplica a algunos paneles ahora, pero eventualmente será común a todas las visualizaciones.
+
+Este tema se aplica actualmente a las siguientes visualizaciones:
+
+* Panel de gráfico circular
+* Panel de series de tiempo
+
+====== Alternar serie
+
+Para alternar una serie: Haga clic en la etiqueta de la serie en la leyenda para aislar la serie en la visualización. Todas las demás series están ocultas en la visualización. Los datos de la serie oculta todavía son accesibles.
+
+Use Cmd/Ctrl+clic en la etiqueta de la serie para ocultar la serie aislada y quitar la palanca.
+
+*Nota:* esta opción es persistente cuando guarda el tablero.
+
+image:media\image63.png[Toggle series visibility,width=624,height=282]
+
+Esto crea una anulación del sistema que oculta las otras series. Puede ver esta anulación en la pestaña Anulaciones. Si elimina la anulación, se quita la alternancia.
+
+image:media\image64.png[Series toggle override example,width=600,height=208]
+
+====== Cambiar el color de la serie
+
+Haga clic en el icono de la serie (línea de color al lado de la etiqueta de la serie) en la leyenda para cambiar el color de la serie seleccionada.
+
+image:media\image65.png[Change legend series color,width=624,height=249]
+
+==== Panel de lista de alertas
+
+===== Panel de lista de alertas
+
+El Panel de la lista de alertas le permite mostrar las alertas de su tablero. Puede configurar la lista para mostrar el estado actual o los cambios de estado recientes. Puede leer más acerca de las alertas en Descripción general de las alertas.
+
+image:media\image66.png[https://grafana.com/static/img/docs/v45/alert-list-panel.png,width=624,height=147]
+
+Utilice esta configuración para refinar su visualización.
+
+====== Opciones
+
+* *Mostrar:* elija si el panel debe mostrar el estado de alerta actual o los cambios de estado de alerta recientes.
+* *Elementos máximos:* establece el número máximo de alertas para listar.
+* *Orden de clasificación:* seleccione cómo ordenar las alertas mostradas:
+** *Alfabético (asc):* orden alfabético.
+** *Alfabético (desc):* orden alfabético inverso.
+** *Importancia:* por importancia de acuerdo con los siguientes valores, siendo 1 el más alto:
+*** alertando: 1
+*** no_data: 2
+*** pendiente: 3
+*** ok: 4
+*** en pausa: 5
+* *Alertas de este tablero:* muestra alertas solo del tablero en el que se encuentra la lista de alertas.
+
+====== Filtrar
+
+Estas opciones le permiten limitar las alertas que se muestran solo a aquellas que coinciden con la consulta, carpeta o etiquetas que elija.
+
+* *Nombre de alerta:* ingrese una consulta de nombre de alerta.
+* *Título del tablero:* ingrese una consulta de título del tablero.
+* *Carpeta:* seleccione una carpeta. Solo se mostrarán las alertas de los tableros de la carpeta seleccionada.
+* *Etiquetas del panel:* seleccione una o más etiquetas. Solo se mostrarán las alertas de los tableros con una o más de las etiquetas.
+
+====== Filtro de estado
+
+Elija qué estados de alerta mostrar en este panel.
+
+* OK
+* Pausado
+* Sin datos
+* Error de ejecución
+* Alertando
+* Pendiente
+
+==== Panel de indicador de barra
+
+===== Panel de indicador de barra
+
+El indicador de barra simplifica sus datos al reducir cada campo a un solo valor. Usted elige cómo Grafana calcula la reducción.
+
+Este panel puede mostrar uno o más medidores de barra dependiendo de cuántas series, filas o columnas devuelva su consulta.
+
+image:media\image67.png[Stat panel,width=624,height=218]
+
+====== Opciones de campo y datos
+
+Las visualizaciones de barras le permiten aplicar:
+
+* Transformaciones de datos
+* Opciones de campo y anulaciones
+* Umbrales
+
+====== Opciones de pantalla
+
+Utilice las siguientes opciones para refinar su visualización:
+
+* *Mostrar:* elija cómo Grafana muestra sus datos.
+** *Calcular:* muestra un valor calculado basado en todas las filas. Para obtener una lista de los cálculos disponibles, consulte Lista de cálculos.
+** *Todos los valores:* muestra una estadística separada para cada fila. Si selecciona esta opción, también puede seleccionar un *Límite* o el número máximo de filas para mostrar.
+* *Valor:* seleccione una función de reducción que Grafana utilizará para reducir muchos campos a un solo valor. Haga clic en la lista *Valor* para ver las funciones y descripciones breves.
+* *Orientación:* elija una dirección de apilamiento.
+** *Auto:* Grafana selecciona lo que cree que es la mejor orientación.
+** *Horizontal:* las barras se estiran horizontalmente, de izquierda a derecha.
+** *Vertical:* las barras se estiran verticalmente, de arriba hacia abajo.
+* *Modo de visualización:* elija un modo de visualización.
+** *Gradiente:* los niveles de umbral definen un gradiente.
+** *LCD retro:* el medidor se divide en pequeñas celdas que están encendidas o apagadas.
+** *Básico:* color único basado en el umbral de coincidencia.
+* *Mostrar área sin relleno:* seleccione esta opción si desea representar la región sin relleno de las barras en gris oscuro. No se aplica al modo de pantalla LCD retro.
+
+==== Panel de lista de tableros
+
+===== Panel de lista de tableros
+
+El panel de lista de tableros le permite mostrar enlaces dinámicos a otros tableros. La lista se puede configurar para usar tableros marcados con estrellas, tableros visualizados recientemente, una consulta de búsqueda y etiquetas de panel.
+
+image:media\image68.png[https://grafana.com/static/img/docs/v45/dashboard-list-panels.png,width=624,height=171]
+
+En cada carga del tablero, este panel consulta la lista de tableros, proporcionando siempre los resultados más actualizados.
+
+====== Opciones
+
+Utilice estas opciones para refinar su visualización.
+
+*Opciones*
+
+* *Destacados:* muestra los tableros marcados con estrellas en orden alfabético.
+* *Visualizados recientemente:* muestra los tableros visualizados recientemente en orden alfabético.
+* *Búsqueda:* muestra tableros por consulta de búsqueda o etiquetas. Debe ingresar al menos un valor en *Consulta* o *Etiquetas*. Para los campos *Consulta* y *Etiquetas*. Se admite la interpolación de variables, por ejemplo, $my_var o $\{my_var}.
+* *Mostrar encabezados:* la selección de la lista elegida (Destacados, Visto recientemente, Buscar) se muestra como un encabezado.
+* *Elementos máximos:* establece el número máximo de elementos a listar por sección. Por ejemplo, si deja esto en el valor predeterminado de 10 y muestra los tableros Destacados y Vistos recientemente, el panel mostrará hasta 20 tableros en total, diez en cada sección.
+
+*Buscar*
+
+Estas opciones solo se aplican si se selecciona la opción *Buscar*.
+
+* *Consulta:* ingrese la consulta por la que desea realizar la búsqueda. Las consultas no distinguen entre mayúsculas y minúsculas y se aceptan valores parciales.
+* *Carpeta:* seleccione las carpetas del tablero que desea mostrar.
+* *Etiquetas:* aquí es donde ingresa las etiquetas por las que desea buscar. Tenga en cuenta que las etiquetas existentes no aparecerán a medida que escribe y _distinguen_ entre mayúsculas y minúsculas.
+
+*Nota:* Cuando aparecen varias etiquetas y cadenas, la lista de tableros muestra los que cumplen _todas_ las condiciones.
+
+==== Panel de medidor
+
+===== Panel de medidor
+
+Indicador es un panel de valor único que puede repetir un indicador para cada serie, columna o fila.
+
+image:media\image69.png[https://grafana.com/static/img/docs/v66/gauge_panel_cover.png,width=624,height=170]
+
+====== Opciones de campo y datos
+
+Las visualizaciones de medidores le permiten aplicar:
+
+* Transformaciones de datos
+* Opciones de campo y anulaciones
+* Umbrales
+
+====== Opciones de pantalla
+
+Utilice las siguientes opciones para refinar su visualización:
+
+* *Mostrar:* elija cómo Grafana muestra sus datos.
+** *Calcular:* muestra un *Valor* calculado basado en todas las filas. Para obtener una lista de los cálculos disponibles, consulte Lista de cálculos.
+** *Todos los valores:* muestra una estadística separada para cada fila. Si selecciona esta opción, también puede seleccionar un *Límite* o el número máximo de filas para mostrar.
+* *Orientación:* elija una dirección de apilamiento.
+** *Auto:* Grafana selecciona lo que cree que es la mejor orientación.
+** *Horizontal:* las barras se estiran horizontalmente, de izquierda a derecha.
+** *Vertical:* las barras se estiran verticalmente, de arriba hacia abajo.
+* *Mostrar etiquetas de umbral:* controla si se muestran los valores de umbral.
+* *Mostrar marcadores de umbral:* controla si se muestra una banda de umbral fuera de la banda de valor del medidor interior.
+
+==== Panel gráfico
+
+===== Panel gráfico
+
+Esta visualización es la más utilizada en el ecosistema Grafana. Se puede representar como una línea, una ruta de puntos o una serie de barras. Este tipo de gráfico es lo suficientemente versátil como para mostrar casi cualquier dato de series de tiempo.
+
+====== Opciones de campo y datos
+
+Las visualizaciones de gráficos le permiten aplicar:
+
+* Alertas: este es el único tipo de visualización que le permite configurar alertas.
+* Transformaciones de datos
+* Opciones de campo y anulaciones
+* Umbrales
+
+====== Opciones de pantalla
+
+Utilice esta configuración para refinar su visualización.
+
+* *Barras:* muestra los valores como un gráfico de barras.
+* *Líneas:* muestra los valores como un gráfico de líneas.
+* *Ancho de línea:* el ancho de la línea de una serie. (predeterminado 1).
+* *Escalera:* dibuja puntos adyacentes como escalera.
+* *Relleno de área:* cantidad de relleno de color para una serie. (predeterminado 1, 0 es ninguno)
+* *Rellenar degradado:* grado de degradado en el relleno del área. (0 es sin gradiente, 10 es un gradiente pronunciado. El valor predeterminado es 0).
+* *Puntos:* muestra puntos para valores.
+* *Radio de punto:* controla el tamaño de los puntos.
+* *Umbrales de alerta:* muestra los umbrales de alerta y las regiones en el panel.
+
+*Apilamiento y valor nulo*
+
+* *Pila:* cada serie se apila una encima de otra.
+* *Porcentaje:* disponible cuando se selecciona *Pila*. Cada serie se extrae como un porcentaje del total de todas las series.
+* *Valor nulo:* cómo se muestran los valores nulos. _Este es un escenario muy importante_. Vea la nota abajo.
+** *conectado:* si hay un espacio en la serie, es decir, un valor o valores nulos, la línea saltará el espacio y se conectará al siguiente valor no nulo.
+** *nulo:* (predeterminado) si hay un espacio en la serie, es decir, un valor nulo, la línea del gráfico se romperá y mostrará el espacio.
+** *nulo como cero:* si hay un espacio en la serie, es decir, un valor nulo, se mostrará como un valor cero en el panel de gráficos.
+
+*Nota:* Si está monitoreando la carga de la CPU de un servidor y la carga alcanza el 100%, entonces el servidor se bloqueará y el agente que envía las estadísticas no podrá recopilar la estadística de carga. Esto conduce a una brecha en las métricas y tener el valor predeterminado como nulo significa que Grafana mostrará las brechas e indicará que algo está mal. Si está configurado como conectado, sería fácil perder esta señal.
+
+*Información sobre herramientas flotante*
+
+Utilice esta configuración para cambiar la apariencia de la información sobre herramientas que aparece cuando pasa el cursor sobre la visualización del gráfico.
+
+* *Modo*
+** *Todas las series:* la información sobre herramientas flotante muestra todas las series en el gráfico. Grafana destaca la serie sobre la que se desplaza en negrita en la lista de series en la información sobre herramientas.
+** *Único:* la información sobre herramientas flotante muestra solo una serie única, la que está sobre la que se desplaza en el gráfico.
+* *Orden de clasificación:* ordena el orden de las series en la información sobre herramientas flotante si ha seleccionado el modo *Todas las series*. Cuando coloca el cursor sobre un gráfico, Grafana muestra los valores asociados con las líneas. Generalmente, los usuarios están más interesados ​​en los valores más altos o más bajos. Ordenar estos valores puede hacer que sea mucho más fácil encontrar los datos de interés.
+
+* *Ninguno:* el orden de las series en la información sobre herramientas está determinado por el orden de clasificación de la consulta. Por ejemplo, podrían ordenarse alfabéticamente por nombre de serie.
+* *Creciente:* las series en la información sobre herramientas flotantes se ordenan por valor y en orden creciente, con el valor más bajo en la parte superior de la lista.
+* *Decreciente:* las series en la información sobre herramientas flotantes se ordenan por valor y en orden decreciente, con el valor más alto en la parte superior de la lista.
+
+====== Anulaciones de series
+
+Las anulaciones de series permiten que una serie en un panel de gráficos se represente de manera diferente a las demás. Puede personalizar las opciones de visualización en una base por serie o mediante el uso de reglas de expresiones regulares. Por ejemplo, una serie puede tener un ancho de línea más grueso para que se destaque o se mueva al eje Y derecho.
+
+Puede agregar varias modificaciones de series.
+
+*Agregar una anulación de serie*
+
+[arabic]
+. {blank}
++
+____
+Haga clic en *Agregar anulación de serie*.
+____
+. {blank}
++
+____
+En *Alias ​​o regex*, escriba o seleccione una serie. Haga clic en el campo para ver una lista de las series disponibles.
+____
+
+*Ejemplo:* /Network.*/ coincidiría con dos series denominadas Network out y Network in.
+
+[arabic, start=3]
+. {blank}
++
+____
+Haga clic en *+* y luego seleccione un estilo para aplicarlo a la serie. Puede agregar varios estilos a cada entrada.
+____
+
+* {blank}
++
+____
+*Barras:* muestra la serie como un gráfico de barras.
+____
+* {blank}
++
+____
+*Líneas:* muestra la serie como gráfico lineal.
+____
+* {blank}
++
+____
+*Relleno de línea:* muestra un gráfico de líneas con relleno de área.
+____
+* {blank}
++
+____
+*Gradiente de relleno:* cantidad de gradiente de relleno del área.
+____
+* {blank}
++
+____
+*Ancho de línea:* establezca el ancho de línea.
+____
+* {blank}
++
+____
+*Modo de punto nulo:* opción para ignorar los valores nulos o reemplazarlos por cero. Importante si desea ignorar las lagunas en sus datos.
+____
+* {blank}
++
+____
+*Rellenar a continuación para:* rellenar el área entre dos series.
+____
+* {blank}
++
+____
+*Línea de escalera:* muestra la serie como una línea de escalera.
+____
+* {blank}
++
+____
+*Guiones:* muestra la línea con guiones.
+____
+* {blank}
++
+____
+*Serie oculta:* oculta la serie.
+____
+* {blank}
++
+____
+*Longitud del guión:* longitud de la línea discontinua.
+____
+* {blank}
++
+____
+*Espacio de guión:* espacio entre líneas discontinuas.
+____
+* {blank}
++
+____
+*Puntos:* muestra las series como puntos separados.
+____
+* {blank}
++
+____
+*Radio de punto:* radio para el renderizado de puntos.
+____
+* {blank}
++
+____
+*Pila:* establece el grupo de pila para la serie.
+____
+* {blank}
++
+____
+*Color:* establece el color de la serie.
+____
+* {blank}
++
+____
+*Eje Y:* establece el eje Y de la serie.
+____
+* {blank}
++
+____
+*Índice Z:* establece el índice Z de la serie (orden de representación). Importante al superponer diferentes estilos (gráficos de barras, gráficos de áreas).
+____
+* {blank}
++
+____
+*Transformar:* transforma el valor en negativo para renderizar debajo del eje y.
+____
+* {blank}
++
+____
+*Leyenda:* controla si una serie se muestra en la leyenda.
+____
+* {blank}
++
+____
+*Ocultar en la información sobre herramientas:* controle si se muestra una serie en la información sobre herramientas del gráfico.
+____
+
+====== Ejes
+
+Utilice estas opciones para controlar la pantalla de ejes en la visualización.
+
+*Y izquierdo/Y derecho*
+
+Las opciones son idénticas para ambos ejes Y.
+
+* *Mostrar:* haga clic para mostrar u ocultar el eje.
+* *Unidad:* la unidad de visualización del valor Y.
+* *Escala:* la escala que se utilizará para el valor Y, lineal o logarítmico. (lineal predeterminado)
+* *Y-Min:* el valor Y mínimo. (auto predeterminado)
+* *Y-Max:* el valor Y máximo. (autopredeterminado)
+* *Decimales:* define cuántos decimales se muestran para el valor Y. (auto predeterminado)
+* *Etiqueta:* la etiqueta del eje Y. (defecto "")
+
+*Ejes Y*
+
+* *Alinear:* seleccione esta opción para alinear los ejes Y izquierdo y derecho por valor. (predeterminado sin marcar/falso)
+* *Nivel:* disponible cuando se selecciona *Alinear*. Valor que se utilizará para la alineación de los ejes Y izquierdo y derecho, comenzando desde Y=0. (predeterminado 0)
+
+*Eje X*
+
+* {blank}
++
+____
+*Mostrar:* haga clic para mostrar u ocultar el eje.
+____
+* {blank}
++
+____
+*Modo:* el modo de visualización cambia completamente la visualización del panel de gráficos. Es como tres paneles en uno. El modo principal es el modo de serie temporal con el tiempo en el eje X. Los otros dos modos son un modo de gráfico de barras básico con series en el eje X en lugar de tiempo y un modo de histograma.
+____
+** {blank}
++
+____
+*Tiempo:* (predeterminado) El eje X representa el tiempo y los datos están agrupados por tiempo (por ejemplo, por hora o por minuto).
+____
+** {blank}
++
+____
+*Serie:* los datos se agrupan por series y no por tiempo. El eje Y todavía representa el valor.
+____
+** {blank}
++
+____
+*Valor:* el tipo de agregación que se utilizará para los valores. El valor predeterminado es total (sumando los valores).
+____
+** {blank}
++
+____
+*Histograma:* convierte el gráfico en un histograma. Un histograma es una especie de gráfico de barras que agrupa números en rangos, a menudo llamados cubos o contenedores. Las barras más altas muestran que más datos caen en ese rango.
+____
+
+____
+Para obtener más información sobre histogramas, consulte Introducción a los histogramas y mapas de calor.
+____
+
+* {blank}
++
+____
+*Cubos*: la cantidad de cubos por los que agrupar los valores. Si se deja vacío, Grafana intenta calcular una cantidad adecuada de cubos.
+____
+* {blank}
++
+____
+*X-Min:* filtra los valores del histograma que están por debajo de este límite mínimo.
+____
+* {blank}
++
+____
+*X-Max:* filtra los valores que superan este límite máximo.
+____
+
+====== Leyenda
+
+Utilice esta configuración para refinar cómo aparece la leyenda en su visualización.
+
+*Opciones*
+
+* *Mostrar:* desmarque para ocultar la leyenda. (por defecto marcado/verdadero)
+* *Como tabla:* marque para mostrar la leyenda en la tabla. (por defecto marcado/verdadero)
+* *A la derecha:* marque para mostrar la leyenda a la derecha.
+* *Ancho:* disponible cuando se selecciona *A la derecha*. Introduzca el ancho mínimo de la leyenda en píxeles.
+
+*Valores*
+
+Se pueden mostrar valores adicionales junto a los nombres de las leyendas:
+
+* *Min:* mínimo de todos los valores devueltos por la consulta de métricas.
+* *Max:* máximo de todos los valores devueltos por la consulta de métricas.
+* *Promedio:* promedio de todos los valores devueltos por la consulta de métricas.
+* *Actual:* último valor devuelto por la consulta de métricas.
+* *Total:* suma de todos los valores devueltos por la consulta de métricas.
+* *Decimales:* controla cuántos decimales se muestran para los valores de leyenda y la información sobre herramientas flotante del gráfico.
+
+Grafana calcula los valores de la leyenda en el lado del cliente y dependen del tipo de agregación o consolidación de puntos que utilice su consulta de métricas. Todos los valores de leyenda anteriores no pueden ser correctos al mismo tiempo.
+
+Por ejemplo, si traza una tasa como solicitudes/segundo, probablemente esté usando el promedio como un agregador, entonces el Total en la leyenda no representará el número total de solicitudes. Es solo la suma de todos los puntos de datos recibidos por Grafana.
+
+*Ocultar serie*
+
+Ocultar series cuando todos los valores de una serie de una consulta de métricas tienen un valor específico.
+
+* *Con solo nulos:* Valor nulo (predeterminado sin marcar)
+* *Con solo ceros:* Valo =cero (predeterminado sin marcar)
+
+*Regiones de tiempo*
+
+Las regiones de tiempo le permiten resaltar ciertas regiones de tiempo del gráfico para que sea más fácil ver, por ejemplo, los fines de semana, el horario comercial y / o las horas libres. Todas las regiones horarias configuradas se refieren a la hora UTC.
+
+==== Panel de mapa de calor
+
+===== Panel de mapa de calor
+
+La visualización del Panel mapa de calor le permite ver histogramas a lo largo del tiempo. Para obtener más información sobre histogramas, consulte Introducción a los histogramas y mapas de calor.
+
+image:media\image70.jpeg[https://grafana.com/static/img/docs/v43/heatmap_panel_cover.jpg,width=624,height=62]
+
+====== Opciones de ejes
+
+Utilice esta configuración para ajustar cómo se muestran los ejes en su visualización.
+
+*Eje Y*
+
+* *Unidad:* la unidad de visualización para el valor del eje Y
+* *Escala:* la escala que se utilizará para el valor del eje Y.
+** *linear:* escala lineal.
+** *log (base 2):* Escala logarítmica con base 2.
+** *log (base 10):* Escala logarítmica con base 10.
+** *log (base 32):* Escala logarítmica con base 32.
+** *log (base 1024):* escala logarítmica con base 1024.
+* *Y-Min:* el valor Y mínimo (auto predeterminado).
+* *Y-Max:* el valor Y máximo (auto predeterminado).
+* *Decimales:* número de decimales para representar los valores del eje Y (auto predeterminado).
+
+*Cubos*
+
+*Nota:* Si el formato de los datos son *Cubos de series temporales*, esta sección no estará disponible.
+
+* *Cubos del eje Y:* número de cubos en el que se dividirá el eje Y.
+* *Tamaño:* (solo visible si la *Escala* es lineal). Tamaño de cada cubo del eje Y. Esta opción tiene prioridad sobre los *Cubos del Eje Y*.
+* *Factor de división:* (solo visible si la *Escala* es _logarítmica_ _(base 2)_ o superior). De forma predeterminada, Grafana divide los valores de Y por base logarítmica. Esta opción permite dividir cada cubo predeterminado en un número específico de cubos.
+* *Cubos del eje X:* número de cubos en los que se dividirá el eje X.
+* *Tamaño:* tamaño de cada cubo del eje X. Número o intervalo de tiempo (10s, 5m, 1h, etc.). Intervalos admitidos: ms, s, m, h, d, w, M, y. Esta opción tiene prioridad sobre los *Cubos del Eje X*.
+
+*Atado al cubo*
+
+Cuando el Formato de datos es Cubos de series temporales, la fuente de datos devuelve series con nombres que representan el límite del cubo. Pero según la fuente de datos, un límite puede ser superior o inferior. Esta opción permite ajustar un tipo de límite. Si se configura Auto, se elegirá una opción enlazada en función del tipo de fuente de datos de los paneles.
+
+*Tamaño del cubo*
+
+Grafana utiliza las opciones de tamaño y recuento de cubos para calcular el tamaño de cada celda en el mapa de calor. Puede definir el tamaño del cubo por recuento (el primer cuadro de entrada) o especificando un intervalo de tamaño. Para el eje Y, el intervalo de tamaño es solo un valor, pero para el cubo X puede especificar un intervalo de tiempo en la entrada Tamaño, por ejemplo, el rango de tiempo 1h. Esto hará que las celdas tengan 1 hora de ancho en el eje X.
+
+*Formato de datos*
+
+Elija una opción en la lista *Formato*.
+
+* *Series temporales:* Grafana clasifica todos los valores de las series temporales. Los tamaños e intervalos de los cubos se establecen en las opciones de Cubos.
+* *Cubos de series temporales:* cada serie temporal ya representa un depósito del eje Y. El nombre de la serie temporal (alias) debe ser un valor numérico que represente el intervalo superior o inferior del cubo. Grafana no clasifica, por lo que las opciones de tamaño del cubo están ocultas.
+
+====== Opciones de pantalla
+
+Utilice esta configuración para refinar su visualización.
+
+*Colores*
+
+El espectro de colores controla el mapeo entre el recuento de valores (en cada cubo) y el color asignado a cada cubo. El color más a la izquierda del espectro representa el recuento mínimo y el color del lado derecho representa el recuento máximo. Algunos esquemas de color se invierten automáticamente cuando se usa el tema de día.
+
+También puede cambiar el modo de color a Opacidad. En este caso, el color no cambiará, pero la cantidad de opacidad cambiará con el recuento de cubos.
+
+* *Modo*
+** *opacidad:* valor del cubo representado por la opacidad de la celda. Celda opaca significa valor máximo.
+*** *Color:* color base de la celda.
+*** *Escala:* escala para asignar los valores del cubo a la opacidad.
+**** *linear:* escala lineal. El valor del cubo se asigna linealmente a la opacidad.
+**** *sqrt:* escala de potencia. Opacidad de celda calculada como valor ^ k, donde k es un valor de *Exponente* configurado. Si el exponente es menor que 1, obtendrás una escala logarítmica. Si el exponente es mayor que 1, obtendrás una escala exponencial. En el caso de 1, la escala será la misma que la lineal.
+*** *Exponente:* valor del exponente, mayor que 0.
+** *espectro:* valor del cubo representado por el color de la celda.
+*** *Esquema:* si el modo es *espectro*, seleccione un esquema de color.
+
+*Escala de colores*
+
+De forma predeterminada, Grafana calcula los colores de las celdas en función de los valores mínimos y máximos de los cubos. Con Min y Max puede sobrescribir esos valores. Piense en un valor de cubo como un eje Z y Min y Max como Z-Min y Z-Max respectivamente.
+
+* *Min:* valor mínimo que se utiliza para el cálculo del color de la celda. Si el valor del cubo es menor que Min, entonces se asigna al color "mínimo". El valor predeterminado es el valor mínimo de la serie.
+* *Max:* valor máximo que se utiliza para el cálculo del color de la celda. Si el valor del depósito es mayor que Max, entonces se asigna al color "máximo". El valor predeterminado es el valor máximo de la serie.
+
+*Leyenda*
+
+Elija si desea mostrar la leyenda del mapa de calor en la visualización o no.
+
+*Cubos*
+
+* *Ocultar cero:* no dibuje celdas con valores cero.
+* *Espacio:* espacio en píxeles entre celdas. El valor predeterminado es 1 píxel.
+* *Redondo:* redondez de la celda en píxeles. El valor predeterminado es 0.
+
+*Información sobre herramientas*
+
+* *Mostrar información sobre herramientas:* muestra información sobre herramientas de mapa de calor.
+* *Histograma:* muestra el histograma del eje Y en la información sobre herramientas. El histograma representa la distribución de los valores del cubo para la marca de tiempo específica.
+* *Decimales:* número de decimales para representar el valor del cubo (auto predeterminado).
+
+==== Panel de registros
+
+===== Panel de registros
+
+La visualización del panel de registros muestra líneas de registro de fuentes de datos que admiten registros, como Elastic, Influx y Loki. Normalmente, utilizaría este panel junto a un panel de gráficos para mostrar la salida del registro de un proceso relacionado.
+
+*Nota:* El panel Registros solo está disponible en Grafana v6.4 +.
+
+image:media\image71.png[https://grafana.com/static/img/docs/v64/logs-panel.png,width=624,height=208]
+
+El panel de registros muestra el resultado de las consultas que se ingresaron en la pestaña Consulta. Los resultados de varias consultas se combinan y ordenan por tiempo. Puede desplazarse dentro del panel si la fuente de datos devuelve más líneas de las que se pueden mostrar a la vez.
+
+Para limitar el número de líneas renderizadas, puede usar la configuración de *Puntos de datos máximos* en las *Opciones de consulta*. Si no se establece, la fuente de datos generalmente aplicará un límite predeterminado.
+
+====== Nivel de registro
+
+Para los registros donde se especifica una etiqueta de *nivel*, usamos el valor de la etiqueta para determinar el nivel del registro y actualizar el color en consecuencia. Si el registro no tiene una etiqueta de nivel especificada, analizamos el registro para averiguar si su contenido coincide con alguna de las expresiones admitidas (consulte a continuación para obtener más información). El nivel de registro siempre está determinado por la primera coincidencia. En caso de que Grafana no pueda determinar un nivel de registro, se visualizará con un nivel de registro *desconocido*. Consulte los niveles de registro admitidos y las asignaciones de abreviaturas y expresiones de nivel de registro.
+
+*Opciones de pantalla*
+
+Utilice esta configuración para refinar su visualización:
+
+* *Tiempo:* muestra u oculta la columna de tiempo. Esta es la marca de tiempo asociada con la línea de registro según lo informado desde la fuente de datos.
+* *Etiquetas únicas:* muestra u oculta la columna de etiquetas únicas, que muestra solo etiquetas no comunes.
+* *Ajustar líneas:* alternar el ajuste de líneas.
+* *Orden:* muestra los resultados en orden de tiempo descendente o ascendente. El valor predeterminado es *Descendente*, mostrando primero los registros más recientes. Configure en *Ascendente* para mostrar primero las líneas de registro más antiguas.
+
+==== Panel de noticias
+
+===== Panel de noticias
+
+Este panel muestra una fuente RSS. De forma predeterminada, muestra artículos del blog de Grafana Labs.
+
+Introduzca la URL de un RSS en el campo URL de la sección Visualización. Este tipo de panel no acepta otras consultas.
+
+==== Panel de gráfico de nodo
+
+===== Panel de gráfico de nodo
+
+*Nota*: este panel se encuentra actualmente en fase beta. Espere cambios en versiones futuras.
+
+El _Gráfico de nodo_ puede visualizar gráficos o redes dirigidos. Utiliza un diseño de fuerza dirigida para posicionar de manera efectiva los nodos de modo que pueda ayudar a mostrar mapas de infraestructura complejos, jerarquías o diagramas de ejecución.
+
+image:media\image72.png[Node graph panel,width=624,height=331]
+
+====== Requerimientos de datos
+
+El Panel de gráficos de nodos requiere una forma específica de los datos para poder mostrar sus nodos y bordes. Esto significa que no todas las fuentes de datos o consultas se pueden visualizar en este panel. Si desea utilizar esto como desarrollador de fuentes de datos, consulte la sección sobre API de datos.
+
+La visualización del Gráfico de nodos consta de _nodos_ y _bordes_.
+
+* Un _nodo_ se muestra como un círculo. Un nodo puede representar una aplicación, un servicio o cualquier otra cosa que sea relevante desde la perspectiva de una aplicación.
+* Un _borde_ se muestra como una línea que conecta dos nodos. La conexión puede ser una solicitud, una ejecución o alguna otra relación entre los dos nodos.
+
+Tanto los nodos como los bordes pueden tener metadatos o estadísticas asociados. La fuente de datos define qué información y valores se muestran, por lo que diferentes fuentes de datos pueden mostrar diferentes tipos de valores o no mostrar algunos valores.
+
+*Nodos*
+
+*Nota:* En este momento, el gráfico de nodos solo puede mostrar 1500 nodos. Si se cruza este límite, aparecerá una advertencia en la esquina superior derecha.
+
+Por lo general, los nodos muestran dos valores estadísticos dentro del nodo y dos identificadores justo debajo del nodo, generalmente el nombre y el tipo. Los nodos también pueden mostrar otro conjunto de valores como un círculo de color alrededor del nodo, con secciones de diferentes colores que representan diferentes valores que deben sumar 1.
+
+Por ejemplo, puede tener el porcentaje de errores representado por la parte roja del círculo. Se pueden mostrar detalles adicionales en un menú contextual cuando se muestra al hacer clic en el nodo. También puede haber enlaces adicionales en el menú contextual que pueden apuntar a otras partes de Grafana o cualquier enlace externo.
+
+image:media\image73.gif[Node graph navigation,width=624,height=415]
+
+*Bordes*
+
+Los bordes también pueden mostrar estadísticas cuando se desplaza sobre el borde. De manera similar a los nodos, puede abrir un menú contextual con detalles y enlaces adicionales haciendo clic en el borde.
+
+La primera fuente de datos que admite esta visualización es la fuente de datos de Rayos X para su función de Mapa de servicio. Para obtener más información, consulte la documentación del complemento de Rayos X.
+
+====== Navegando por el gráfico de nodos
+
+Puede desplazarse y acercar o alejar el gráfico de nodos.
+
+*Desplazar*
+
+Puede desplazar la vista haciendo clic fuera de cualquier nodo o borde y arrastrando el mouse.
+
+*Acercar o alejar*
+
+Use los botones en la esquina superior izquierda o use la rueda del mouse, el panel táctil de desplazamiento, junto con la tecla Ctrl o Cmd para acercar o alejar.
+
+====== API de datos
+
+Esta visualización necesita una forma específica de los datos que se devolverán desde la fuente de datos para mostrarlos correctamente.
+
+La fuente de datos debe devolver dos marcos de datos, uno para los nodos y otro para los bordes, y también debe establecer frame.meta.preferredVisualisationType = 'nodeGraph' en ambos marcos de datos.
+
+*Parámetros de nodo*
+
+Campos requeridos:
+
+[cols=",,",options="header",]
+|===
+|Nombre de campo |Tipo |Descripción
+|id |cadena |Identificador único del nodo. Se hace referencia a este ID por borde en su campo de origen y destino.
+|===
+
+Campos opcionales:
+
+[cols=",,",options="header",]
+|===
+|Nombre de campo |Tipo |Descripción
+|title |cadena |Nombre del nodo visible justo debajo del nodo.
+|subTitle |cadena |Adicional, nombre, tipo u otro identificador que se mostrará justo debajo del título.
+|mainStat |cadena/número |Primera estadística que se muestra dentro del propio nodo. Puede ser una cadena, en cuyo caso el valor se mostrará tal cual o puede ser un número, en cuyo caso también se mostrará cualquier unidad asociada con ese campo.
+|secundarioStat |cadena/número |Igual que mainStat pero se muestra justo debajo de él dentro del nodo.
+|arc__* |número |Cualquier campo con el prefijo arc__ se utilizará para crear el círculo de color alrededor del nodo. Todos los valores en estos campos deben sumar 1. Puede especificar el color usando config.color.fixedColor.
+|detail__* |cadena/número |Cualquier campo con el prefijo detail__ se mostrará en el encabezado del menú contextual cuando se haga clic en el nodo. Utilice config.displayName para una etiqueta más legible por humanos.
+|===
+
+*Parámetros de borde*
+
+Campos requeridos:
+
+[cols=",,",options="header",]
+|===
+|Nombre de campo |Tipo |Descripción
+|Id |cadena |Identificador único del borde.
+|source |cadena |Id del nodo de origen.
+|target |cadena |Id del objetivo.
+|===
+
+Campos opcionales:
+
+[cols=",,",options="header",]
+|===
+|Nombre de campo |Tipo |Descripción
+|mainStat |cadena/número |Primera estadística que se muestra en la superposición al pasar el cursor sobre el borde. Puede ser una cadena, en cuyo caso el valor se mostrará tal cual o puede ser un número, en cuyo caso también se mostrará cualquier unidad asociada con ese campo.
+|secondaryStat |cadena/número |Igual que mainStat pero se muestra justo debajo de él.
+|detail__* |cadena/número |Cualquier campo con el prefijo detail__ se mostrará en el encabezado del menú contextual cuando se haga clic en el borde. Utilice config.displayName para una etiqueta más legible por humanos.
+|===
+
+==== Panel de gráfico circular
+
+===== Panel de gráfico circular v2
+
+*Nota:* esta documentación se refiere a una función beta.
+
+El gráfico circular muestra series reducidas, o valores en una serie, de una o más consultas, según se relacionan entre sí, en forma de porciones de un pastel. La longitud del arco, el área y el ángulo central de un corte son proporcionales al valor de los cortes, ya que se relaciona con la suma de todos los valores. Este tipo de gráfico se utiliza mejor cuando desea una comparación rápida de un pequeño conjunto de valores en una forma estéticamente agradable.
+
+image:media\image74.png[Pie chart panel,width=624,height=277]
+
+====== Opciones de campo y datos
+
+Las visualizaciones de gráficos circulares le permiten aplicar:
+
+* Transformaciones de datos
+* Opciones de campo y anulaciones
+* Umbrales
+
+====== Opciones de pantalla
+
+Utilice las siguientes opciones para refinar su visualización:
+
+*Mostrar*
+
+Elija cuánta información mostrar.
+
+* *Calcular:* reduce cada valor a un solo valor por serie.
+* *Todos los valores:* muestra todos los valores de una única serie.
+
+*Cálculo*
+
+Seleccione un cálculo para reducir cada serie cuando se haya seleccionado Calcular. Para obtener información sobre los cálculos disponibles, consulte la Lista de cálculos.
+
+*Límite*
+
+Cuando se muestran todos los valores de una sola serie, esto limita el número de valores mostrados.
+
+*Campos*
+
+Seleccione qué campo o campos mostrar en la visualización. Cada nombre de campo está disponible en la lista, o puede seleccionar una de las siguientes opciones:
+
+* *Campos numéricos:* todos los campos con valores numéricos.
+* *Todos los campos:* todos los campos que no se eliminan mediante transformaciones.
+* *Tiempo:* todos los campos con valores de tiempo.
+
+*Tipo de gráfico circular*
+
+Seleccione el estilo de visualización del gráfico circular.
+
+*_Tarta_*
+
+image:media\image75.png[Pie type chart,width=396,height=396]
+
+*_Rosquilla_*
+
+image:media\image76.png[Donut type chart,width=395,height=394]
+
+*_Etiquetas_*
+
+Seleccione etiquetas para mostrar en el gráfico circular. Puede seleccionar más de una.
+
+* *Nombre:* el nombre de la serie o del campo.
+* *Porcentaje:* el porcentaje del total.
+* *Valor:* el valor numérico sin procesar.
+
+Las etiquetas se muestran en blanco sobre el cuerpo del gráfico. Es posible que deba seleccionar colores de gráfico más oscuros para hacerlos más visibles. Los nombres o números largos pueden aparecer recortados.
+
+El siguiente ejemplo muestra un gráfico circular con las etiquetas de *Nombre* y *Porcentaje*.
+
+image:media\image77.png[Pie chart labels,width=400,height=398]
+
+*Modo de la leyenda*
+
+Utilice esta configuración para refinar cómo aparece la leyenda en su visualización.
+
+* *Lista:* muestra la leyenda como una lista. Este es un modo de visualización predeterminado de la leyenda.
+* *Tabla:* muestra la leyenda como una tabla.
+* *Oculto:* oculta la leyenda.
+
+*Colocación de la leyenda*
+
+Elija dónde mostrar la leyenda.
+
+* *Abajo:* debajo del gráfico.
+* *Derecha:* a la derecha del gráfico.
+
+*Valores de leyenda*
+
+Seleccione valores para mostrar en la leyenda. Puede seleccionar más de uno.
+
+* *Porcentaje:* el porcentaje del total.
+* *Valor:* el valor numérico sin procesar.
+
+==== Panel de estadísticas
+
+===== Panel de estadísticas
+
+El Panel de estadísticas muestra un valor de estadística grande con un minigráfico de gráficos opcional. Puede controlar el color de fondo o el valor mediante umbrales.
+
+image:media\image78.png[Stat panel,width=624,height=95]
+
+*Nota:* Este panel reemplaza al panel Singlestat, que quedó obsoleto en Grafana 7.0.
+
+De forma predeterminada, el Panel de estadísticas muestra uno de los siguientes:
+
+* Solo el valor de una sola serie o campo.
+* Tanto el valor como el nombre de varias series o campos.
+
+Puede utilizar el *Modo texto* para controlar si el texto se muestra o no.
+
+Captura de pantalla de ejemplo:
+
+image:media\image79.png[Stat panel,width=624,height=277]
+
+====== Opciones de campo y datos
+
+Las visualizaciones de estadísticas le permiten aplicar:
+
+* Transformaciones de datos
+* Opciones de campo y anulaciones
+* Umbrales
+
+====== Ajuste de diseño automático
+
+El panel ajusta automáticamente el diseño según el ancho y la altura disponibles en el tablero. Oculta automáticamente el gráfico (minigráfico) si el panel se vuelve demasiado pequeño.
+
+====== Opciones de pantalla
+
+Utilice las siguientes opciones para refinar su visualización:
+
+* *Mostrar:* elija cómo Grafana muestra sus datos.
+** *Calcular:* muestra un valor calculado basado en todas las filas.
+*** *Cálculo:* seleccione un cálculo para aplicar. Para obtener información sobre los cálculos disponibles, consulte la Lista de cálculos.
+** *Todos los valores:* muestra una estadística separada para cada fila.
+*** *Límite:* el número máximo de filas que se mostrarán.
+* *Campos:* seleccione un nombre de campo o tipo de campo (incluidos *Todos los campos* o *Campos numéricos*) para incluirlo en este panel.
+* *Valor:* seleccione una función de reducción que Grafana utilizará para reducir muchos campos a un solo valor. Haga clic en la lista *Valor* para ver las funciones y descripciones breves.
+* *Orientación:* elija una dirección de apilamiento.
+** *Auto:* Grafana selecciona lo que cree que es la mejor orientación.
+** *Horizontal:* las barras se estiran horizontalmente, de izquierda a derecha.
+** *Vertical:* las barras se estiran verticalmente, de arriba hacia abajo.
+* *Modo de texto:* (solo disponible en Grafana 7.1+). Puede usar la opción Modo de texto para controlar qué texto muestra el panel. Si el valor no es importante, solo el nombre y el color lo son, cambie el *Modo de texto* a *Nombre*. El valor se seguirá utilizando para determinar el color y se muestra en una información sobre herramientas.
+** *Automático:* si los datos contienen varias series o campos, muestra tanto el nombre como el valor.
+** *Valor:* muestra solo el valor, nunca el nombre. En su lugar, el nombre se muestra en la información sobre herramientas flotante.
+** *Valor y nombre:* muestre siempre el valor y el nombre.
+** *Nombre:* muestra el nombre en lugar del valor. El valor se muestra en la información sobre herramientas flotante.
+** *Ninguno:* no muestra nada (vacío). El nombre y el valor se muestran en la información sobre herramientas flotante.
+* *Modo de color*
+** *Valor:* colorea solo el valor y el área del gráfico.
+** *Fondo:* también colorea el fondo.
+* *Modo gráfico*
+** *Ninguno:* oculta el gráfico y solo muestra el valor.
+** *Área:* muestra el gráfico de área debajo del valor. Esto requiere que su consulta devuelva una columna de tiempo.
+* *Modo de alineación:* elija un modo de alineación.
+** *Automático:* si solo se muestra un valor único (sin repetición), el valor está centrado. Si se muestran varias series o filas, el valor se alinea a la izquierda.
+** *Centro:* el valor de estadística está centrado.
+
+==== Panel de tabla
+
+===== Panel de tabla
+
+El panel de la tabla es muy flexible y admite múltiples modos para series de tiempo y para tablas, anotaciones y datos JSON sin procesar. Este panel también proporciona opciones de formato de fecha, formato de valor y coloración.
+
+image:media\image80.png[Table visualization,width=624,height=213]
+
+====== Opciones de campo y datos
+
+Las visualizaciones de tablas le permiten aplicar:
+
+* Transformaciones de datos
+* Opciones de campo y anulaciones
+* Umbrales
+
+====== Opciones de pantalla
+
+*Nota:* Si está utilizando una visualización de tabla creada antes de Grafana 7.0, debe migrar a la nueva versión de tabla para ver estas opciones. Para migrar, en la pestaña Panel, haga clic en Visualización de *tabla*. Grafana actualiza la versión de la tabla y luego puede acceder a todas las opciones de la tabla.
+
+* *Mostrar encabezado:* muestra u oculta los nombres de las columnas importadas de su fuente de datos.
+* *Orden ascendente / descendente:* haga clic en el título de una columna para cambiar el orden de clasificación de predeterminado a descendente a ascendente. Cada vez que hace clic, el orden de clasificación cambia a la siguiente opción del ciclo. Solo puede ordenar por una columna a la vez.
+
+____
+image:media\image81.png[Sort descending,width=400,height=147]
+____
+
+* Las opciones de campo de la tabla le permiten cambiar las opciones de campo, como el ancho de columna, la alineación y el modo de visualización de celda.
+* Filtrar columnas de la tabla: puede cambiar temporalmente cómo se muestran los datos de las columnas. Por ejemplo, puede ordenar los valores de mayor a menor u ocultar valores específicos.
+
+====== Soporte de anotaciones
+
+Actualmente, las anotaciones no son compatibles con el nuevo panel de la tabla. Esto podría volver a agregarse en una versión futura.
+
+===== Opciones de campo de tabla
+
+====== Opciones de campo de tabla
+
+Esta sección explica todas las opciones de campo de tabla disponibles. Se enumeran en el mismo orden que en Grafana. Las opciones enumeradas en este tema se aplican solo a las visualizaciones del panel de tabla.
+
+La mayoría de las opciones de campo no afectarán la visualización hasta que haga clic fuera del cuadro de opción de campo que está editando o presione Entrar.
+
+Para obtener más información sobre cómo aplicar estas opciones, consulte:
+
+* Configurar todos los campos
+* Configurar campos específicos
+
+*Alineación de columnas*
+
+Elija cómo Grafana debe alinear el contenido de la celda:
+
+* Auto (predeterminado)
+* Izquierda
+* Centrar
+* Derecha
+
+*Ancho de columna*
+
+De forma predeterminada, Grafana calcula automáticamente el ancho de la columna en función del contenido de la celda. En esta opción de campo, puede anular la configuración y definir el ancho de todas las columnas en píxeles.
+
+Por ejemplo, si ingresa 100 en el campo, cuando haga clic fuera del campo, todas las columnas se establecerán en 100 píxeles de ancho.
+
+*Modo de visualización de celda*
+
+De forma predeterminada, Grafana elige automáticamente la configuración de pantalla. Puede anular la configuración eligiendo una de las siguientes opciones para cambiar todos los campos.
+
+*Nota:* Si los configura en la pestaña Campo, los modos de visualización se aplicarán a todos los campos, incluido el campo de tiempo. Muchas opciones funcionarán mejor si las configura en la pestaña Anular.
+
+*_Texto en color_*
+
+Si se establecen umbrales, el texto del campo se muestra en el color de umbral apropiado.
+
+image:media\image82.png[Color text,width=400,height=118]
+
+*_Fondo de color (degradado o sólido)_*
+
+Si se establecen umbrales, el fondo del campo se muestra en el color de umbral apropiado.
+
+image:media\image83.png[Color background,width=398,height=107]
+
+*_Medidor de gradiente_*
+
+Los niveles de umbral definen un gradiente.
+
+image:media\image84.png[Gradient gauge,width=398,height=133]
+
+*_Indicador LCD_*
+
+El medidor se divide en pequeñas celdas que están encendidas o apagadas.
+
+image:media\image85.png[LCD gauge,width=400,height=169]
+
+*_Vista JSON_*
+
+Muestra el valor formateado como código. Si un valor es un objeto, la vista JSON que permite navegar por el objeto JSON aparecerá al pasar el mouse.
+
+image:media\image86.png[JSON view,width=398,height=113]
+
+*_Imagen_*
+
+Solo disponible en Grafana 7.3+
+
+Si tiene un valor de campo que es una URL de imagen o una imagen codificada en base64, puede configurar la tabla para que se muestre como una imagen.
+
+*Filtro de columna*
+
+Nota: esta función está disponible en Grafana 7.2+.
+
+Active esta opción para habilitar los filtros de campo de la tabla. Para obtener más información, consulte Filtrar columnas de la tabla.
+
+===== Filtrar columnas de la tabla
+
+====== Filtrar columnas de la tabla
+
+*Nota:* esta función está disponible en Grafana 7.2+.
+
+Si activa el *Filtro de columna* en las Opciones de la tabla, puede filtrar las opciones de la tabla.
+
+*Activar el filtrado de columnas*
+
+[arabic]
+. En Grafana, navegue hasta el tablero con la tabla con las columnas que desea filtrar.
+. En el panel de la tabla que desea filtrar, abra el editor de paneles.
+. Haga clic en la pestaña *Campo*.
+. En las Opciones de la tabla, active la opción de *Filtro de columna*.
+
+Aparece un icono de filtro junto al título de cada columna.
+
+image:media\image87.png[Column filtering turned on,width=512,height=99]
+
+*Filtrar valores de columna*
+
+Para filtrar valores de columna, haga clic en el icono de filtro (embudo) junto al título de una columna. Grafana muestra las opciones de filtro para esa columna.
+
+image:media\image88.png[Filter column values,width=390,height=500]
+
+Haga clic en la casilla de verificación junto a los valores que desea mostrar. Ingrese texto en el campo de búsqueda en la parte superior para mostrar esos valores en la pantalla para que pueda seleccionarlos en lugar de desplazarse para encontrarlos.
+
+*Borrar filtros de columna*
+
+Las columnas con filtros aplicados tienen un embudo azul junto al título.
+
+image:media\image89.png[Filtered column,width=162,height=193]
+
+Para eliminar el filtro, haga clic en el icono de embudo azul y luego haga clic en *Borrar filtro*.
+
+==== Panel de texto
+
+===== Panel de texto
+
+El panel de texto le permite crear paneles de información y descripción para sus tableros.
+
+En el *Modo*, seleccione si desea utilizar Markdown o HTML para darle estilo a su texto, luego ingrese el contenido en el cuadro a continuación. Grafana incluye un título y un párrafo para ayudarlo a comenzar, o puede pegar contenido de otro editor.
+
+==== Panel de series de tiempo
+
+===== Panel de series de tiempo
+
+*Nota:* esta es una función beta. El panel de series de tiempo reemplazará al panel de gráficos en las versiones futuras.
+
+El panel de series de tiempo es una visualización robusta para trazar datos de series de tiempo. Se puede representar como una línea, una ruta de puntos o una serie de barras. Este tipo de gráfico es lo suficientemente versátil como para mostrar casi cualquier dato de series de tiempo.
+
+Para ver ejemplos de Paneles de series temporales, consulte las nuevas funciones del tablero de Grafana Play en v7.4.
+
+====== Opciones de campo y datos
+
+Las visualizaciones de series de tiempo le permiten aplicar:
+
+* Transformaciones de datos
+* Opciones de campo y anulaciones
+* Umbrales
+
+También puede usar las opciones de campo para crear diferentes tipos de gráficos o ajustar sus ejes:
+
+* Graficar series de tiempo como líneas
+* Graficar series de tiempo como barras
+* Graficar series de tiempo como puntos
+* Cambiar visualización de eje
+
+====== Opciones de pantalla
+
+*Nota:* Puede migrar las visualizaciones del Panel gráfico a Visualizaciones de series temporales. Para migrar, en la pestaña Panel, haga clic en Visualización de *serie temporal*. Grafana transfiere todas las configuraciones aplicables. (Mientras está en beta, la migración aún se está refinando. ¡Mejorará a medida que pase el tiempo!)
+
+*Modo de información sobre herramientas*
+
+Cuando pasa el cursor sobre el gráfico, Grafana puede mostrar información sobre herramientas. Elija cómo se comportan las descripciones emergentes.
+
+* *Único:* la información sobre herramientas flotante muestra solo una serie única, la que está sobre la que se desplaza en el gráfico.
+* *Todo:* la información sobre herramientas flotante muestra todas las series en el gráfico. Grafana destaca la serie sobre la que se desplaza en negrita en la lista de series en la información sobre herramientas.
+* *Oculto:* no muestra la información sobre herramientas cuando interactúa con el gráfico.
+
+*Nota:* Utilice una modificación para ocultar series individuales de la información sobre herramientas.
+
+*Modo de la leyenda*
+
+Utilice esta configuración para refinar cómo aparece la leyenda en su visualización.
+
+* *Lista:* muestra la leyenda como una lista. Este es un modo de visualización predeterminado de la leyenda.
+* *Tabla:* muestra la leyenda como una tabla.
+* *Oculto:* oculta la leyenda.
+
+*Colocación de la leyenda*
+
+Elija dónde mostrar la leyenda.
+
+* *Abajo:* debajo del gráfico.
+* *Derecha:* a la derecha del gráfico.
+
+*Cálculos de leyenda*
+
+Elija cuál de los cálculos estándar mostrar en la leyenda. Puedes tener más de uno.
+
+===== Graficar series de tiempo como líneas
+
+====== Graficar series de tiempo como líneas
+
+*Nota:* esta es una función beta. El panel de series de tiempo reemplazará al panel de gráficos en las versiones futuras.
+
+Esta sección explica cómo utilizar las opciones del Campo Serie temporal para visualizar los datos de la serie temporal como líneas e ilustra lo que hacen las opciones.
+
+*Crear el panel*
+
+[arabic]
+. Agregue un panel. Seleccione la Visualización de serie temporal.
+. En el Editor de panel, haga clic en la pestaña *Campo*.
+. En Estilo, haga clic en *Líneas*.
+
+*Estilizar las líneas*
+
+Utilice la siguiente configuración de campo para refinar su visualización.
+
+Para obtener más información sobre cómo aplicar estas opciones, consulte:
+
+* Configurar todos los campos
+* Configurar campos específicos
+
+Algunas opciones de campo no afectarán la visualización hasta que haga clic fuera del cuadro de opción de campo que está editando o presione Entrar.
+
+*_Interpolación de línea_*
+
+Elija cómo Grafana interpola la línea de la serie. Las capturas de pantalla a continuación muestran los mismos datos mostrados con diferentes interpolaciones de líneas.
+
+_Lineal_
+
+image:media\image90.png[Linear interpolation icon,width=142,height=65]
+
+Los puntos están unidos por líneas rectas.
+
+image:media\image91.png[Linear interpolation example,width=624,height=137]
+
+_Suave_
+
+image:media\image92.png[Smooth interpolation icon,width=143,height=65]
+
+Los puntos están unidos por líneas curvas que dan como resultado transiciones suaves entre puntos.
+
+image:media\image93.png[Smooth interpolation example,width=624,height=135]
+
+_Paso antes_
+
+image:media\image94.png[Step before interpolation icon,width=144,height=68]
+
+La línea se muestra como pasos entre puntos. Los puntos se representan al final del paso.
+
+image:media\image95.png[Step before interpolation example,width=624,height=138]
+
+_Paso después_
+
+image:media\image96.png[Step after interpolation icon,width=144,height=68]
+
+La línea se muestra como pasos entre puntos. Los puntos se representan al comienzo del paso.
+
+image:media\image97.png[Step after interpolation example,width=624,height=131]
+
+*_Ancho de línea_*
+
+Establezca el grosor de la línea de la serie, de 0 a 10 píxeles.
+
+Grosor de línea establecido en 1:
+
+image:media\image98.png[Line thickness 1 example,width=624,height=164]
+
+Grosor de línea establecido en 7:
+
+image:media\image99.png[Line thickness 7 example,width=624,height=164]
+
+*_Opacidad de relleno_*
+
+Establezca la opacidad del relleno de la serie, de 0 a 100 por ciento.
+
+Opacidad de relleno establecida en 20:
+
+image:media\image100.png[Fill opacity 20 example,width=624,height=163]
+
+Opacidad de relleno establecida en 95:
+
+image:media\image101.png[Fill opacity 95 example,width=624,height=158]
+
+*_Modo de gradiente_*
+
+Establece el modo del relleno degradado. El degradado de relleno se basa en el color de la línea. Para cambiar el color, use la opción de campo estándar de esquema de color.
+
+La apariencia del degradado está influenciada por la configuración de *Opacidad de relleno*. En las capturas de pantalla a continuación, la *Opacidad de relleno* se establece en 50.
+
+_Ninguno_
+
+Sin relleno degradado. Ésta es la configuración predeterminada.
+
+image:media\image102.png[Gradient mode none example,width=624,height=158]
+
+_Opacidad_
+
+La transparencia del gradiente se calcula en función de los valores del eje y. La opacidad del relleno aumenta con los valores del eje Y.
+
+image:media\image103.png[Gradient mode opacity example,width=624,height=161]
+
+_Tono_
+
+El color degradado se genera en función del tono del color de la línea.
+
+image:media\image104.png[Gradient mode hue example,width=624,height=159]
+
+*_Estilo de línea_*
+
+Establece el estilo de la línea. Para cambiar el color, use la opción de campo estándar de esquema de color.
+
+La apariencia del estilo de línea está influenciada por la configuración de *Ancho de línea* y *Opacidad de relleno*. En las capturas de pantalla a continuación, el *Ancho de línea* se establece en 3 y la *Opacidad de relleno* se establece en 20.
+
+_Sólido_
+
+Muestra una línea sólida. Ésta es la configuración predeterminada.
+
+image:media\image105.png[Line style solid example,width=624,height=157]
+
+_Guión_
+
+Muestre una línea discontinua. Cuando elige esta opción, aparece una lista para que pueda seleccionar la longitud y el espacio (largo, espacio) para los guiones de línea.
+
+Espaciado de guiones establecido en 10, 10 (predeterminado):
+
+image:media\image106.png[Line style dashed 10, 10 example,width=624,height=157]
+
+Espaciado de guiones establecido en 10, 30:
+
+image:media\image107.png[Line style dashed 10, 30 example,width=624,height=161]
+
+Espaciado de guiones establecido en 40, 10:
+
+image:media\image108.png[Line style dashed 40, 10 example,width=624,height=157]
+
+_Puntos_
+
+Muestra líneas de puntos. Cuando elige esta opción, aparece una lista para que pueda seleccionar el espacio (longitud = 0, espacio) para el espaciado de puntos.
+
+Espaciado de puntos establecido en 0, 10 (predeterminado):
+
+image:media\image109.png[Line style dots 0, 10 example,width=624,height=155]
+
+Espaciado de puntos establecido en 0, 30:
+
+image:media\image110.png[Line style dots 0, 30 example,width=624,height=157]
+
+*_Valores nulos_*
+
+Elija cómo se muestran los valores nulos (espacios en los datos) en el gráfico.
+
+_Brechas_
+
+Si hay una brecha en la serie, la línea en el gráfico se romperá y mostrará la brecha.
+
+image:media\image111.png[Null values gaps example,width=624,height=264]
+
+_Conectado_
+
+Si hay un espacio en la serie, la línea saltará el espacio y se conectará al siguiente valor no nulo.
+
+image:media\image112.png[Null values connected example,width=624,height=259]
+
+*_Mostrar puntos_*
+
+Elija cuándo deben mostrarse los puntos en el gráfico.
+
+_Auto_
+
+Grafana decide automáticamente si muestra o no los puntos en función de la densidad de los datos. Si la densidad es baja, se muestran los puntos.
+
+_Siempre_
+
+Muestre los puntos sin importar cuán denso sea el conjunto de datos. Este ejemplo usa un *Ancho de línea* de 1 y 50 puntos de datos. Si el ancho de la línea es más grueso que el tamaño del punto, la línea oscurece los puntos.
+
+Tamaño de punto
+
+Establezca el tamaño de los puntos, de 1 a 40 píxeles de diámetro.
+
+Tamaño de punto establecido en 4:
+
+image:media\image113.png[Show points point size 4 example,width=624,height=146]
+
+Tamaño de punto establecido en 10:
+
+image:media\image114.png[Show points point size 10 example,width=624,height=145]
+
+_Nunca_
+
+Nunca muestre los puntos.
+
+image:media\image115.png[Show points point never example,width=624,height=148]
+
+*Rellene debajo hasta*
+
+Esta opción solo está disponible en la pestaña Anulaciones.
+
+Rellena el área entre dos series. En la pestaña Anulaciones:
+
+[arabic]
+. Seleccione los campos para completar a continuación.
+. En *Agregar propiedad de anulación*, seleccione *Rellenar debajo hasta*.
+. Seleccione la serie en la que desea que se detenga el relleno.
+
+Serie A rellenada hasta la serie B:
+
+image:media\image116.png[Fill below to example,width=624,height=140]
+
+*Ejemplos de gráficos de líneas*
+
+A continuación se muestran algunos ejemplos de gráficos de líneas para darle ideas.
+
+*_Varios estilos de línea_*
+
+Este es un gráfico con diferentes estilos de línea y colores aplicados a cada serie y relleno de cero.
+
+image:media\image117.png[Various line styles example,width=624,height=252]
+
+*_Ejemplo de modos de interpolación_*
+
+image:media\image118.png[Interpolation modes example,width=624,height=381]
+
+*_Ejemplo de Rellene debajo hasta_*
+
+Este gráfico muestra tres series: Min, Max y Valor. Las series Min y Max tienen el *Ancho de línea* establecido en 0. Max tiene una anulación de *Rellene debajo hasta* establecido en Min, que llena el área entre Max y Min con el color de línea Max.
+
+image:media\image119.png[Fill below example,width=624,height=252]
+
+===== Graficar series de tiempo como barras
+
+====== Graficar series de tiempo como barras
+
+*Nota:* esta es una función beta. El panel de series de tiempo reemplazará al panel de gráficos en las versiones futuras.
+
+Esta sección explica cómo usar las opciones del campo Serie temporal para visualizar datos de series temporales como barras e ilustra lo que hacen las opciones.
+
+*Crea el panel*
+
+[arabic]
+. Agrega un panel. Seleccione la Visualización de serie temporal.
+. En el Editor de panel, haga clic en la pestaña *Campo*.
+. En Estilo, haga clic en *Barras*.
+
+*Estilizar las barras*
+
+Utilice la siguiente configuración de campo para refinar su visualización.
+
+Para obtener más información sobre cómo aplicar estas opciones, consulte:
+
+* Configurar todos los campos
+* Configurar campos específicos
+
+Algunas opciones de campo no afectarán la visualización hasta que haga clic fuera del cuadro de opción de campo que está editando o presione Entrar.
+
+*_Alineación de barras_*
+
+Establece la posición de la barra relativa a un punto de datos. En los ejemplos siguientes, *Mostrar puntos* se establece en *Siempre* para que sea más fácil ver la diferencia que hace esta configuración. Los puntos no cambian; las barras cambian en relación a los puntos.
+
+_Antes_
+
+image:media\image120.png[Bar alignment before icon,width=114,height=67]
+
+La barra se dibuja antes del punto. El punto se coloca en la esquina posterior de la barra.
+
+image:media\image121.png[Bar alignment before example,width=624,height=182]
+
+_Centrar_
+
+image:media\image122.png[Bar alignment center icon,width=114,height=68]
+
+La barra se dibuja alrededor del punto. El punto se coloca en el centro de la barra. Este es el predeterminado.
+
+image:media\image123.png[Bar alignment center,width=624,height=183]
+
+_Después_
+
+image:media\image124.png[Bar alignment after icon,width=115,height=66]
+
+La barra se dibuja después del punto. El punto se coloca en la esquina principal de la barra.
+
+image:media\image125.png[Bar alignment after,width=624,height=184]
+
+*_Ancho de línea_*
+
+Establezca el grosor de los contornos de la barra de líneas, de 0 a 10 píxeles. La *Opacidad de relleno* se establece en 10 en los ejemplos siguientes.
+
+Grosor de línea establecido en 1:
+
+image:media\image126.png[Line thickness 1 example,width=624,height=192]
+
+Grosor de línea establecido en 7:
+
+image:media\image127.png[Line thickness 7 example,width=624,height=188]
+
+*_Opacidad de relleno_*
+
+Establezca la opacidad del relleno de la barra, de 0 a 100 por ciento. En los ejemplos siguientes, el *Ancho de línea* se establece en 1.
+
+Opacidad de relleno establecida en 20:
+
+image:media\image128.png[Fill opacity 20 example,width=624,height=188]
+
+Opacidad de relleno establecida en 95:
+
+image:media\image129.png[Fill opacity 95 example,width=624,height=190]
+
+*_Modo de gradiente_*
+
+Establece el modo del relleno degradado. El degradado de relleno se basa en el color de la línea. Para cambiar el color, use la opción estándar de campo de esquema de color.
+
+La apariencia del degradado está influenciada por la configuración de b. En las capturas de pantalla a continuación, la *Opacidad de relleno* se establece en 50.
+
+_Ninguno_
+
+Sin relleno degradado. Ésta es la configuración predeterminada.
+
+image:media\image130.png[Gradient mode none example,width=624,height=184]
+
+_Opacidad_
+
+La transparencia del gradiente se calcula en función de los valores del eje y. La opacidad del relleno aumenta con los valores del eje Y.
+
+image:media\image131.png[Gradient mode opacity example,width=624,height=187]
+
+Tono
+
+El color degradado se genera en función del tono del color de la línea.
+
+image:media\image132.png[Gradient mode hue example,width=624,height=186]
+
+*_Mostrar puntos_*
+
+Elija cuándo deben mostrarse los puntos en el gráfico
+
+_Auto_
+
+Grafana decide automáticamente si muestra o no los puntos en función de la densidad de los datos. Si la densidad es baja, se muestran los puntos.
+
+_Siempre_
+
+Muestre los puntos sin importar cuán denso sea el conjunto de datos. Este ejemplo usa un *Ancho de línea* de 1. Si el ancho de línea es más grueso que el tamaño del punto, entonces la línea oscurece los puntos.
+
+Tamaño de punto
+
+Establezca el tamaño de los puntos, de 1 a 40 píxeles de diámetro.
+
+Tamaño de punto establecido en 6:
+
+image:media\image133.png[Show points point size 6 example,width=624,height=184]
+
+Tamaño de punto establecido en 20:
+
+image:media\image134.png[Show points point size 20 example,width=624,height=186]
+
+_Nunca_
+
+Nunca muestre los puntos.
+
+image:media\image135.png[Show points point never example,width=624,height=182]
+
+*Ejemplos de gráficos de barras*
+
+A continuación se muestran algunos ejemplos de gráficos de barras para darle ideas.
+
+*_Gradiente de tono_*
+
+image:media\image136.png[Bars with hue gradient example,width=403,height=303]
+
+===== Graficar series de tiempo como puntos
+
+====== Graficar series de tiempo como puntos
+
+*Nota:* esta es una función beta. El panel de series de tiempo reemplazará al panel de gráficos en las versiones futuras.
+
+Esta sección explica cómo utilizar las Opciones del campo Serie temporal para visualizar datos de series temporales como puntos e ilustra lo que hacen las opciones.
+
+*Crear el panel*
+
+[arabic]
+. Agrega un panel. Seleccione la Visualización de serie temporal.
+. En el Editor de Panel, haga clic en la pestaña *Campo*.
+. En Estilo, haga clic en *Puntos*.
+
+*Estilizar los puntos*
+
+Utilice la siguiente configuración de campo para refinar su visualización.
+
+Para obtener más información sobre cómo aplicar estas opciones, consulte:
+
+* Configurar todos los campos
+* Configurar campos específicos
+
+Algunas opciones de campo no afectarán la visualización hasta que haga clic fuera del cuadro de opción de campo que está editando o presione Entrar.
+
+*_Tamaño de punto_*
+
+Establezca el tamaño de los puntos, de 1 a 40 píxeles de diámetro.
+
+Tamaño de punto establecido en 6:
+
+image:media\image137.png[Show points point size 6 example,width=624,height=169]
+
+Tamaño de punto establecido en 20:
+
+image:media\image138.png[Show points point size 20 example,width=624,height=170]
+
+Tamaño de punto establecido en 35:
+
+image:media\image139.png[Show points point size 35 example,width=624,height=174]
+
+===== Cambiar visualización de eje
+
+====== Cambiar visualización de eje
+
+*Nota:* esta es una función beta. El panel de series de tiempo reemplazará al panel de gráficos en las versiones futuras.
+
+Esta sección explica cómo utilizar las Opciones del campo Serie temporal para controlar la visualización de los ejes en la visualización e ilustra lo que hacen las opciones de los ejes.
+
+Utilice la siguiente configuración de campo para refinar cómo se muestran sus ejes.
+
+Para obtener más información sobre cómo aplicar estas opciones, consulte:
+
+* Configurar todos los campos
+* Configurar campos específicos
+
+Algunas opciones de campo no afectarán la visualización hasta que haga clic fuera del cuadro de opción de campo que está editando o presione Entrar.
+
+*Ubicación*
+
+Seleccione la ubicación del eje Y.
+
+*_Auto_*
+
+Grafana asigna automáticamente el eje Y a la serie. Cuando hay dos o más series con diferentes unidades, Grafana asigna el eje izquierdo a la primera unidad y el derecho a las siguientes unidades.
+
+*_Izquierda_*
+
+Muestra todos los ejes Y en el lado izquierdo.
+
+image:media\image140.png[Left Y-axis example,width=624,height=193]
+
+*_Derecha_*
+
+Muestre todos los ejes Y en el lado derecho.
+
+image:media\image141.png[Right Y-axis example,width=624,height=200]
+
+*_Oculto_*
+
+Ocultar los ejes Y
+
+image:media\image142.png[Hidden Y-axis example,width=624,height=177]
+
+*Etiqueta*
+
+Establece una etiqueta de texto en el eje Y.
+
+image:media\image143.png[Label example,width=624,height=212]
+
+Si tiene más de un eje Y, puede asignar etiquetas diferentes en la pestaña Anular.
+
+*Ancho*
+
+Establezca un ancho fijo del eje. De forma predeterminada, Grafana calcula dinámicamente el ancho de un eje.
+
+Al establecer el ancho del eje, los datos cuyos tipos de ejes son diferentes pueden compartir las mismas proporciones de visualización. Esto hace que sea más fácil comparar los datos de más de un gráfico porque los ejes no se desplazan ni se estiran en una proximidad visual entre sí.
+
+*Mínimo suave y máximo suave*
+
+Configure una opción *mínimo suave* o *máximo suave* para un mejor control de los límites del eje Y. De forma predeterminada, Grafana establece el rango para el eje Y automáticamente según el conjunto de datos.
+
+Los ajustes *mínimos suaves* y *máximos suaves* pueden evitar que los puntos se conviertan en montañas cuando los datos son en su mayoría planos, y los valores mínimos o máximos estrictos derivados de las opciones de campo mínimo y máximo estándar pueden evitar que los picos intermitentes aplanen los detalles útiles recortando los picos más allá de un punto definido.
+
+Puede establecer opciones estándar min/max para definir límites estrictos del eje Y. Para obtener más información, consulte Opciones de campo estándar.
+
+image:media\image144.png[Label example,width=624,height=210]
+
+*Escala*
+
+Establezca la escala que se utilizará para los valores del eje Y.
+
+*_Lineal_*
+
+Utilice una escala dividida en partes iguales.
+
+*_Logarítmico_*
+
+Utilice una escala logarítmica. Cuando se elige esta opción, aparece una lista donde puede elegir escala logarítmica binaria (base 2) o común (base 10).
+
+=== Expresiones
+
+==== Expresiones del lado del servidor
+
+*Nota:* esta documentación es para una función beta.
+
+Las expresiones del lado del servidor le permiten manipular los datos devueltos por consultas con matemáticas y otras operaciones. Las expresiones crean nuevos datos y no manipulan los datos devueltos por las fuentes de datos, además de una pequeña reestructuración de datos para hacer que los datos sean una entrada aceptable para las expresiones.
+
+===== Usando expresiones
+
+El caso de uso principal de las expresiones es para la próxima versión de las alertas de Grafana. Al igual que las alertas, el procesamiento se realiza en el lado del servidor, por lo que las expresiones pueden funcionar sin una sesión de navegador. Sin embargo, las expresiones también se pueden usar con fuentes de datos back-end y visualización.
+
+*Nota:* Las expresiones no funcionan con las alertas actuales de Grafana.
+
+*Nota:* Las expresiones no funcionan con variables de panel.
+
+Las expresiones están destinadas a aumentar las fuentes de datos al permitir que las consultas de diferentes fuentes de datos se combinen o al proporcionar operaciones no disponibles en una fuente de datos.
+
+*Nota:* Cuando sea posible, debe realizar el procesamiento de datos dentro de la fuente de datos. Copiar datos desde el almacenamiento al servidor Grafana para su procesamiento es ineficiente, por lo que las expresiones están dirigidas al procesamiento de datos livianos.
+
+Las expresiones funcionan con consultas de fuentes de datos que devuelven series de tiempo o datos numéricos. También operan con datos multidimensionales. Por ejemplo, una consulta que devuelve varias series, donde cada serie se identifica mediante etiquetas o chapas.
+
+Una expresión individual toma una o más consultas u otras expresiones como entrada y agrega datos al resultado. Cada expresión o consulta individual está representada por una variable que es un identificador con nombre conocido como su RefID (por ejemplo, la letra predeterminada A o B).
+
+Para hacer referencia a la salida de una expresión individual o una consulta de fuente de datos en otra expresión, este identificador se utiliza como variable.
+
+===== Tipos de expresión
+
+Las expresiones funcionan con dos tipos de datos.
+
+* Colecciones de series temporales.
+* Una colección de números, donde cada colección puede ser una sola serie o un solo número.
+
+Cada colección se devuelve desde una única consulta o expresión de fuente de datos y se representa mediante RefID. Cada colección es un conjunto, donde cada elemento del conjunto se identifica de forma única por sus dimensiones que se almacenan como etiquetas o pares clave-valor.
+
+===== Consultas de fuentes de datos
+
+Las expresiones del lado del servidor solo admiten consultas de fuentes de datos para fuentes de datos de back-end. En general, se supone que los datos se etiquetan como datos de series de tiempo. En el futuro, teníamos la intención de agregar una afirmación de los datos del tipo de retorno de la consulta (número o serie temporal) para que las expresiones puedan manejar mejor los errores.
+
+Las consultas de fuentes de datos, cuando se utilizan con expresiones, son ejecutadas por el motor de expresiones. Cuando hace esto, reestructura los datos para que sean una serie de tiempo o un número por marco de datos. Entonces, por ejemplo, si usa una fuente de datos que devuelve múltiples series en un marco en la vista de tabla, puede notar que se ve diferente cuando se ejecuta con expresiones.
+
+Actualmente, el único formato de serie que no es de tiempo (número) es compatible cuando se usan marcos de datos si tiene una respuesta de tabla que devuelve un marco de datos sin tiempo, columnas de cadena y una columna numérica:
+
+[cols=",,",options="header",]
+|===
+|Loc |Host |Avg_CPU
+|MIA |A |1
+|NYC |B |2
+|===
+
+producirá un número que funciona con expresiones. Las columnas de cadena se convierten en etiquetas y la columna numérica en el valor correspondiente. Por ejemplo, \{"Loc": "MIA", "Host": "A"} con un valor de 1.
+
+===== Operaciones
+
+Puede utilizar las siguientes operaciones en expresiones: matemáticas, reducir y volver a muestrear.
+
+====== Matemáticas
+
+Mátematicas es para fórmulas matemáticas de forma libre en series de tiempo o datos numéricos. Las operaciones matemáticas toman números y series de tiempo como entrada y los cambian a diferentes números y series de tiempo.
+
+Los datos de otras consultas o expresiones se referencian con el RefID prefijado con un signo de dólar, por ejemplo $A. Si la variable tiene espacios en el nombre, entonces puede usar una sintaxis de llaves como $\{my variable}.
+
+Las constantes numéricas pueden estar en decimal (2.24), octal (con un cero inicial como 072) o hexadecimal (con un 0x inicial como 0x2A). También se admiten exponenciales y signos (p. Ej., -0.8e-2).
+
+====== Operadores
+
+La aritmética (+, binaria y unaria -, *, /, %, exponente **), relacional (<, >, ==, !=, >=, <=) Y lógica (&&, || y unaria !) los operadores son compatibles.
+
+El comportamiento de la operación con los datos depende de si se trata de un número o de una serie temporal.
+
+Con operaciones binarias, como $A + $B o $A || $B, el operador se aplica de las siguientes formas según el tipo de dato:
+
+* Si tanto $A como $B son un número, la operación se realiza entre los dos números.
+* Si una variable es un número y la otra variable es una serie de tiempo, entonces se realiza la operación entre el valor de cada punto de la serie de tiempo y el número.
+* Si tanto $A como $B son datos de series de tiempo, la operación entre cada valor de las dos series se realiza para cada marca de tiempo que exista tanto en $A como en $B. La operación Remuestrear se puede utilizar para alinear las marcas de tiempo. (*Nota:* en el futuro, planeamos agregar opciones a la operación Matemática para diferentes comportamientos).
+
+Entonces, en resumen:
+
+* Número OP número = número
+* Número OP serie = serie
+* Serie OP serie = serie
+
+Debido a que las expresiones funcionan con múltiples series o números representados por una sola variable, las operaciones binarias también realizan una unión entre las dos variables. Esto se hace en base a las etiquetas de identificación asociadas con cada serie o número individual.
+
+Entonces, si tiene números con etiquetas como \{host=web01} en $A y otro número en $B con las mismas etiquetas, entonces la operación se realiza entre esos dos elementos dentro de cada variable, y el resultado compartirá las mismas etiquetas. Las reglas para el comportamiento de esta unión son las siguientes:
+
+* Un artículo sin etiquetas se unirá a cualquier cosa.
+* Si tanto $A como $B contienen cada uno solo un elemento (una serie o un número), se unirán.
+* Si las etiquetas son matemáticas exactas, se unirán.
+* Si las etiquetas son un subconjunto del otro, por ejemplo, y el elemento en $A está etiquetado como \{host=A, dc=MIA} y el elemento en $B está etiquetado como \{host=A}, se unirán.
+* Actualmente, si dentro de una variable como $A hay diferentes _claves_ de etiqueta para cada elemento, el comportamiento de unión no está definido.
+
+Los operadores lógicos y relacionales devuelven 0 para falso 1 para verdadero.
+
+*Funciones matemáticas*
+
+Si bien la mayoría de las funciones existen en las propias operaciones de expresión, la operación matemática tiene algunas funciones similares a los operadores matemáticos o símbolos. Cuando las funciones pueden tomar números o series, se devolverá el mismo tipo que el argumento. Cuando es una serie, la operación se realiza por el valor de cada punto de la serie.
+
+*_abs_*
+
+abs devuelve el valor absoluto de su argumento, que puede ser un número o una serie. Por ejemplo abs(-1) o abs($ A).
+
+*_log_*
+
+Log devuelve el logaritmo natural de de su argumento, que puede ser un número o una serie. Si el valor es menor que 0, se devuelve NaN. Por ejemplo, log(-1) o log($A).
+
+*_inf, nan y null_*
+
+Las funciones inf, nan y null devuelven un solo valor del nombre. Existen principalmente para realizar pruebas. Ejemplo: null(). (Nota: inf siempre devuelve infinito positivo, probablemente debería cambiar esto para tomar un argumento para que pueda devolver infinito negativo).
+
+====== Reducir
+
+Reducir toma una o más series de tiempo devueltas por una consulta o una expresión y convierte cada serie en un solo número. Las etiquetas de la serie temporal se mantienen como etiquetas en cada número reducido generado.
+
+*Campos:*
+
+* *Función:* la función de reducción a utilizar
+* *Entrada:* la variable (refID (como A)) para volver a muestrear
+
+*Funciones de reducción*
+
+*Nota:* En el futuro planeamos agregar opciones para controlar el comportamiento vacío, NaN y nulo para las funciones de reducción.
+
+*_Contar_*
+
+Contar devuelve el número de puntos de cada serie.
+
+*_Promediar_*
+
+La media devuelve el total de todos los valores de cada serie dividido por el número de puntos de esa serie. Si algún valor de la serie es nulo o nan, o si la serie está vacía, se devuelve NaN.
+
+*_Min y Max_*
+
+Min y Max devuelven el valor más pequeño o más grande de la serie, respectivamente. Si algún valor de la serie es nulo o nan, o si la serie está vacía, se devuelve NaN.
+
+*_Sumar_*
+
+Sum devuelve el total de todos los valores de la serie. Si la serie tiene una longitud cero, la suma será 0. Si hay valores NaN o Null en la serie, se devuelve NaN.
+
+====== Remuestrear
+
+Volver a muestrear cambia las marcas de tiempo en cada serie de tiempo para tener un intervalo de tiempo coherente. El caso de uso principal es para que pueda volver a muestrear series de tiempo que no comparten las mismas marcas de tiempo para que se puedan realizar operaciones matemáticas entre ellas. Esto se puede hacer volviendo a muestrear cada una de las dos series, y luego en una Operación matemática haciendo referencia a las variables remuestreadas.
+
+*Campos:*
+
+* *Entrada:* la variable de datos de series de tiempo (refID (como A)) para volver a muestrear
+* *Volver a muestrear a:* la duración del tiempo para volver a muestrear, por ejemplo, 10s. Las unidades pueden ser s segundos, m para minutos, h para horas, d para días, w para semanas e y para años.
+* *Downsample:* la función de reducción que se utiliza cuando hay más de un punto de datos por muestra de ventana. Consulte la operación de reducción para obtener detalles sobre el comportamiento.
+* *Upsample:* el método que se usa para llenar una muestra de ventana que no tiene puntos de datos.
+** *almohadilla* se llena con el último valor conocido
+** *relleno* con el siguiente valor conocido
+** *fillna* para llenar ventanas de muestra vacías con NaNs
