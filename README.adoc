@@ -3,3 +3,9 @@
 == https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs.html[Ir a la Documentación]
 
 Traducción de la https://grafana.com/docs/grafana/latest/[documentación de Grafana].
+
+== Versión 1.2
+
+* Versión de Grafana 7.5.x
+
+image::modules/ROOT/images/ceos-grafana-docs.png[]
