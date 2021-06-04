@@ -1,124 +1,22 @@
-== Autenticación
-
-=== Descripción general
-
-==== Descripción general de la autenticación de usuario
+= Descripción general de la autenticación de usuario
 
 Grafana ofrece muchas formas de autenticar a los usuarios. Algunas integraciones de autenticación también permiten sincronizar permisos de usuario y membresías de organizaciones.
 
-A continuación, se muestra una tabla que muestra todos los proveedores de autenticación admitidos y las funciones disponibles para ellos. La <<sincronización de equipo>> y la <<sincronización activa>> solo están disponibles en Grafana Enterprise.
+A continuación, se muestra una tabla que muestra todos los proveedores de autenticación admitidos y las funciones disponibles para ellos. La xref:grafana-enterprise/sincronizacion-de-equipo.adoc[sincronización de equipo] y la xref:grafana-enterprise/ldap-mejorada.adoc#_sincronizacion_ldap_activa[sincronización activa] solo están disponibles en Grafana Enterprise.
 
-Consulte también <<Autenticación de Grafana>>.
+Consulte también xref:autenticacion/grafana.adoc[Autenticación de Grafana].
 
 [cols=",,,,",options="header",]
 |===
 |Proveedor |Soporte |Mapeo de roles |Sincronización de equipo (Solo Enterprise) |Sincronización activa (Solo Enterprise)
 | | | | |
-|https://grafana.com/docs/grafana/latest/auth/auth-proxy/[Auth Proxy] |v2.1+ |- |v6.3+ |-
-|https://grafana.com/docs/grafana/latest/auth/azuread/[Azure AD OAuth] |v6.7+ |v6.7+ |v6.7+ |-
-|https://grafana.com/docs/grafana/latest/auth/generic-oauth/[Generic OAuth] |v4.0+ |v6.5+ |- |-
-|https://grafana.com/docs/grafana/latest/auth/github/[GitHub OAuth] |v2.0+ |- |v6.3+ |-
-|https://grafana.com/docs/grafana/latest/auth/gitlab/[GitLab OAuth] |v5.3+ |- |v6.4+ |-
-|https://grafana.com/docs/grafana/latest/auth/google/[Google OAuth] |v2.0+ |- |- |-
-|https://grafana.com/docs/grafana/latest/auth/ldap/[LDAP] |v2.1+ |v2.1+ |v5.3+ |v6.3+
-|https://grafana.com/docs/grafana/latest/auth/okta/[Okta OAuth] |v7.0+ |v7.0+ |v7.0+ |-
-|https://grafana.com/docs/grafana/latest/enterprise/saml/[SAML (Enterprise only)] |v6.3+ |v7.0+ |v7.0+ |-
+|xref:autenticacion/proxy-de-autenticacion.adoc[Auth Proxy] |v2.1+ |- |v6.3+ |-
+|xref:autenticacion/autenticacion-de-azure-ad-oauth2.adoc[Azure AD OAuth] |v6.7+ |v6.7+ |v6.7+ |-
+|xref:autenticacion/autenticacion-generica-oauth2.adoc[Generic OAuth] |v4.0+ |v6.5+ |- |-
+|xref:autenticacion/autenticacion-de-github-oauth2.adoc[GitHub OAuth] |v2.0+ |- |v6.3+ |-
+|xref:autenticacion/autenticacion-de-gitlab-oauth2.adoc[GitLab OAuth] |v5.3+ |- |v6.4+ |-
+|xref:autenticacion/autenticacion-de-google-oauth2.adoc[Google OAuth] |v2.0+ |- |- |-
+|xref:autenticacion/autenticacion-ldap.adoc[LDAP] |v2.1+ |v2.1+ |v5.3+ |v6.3+
+|xref:autenticacion/autenticacion-okta-oauth2.adoc[Okta OAuth] |v7.0+ |v7.0+ |v7.0+ |-
+|xref:autenticacion/autenticacion-saml.adoc[SAML (Enterprise only)] |v6.3+ |v7.0+ |v7.0+ |-
 |===
-
-=== Autenticación de Grafana
-
-==== Grafana Auth
-
-Grafana, por supuesto, tiene un sistema de autenticación de usuario integrado con autenticación de contraseña habilitada de forma predeterminada. Puede deshabilitar la autenticación habilitando el acceso anónimo. También puede ocultar el formulario de inicio de sesión y solo permitir el inicio de sesión a través de un proveedor de autenticación (mencionado anteriormente). También hay opciones para permitir el registro automático.
-
-===== Inicio de sesión y tokens de corta duración
-
-****
-Lo siguiente se aplica cuando se utiliza la autenticación de usuario integrada de Grafana, LDAP (sin proxy de autenticación) o la integración de OAuth.
-****
-
-Grafana está utilizando tokens de corta duración como mecanismo para verificar usuarios autenticados. Estos tokens de corta duración se rotan cada ˋtoken_rotation_interval_minutesˋ para un usuario autenticado activo.
-
-Un usuario autenticado activo al que han rotado su token extenderá el tiempo ˋlogin_maximum_inactive_lifetime_daysˋ desde "ahora" que Grafana recordará al usuario. Esto significa que un usuario puede cerrar su navegador y regresar antes de ˋnow + login_maximum_inactive_lifetime_daysˋ y aún estar autenticado. Esto es cierto siempre que el tiempo transcurrido desde el inicio de sesión del usuario sea inferior a ˋlogin_maximum_lifetime_daysˋ.
-
-====== Cierre de sesión remoto
-
-Puede cerrar sesión desde otros dispositivos eliminando las sesiones iniciadas desde la parte inferior de la página de su perfil. Si es un usuario administrador de Grafana, también puede hacer lo mismo para cualquier usuario desde la vista Administrador del servidor / Editar usuario.
-
-==== Ajustes
-
-Ejemplo:
-
-ˋ{empty}[auth]
-
-/* Nombre de la cookie de inicio de sesión
-login_cookie_name = grafana_session
-
-/* El tiempo de vida (días) que un usuario autenticado puede estar inactivo antes de que se le solicite que inicie sesión en la próxima visita. El valor predeterminado es 7 días.
-login_maximum_inactive_lifetime_days = 7
-
-/* La vida máxima (días) que un usuario autenticado puede iniciar sesión desde el tiempo de inicio de sesión antes de que se le solicite iniciar sesión. El valor predeterminado es 30 días.
-login_maximum_lifetime_days = 30
-
-/* ¿Con qué frecuencia se deben rotar los tokens de autenticación para los usuarios autenticados cuando están activos? El valor predeterminado es cada 10 minutos.
-token_rotation_interval_minutes = 10
-
-/* La vida útil máxima (segundos) que se puede usar una clave api. Si se establece, todas las claves de la API deberían tener una vida útil limitada inferior a este valor.
-api_key_max_seconds_to_live = -1ˋ
-
-===== Autenticación anónima
-
-Puede hacer que Grafana sea accesible sin necesidad de iniciar sesión habilitando el acceso anónimo en el archivo de configuración. Para obtener más información, consulte Implicaciones de permitir el acceso anónimo a los tableros.
-
-Ejemplo:
-
-ˋ{empty}[auth.anonymous]
-enabled = true
-
-/* Nombre de la organización que debe usarse para usuarios no autenticados
-org_name = Main Org.
-
-/* Rol para usuarios no autenticados, otros valores válidos son `Editor` y` Admin`
-org_role = Viewer
-
-/* Ocultar el texto de la versión de Grafana del pie de página y la información sobre herramientas de ayuda para usuarios no autenticados (predeterminado: falso)
-hide_version = trueˋ
-
-Si cambia el nombre de su organización en la interfaz de usuario de Grafana, esta configuración debe actualizarse para que coincida con el nuevo nombre.
-
-===== Autenticación básica
-
-La autenticación básica está habilitada de forma predeterminada y funciona con el sistema integrado de autenticación de contraseña de usuario de Grafana y la integración de autenticación LDAP.
-
-Para deshabilitar la autenticación básica:
-
-ˋ{empty}[auth.basic]
-enabled = falseˋ
-
-===== Desactivar formulario de inicio de sesión
-
-Puede ocultar el formulario de inicio de sesión de Grafana utilizando los siguientes ajustes de configuración.
-
-ˋ{empty}[auth]
-disable_login_form = trueˋ
-
-===== Inicio de sesión automático de OAuth
-
-Configure en verdadero para intentar iniciar sesión con OAuth automáticamente, omitiendo la pantalla de inicio de sesión. Esta configuración se ignora si se configuran varios proveedores de OAuth. El valor predeterminado es falso.
-
-ˋ{empty}[auth]
-oauth_auto_login = trueˋ
-
-===== Ocultar el menú de cierre de sesión
-
-Establezca la opción que se detalla a continuación en verdadero para ocultar el enlace del menú de cierre de sesión. Útil si usa un proxy de autenticación.
-
-ˋ{empty}[auth]
-disable_signout_menu = trueˋ
-
-===== Redireccionamiento de URL después de cerrar sesión
-
-URL a la que redirigir al usuario después de cerrar sesión en Grafana. Esto se puede utilizar, por ejemplo, para habilitar el cierre de sesión del proveedor de oauth.
-
-ˋ{empty}[auth]
-signout_redirect_url =ˋ
