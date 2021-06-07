@@ -1,57 +1,34 @@
-
-== Explorar
-
-Explorar
+= Explorar
 
 La interfaz de usuario del tablero de Grafana tiene que ver con la creación de tableros para la visualización. Explorar elimina el tablero y las opciones del panel para que pueda concentrarse en la consulta. Le ayuda a iterar hasta que tenga una consulta que funcione y luego piense en la creación de un tablero.
 
 Si solo desea explorar sus datos y no desea crear un tablero, Explorar lo hace mucho más fácil. Si su fuente de datos admite datos de tablas y gráficos, Explorar muestra los resultados tanto en forma de gráfico como de tabla. Esto le permite ver tendencias en los datos y más detalles al mismo tiempo. Ver también:
 
-* Gestión de consultas en Explorar
-* Integración de registros en Explorar
-* Trace la integración en Explorar
+* xref:explorar/gestion-de-consultas.adoc[Gestión de consultas en Explorar]
+* xref:explorar/registros-en-explorar.adoc[Integración de registros en Explorar]
+* xref:explorar/rastreo-en-explorar.adoc[Integración de rastreo en Explorar]
 
-=== Empiece a explorar
+== Empiece a explorar
 
-Para acceder a Explorar, debe tener un rol de editor o administrador. Consulte Roles de la organización para obtener más información sobre a qué tiene acceso cada rol.
+Para acceder a Explorar, debe tener un rol de editor o administrador. Consulte xref:permisos/roles-de-la-organizacion.adoc[Roles de la organización] para obtener más información sobre a qué tiene acceso cada rol.
 
 Para acceder a Explorar:
 
 [arabic]
-. {blank}
+. Haga clic en el icono Explorar en la barra de menú.
 +
-____
-Haga clic en el icono Explorar en la barra de menú.
-____
-
-____
-image:media\image171.png[Screenshot of the new Explore Icon,width=146,height=271]
-____
-
-[arabic, start=2]
-. {blank}
+image::image171.png[Screenshot of the new Explore Icon,width=146,height=271]
 +
-____
 Se abre una pestaña Explorar vacía.
-____
-
++
 Alternativamente, para comenzar con una consulta existente en un panel, elija la opción Explorar en el menú Panel. Esto abre una pestaña Explorar con la consulta del panel y le permite modificar o iterar en la consulta fuera de su tablero.
 
-image:media\image172.png[Screenshot of the new Explore option in the panel menu,width=624,height=213]
+image::image172.png[Screenshot of the new Explore option in the panel menu,width=624,height=213]
 
-[arabic, start=3]
-. {blank}
-+
-____
-Elija su fuente de datos del menú desplegable en la parte superior izquierda. Prometheus tiene una implementación Explorar personalizada, las otras fuentes de datos usan su editor de consultas estándar.
-____
-. {blank}
-+
-____
-En el campo de consulta, escriba su consulta para explorar sus datos. Hay tres botones al lado del campo de consulta, un botón para borrar (X), un botón para agregar consulta (+) y el botón para eliminar consulta (-). Al igual que el editor de consultas normal, puede agregar y eliminar varias consultas.
-____
+. Elija su fuente de datos del menú desplegable en la parte superior izquierda. https://grafana.com/oss/prometheus/[Prometheus] tiene una implementación Explorar personalizada, las otras fuentes de datos usan su editor de consultas estándar.
+. En el campo de consulta, escriba su consulta para explorar sus datos. Hay tres botones al lado del campo de consulta, un botón para borrar (X), un botón para agregar consulta (+) y el botón para eliminar consulta (-). Al igual que el editor de consultas normal, puede agregar y eliminar varias consultas.
 
-=== Dividir y comparar
+== Dividir y comparar
 
 La vista dividida proporciona una manera fácil de comparar gráficos y tablas uno al lado del otro o de mirar datos relacionados juntos en una página.
 
@@ -62,352 +39,25 @@ Para abrir la vista dividida:
 
 Es posible seleccionar otra fuente de datos para la nueva consulta que, por ejemplo, le permite comparar la misma consulta para dos servidores diferentes o comparar el entorno de ensayo con el entorno de producción.
 
-image:media\image173.png[Screenshot of Explore option in the panel menu,width=624,height=292]
+image::image173.png[Screenshot of Explore option in the panel menu,width=624,height=292]
 
 En la vista dividida, los selectores de tiempo de ambos paneles se pueden vincular (si cambia uno, el otro también se cambia) haciendo clic en uno de los botones de sincronización de tiempo adjuntos a los selectores de tiempo. La vinculación de selectores de tiempo ayuda a mantener sincronizadas las horas de inicio y finalización de las consultas de vista dividida. Garantiza que esté mirando el mismo intervalo de tiempo en ambos paneles divididos.
 
 Para cerrar la consulta recién creada, haga clic en el botón Cerrar división.
 
-=== Navegar entre Explorar y un tablero
+== Navegar entre Explorar y un tablero
 
 Para ayudar a acelerar los flujos de trabajo que implican cambiar regularmente de Explorar a un tablero y viceversa, Grafana le brinda la capacidad de volver al tablero de origen después de navegar a Explorar desde el menú desplegable del panel.
 
 Una vez que haya navegado a Explorar, debería ver un botón "Atrás" en la barra de herramientas Explorar. Simplemente haga clic en él para volver al tablero de origen. Para traer al tablero los cambios que realice en Explorar, haga clic en la flecha junto al botón para mostrar un elemento de menú "Volver al panel con cambios".
 
-image:media\image174.png[Screenshot of the expanded explore return dropdown,width=328,height=67]
+image::image174.png[Screenshot of the expanded explore return dropdown,width=328,height=67]
 
-=== Compartir enlace acortado
+== Compartir enlace acortado
 
-*Nota:* Disponible en Grafana 7.3 y versiones posteriores.
+[NOTE]
+====
+Disponible en Grafana 7.3 y versiones posteriores.
+====
 
 La función Compartir enlace abreviado le permite crear URL más pequeñas y sencillas con el formato /goto/:uid en lugar de utilizar URL más largas con parámetros de consulta. Para crear un enlace abreviado, haga clic en la opción *Compartir* en la barra de herramientas Explorar. Cualquier enlace abreviado que nunca se utilice se eliminará automáticamente después de 7 días.
-
-=== Gestión de consultas
-
-==== Gestión de consultas en Explorar
-
-Para ayudar con la depuración de consultas, Explorar le permite investigar solicitudes y respuestas de consultas, así como estadísticas de consultas, a través del inspector de Consultas. Esta funcionalidad es similar a la pestaña Estadísticas y la pestaña Consulta del inspector de paneles.
-
-image:media\image175.png[Screenshot of the query inspector button in Explore,width=624,height=94]
-
-===== Historial de consultas
-
-El historial de consultas es una lista de consultas que ha utilizado en Explorar. El historial es local para su navegador y no se comparte. Para abrir e interactuar con su historial, haga clic en el botón *Historial de consultas* en Explorar.
-
-====== Ver historial de consultas
-
-El historial de consultas le permite ver el historial de sus consultas. Para cada consulta individual, puede:
-
-* Ejecute una consulta.
-* Cree y/o edite un comentario.
-* Copie una consulta al portapapeles.
-* Copie un enlace abreviado con la consulta en el portapapeles.
-* Marque una consulta.
-
-====== Gestionar consultas favoritas
-
-Todas las consultas destacadas en la pestaña Historial de consultas se muestran en Destacadas. Esto le permite acceder a sus consultas favoritas más rápido y reutilizar estas consultas sin tener que escribirlas desde cero.
-
-====== Ordenar historial de consultas
-
-De forma predeterminada, el historial de consultas muestra las consultas más recientes. Puede ordenar su historial por fecha o por nombre de fuente de datos en orden ascendente o descendente.
-
-[arabic]
-. Haga clic en el campo *Ordenar consultas por*.
-. Selecciona una de las siguientes opciones:
-* La más reciente primero
-* La más vieja primero
-* Fuente de datos A-Z
-* Fuente de datos Z-A
-
-*Nota:* Si está en modo dividido, el modo de clasificación elegido se aplica solo al panel activo.
-
-====== Filtrar historial de consultas
-
-Filtrar el historial de consultas en la pestaña Historial de consultas y Destacados por nombre de fuente de datos:
-
-[arabic]
-. Haga clic en el campo *Filtrar consultas para fuentes de datos específicas*.
-. Seleccione la fuente de datos por la que le gustaría filtrar su historial. Puede seleccionar varias fuentes de datos.
-
-En la pestaña *Historial de consultas* también es posible filtrar las consultas por fecha usando el control deslizante:
-
-[arabic]
-. Utilice el control deslizante vertical para filtrar las consultas por fecha.
-. Arrastrar el asa superior, ajusta la fecha de inicio.
-. Arrastrando el asa superior, ajusta la fecha de finalización.
-
-*Nota:* Si está en modo dividido, los filtros se aplican solo a su panel activo actualmente.
-
-====== Buscar en el historial de consultas
-
-Puede buscar en su historial entre consultas y comentarios. La búsqueda es posible para consultas en la pestaña Historial de consultas y la pestaña Destacados.
-
-[arabic]
-. Haga clic en el campo *Consultas de búsqueda*.
-. Escriba el término que está buscando en el campo de búsqueda.
-
-====== Configuración del historial de consultas
-
-Puede personalizar el historial de consultas en la pestaña Configuración. Las opciones se describen en la tabla siguiente.
-
-[cols=",",options="header",]
-|===
-|Configuración |Valor predeterminado
-|Período de tiempo durante el cual Grafana guardará su historial de consultas |1 semana
-|Cambiar la pestaña activa predeterminada |Pestaña Historial de consultas
-|Mostrar solo consultas para la fuente de datos actualmente activa en Explorar |Verdadero
-|Borrar historial de consultas |Elimina permanentemente todas las consultas almacenadas.
-|===
-
-*Nota:* La configuración del historial de consultas es global y se aplica a ambos paneles en modo dividido.
-
-===== Funciones específicas de Prometheus
-
-La primera versión de Explorar presenta una experiencia de consulta personalizada para Prometheus. Cuando se ejecuta una consulta, en realidad ejecuta dos consultas, una consulta normal de Prometheus para el gráfico y una consulta instantánea para la tabla. Una Consulta Instantánea devuelve el último valor para cada serie de tiempo que muestra un buen resumen de los datos que se muestran en el gráfico.
-
-====== Explorador de métricas
-
-En el lado izquierdo del campo de consulta, haga clic en *Métricas* para abrir el Explorador de Métricas. Esto muestra un menú jerárquico con métricas agrupadas por su prefijo. Por ejemplo, todas las métricas de Alertmanager se agrupan bajo el prefijo alertmanager. Este es un buen punto de partida si solo desea explorar qué métricas están disponibles.
-
-image:media\image176.png[Screenshot of the new Explore option in the panel menu,width=624,height=247]
-
-====== Campo de consulta
-
-El campo Consulta admite el autocompletado para nombres de métricas, funciones y funciona casi de la misma manera que el editor de consultas estándar de Prometheus. Presione la tecla enter para ejecutar una consulta.
-
-El menú de autocompletar se puede activar presionando Ctrl+Espacio. El menú Autocompletar contiene una nueva sección de Historial con una lista de consultas ejecutadas recientemente.
-
-Las sugerencias pueden aparecer debajo del campo de consulta; haga clic en ellas para actualizar su consulta con el cambio sugerido.
-
-[arabic]
-. Para los contadores (métricas que aumentan monótonamente), se sugerirá una función de tasa.
-. Para los cubos, se sugerirá una función de histograma.
-. Para registrar reglas, es posible expandir las reglas.
-
-====== Filtros de tabla
-
-Haga clic en el botón de filtro en la columna "etiqueta" de un panel Tabla para agregar filtros a la expresión de la consulta. También puede agregar filtros para múltiples consultas; el filtro se agrega para todas las consultas.
-
-=== Registros en Explorar
-
-==== Registros en Explorar
-
-Junto con las métricas, Explorar le permite investigar sus registros en las siguientes fuentes de datos:
-
-* Elasticsearch
-* InfluxDB
-* Loki
-
-Durante el monitoreo de la infraestructura y la respuesta a incidentes, puede profundizar en las métricas y los registros para encontrar la causa. Explore también le permite correlacionar métricas y registros al verlos uno al lado del otro. Esto crea un nuevo flujo de trabajo de depuración:
-
-[arabic]
-. Reciba una alerta.
-. Profundice y examine las métricas.
-. Vuelva a profundizar y busque registros relacionados con la métrica y el intervalo de tiempo (y, en el futuro, seguimientos distribuidos).
-
-===== Visualización de registros
-
-Los resultados de las consultas de registros se muestran como histogramas en el gráfico y los registros individuales se muestran a continuación. Si la fuente de datos no envía datos de histograma para el rango de tiempo solicitado, el modelo de registros calcula una serie de tiempo basada en los recuentos de filas de registros agrupados por un intervalo de tiempo calculado automáticamente y el inicio del histograma está anclado por la marca de tiempo de la primera fila de registros. del resultado. El final de la serie temporal está anclado al rango *Hasta* del selector de tiempo.
-
-====== Nivel de registro
-
-Para los registros donde se especifica una etiqueta de *nivel*, usamos el valor de la etiqueta para determinar el nivel del registro y actualizar el color en consecuencia. Si el registro no tiene una etiqueta de nivel especificada, analizamos el registro para averiguar si su contenido coincide con alguna de las expresiones admitidas (consulte a continuación para obtener más información). El nivel de registro siempre está determinado por la primera coincidencia. En caso de que Grafana no pueda determinar un nivel de registro, se visualizará con un nivel de registro *desconocido*.
-
-*Niveles de registro admitidos y mapeo de abreviaturas y expresiones de nivel de registro:*
-
-[cols=",,",options="header",]
-|===
-|Expresiones admitidas |Nivel de registro |Color
-|emerg |crítico |púrpura
-|fatal |crítico |púrpura
-|alert |crítica |púrpura
-|crit |crítico |púrpura
-|critical |crítico |púrpura
-|err |error |rojo
-|eror |error |rojo
-|error |error |rojo
-|warn |advertencia |amarillo
-|warning |advertencia |amarillo
-|info |info |verde
-|information |información |verde
-|notice |información |verde
-|dbug |depuración |azul
-|debug |depurar |azul
-|trace |traza |azul claro
-|* |gris |desconocido
-|===
-
-===== Opciones de visualización
-
-Puede personalizar cómo se muestran los registros y seleccionar qué columnas se muestran.
-
-====== Hora
-
-Muestra u oculta la columna de tiempo. Esta es la marca de tiempo asociada con la línea de registro según lo informado desde la fuente de datos.
-
-====== Etiquetas únicas
-
-Muestra u oculta la columna de etiquetas únicas que incluye solo etiquetas no comunes. Todas las etiquetas comunes se muestran arriba.
-
-====== Envolver líneas
-
-Establezca esto en True si desea que la pantalla utilice el ajuste de línea. Si se establece en False, resultará en un desplazamiento horizontal.
-
-====== Deduplicación
-
-Los datos de registro pueden ser muy repetitivos y Explorar puede ayudar al ocultar líneas de registro duplicadas. Hay algunos algoritmos de deduplicación diferentes que puede utilizar:
-
-* *Exacto:* las coincidencias exactas se realizan en toda la línea, excepto en los campos de fecha.
-* *Números:* coincidencias en la línea después de eliminar números, como duraciones, direcciones IP, etc.
-* *Firma:* la deduplicación más agresiva, elimina todas las letras y números y coincide con el espacio en blanco y la puntuación restante.
-
-====== Voltear el orden de los resultados
-
-Puede cambiar el orden de los registros recibidos del orden descendente predeterminado (el más reciente primero) al orden ascendente (el más antiguo primero).
-
-===== Etiquetas y campos detectados
-
-Cada fila de registro tiene un área extensible con sus etiquetas y campos detectados, para una interacción más robusta. Para todas las etiquetas, hemos agregado la capacidad de filtrar (filtro positivo) y filtrar (filtro negativo) las etiquetas seleccionadas. Cada campo o etiqueta también tiene un icono de estadísticas para mostrar estadísticas ad-hoc en relación con todos los registros mostrados.
-
-====== Vínculos de campos derivados
-
-Al utilizar los campos derivados, puede convertir cualquier parte de un mensaje de registro en un enlace interno o externo. El enlace creado es visible como un botón junto al campo Detectado en la vista Detalles del registro.
-
-image:media\image27.png[Detected fields link in Explore,width=624,height=239]
-
-====== Alternar campos detectados
-
-*Nota:* Disponible en Grafana 7.2 y versiones posteriores.
-
-Si sus registros están estructurados en json o logfmt, puede mostrar u ocultar los campos detectados. Expanda una línea de registro y luego haga clic en el icono del ojo para mostrar u ocultar campos.
-
-image:media\image177.gif[Toggling detected fields in Explore,width=624,height=351]
-
-===== Características específicas de Loki
-
-Como se mencionó, una de las integraciones de registros es para el nuevo sistema de agregación de registros de código abierto de Grafana Labs - Loki. Loki está diseñado para ser muy rentable, ya que no indexa el contenido de los registros, sino un conjunto de etiquetas para cada flujo de registros. Los registros de Loki se consultan de forma similar a la consulta con selectores de etiquetas en Prometheus. Utiliza etiquetas para agrupar los flujos de registros que se pueden hacer para que coincidan con sus etiquetas de Prometheus. Para obtener más información sobre Grafana Loki, consulte Grafana Loki o la variante alojada de Grafana Labs: Grafana Cloud Logs.
-
-Para obtener más información, consulte la documentación de la fuente de datos de Loki sobre cómo consultar datos de registro.
-
-====== Cambiar de métricas a registros
-
-Si cambia de una consulta de Prometheus a una consulta de registros (puede hacer una división primero para tener sus métricas y registros uno al lado del otro), entonces mantendrá las etiquetas de su consulta que existen en los registros y las utilizará para consultar los flujos de registro. Por ejemplo, la siguiente consulta de Prometheus:
-
-grafana_alerting_active_alerts\{job="grafana"}
-
-después de cambiar a la fuente de datos de Registros, la consulta cambia a:
-
-\{job="grafana"}
-
-Esto devolverá una parte de los registros en el rango de tiempo seleccionado que se pueden buscar por texto.
-
-====== Seguimiento en vivo
-
-Utilice la función de seguimiento en vivo para ver registros en tiempo real en fuentes de datos compatibles.
-
-Haga clic en el botón *En vivo* en la barra de herramientas Explorar para cambiar a la vista de seguimiento en vivo.
-
-Mientras esté en la vista Seguimiento en vivo, los nuevos registros vendrán desde la parte inferior de la pantalla y tendrán un fondo de contraste que se desvanecerá para que pueda realizar un seguimiento de las novedades. Haga clic en el botón *Pausa* o desplácese por la vista de registros para pausar el seguimiento en vivo y explorar registros anteriores sin interrupción. Haga clic en el botón *Reanudar* para reanudar el seguimiento en vivo o haga clic en el botón *Detener* para salir del seguimiento en vivo y volver a la vista de exploración estándar.
-
-image:media\image178.gif[Explore Live tailing in action,width=624,height=436]
-
-=== Rastreo en Explorar
-
-==== Rastreo en Explore
-
-Explore le permite visualizar los rastros de las fuentes de datos de rastreo. Está disponible en Grafana v7.0 +.
-
-Las fuentes de datos admitidas son:
-
-* Jaeger
-* Tempo
-* Radiografía
-* Zipkin
-
-Para obtener información sobre cómo configurar consultas para las fuentes de datos enumeradas anteriormente, consulte la documentación de la fuente de datos específica.
-
-image:media\image179.png[Screenshot of the trace view,width=624,height=192]
-
-===== Encabezado
-
-image:media\image180.png[Screenshot of the trace view header,width=624,height=66]
-
-* Título del encabezado: muestra el nombre del intervalo raíz y el ID de seguimiento.
-* Buscar: resalta los intervalos que contienen el texto buscado.
-* Metadatos: varios metadatos sobre el seguimiento.
-
-===== Minimapa
-
-image:media\image181.png[Screenshot of the trace view minimap,width=624,height=69]
-
-Muestra la vista condensada o la línea de tiempo de seguimiento. Arrastre el mouse sobre el minimapa para hacer zoom en un rango de tiempo más pequeño. El zoom también actualizará la línea de tiempo principal, por lo que es fácil ver intervalos más cortos. Al pasar el cursor sobre el minimapa, cuando se hace zoom, se mostrará el botón Restablecer selección que restablece el zoom.
-
-===== Linea de tiempo
-
-image:media\image182.png[Screenshot of the trace view timeline,width=624,height=149]
-
-Muestra la lista de tramos dentro del seguimiento. Cada fila de tramo consta de estos componentes:
-
-* Botón Expandir hijos: expande o contrae todos los intervalos secundarios del intervalo seleccionado.
-* Nombre del servicio: nombre del servicio que registró el intervalo.
-* Nombre de la operación: nombre de la operación que representa este intervalo.
-* Barra de duración del intervalo: representación visual de la duración de la operación dentro del seguimiento.
-
-Al hacer clic en cualquier parte de la fila del intervalo, se muestran los detalles del intervalo.
-
-===== Detalles del tramo
-
-image:media\image183.png[Screenshot of the trace view span details,width=624,height=311]
-
-* Nombre de la operación
-* Metadatos de extensión
-* Etiquetas: cualquier etiqueta asociada con este intervalo.
-* Metadatos del proceso: metadatos sobre el proceso que registró este intervalo.
-* Registros: lista de registros registrados por este intervalo y valores clave asociados. En el caso de la sección de registros de Zipkin, se muestran las anotaciones de Zipkin.
-
-===== Seguimiento de registros
-
-*Nota:* Disponible en Grafana 7.4 y versiones posteriores.
-
-Puede navegar desde un tramo en una vista de seguimiento directamente a los registros relevantes para ese tramo. Esto está disponible para las fuentes de datos Tempo, Jaeger y Zipkin en este momento. su documentación relevante para obtener instrucciones sobre cómo configurar esta función.
-
-image:media\image184.png[Screenshot of the trace view in Explore with icon next to the spans,width=624,height=385]
-
-Haga clic en el icono del documento para abrir una vista dividida en Explorar con la fuente de datos configurada y consultar los registros relevantes para el intervalo.
-
-===== API de datos
-
-Esta visualización necesita una forma específica de los datos que se devolverán desde la fuente de datos para mostrarlos correctamente.
-
-La fuente de datos debe devolver el marco de datos y establecer frame.meta.preferredVisualisationType = 'trace'.
-
-====== Estructura del marco de datos
-
-Campos requeridos:
-
-[cols=",,",options="header",]
-|===
-|Nombre de campo |Tipo |Descripción
-|traceID |cadena |Identificador del seguimiento completo. Debe haber solo un rastro en el marco de datos.
-|spanID |cadena |Identificador del intervalo actual. Los SpanID deben ser únicos por seguimiento.
-|parentSpanID |cadena |SpanID del intervalo principal para crear una relación principal secundaria en la vista de seguimiento. Puede ser indefinido para el intervalo raíz sin padre.
-|serviceName |cadena |Nombre del servicio del que forma parte este intervalo.
-|serviceTags |TraceKeyValuePair [] |Lista de etiquetas relevantes para el servicio.
-|startTime |número |Hora de inicio del intervalo en milisegundos de tiempo de época.
-|duration |número |Duración del intervalo en milisegundos.
-|===
-
-Campos opcionales:
-
-[cols=",,",options="header",]
-|===
-|Nombre de campo |Tipo |Descripción
-|logs |TraceLog [] |Lista de registros asociados con el intervalo actual.
-|tags |TraceKeyValuePair [] |Lista de etiquetas asociadas con el intervalo actual.
-|warnings |cadena[] |Lista de advertencias asociadas con el intervalo actual.
-|stackTraces |cadena[] |Lista de seguimientos de pila asociados con el intervalo actual.
-|errorIconColor |cadena |Color del icono de error en caso de que el intervalo esté etiquetado con error: true.
-|===
-
-Para obtener detalles sobre los tipos, consulte TraceSpanRow, TraceKeyValuePair y TraceLog

@@ -23,7 +23,7 @@ image::image49.png[https://grafana.com/static/img/docs/transformations/transform
 
 Para eliminar una transformación que ya no es necesaria, haga clic en el icono de la papelera.
 
-== Transformaciones de depuración
+== Depurar transformaciones
 
 Para ver los conjuntos de resultados de entrada y salida de la transformación, haga clic en el icono de error (bicho) en el lado derecho de la fila de transformación, Grafana muestra la vista de depuración de transformación debajo de la fila de transformación.
 

@@ -1,4 +1,4 @@
-= Cambie su contraseña de Grafana
+= Cambiar su contraseña de Grafana
 
 Puede cambiar su contraseña de Grafana en la pestaña Cambiar contraseña.
 
