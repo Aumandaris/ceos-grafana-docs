@@ -13,7 +13,7 @@ Para obtener información sobre cómo configurar consultas para las fuentes de d
 
 image::image179.png[Screenshot of the trace view,width=624,height=192]
 
-=== Encabezado
+*Encabezado*
 
 image::image180.png[Screenshot of the trace view header,width=624,height=66]
 
@@ -21,13 +21,13 @@ image::image180.png[Screenshot of the trace view header,width=624,height=66]
 * Buscar: resalta los intervalos que contienen el texto buscado.
 * Metadatos: varios metadatos sobre el seguimiento.
 
-=== Minimapa
+*Minimapa*
 
 image::image181.png[Screenshot of the trace view minimap,width=624,height=69]
 
 Muestra la vista condensada o la línea de tiempo de seguimiento. Arrastre el mouse sobre el minimapa para hacer zoom en un rango de tiempo más pequeño. El zoom también actualizará la línea de tiempo principal, por lo que es fácil ver intervalos más cortos. Al pasar el cursor sobre el minimapa, cuando se hace zoom, se mostrará el botón Restablecer selección que restablece el zoom.
 
-=== Linea de tiempo
+*Linea de tiempo*
 
 image::image182.png[Screenshot of the trace view timeline,width=624,height=149]
 
@@ -40,7 +40,7 @@ Muestra la lista de tramos dentro del seguimiento. Cada fila de tramo consta de 
 
 Al hacer clic en cualquier parte de la fila del intervalo, se muestran los detalles del intervalo.
 
-=== Detalles del tramo
+*Detalles del tramo*
 
 image::image183.png[Screenshot of the trace view span details,width=624,height=311]
 
@@ -50,7 +50,7 @@ image::image183.png[Screenshot of the trace view span details,width=624,height=3
 * Metadatos del proceso: metadatos sobre el proceso que registró este intervalo.
 * Registros: lista de registros registrados por este intervalo y valores clave asociados. En el caso de la sección de registros de Zipkin, se muestran las anotaciones de Zipkin.
 
-=== Seguimiento de registros
+*Seguimiento de registros*
 
 [NOTE]
 ====

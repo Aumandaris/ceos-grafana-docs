@@ -19,7 +19,7 @@ En el siguiente JSON, id se muestra como nulo, que es el valor predeterminado qu
 ====
 
 [source,JSON]
-====
+----
 {
   "id": null,
   "uid": "cLV5GDCkz",
@@ -50,7 +50,7 @@ En el siguiente JSON, id se muestra como nulo, que es el valor predeterminado qu
   "version": 0,
   "links": []
 }
-====
+----
 
 Cada campo del JSON del tablero se explica a continuación con su uso:
 
@@ -80,7 +80,7 @@ Cada campo del JSON del tablero se explica a continuación con su uso:
 Los paneles son los componentes básicos de un tablero. Consiste en consultas de fuentes de datos, tipo de gráficos, alias, etc. El panel JSON consiste en una matriz de objetos JSON, cada uno de los cuales representa un panel diferente. La mayoría de los campos son comunes para todos los paneles, pero algunos campos dependen del tipo de panel. A continuación se muestra un ejemplo de panel JSON de un panel de texto.
 
 [source,JSON]
-====
+----
 "panels": [
   {
     "type": "text",
@@ -95,7 +95,7 @@ Los paneles son los componentes básicos de un tablero. Consiste en consultas de
     "mode": "markdown",
     "content": "# title"
   }
-====
+----
 
 === Tamaño y posición del panel
 
@@ -111,7 +111,7 @@ La cuadrícula tiene una gravedad negativa que mueve los paneles hacia arriba si
 === Selector de tiempo
 
 [source,JSON]
-====
+----
 "timepicker": {
     "collapse": false,
     "enable": true,
@@ -132,7 +132,7 @@ La cuadrícula tiene una gravedad negativa que mueve los paneles hacia arriba si
     "status": "Stable",
     "type": "timepicker"
   }
-====
+----
 
 El uso de los campos se explica a continuación:
 
@@ -153,7 +153,7 @@ El uso de los campos se explica a continuación:
 El campo `templating` contiene una matriz de variables de plantilla con sus valores guardados junto con algunos otros metadatos, por ejemplo:
 
 [source,JSON]
-====
+----
 "templating": {
     "enable": true,
     "list": [
@@ -218,7 +218,7 @@ El campo `templating` contiene una matriz de variables de plantilla con sus valo
       }
     ]
   }
-====
+----
 
 El uso de los campos mencionados anteriormente en la sección de plantillas se explica a continuación:
 

@@ -80,7 +80,7 @@ Consulta B:
 |3.2 |5
 |===
 
-====== Fusionar
+== Unir
 
 [NOTE]
 ====

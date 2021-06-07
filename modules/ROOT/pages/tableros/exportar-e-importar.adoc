@@ -41,7 +41,7 @@ Los tableros exportados desde Grafana 3.1+ tienen una nueva sección json `__inp
 Ejemplo:
 
 [source,JSON]
-====
+----
 {
   "__inputs": [
     {
@@ -61,12 +61,12 @@ Ejemplo:
     }
   ]
 }
-=====
+----
 
 Luego, se hace referencia a estos en los paneles del tablero de la siguiente manera:
 
 [source,JSON]
-====
+----
 {
   "rows": [
       {
@@ -79,7 +79,7 @@ Luego, se hace referencia a estos en los paneles del tablero de la siguiente man
       }
   ]
 }
-====
+----
 
 Estas entradas y su uso en las propiedades de la fuente de datos se agregan automáticamente durante la exportación en Grafana 3.1. Si ejecuta una versión anterior de Grafana y desea compartir un tablero en Grafana.com, debe agregar manualmente las entradas y crear plantillas de las propiedades de la fuente de datos como se indicó anteriormente.
 

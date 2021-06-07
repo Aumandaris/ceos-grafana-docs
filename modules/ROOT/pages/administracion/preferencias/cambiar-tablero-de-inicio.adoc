@@ -12,7 +12,7 @@ El tablero de inicio es el primer tablero que ve un usuario cuando inicia sesió
 . Coloque el cursor sobre el ícono *Tableros* (cuatro cuadrados).
 . Haga clic en *Inicio*.
 
-====== Configurar el tablero de inicio para el servidor
+== Configurar el tablero de inicio para el servidor
 
 Los usuarios con la marca de administrador de servidor de Grafana en su cuenta o acceso al archivo de configuración pueden definir un archivo JSON para usar como tablero de inicio para todos los usuarios en el servidor.
 
@@ -61,7 +61,7 @@ Los administradores de la organización y los administradores del equipo pueden 
 . En el campo *Tablero de inicio*, seleccione el tablero que desea utilizar para su tablero de inicio. Las opciones incluyen todos los tablero marcados con estrellas.
 . Clic en *Guardar*.
 
-== Configura tu tablero de inicio personal
+== Configure su tablero de inicio personal
 
 Puede elegir su propio tablero de inicio personal. Esta configuración anula todos los tableros de inicio establecidos en niveles superiores.
 

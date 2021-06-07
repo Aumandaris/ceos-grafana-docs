@@ -26,9 +26,9 @@ Para obtener más información, consulte el tema xref:administracion/procesamien
 Aquí hay un ejemplo de un enlace a un PNG renderizado del lado del servidor:
 
 [source,Bash]
-====
+----
 https://play.grafana.org/d/000000012/grafana-play-home?orgId=1&from=1568719680173&to=1568726880174&panelId=4&fullscreen
-====
+----
 
 === Parámetros de cadena de consulta para imágenes renderizadas del lado del servidor
 
@@ -64,9 +64,9 @@ image::image169.png[Panel share embed,width=624,height=349]
 A continuación, se muestra un ejemplo del código HTML:
 
 [source,HTML]
-====
+----
 <iframe src="https://snapshot.raintank.io/dashboard-solo/snapshot/y7zwi2bZ7FcoTlB93WN7yWO4aMiz3pZb?from=1493369923321&to=1493377123321&panelId=4" width="650" height="300" frameborder="0"></iframe>
-====
+----
 
 El resultado es un gráfico Grafana interactivo incrustado en un iframe:
 

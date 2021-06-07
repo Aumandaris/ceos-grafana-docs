@@ -1,7 +1,8 @@
 = Panel de gráfico circular v2
+
 [NOTE]
 ====
-*Nota:* esta documentación se refiere a una función beta.
+Esta documentación se refiere a una función beta.
 ====
 
 El gráfico circular muestra series reducidas, o valores en una serie, de una o más consultas, según se relacionan entre sí, en forma de porciones de un pastel. La longitud del arco, el área y el ángulo central de un corte son proporcionales al valor de los cortes, ya que se relaciona con la suma de todos los valores. Este tipo de gráfico se utiliza mejor cuando desea una comparación rápida de un pequeño conjunto de valores en una forma estéticamente agradable.
