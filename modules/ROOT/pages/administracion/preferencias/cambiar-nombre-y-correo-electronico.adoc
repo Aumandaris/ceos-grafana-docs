@@ -4,11 +4,11 @@ En Grafana, puede cambiar sus nombres y correos electrónicos asociados con grup
 
 Algunas tareas requieren ciertos permisos. Para obtener más información sobre los roles, consulte xref:permisos/permisos.adoc[Permisos].
 
-====== Cambiar el nombre de la organización
+== Cambiar el nombre de la organización
 
 Los administradores del servidor de Grafana y los administradores de la organización pueden cambiar los nombres de las organizaciones.
 
-*Cambiar el nombre de la organización como administrador del servidor de grafana*
+=== Cambiar el nombre de la organización como administrador del servidor de grafana
 
 Siga estas instrucciones si es administrador del servidor de Grafana.
 
@@ -19,7 +19,7 @@ Siga estas instrucciones si es administrador del servidor de Grafana.
 . En *Nombre*, ingrese el nuevo nombre de la organización.
 . Haga clic en *Actualizar*.
 
-*Cambiar el nombre de la organización como administrador de la organización*
+=== Cambiar el nombre de la organización como administrador de la organización
 
 Si es administrador de una organización, siga estos pasos:
 
@@ -29,7 +29,7 @@ Si es administrador de una organización, siga estos pasos:
 . En *Nombre de la organización*, ingrese el nuevo nombre.
 . Haz clic en *Actualizar nombre de la organización*.
 
-====== Cambiar el nombre o el correo electrónico del equipo
+== Cambiar el nombre o el correo electrónico del equipo
 
 Los administradores de la organización y los administradores del equipo pueden cambiar los nombres y las direcciones de correo electrónico del equipo. Para cambiar el nombre del equipo o el correo electrónico, siga estos pasos:
 
@@ -43,6 +43,6 @@ Los administradores de la organización y los administradores del equipo pueden 
 ** *Correo electrónico:* edite este campo para cambiar la dirección de correo electrónico asociada con el equipo.
 . Haga clic en *Actualizar*.
 
-====== Cambiar nombre de usuario o correo electrónico
+== Cambiar nombre de usuario o correo electrónico
 
 Para saber cómo editar su información de usuario, consulte xref:administrar-usuarios/tareas-de-la-cuenta-de-usuario/perfil-de-la-cuenta-de-usuario.adoc[Perfil de la cuenta de usuario de Grafana].
