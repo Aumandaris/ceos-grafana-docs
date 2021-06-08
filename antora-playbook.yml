@@ -6,7 +6,7 @@ content:
   - url: https://github.com/Aumandaris/ceos-grafana-docs.git
 ui:
   bundle: 
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    url: https://github.com/Aumandaris/ceos-grafana-docs/releases/download/1.0/paquete-interfaz-grafana.zip
     snapshot: true
   supplemental_files:
   - path: ui.yml
