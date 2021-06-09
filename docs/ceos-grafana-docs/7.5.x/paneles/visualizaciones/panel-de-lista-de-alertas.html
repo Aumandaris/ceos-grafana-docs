@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Panel de lista de alertas :: Documentación de Grafana</title>
+    <link rel="canonical" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html/ceos-grafana-docs/7.5.x/paneles/visualizaciones/panel-de-lista-de-alertas.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html">
+        <img src="/ceos-grafana-docs/ceos-grafana-docs/7.5.x/_images/logo.png" width="100">
+        <span>| Documentación de Grafana<span>     
+      </a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ceos-grafana-docs" data-version="7.5.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Documentación de Grafana</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../comenzando/comenzando.html">Comenzando</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../comenzando/con-grafana.html">Con Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../comenzando/con-grafana-y-prometheus.html">Con Grafana y Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../comenzando/series-de-tiempo.html">Series de tiempo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../comenzando/dimensiones-de-las-series-de-tiempo.html">Dimensiones de las series de tiempo.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../comenzando/glosario.html">Glosario</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../autenticacion/autenticacion.html">Autenticación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../autenticacion/autenticacion-de-grafana.html">Autenticación de Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../instalacion/instalacion.html">Instalación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../instalacion/requisitos.html">Requisitos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../instalacion/instalar-en-windows.html">Instalar en Windows</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../instalacion/actualizar-grafana.html">Actualizar Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../instalacion/reiniciar-grafana.html">Reiniciar Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../administracion/administracion.html">Administración</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../administracion/preferencias.html">Preferencias</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administracion/preferencias/cambiar-nombre-y-correo-electronico.html">Cambiar nombre y correo electrónico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administracion/preferencias/cambiar-el-tema-de-la-interfaz-de-usuario.html">Cambiar el tema de la interfaz de usuario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administracion/preferencias/cambiar-tablero-de-inicio.html">Camniar tablero de inicio</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administracion/preferencias/cambiar-zona-horaria-predeterminada.adoc">Cambiar zona horaria predeterminada</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../administracion/ver-servidor.html">Ver servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administracion/ver-servidor/metricas-internas-de-grafana.html">Métricas internas de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administracion/ver-servidor/ver-configuracion-del-servidor.html">Ver configuración del servidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administracion/ver-servidor/ver-estadisticas-del-servidor.html">Ver estadísticas del servidor</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../administracion/configuracion.html">Configuración</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../administracion/cli-de-grafana.html">CLI de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../administracion/seguridad.html">Seguridad</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../administrar-usuarios/administrar-usuarios.html">Administrar usuarios</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../administrar-usuarios/tareas-de-administrador-de-servidor.html">Tareas de administrador de servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-usuarios.html">Administrar usuarios</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-organizacion.html">Administrar organización</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../administrar-usuarios/tareas-de-administrador-de-organizacion.html">Tareas de administrador de organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#administrar-usuarios/administar-equipos.adoc">Administrar equipos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../administrar-usuarios/tareas-de-la-cuenta-de-usuario.html">Tareas de la cuenta de usuario</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administrar-usuarios/tareas-de-la-cuenta-de-usuario/perfil-de-cuenta-de-usuario.html">Perfil de cuenta de uruario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-su-contraseña">Cambiar su contraseña</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-organizacion">Cambiar organización</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../permisos/permisos.html">Permisos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../permisos/roles-de-la-organizacion.html">Roles de la organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../permisos/permisos-de-tablero-y-carpeta.html">Permiso de tablero y carpeta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#permisos/restringir-acceso">Restringit acceso</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../permisos/permisos-de-fuente-de-datos.html">Permisos de fuente de datos</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../fuentes-de-datos/fuentes-de-datos.html">Fuentes de datos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#fuentes-de-datos/agregar-una-fuente-de-datos.adoc">Agregar una fuente de datos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../fuentes-de-datos/loki.html">Loki</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../fuentes-de-datos/prometheus.html">Prometheus</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles.html">Paneles</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../agregar-un-panel.html">Agregar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../editor-de-paneles.html">Editor de paneles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lista-de-calculos.html">Lista de cálculos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../consultas.html">Consultas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../umbrales.html">Umbrales</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../transformaciones.html">Transformaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../transformaciones/aplicar-transformaciones.html">Aplicar transformaciones</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../transformaciones/tipos-y-opciones-de-transformacion.html">Tipos y opciones de transformación</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../compartir-resultados-de-la-consulta.html">Compartir resultados de la consulta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../inspeccionar-un-panel.html">Inspeccionar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../opciones-de-campo-y-anulaciones.html">Opciones de campo y anulaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../opciones-de-campo-y-anulaciones/configurar-todos-los-campos.html">Configurar todos los campos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../opciones-de-campo-y-anulaciones/configurar-campos-especificos.html">Configurar campos específicos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../opciones-de-campo-y-anulaciones/opciones-de-campo-estandar.html">Opciones de campo estándar</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../visualizaciones.html">Visualizaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="opciones-de-leyenda-del-panel.html">Opciones de leyenda del panel</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="panel-de-lista-de-alertas.html">Panel de lista de alertas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="panel-de-medidor-de-barra.html">Panel de medidor de barra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="panel-de-lista-de-tableros.html">Panel de lista de tableros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="panel-de-medidor.html">Panel de medidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="panel-de-grafico.html">Panel de gráfico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="panel-de-mapa-de-calor.html">Panel de mapa de calor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="panel-de-registros.html">Panel de registros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-noticias">Panel de noticias</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-grafico-de-nodo.adoc">Panel de gráfico de nodo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="panel-de-grafico-circular.html">Panel de gráfico circular</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="panel-de-estadisticas.html">Panel de estadísticas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="panel-de-tabla.html">Panel de tabla</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="panel-de-tabla/opciones-de-campo-de-tabla.html">Opciones de campo de tabla</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="panel-de-tabla/filtrar-columnas-de-la-tabla.html">Filtrar columnas de la tabla</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="panel-de-texto.html">Panel de texto</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="panel-de-series-de-tiempo.html">Panel de series de tiempo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="panel-de-series-de-tiempo/cambiar-visualizacion-del-eje.html">Cambiar visualización del eje</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../expresiones.html">Expresiones</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../tableros/tableros.html">Tableros</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../compartir/compartir.html">Compartir</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../explorar/explorar.html">Explorar</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../alertas/alertas.html">Alertas</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../solucion-de-problemas/solucion-de-problemas.html">Solución de problemas</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentación de Grafana</span>
+    <span class="version">7.5.x</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Documentación de Grafana</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">7.5.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Documentación de Grafana</a></li>
+    <li><a href="../paneles.html">Paneles</a></li>
+    <li><a href="../visualizaciones.html">Visualizaciones</a></li>
+    <li><a href="panel-de-lista-de-alertas.html">Panel de lista de alertas</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/Aumandaris/ceos-grafana-docs/edit/master/modules/ROOT/pages/paneles/visualizaciones/panel-de-lista-de-alertas.adoc">Editar esta página</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Panel de lista de alertas</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>El Panel de la lista de alertas le permite mostrar las alertas de su tablero. Puede configurar la lista para mostrar el estado actual o los cambios de estado recientes. Puede leer más acerca de las alertas en <a href="../../alertas/alertas.html" class="page">Descripción general de las alertas</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../_images/image66.png" alt="https://grafana.com/static/img/docs/v45/alert-list-panel.png" width="624" height="147">
+</div>
+</div>
+<div class="paragraph">
+<p>Utilice esta configuración para refinar su visualización.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_opciones"><a class="anchor" href="#_opciones"></a>Opciones</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Mostrar:</strong> elija si el panel debe mostrar el estado de alerta actual o los cambios de estado de alerta recientes.</p>
+</li>
+<li>
+<p><strong>Elementos máximos:</strong> establece el número máximo de alertas para listar.</p>
+</li>
+<li>
+<p><strong>Orden de clasificación:</strong> seleccione cómo ordenar las alertas mostradas:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alfabético (asc):</strong> orden alfabético.</p>
+</li>
+<li>
+<p><strong>Alfabético (desc):</strong> orden alfabético inverso.</p>
+</li>
+<li>
+<p><strong>Importancia:</strong> por importancia de acuerdo con los siguientes valores, siendo 1 el más alto:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>alerting: 1</p>
+</li>
+<li>
+<p>no_data: 2</p>
+</li>
+<li>
+<p>pending: 3</p>
+</li>
+<li>
+<p>ok: 4</p>
+</li>
+<li>
+<p>paused: 5</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alertas de este tablero:</strong> muestra alertas solo del tablero en el que se encuentra la lista de alertas.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_filtrar"><a class="anchor" href="#_filtrar"></a>Filtrar</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Estas opciones le permiten limitar las alertas que se muestran solo a aquellas que coinciden con la consulta, carpeta o etiquetas que elija.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Nombre de alerta:</strong> ingrese una consulta de nombre de alerta.</p>
+</li>
+<li>
+<p><strong>Título del tablero:</strong> ingrese una consulta de título del tablero.</p>
+</li>
+<li>
+<p><strong>Carpeta:</strong> seleccione una carpeta. Solo se mostrarán las alertas de los tableros de la carpeta seleccionada.</p>
+</li>
+<li>
+<p><strong>Etiquetas del panel:</strong> seleccione una o más etiquetas. Solo se mostrarán las alertas de los tableros con una o más de las etiquetas.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_filtro_de_estado"><a class="anchor" href="#_filtro_de_estado"></a>Filtro de estado</h3>
+<div class="paragraph">
+<p>Elija qué estados de alerta mostrar en este panel.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>OK</p>
+</li>
+<li>
+<p>Pausado</p>
+</li>
+<li>
+<p>Sin datos</p>
+</li>
+<li>
+<p>Error de ejecución</p>
+</li>
+<li>
+<p>Alertando</p>
+</li>
+<li>
+<p>Pendiente</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Esta página fue hecha usando la interfaz predeterminada de Antora.</p>
+  <p>El código de esta interfaz está licenciado bajo los términos de la licencia MPL-2.0.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

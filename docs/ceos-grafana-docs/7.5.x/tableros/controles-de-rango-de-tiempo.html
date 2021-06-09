@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Controles de rango de tiempo :: Documentación de Grafana</title>
+    <link rel="canonical" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html/ceos-grafana-docs/7.5.x/tableros/controles-de-rango-de-tiempo.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html">
+        <img src="/ceos-grafana-docs/ceos-grafana-docs/7.5.x/_images/logo.png" width="100">
+        <span>| Documentación de Grafana<span>     
+      </a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ceos-grafana-docs" data-version="7.5.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Documentación de Grafana</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../comenzando/comenzando.html">Comenzando</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/con-grafana.html">Con Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/con-grafana-y-prometheus.html">Con Grafana y Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/series-de-tiempo.html">Series de tiempo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/dimensiones-de-las-series-de-tiempo.html">Dimensiones de las series de tiempo.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/glosario.html">Glosario</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../autenticacion/autenticacion.html">Autenticación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../autenticacion/autenticacion-de-grafana.html">Autenticación de Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../instalacion/instalacion.html">Instalación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/requisitos.html">Requisitos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/instalar-en-windows.html">Instalar en Windows</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/actualizar-grafana.html">Actualizar Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/reiniciar-grafana.html">Reiniciar Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/administracion.html">Administración</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/preferencias.html">Preferencias</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-nombre-y-correo-electronico.html">Cambiar nombre y correo electrónico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-el-tema-de-la-interfaz-de-usuario.html">Cambiar el tema de la interfaz de usuario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-tablero-de-inicio.html">Camniar tablero de inicio</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administracion/preferencias/cambiar-zona-horaria-predeterminada.adoc">Cambiar zona horaria predeterminada</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/ver-servidor.html">Ver servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/metricas-internas-de-grafana.html">Métricas internas de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/ver-configuracion-del-servidor.html">Ver configuración del servidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/ver-estadisticas-del-servidor.html">Ver estadísticas del servidor</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/configuracion.html">Configuración</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/cli-de-grafana.html">CLI de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/seguridad.html">Seguridad</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/administrar-usuarios.html">Administrar usuarios</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor.html">Tareas de administrador de servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-usuarios.html">Administrar usuarios</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-organizacion.html">Administrar organización</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-organizacion.html">Tareas de administrador de organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#administrar-usuarios/administar-equipos.adoc">Administrar equipos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario.html">Tareas de la cuenta de usuario</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario/perfil-de-cuenta-de-usuario.html">Perfil de cuenta de uruario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-su-contraseña">Cambiar su contraseña</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-organizacion">Cambiar organización</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../permisos/permisos.html">Permisos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/roles-de-la-organizacion.html">Roles de la organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-tablero-y-carpeta.html">Permiso de tablero y carpeta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#permisos/restringir-acceso">Restringit acceso</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-fuente-de-datos.html">Permisos de fuente de datos</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../fuentes-de-datos/fuentes-de-datos.html">Fuentes de datos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#fuentes-de-datos/agregar-una-fuente-de-datos.adoc">Agregar una fuente de datos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../fuentes-de-datos/loki.html">Loki</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../fuentes-de-datos/prometheus.html">Prometheus</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/paneles.html">Paneles</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/agregar-un-panel.html">Agregar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/editor-de-paneles.html">Editor de paneles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/lista-de-calculos.html">Lista de cálculos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/consultas.html">Consultas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/umbrales.html">Umbrales</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/transformaciones.html">Transformaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/transformaciones/aplicar-transformaciones.html">Aplicar transformaciones</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/transformaciones/tipos-y-opciones-de-transformacion.html">Tipos y opciones de transformación</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/compartir-resultados-de-la-consulta.html">Compartir resultados de la consulta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/inspeccionar-un-panel.html">Inspeccionar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones.html">Opciones de campo y anulaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/configurar-todos-los-campos.html">Configurar todos los campos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/configurar-campos-especificos.html">Configurar campos específicos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/opciones-de-campo-estandar.html">Opciones de campo estándar</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones.html">Visualizaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/opciones-de-leyenda-del-panel.html">Opciones de leyenda del panel</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-lista-de-alertas.html">Panel de lista de alertas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-medidor-de-barra.html">Panel de medidor de barra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-lista-de-tableros.html">Panel de lista de tableros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-medidor.html">Panel de medidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-grafico.html">Panel de gráfico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-mapa-de-calor.html">Panel de mapa de calor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-registros.html">Panel de registros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-noticias">Panel de noticias</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-grafico-de-nodo.adoc">Panel de gráfico de nodo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-grafico-circular.html">Panel de gráfico circular</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-estadisticas.html">Panel de estadísticas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla.html">Panel de tabla</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla/opciones-de-campo-de-tabla.html">Opciones de campo de tabla</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla/filtrar-columnas-de-la-tabla.html">Filtrar columnas de la tabla</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-texto.html">Panel de texto</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo.html">Panel de series de tiempo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/cambiar-visualizacion-del-eje.html">Cambiar visualización del eje</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/expresiones.html">Expresiones</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="tableros.html">Tableros</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../compartir/compartir.html">Compartir</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../explorar/explorar.html">Explorar</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alertas/alertas.html">Alertas</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../solucion-de-problemas/solucion-de-problemas.html">Solución de problemas</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentación de Grafana</span>
+    <span class="version">7.5.x</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Documentación de Grafana</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">7.5.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Documentación de Grafana</a></li>
+    <li><a href="controles-de-rango-de-tiempo.html">Controles de rango de tiempo</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/Aumandaris/ceos-grafana-docs/edit/master/modules/ROOT/pages/tableros/controles-de-rango-de-tiempo.adoc">Editar esta página</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Controles de rango de tiempo</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Grafana proporciona varias formas de administrar los rangos de tiempo de los datos que se visualizan, tanto a nivel del tablero como a nivel del panel.</p>
+</div>
+<div class="paragraph">
+<p>Esta página describe las unidades de tiempo admitidas y los rangos relativos, los controles de tiempo comunes, la configuración de tiempo de todo el tablero y la configuración de tiempo específica del panel.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_unidades_de_tiempo_y_rangos_relativos"><a class="anchor" href="#_unidades_de_tiempo_y_rangos_relativos"></a>Unidades de tiempo y rangos relativos</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Se admiten las siguientes unidades de tiempo: <code>s (segundos)</code>, <code>m (minutos)</code>, <code>h (horas)</code>, <code>d (días)</code>, <code>w (semanas)</code>, <code>M (meses)</code>, <code>y (años)</code>.</p>
+</div>
+<div class="paragraph">
+<p>El operador menos le permite retroceder en el tiempo, en relación con el ahora. Si desea mostrar el período completo de la unidad (día, semana, mes, etc.), agregue <code>/&lt;time unit&gt;</code> al final.</p>
+</div>
+<div class="paragraph">
+<p>El operador más le permite avanzar en el tiempo en relación con el ahora. Puede utilizar esta función para ver datos pronosticados en el futuro, por ejemplo.</p>
+</div>
+<div class="paragraph">
+<p>Aquí hay unos ejemplos:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Ejemplo de rango relativo</th>
+<th class="tableblock halign-left valign-top">Desde:</th>
+<th class="tableblock halign-left valign-top">Hasta:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Últimos 5 minutos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>now-5m</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>now</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">El día hasta ahora</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>now/d</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>now</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Esta semana</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>now/w</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>now/w</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Esta semana hasta ahora</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>now/w</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>now</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Este mes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>now/M</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>now/M</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Este mes hasta ahora</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>now/M</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>now</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mes anterior</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>now-1M/M</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>now-1M/M</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Este año hasta ahora</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>now/Y</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>now</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Este año</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>now/Y</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>now/Y</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_controles_de_rango_de_tiempo_común"><a class="anchor" href="#_controles_de_rango_de_tiempo_común"></a>Controles de rango de tiempo común</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>El tablero y los controles de tiempo del panel tienen una interfaz de usuario (UI) común.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/image153.png" alt="https://grafana.com/static/img/docs/time-range-controls/common-time-controls-7-0.png" width="452" height="76">
+</div>
+</div>
+<div class="paragraph">
+<p>Las opciones se definen a continuación.</p>
+</div>
+<div class="sect2">
+<h3 id="_rango_de_tiempo_actual"><a class="anchor" href="#_rango_de_tiempo_actual"></a>Rango de tiempo actual</h3>
+<div class="paragraph">
+<p>El rango de tiempo actual, también llamado <em>selector de tiempo</em>, muestra el rango de tiempo que se muestra actualmente en el tablero o panel que está viendo.</p>
+</div>
+<div class="paragraph">
+<p>Pase el cursor sobre el campo para ver las marcas de tiempo exactas en el rango y su fuente (como el navegador local).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/image154.png" alt="https://grafana.com/static/img/docs/time-range-controls/time-picker-7-0.png" width="262" height="223">
+</div>
+</div>
+<div class="paragraph">
+<p>Haga clic en el rango de tiempo actual para cambiar el rango de tiempo. Puede cambiar la hora actual utilizando un rango de tiempo relativo, como los últimos 15 minutos, o un rango de tiempo absoluto, como <code>2020-05-14 00:00:00</code> to <code>2020-05-15 23:59:59</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/image155.png" alt="https://grafana.com/static/img/docs/time-range-controls/change-current-time-range-7-0.png" width="624" height="471">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rango_de_tiempo_relativo"><a class="anchor" href="#_rango_de_tiempo_relativo"></a>Rango de tiempo relativo</h3>
+<div class="paragraph">
+<p>Seleccione el intervalo de tiempo relativo de la lista de <strong>Intervalos de tiempo relativos</strong>. Algunos ejemplos de rangos de tiempo son:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Últimos 30 minutos</p>
+</li>
+<li>
+<p>Últimas 12 horas</p>
+</li>
+<li>
+<p>Últimos 7 días</p>
+</li>
+<li>
+<p>Últimos 2 años</p>
+</li>
+<li>
+<p>Ayer</p>
+</li>
+<li>
+<p>Anteayer</p>
+</li>
+<li>
+<p>Este día la semana pasada</p>
+</li>
+<li>
+<p>Hoy hasta ahora</p>
+</li>
+<li>
+<p>Esta semana hasta ahora</p>
+</li>
+<li>
+<p>Este mes hasta ahora</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rango_de_tiempo_absoluto"><a class="anchor" href="#_rango_de_tiempo_absoluto"></a>Rango de tiempo absoluto</h3>
+<div class="paragraph">
+<p>Establezca un intervalo de tiempo absoluto de dos formas:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Escriba valores en los campos <strong>Desde</strong> y <strong>Hasta</strong>. Puede escribir valores de tiempo exactos o valores relativos, como <code>now-24h</code>, y luego hacer clic en <strong>Aplicar rango de tiempo</strong>.</p>
+</li>
+<li>
+<p>Haga clic en el campo <strong>Desde</strong> o <strong>Hasta</strong>. Grafana muestra un calendario. Haga clic en el día o los días que desea usar como rango de tiempo actual y luego haga clic en <strong>Aplicar rango de tiempo</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Esta sección también muestra los rangos absolutos usados ​​recientemente.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_alejar_cmdz_o_ctrlz"><a class="anchor" href="#_alejar_cmdz_o_ctrlz"></a>Alejar (Cmd+Z o Ctrl+Z)</h3>
+<div class="paragraph">
+<p>Haga clic en el icono <strong>Alejar</strong> para ver un intervalo de tiempo más grande en el tablero o visualización del panel.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_acercar_solo_aplicable_a_visualizaciones_de_gráficos"><a class="anchor" href="#_acercar_solo_aplicable_a_visualizaciones_de_gráficos"></a>Acercar (solo aplicable a visualizaciones de gráficos)</h3>
+<div class="paragraph">
+<p>Haga clic y arrastre para seleccionar el rango de tiempo en la visualización que desea ver.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_actualizar_el_tablero"><a class="anchor" href="#_actualizar_el_tablero"></a>Actualizar el tablero</h3>
+<div class="paragraph">
+<p>Haga clic en el icono <strong>Actualizar tablero</strong> para ejecutar inmediatamente todas las consultas en el tablero y actualizar las visualizaciones. Grafana cancela cualquier solicitud pendiente cuando se activa una nueva actualización.</p>
+</div>
+<div class="paragraph">
+<p>De forma predeterminada, Grafana no actualiza automáticamente el tablero. Las consultas se ejecutan en su propio horario de acuerdo con la configuración del panel. Sin embargo, si desea actualizar periódicamente el tablero, haga clic en la flecha hacia abajo junto al icono <strong>Actualizar tablero</strong> y luego seleccione un intervalo de actualización.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuración_de_tiempo_del_tablero"><a class="anchor" href="#_configuración_de_tiempo_del_tablero"></a>Configuración de tiempo del tablero</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La configuración de tiempo se guarda por tablero.</p>
+</div>
+<div class="paragraph">
+<p>Para acceder a la configuración de tiempo del tablero, haga clic en el icono de <strong>configuración del Tablero</strong> (engranaje) en la parte superior de la pantalla. La configuración se encuentra en la sección <strong>Opciones de tiempo</strong> de la pestaña General.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Zona horaria:</strong> especifique la zona horaria local del servicio o sistema que está supervisando. Esto puede resultar útil al monitorear un sistema o servicio que opera en varias zonas horarias.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Predeterminado:</strong> se utiliza la zona horaria seleccionada predeterminada para el perfil de usuario, el equipo o la organización. Si no se especifica una zona horaria para el perfil de usuario, un equipo del que el usuario es miembro o la organización, entonces Grafana usa la hora del navegador local.</p>
+</li>
+<li>
+<p><strong>Hora local del navegador:</strong> se utiliza la zona horaria configurada para el navegador del usuario de visualización. Esta suele ser la misma zona horaria que la configurada en la computadora.</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Zonas horarias estándar ISO 8601</a>, incluido UTC.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Actualización automática:</strong> personalice las opciones que se muestran por tiempo relativo y las opciones de actualización automática. Las entradas están separadas por comas y aceptan cualquier unidad de tiempo válida.</p>
+</li>
+<li>
+<p><strong>Ahora retrasa ahora:</strong> anule el valor <code>now</code> introduciendo un retraso de tiempo. Por lo general, esta función se utiliza para adaptarse a retrasos conocidos en la agregación de datos para evitar valores nulos.</p>
+</li>
+<li>
+<p><strong>Ocultar selector de tiempo:</strong> seleccione esta opción si no desea que Grafana muestre el selector de tiempo.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_anulaciones_de_tiempo_del_panel_y_cambio_de_tiempo"><a class="anchor" href="#_anulaciones_de_tiempo_del_panel_y_cambio_de_tiempo"></a>Anulaciones de tiempo del panel y cambio de tiempo</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>En las <a href="../paneles/consultas.html#_opciones_de_consulta" class="page">Opciones de consulta</a>, puede anular el intervalo de tiempo relativo para paneles individuales, lo que hace que sean diferentes de lo que está seleccionado en el selector de tiempo del tablero en la parte superior derecha. Esto le permite mostrar métricas de diferentes períodos de tiempo o días al mismo tiempo.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_controle_el_rango_de_tiempo_usando_una_url"><a class="anchor" href="#_controle_el_rango_de_tiempo_usando_una_url"></a>Controle el rango de tiempo usando una URL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>El rango de tiempo de un tablero se puede controlar proporcionando los siguientes parámetros de consulta en la URL del panel:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>from</code>: define el límite inferior del rango de tiempo, especificado en ms epoch o <a href="#rango de tiempo relativo">[rango de tiempo relativo]</a></p>
+</li>
+<li>
+<p><code>to</code>: define el límite superior del rango de tiempo, especificado en ms epoch o <a href="#rango de tiempo relativo">[rango de tiempo relativo]</a></p>
+</li>
+<li>
+<p><code>time</code> y <code>time.window</code>: define un rango de tiempo desde time-time.window/2 hasta time+time.window/2. Ambos parámetros deben especificarse en ms. Por ejemplo <code>?time=1500000000000&amp;time.window=10000</code> dará como resultado un rango de tiempo de 10s desde 1499999995000 a 1500000005000</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Esta página fue hecha usando la interfaz predeterminada de Antora.</p>
+  <p>El código de esta interfaz está licenciado bajo los términos de la licencia MPL-2.0.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

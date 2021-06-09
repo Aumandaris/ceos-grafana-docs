@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CLI de Grafana :: Documentación de Grafana</title>
+    <link rel="canonical" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html/ceos-grafana-docs/7.5.x/administracion/cli-de-grafana.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html">
+        <img src="/ceos-grafana-docs/ceos-grafana-docs/7.5.x/_images/logo.png" width="100">
+        <span>| Documentación de Grafana<span>     
+      </a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ceos-grafana-docs" data-version="7.5.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Documentación de Grafana</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../comenzando/comenzando.html">Comenzando</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/con-grafana.html">Con Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/con-grafana-y-prometheus.html">Con Grafana y Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/series-de-tiempo.html">Series de tiempo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/dimensiones-de-las-series-de-tiempo.html">Dimensiones de las series de tiempo.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/glosario.html">Glosario</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../autenticacion/autenticacion.html">Autenticación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../autenticacion/autenticacion-de-grafana.html">Autenticación de Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../instalacion/instalacion.html">Instalación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/requisitos.html">Requisitos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/instalar-en-windows.html">Instalar en Windows</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/actualizar-grafana.html">Actualizar Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/reiniciar-grafana.html">Reiniciar Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="administracion.html">Administración</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="preferencias.html">Preferencias</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="preferencias/cambiar-nombre-y-correo-electronico.html">Cambiar nombre y correo electrónico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="preferencias/cambiar-el-tema-de-la-interfaz-de-usuario.html">Cambiar el tema de la interfaz de usuario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="preferencias/cambiar-tablero-de-inicio.html">Camniar tablero de inicio</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administracion/preferencias/cambiar-zona-horaria-predeterminada.adoc">Cambiar zona horaria predeterminada</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="ver-servidor.html">Ver servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="ver-servidor/metricas-internas-de-grafana.html">Métricas internas de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="ver-servidor/ver-configuracion-del-servidor.html">Ver configuración del servidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="ver-servidor/ver-estadisticas-del-servidor.html">Ver estadísticas del servidor</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="configuracion.html">Configuración</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="cli-de-grafana.html">CLI de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="seguridad.html">Seguridad</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/administrar-usuarios.html">Administrar usuarios</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor.html">Tareas de administrador de servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-usuarios.html">Administrar usuarios</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-organizacion.html">Administrar organización</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-organizacion.html">Tareas de administrador de organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#administrar-usuarios/administar-equipos.adoc">Administrar equipos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario.html">Tareas de la cuenta de usuario</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario/perfil-de-cuenta-de-usuario.html">Perfil de cuenta de uruario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-su-contraseña">Cambiar su contraseña</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-organizacion">Cambiar organización</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../permisos/permisos.html">Permisos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/roles-de-la-organizacion.html">Roles de la organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-tablero-y-carpeta.html">Permiso de tablero y carpeta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#permisos/restringir-acceso">Restringit acceso</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-fuente-de-datos.html">Permisos de fuente de datos</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../fuentes-de-datos/fuentes-de-datos.html">Fuentes de datos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#fuentes-de-datos/agregar-una-fuente-de-datos.adoc">Agregar una fuente de datos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../fuentes-de-datos/loki.html">Loki</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../fuentes-de-datos/prometheus.html">Prometheus</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/paneles.html">Paneles</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/agregar-un-panel.html">Agregar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/editor-de-paneles.html">Editor de paneles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/lista-de-calculos.html">Lista de cálculos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/consultas.html">Consultas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/umbrales.html">Umbrales</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/transformaciones.html">Transformaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/transformaciones/aplicar-transformaciones.html">Aplicar transformaciones</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/transformaciones/tipos-y-opciones-de-transformacion.html">Tipos y opciones de transformación</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/compartir-resultados-de-la-consulta.html">Compartir resultados de la consulta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/inspeccionar-un-panel.html">Inspeccionar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones.html">Opciones de campo y anulaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/configurar-todos-los-campos.html">Configurar todos los campos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/configurar-campos-especificos.html">Configurar campos específicos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/opciones-de-campo-estandar.html">Opciones de campo estándar</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones.html">Visualizaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/opciones-de-leyenda-del-panel.html">Opciones de leyenda del panel</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-lista-de-alertas.html">Panel de lista de alertas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-medidor-de-barra.html">Panel de medidor de barra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-lista-de-tableros.html">Panel de lista de tableros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-medidor.html">Panel de medidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-grafico.html">Panel de gráfico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-mapa-de-calor.html">Panel de mapa de calor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-registros.html">Panel de registros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-noticias">Panel de noticias</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-grafico-de-nodo.adoc">Panel de gráfico de nodo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-grafico-circular.html">Panel de gráfico circular</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-estadisticas.html">Panel de estadísticas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla.html">Panel de tabla</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla/opciones-de-campo-de-tabla.html">Opciones de campo de tabla</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla/filtrar-columnas-de-la-tabla.html">Filtrar columnas de la tabla</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-texto.html">Panel de texto</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo.html">Panel de series de tiempo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/cambiar-visualizacion-del-eje.html">Cambiar visualización del eje</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/expresiones.html">Expresiones</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../tableros/tableros.html">Tableros</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../compartir/compartir.html">Compartir</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../explorar/explorar.html">Explorar</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alertas/alertas.html">Alertas</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../solucion-de-problemas/solucion-de-problemas.html">Solución de problemas</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentación de Grafana</span>
+    <span class="version">7.5.x</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Documentación de Grafana</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">7.5.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Documentación de Grafana</a></li>
+    <li><a href="administracion.html">Administración</a></li>
+    <li><a href="cli-de-grafana.html">CLI de Grafana</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/Aumandaris/ceos-grafana-docs/edit/master/modules/ROOT/pages/administracion/cli-de-grafana.adoc">Editar esta página</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">CLI de Grafana</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Grafana CLI es un pequeño ejecutable que se incluye con el servidor Grafana. Se puede ejecutar en la misma máquina en la que se ejecuta el servidor Grafana. Grafana CLI tiene comandos plugins y admin, así como opciones globales.</p>
+</div>
+<div class="paragraph">
+<p>Para enumerar todos los comandos y opciones:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>grafana-cli –h</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_invocar_la_cli_de_grafana"><a class="anchor" href="#_invocar_la_cli_de_grafana"></a>Invocar la CLI de Grafana</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Para invocar la CLI de Grafana, agregue la ruta a los binarios de grafana en su variable de entorno <code>PATH</code>. Alternativamente, si su directorio actual es el directorio <code>bin</code>, use <code>./grafana-cli.</code> De lo contrario, puede especificar la ruta completa a la CLI. Por ejemplo, en Linux <code>/usr/share/grafana/bin/grafana-cli</code> y en Windows <code>C:\ProgramFiles\GrafanaLabs\grafana\bin\grafana-cli.exe</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Algunos comandos, como instalar o eliminar complementos, requieren <code>sudo</code> en Linux. Si está en Windows, ejecute Windows PowerShell como administrador.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sintaxis_del_comando_de_la_cli_de_grafana"><a class="anchor" href="#_sintaxis_del_comando_de_la_cli_de_grafana"></a>Sintaxis del comando de la CLI de Grafana</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La sintaxis general de los comandos en la CLI Grafana es:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli [global options] command [command options] [arguments...]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_opciones_globales"><a class="anchor" href="#_opciones_globales"></a>Opciones globales</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Grafana CLI le permite anular temporalmente ciertas configuraciones predeterminadas de Grafana. A excepción de <code>--help</code> y <code>--version</code>, la mayoría de las opciones globales solo las utilizan los desarrolladores.</p>
+</div>
+<div class="paragraph">
+<p>Cada opción global se aplica solo al comando en el que se usa. Por ejemplo, <code>--pluginsDir value</code> no cambia permanentemente donde Grafana guarda los complementos. Solo lo cambia para el comando en el que aplica la opción.</p>
+</div>
+<div class="sect2">
+<h3 id="_mostrar_la_ayuda_de_la_cli_de_grafana"><a class="anchor" href="#_mostrar_la_ayuda_de_la_cli_de_grafana"></a>Mostrar la ayuda de la CLI de Grafana</h3>
+<div class="paragraph">
+<p><code>--help</code> o <code>-h</code> muestra la ayuda, incluidas las rutas predeterminadas y la información de configuración de Docker.</p>
+</div>
+<div class="paragraph">
+<p><strong>Ejemplo:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli –h</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mostrar_la_versión_de_la_cli_de_grafana"><a class="anchor" href="#_mostrar_la_versión_de_la_cli_de_grafana"></a>Mostrar la versión de la CLI de Grafana</h3>
+<div class="paragraph">
+<p><code>--version</code> o <code>-v</code> imprime la versión de Grafana CLI que se está ejecutando actualmente.</p>
+</div>
+<div class="paragraph">
+<p><strong>Ejemplo:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli –v</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_anular_el_directorio_de_complementos_predeterminado"><a class="anchor" href="#_anular_el_directorio_de_complementos_predeterminado"></a>Anular el directorio de complementos predeterminado</h3>
+<div class="paragraph">
+<p><code>--pluginsDir value</code> anula la ruta a donde su instancia local de Grafana almacena complementos. Utilice esta opción si desea instalar, actualizar o eliminar un complemento en algún lugar que no sea el directorio predeterminado ("/var/lib/grafana/plugins") [$GF_PLUGIN_DIR].</p>
+</div>
+<div class="paragraph">
+<p><strong>Ejemplo:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli --pluginsDir "/var/lib/grafana/devplugins" plugins install &lt;plugin-id&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_anular_la_url_del_repositorio_del_complemento_predeterminado"><a class="anchor" href="#_anular_la_url_del_repositorio_del_complemento_predeterminado"></a>Anular la URL del repositorio del complemento predeterminado</h3>
+<div class="paragraph">
+<p><code>--repo value</code> le permite descargar e instalar o actualizar complementos desde un repositorio que no sea el repositorio predeterminado de Grafana.</p>
+</div>
+<div class="paragraph">
+<p><strong>Ejemplo:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli --repo "https://example.com/plugins" plugins install &lt;plugin-id&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_anular_la_url_zip_del_complemento_predeterminado"><a class="anchor" href="#_anular_la_url_zip_del_complemento_predeterminado"></a>Anular la URL .zip del complemento predeterminado</h3>
+<div class="paragraph">
+<p><code>--pluginUrl value</code> le permite descargar un archivo .zip que contiene un complemento desde una URL local en lugar de descargarlo desde la fuente predeterminada de Grafana.</p>
+</div>
+<div class="paragraph">
+<p><strong>Ejemplo:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli --pluginUrl https://company.com/grafana/plugins/&lt;plugin-id&gt;-&lt;plugin-version&gt;.zip plugins install &lt;plugin-id&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_anular_la_seguridad_de_la_capa_de_transporte"><a class="anchor" href="#_anular_la_seguridad_de_la_capa_de_transporte"></a>Anular la seguridad de la capa de transporte</h3>
+<div class="paragraph">
+<p><strong>Advertencia:</strong> Desactivar la TLS es un riesgo de seguridad significativo. No recomendamos utilizar esta opción.</p>
+</div>
+<div class="paragraph">
+<p><code>--insecure</code> le permite desactivar la verificación de Seguridad de la capa de transporte (TLS) (inseguro). Es posible que desee hacer esto si está descargando un complemento de una fuente no predeterminada.</p>
+</div>
+<div class="paragraph">
+<p><strong>Ejemplo:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli --insecure –pluginUrl https://company.com/grafana/plugins/&lt;plugin-id&gt;-&lt;plugin-version&gt;.zip plugins install &lt;plugin-id&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_habilitar_el_registro_de_depuración"><a class="anchor" href="#_habilitar_el_registro_de_depuración"></a>Habilitar el registro de depuración</h3>
+<div class="paragraph">
+<p><code>--debug</code> o <code>-d</code> habilita el registro de depuración. La salida de depuración se devuelve y se muestra en la terminal.</p>
+</div>
+<div class="paragraph">
+<p><strong>Ejemplo:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli --debug plugins install &lt;plugin-id&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_anular_un_ajuste_de_configuración"><a class="anchor" href="#_anular_un_ajuste_de_configuración"></a>Anular un ajuste de configuración</h3>
+<div class="paragraph">
+<p><code>--configOverrides</code> es un argumento de línea de comando que actúa como una anulación de variable de entorno.</p>
+</div>
+<div class="paragraph">
+<p>Por ejemplo, puede usarlo para redirigir el registro a otro archivo (tal vez para registrar instalaciones de complementos en Grafana Cloud) o al restablecer la contraseña de administrador y tiene valores no predeterminados para algún valor de configuración importante (como dónde se encuentra la base de datos).</p>
+</div>
+<div class="paragraph">
+<p><strong>Ejemplo:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli --configOverrides cfg:default.paths.log=/dev/null plugins install &lt;plugin-id&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_anular_el_valor_de_la_ruta_de_inicio"><a class="anchor" href="#_anular_el_valor_de_la_ruta_de_inicio"></a>Anular el valor de la ruta de inicio</h3>
+<div class="paragraph">
+<p>Establece la ruta para la ruta de instalación / inicio de Grafana, por defecto es el directorio de trabajo. No es necesario que lo utilice si se encuentra en el directorio de instalación de Grafana cuando utiliza la CLI.</p>
+</div>
+<div class="paragraph">
+<p><strong>Ejemplo:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli --homepath "/usr/share/grafana" admin reset-admin-password &lt;new password&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_anular_archivo_de_configuración"><a class="anchor" href="#_anular_archivo_de_configuración"></a>Anular archivo de configuración</h3>
+<div class="paragraph">
+<p><code>--config value</code> anula la ubicación predeterminada donde Grafana espera el archivo de configuración. Consulte <a href="configuracion.html" class="page">Configuración</a> para obtener más información sobre cómo configurar Grafana y las ubicaciones predeterminadas de los archivos de configuración.</p>
+</div>
+<div class="paragraph">
+<p><strong>Ejemplo:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli --config "/etc/configuration/" admin reset-admin-password mynewpassword</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_comandos_de_complementos"><a class="anchor" href="#_comandos_de_complementos"></a>Comandos de complementos</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Grafana CLI le permite instalar, actualizar y administrar sus complementos de Grafana. Para obtener más información sobre la instalación de complementos, consulte la <a href="#complementos/instalacion.adoc" class="page unresolved">página de complementos</a>.</p>
+</div>
+<div class="paragraph">
+<p>Todos los comandos enumerados se aplican a los repositorios y directorios predeterminados de Grafana. Puede anular los valores predeterminados con <a href="#_opciones_globales">Opciones globales</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_lista_de_complementos_disponibles"><a class="anchor" href="#_lista_de_complementos_disponibles"></a>Lista de complementos disponibles</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli plugins list-remote</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_instale_la_última_versión_de_un_complemento"><a class="anchor" href="#_instale_la_última_versión_de_un_complemento"></a>Instale la última versión de un complemento</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli plugins install &lt;plugin-id&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_instalar_una_versión_específica_de_un_complemento"><a class="anchor" href="#_instalar_una_versión_específica_de_un_complemento"></a>Instalar una versión específica de un complemento</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli plugins install &lt;plugin-id&gt; &lt;version&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lista_de_complementos_instalados"><a class="anchor" href="#_lista_de_complementos_instalados"></a>Lista de complementos instalados</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli plugins ls</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_actualizar_todos_los_complementos_instalados"><a class="anchor" href="#_actualizar_todos_los_complementos_instalados"></a>Actualizar todos los complementos instalados</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli plugins update-all</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_actualizar_un_complemento"><a class="anchor" href="#_actualizar_un_complemento"></a>Actualizar un complemento</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli plugins update &lt;plugin-id&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_quitar_un_complemento"><a class="anchor" href="#_quitar_un_complemento"></a>Quitar un complemento</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli plugins remove &lt;plugin-id&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_comandos_de_administrador"><a class="anchor" href="#_comandos_de_administrador"></a>Comandos de administrador</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Los comandos de administrador solo están disponibles en Grafana 4.1 y versiones posteriores.</p>
+</div>
+<div class="sect2">
+<h3 id="_mostrar_todos_los_comandos_de_administrador"><a class="anchor" href="#_mostrar_todos_los_comandos_de_administrador"></a>Mostrar todos los comandos de administrador</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli admin</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_restablecer_contraseña_de_administrador"><a class="anchor" href="#_restablecer_contraseña_de_administrador"></a>Restablecer contraseña de administrador</h3>
+<div class="paragraph">
+<p><code>grafana-cli admin reset-admin-password &lt;new password&gt;</code> restablece la contraseña del usuario administrador mediante la CLI. Es posible que deba hacer esto si pierde la contraseña de administrador.</p>
+</div>
+<div class="paragraph">
+<p>Si se utilizan dos indicadores para establecer la ruta de inicio y la ruta del archivo de configuración, la ejecución del comando devuelve este error:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>No se pudieron encontrar los valores predeterminados de configuración, asegúrese de que el parámetro de línea de comando homepath esté configurado o que el directorio de trabajo sea homepath</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Para corregir esto, use la opción global <code>--homepath</code> para especificar la ruta de inicio predeterminada de Grafana para este comando:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli --homepath "/usr/share/grafana" admin reset-admin-password &lt;new password&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Si no ha perdido la contraseña de administrador, le recomendamos que cambie la contraseña de usuario en las Preferencias de usuario o en la pestaña Administrador del servidor &gt; Usuario.</p>
+</div>
+<div class="paragraph">
+<p>Si necesita establecer la contraseña en un script, puede usar la <a href="#api-http/usuario.adoc#_cambiar_contraseña" class="page unresolved">API de usuario de Grafana</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_migrar_datos_y_cifrar_contraseñas"><a class="anchor" href="#_migrar_datos_y_cifrar_contraseñas"></a>Migrar datos y cifrar contraseñas</h3>
+<div class="paragraph">
+<p><code>data-migration</code> ejecuta un script que migra o limpia datos en su base de datos.</p>
+</div>
+<div class="paragraph">
+<p><code>encrypt-datasource-passwords</code> migra contraseñas de campos no seguros al campo secure_json_data. Devuelve <code>ok</code> a menos que haya un error. Seguro de ejecutar varias veces.</p>
+</div>
+<div class="paragraph">
+<p><strong>Ejemplo:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">grafana-cli admin data-migration encrypt-datasource-passwords</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Esta página fue hecha usando la interfaz predeterminada de Antora.</p>
+  <p>El código de esta interfaz está licenciado bajo los términos de la licencia MPL-2.0.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Comenzando :: Documentación de Grafana</title>
+    <link rel="canonical" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html/ceos-grafana-docs/7.5.x/comenzando/comenzando.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html">
+        <img src="/ceos-grafana-docs/ceos-grafana-docs/7.5.x/_images/logo.png" width="100">
+        <span>| Documentación de Grafana<span>     
+      </a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ceos-grafana-docs" data-version="7.5.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Documentación de Grafana</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="comenzando.html">Comenzando</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="con-grafana.html">Con Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="con-grafana-y-prometheus.html">Con Grafana y Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="series-de-tiempo.html">Series de tiempo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dimensiones-de-las-series-de-tiempo.html">Dimensiones de las series de tiempo.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="glosario.html">Glosario</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../autenticacion/autenticacion.html">Autenticación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../autenticacion/autenticacion-de-grafana.html">Autenticación de Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../instalacion/instalacion.html">Instalación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/requisitos.html">Requisitos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/instalar-en-windows.html">Instalar en Windows</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/actualizar-grafana.html">Actualizar Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/reiniciar-grafana.html">Reiniciar Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/administracion.html">Administración</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/preferencias.html">Preferencias</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-nombre-y-correo-electronico.html">Cambiar nombre y correo electrónico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-el-tema-de-la-interfaz-de-usuario.html">Cambiar el tema de la interfaz de usuario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-tablero-de-inicio.html">Camniar tablero de inicio</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administracion/preferencias/cambiar-zona-horaria-predeterminada.adoc">Cambiar zona horaria predeterminada</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/ver-servidor.html">Ver servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/metricas-internas-de-grafana.html">Métricas internas de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/ver-configuracion-del-servidor.html">Ver configuración del servidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/ver-estadisticas-del-servidor.html">Ver estadísticas del servidor</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/configuracion.html">Configuración</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/cli-de-grafana.html">CLI de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/seguridad.html">Seguridad</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/administrar-usuarios.html">Administrar usuarios</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor.html">Tareas de administrador de servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-usuarios.html">Administrar usuarios</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-organizacion.html">Administrar organización</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-organizacion.html">Tareas de administrador de organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#administrar-usuarios/administar-equipos.adoc">Administrar equipos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario.html">Tareas de la cuenta de usuario</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario/perfil-de-cuenta-de-usuario.html">Perfil de cuenta de uruario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-su-contraseña">Cambiar su contraseña</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-organizacion">Cambiar organización</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../permisos/permisos.html">Permisos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/roles-de-la-organizacion.html">Roles de la organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-tablero-y-carpeta.html">Permiso de tablero y carpeta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#permisos/restringir-acceso">Restringit acceso</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-fuente-de-datos.html">Permisos de fuente de datos</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../fuentes-de-datos/fuentes-de-datos.html">Fuentes de datos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#fuentes-de-datos/agregar-una-fuente-de-datos.adoc">Agregar una fuente de datos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../fuentes-de-datos/loki.html">Loki</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../fuentes-de-datos/prometheus.html">Prometheus</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/paneles.html">Paneles</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/agregar-un-panel.html">Agregar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/editor-de-paneles.html">Editor de paneles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/lista-de-calculos.html">Lista de cálculos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/consultas.html">Consultas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/umbrales.html">Umbrales</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/transformaciones.html">Transformaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/transformaciones/aplicar-transformaciones.html">Aplicar transformaciones</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/transformaciones/tipos-y-opciones-de-transformacion.html">Tipos y opciones de transformación</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/compartir-resultados-de-la-consulta.html">Compartir resultados de la consulta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/inspeccionar-un-panel.html">Inspeccionar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones.html">Opciones de campo y anulaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/configurar-todos-los-campos.html">Configurar todos los campos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/configurar-campos-especificos.html">Configurar campos específicos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/opciones-de-campo-estandar.html">Opciones de campo estándar</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones.html">Visualizaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/opciones-de-leyenda-del-panel.html">Opciones de leyenda del panel</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-lista-de-alertas.html">Panel de lista de alertas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-medidor-de-barra.html">Panel de medidor de barra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-lista-de-tableros.html">Panel de lista de tableros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-medidor.html">Panel de medidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-grafico.html">Panel de gráfico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-mapa-de-calor.html">Panel de mapa de calor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-registros.html">Panel de registros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-noticias">Panel de noticias</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-grafico-de-nodo.adoc">Panel de gráfico de nodo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-grafico-circular.html">Panel de gráfico circular</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-estadisticas.html">Panel de estadísticas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla.html">Panel de tabla</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla/opciones-de-campo-de-tabla.html">Opciones de campo de tabla</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla/filtrar-columnas-de-la-tabla.html">Filtrar columnas de la tabla</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-texto.html">Panel de texto</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo.html">Panel de series de tiempo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/cambiar-visualizacion-del-eje.html">Cambiar visualización del eje</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/expresiones.html">Expresiones</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../tableros/tableros.html">Tableros</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../compartir/compartir.html">Compartir</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../explorar/explorar.html">Explorar</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alertas/alertas.html">Alertas</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../solucion-de-problemas/solucion-de-problemas.html">Solución de problemas</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentación de Grafana</span>
+    <span class="version">7.5.x</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Documentación de Grafana</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">7.5.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Documentación de Grafana</a></li>
+    <li><a href="comenzando.html">Comenzando</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/Aumandaris/ceos-grafana-docs/edit/master/modules/ROOT/pages/comenzando/comenzando.adoc">Editar esta página</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Comenzando</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Esta sección proporciona una mirada de alto nivel a Grafana, su proceso y sus caracteristicas. Por ende, es un buen lugar para aprender a usar el software Grafana.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_qué_es_grafana"><a class="anchor" href="#_qué_es_grafana"></a>¿Qué es Grafana?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Grafana es un software de análisis y visualización de código abierto. Le permite consultar, visualizar, alertar y explorar sus métricas sin importar dónde estén almacenadas. En un lenguaje sencillo, proporciona las herramientas para convertir los datos de su base de datos de series de tiempo (TSDB) en hermosos gráficos y visualizaciones.</p>
+</div>
+<div class="paragraph">
+<p>Después de crear un tablero como lo hace en <a href="con-grafana.html" class="page">Comenzando con Grafana</a>, hay muchas cosas posibles que puede hacer a continuación. Todo depende de sus necesidades y su caso de uso.</p>
+</div>
+<div class="paragraph">
+<p>Por ejemplo, si desea ver datos meteorológicos y estadísticas sobre su hogar inteligente, puede crear una lista de reproducción. Si es el administrador de una corporación y administra Grafana para varios equipos, es posible que deba configurar el aprovisionamiento y la autenticación.</p>
+</div>
+<div class="paragraph">
+<p>Las siguientes secciones proporcionan una descripción general de las cosas que podría querer hacer con su base de datos y enlaces de Grafana para que pueda obtener más información. Para obtener más orientación e ideas, consulte los <a href="https://community.grafana.com/">foros de la Comunidad de Grafana</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_explore_métricas_y_registros"><a class="anchor" href="#_explore_métricas_y_registros"></a>Explore métricas y registros</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Explore sus datos a través de consultas ad-hoc y desglose dinámico. Visualice y compare diferentes rangos de tiempo, consultas y fuentes de datos en paralelo.</p>
+</div>
+<div class="paragraph">
+<p>Consulte <a href="../explorar/explorar.html" class="page">Explorar</a> para obtener más información.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_alertas"><a class="anchor" href="#_alertas"></a>Alertas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Si está utilizando las alertas de Grafana, puede hacer que se envíen alertas a través de varios <a href="#alertas/notificaciones.adoc" class="page unresolved">notificadores de alertas</a> diferentes, incluidos PagerDuty, SMS, correo electrónico, VictorOps, OpsGenie o Slack.</p>
+</div>
+<div class="paragraph">
+<p>Los ganchos de alerta le permiten crear diferentes notificadores con un poco de código si prefiere otros canales de comunicación. Defina visualmente las <a href="../alertas/alertas.html" class="page">reglas de alerta</a> para sus métricas más importantes.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_anotaciones"><a class="anchor" href="#_anotaciones"></a>Anotaciones</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Anote gráficos con eventos enriquecidos de diferentes fuentes de datos. Desplácese sobre los eventos para ver toda la metadata del evento y las etiquetas.</p>
+</div>
+<div class="paragraph">
+<p>Esta función, que se muestra como un marcador de gráfico en Grafana, es útil para correlacionar datos en caso de que algo salga mal. Puede crear las anotaciones manualmente, simplemente presione la tecla Control y haga clic en un gráfico e ingrese algo de texto, o puede obtener datos de cualquier fuente de datos.</p>
+</div>
+<div class="paragraph">
+<p>Consulte <a href="../tableros/anotaciones.html" class="page">Anotaciones</a> para obtener más información.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_variables_del_tablero"><a class="anchor" href="#_variables_del_tablero"></a>Variables del tablero</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Las <a href="#plantillas-y-variables/plantillas-y-variables.adoc" class="page unresolved">variables de plantilla</a> le permiten crear tableros que se pueden reutilizar para muchos casos de diferentes usos. Los valores no están codificados con estas plantillas, por lo que, por ejemplo, si tiene un servidor de producción y un servidor de prueba, puede usar el mismo tablero para ambos.</p>
+</div>
+<div class="paragraph">
+<p>La creación de plantillas le permite profundizar en sus datos, por ejemplo, desde todos los datos hasta los datos de América del Norte, hasta los datos de Texas y más. También puede compartir estos tableros entre equipos dentro de su organización, o si crea una excelente plantilla de tablero para una fuente de datos popular, puede contribuir a que toda la comunidad la personalice y use.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configurar_grafana"><a class="anchor" href="#_configurar_grafana"></a>Configurar Grafana</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Si es administrador de Grafana, querrá familiarizarse a fondo con las <a href="../administracion/configuracion.html" class="page">opciones de configuración de Grafana</a> y la <a href="#administracion/cli.adoc" class="page unresolved">CLI de Grafana</a>.</p>
+</div>
+<div class="paragraph">
+<p>La configuración cubre tanto los archivos de configuración como las variables de entorno. Puede configurar puertos predeterminados, niveles de registro, direcciones IP de correo electrónico, seguridad y más.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_importar_paneles_y_complementos"><a class="anchor" href="#_importar_paneles_y_complementos"></a>Importar paneles y complementos</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Descubra cientos de <a href="../tableros/tableros.html" class="page">tableros</a> y <a href="#complementos/complementos.adoc" class="page unresolved">complementos</a> en la biblioteca oficial. Gracias a la pasión y el impulso de los miembros de la comunidad, se agregan nuevos cada semana.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_autenticación"><a class="anchor" href="#_autenticación"></a>Autenticación</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Grafana admite diferentes métodos de autenticación, como LDAP y OAuth, y le permite asignar usuarios a organizaciones. Consulte la <a href="#autenticacion/descripcion-general.adoc" class="page unresolved">descripción general de la autenticación de usuario</a> para obtener más información.</p>
+</div>
+<div class="paragraph">
+<p>En Grafana Enterprise, también puede asignar usuarios a equipos: si su empresa tiene su propio sistema de autenticación, Grafana le permite asignar los equipos de sus sistemas internos a los equipos de Grafana. De esa manera, puede otorgar automáticamente acceso a las personas a los tableros designados para sus equipos.</p>
+</div>
+<div class="paragraph">
+<p>Consulte <a href="#grafana-enterprise/grafana-enterprise.adoc" class="page unresolved">Grafana Enterprise</a> para obtener más información.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_aprovisionamiento"><a class="anchor" href="#_aprovisionamiento"></a>Aprovisionamiento</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Si bien es fácil hacer clic, arrastrar y soltar para crear un solo tablero, los usuarios avanzados que necesitan muchos tableros querrán automatizar la configuración con un script. Se puede programar cualquier cosa en Grafana.</p>
+</div>
+<div class="paragraph">
+<p>Por ejemplo, si está creando un nuevo clúster de Kubernetes, también puede activar un Grafana automáticamente con un script que tendría el servidor, la dirección IP y las fuentes de datos correctos preestablecidos y bloqueados para que los usuarios no puedan cambiarlos. También es una forma de controlar muchos tableros.</p>
+</div>
+<div class="paragraph">
+<p>Consulte <a href="#administracion/aprovisionamiento.adoc" class="page unresolved">Aprovisionamiento</a> para obtener más información.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_permisos"><a class="anchor" href="#_permisos"></a>Permisos</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cuando las organizaciones tienen un Grafana y varios equipos, a menudo quieren tener la capacidad de mantener las cosas separadas y compartir tableros. Puede crear un equipo de usuarios y luego establecer <a href="../permisos/permisos.html" class="page">permisos</a> en carpetas, tableros y hasta el <a href="#grafana-enterprise/permisos-de-fuente-de-datos.adoc" class="page unresolved">nivel de fuente de datos</a> si está utilizando <a href="#grafana-enterprise/grafana-enterprise.adoc" class="page unresolved">Grafana Enterprise</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_grafana_cloud"><a class="anchor" href="#_grafana_cloud"></a>Grafana Cloud</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Grafana Cloud es una plataforma de registro y métricas OpenSaaS de alta disponibilidad, rápida y totalmente administrada. Todo lo que amas de Grafana, pero Grafana Labs lo aloja para ti y se encarga de todos los dolores de cabeza.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://grafana.com/cloud/">Obtenga más información sobre Grafana Cloud</a> o pruebe la <a href="#grafana-cloud/guia-de-inicio-rapido.adoc" class="page unresolved">guía de inicio rápido del host de Grafana Cloud Linux</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_grafana_enterprise"><a class="anchor" href="#_grafana_enterprise"></a>Grafana Enterprise</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Grafana Enterprise es una edición comercial de Grafana que incluye funciones adicionales que no se encuentran en la versión de código abierto.</p>
+</div>
+<div class="paragraph">
+<p>Sobre la base de todo lo que ya sabe y ama sobre Grafana, Grafana Enterprise agrega fuentes de datos empresariales, opciones de autenticación avanzadas, más controles de permisos, soporte 24x7x365 y capacitación del equipo central de Grafana.</p>
+</div>
+<div class="paragraph">
+<p><a href="#grafana-enterprise/grafana-enterprise.adoc" class="page unresolved">Obtenga más información sobre Grafana Enterprise</a>. Para comprar Enterprise u obtener una licencia de prueba, comuníquese con el <a href="#grafana-enterprise/grafana-enterprise.adoc" class="page unresolved">Equipo de Ventas</a> de Grafana Labs.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Esta página fue hecha usando la interfaz predeterminada de Antora.</p>
+  <p>El código de esta interfaz está licenciado bajo los términos de la licencia MPL-2.0.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

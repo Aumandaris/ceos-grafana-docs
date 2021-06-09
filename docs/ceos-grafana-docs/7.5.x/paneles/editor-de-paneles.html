@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Editor de paneles :: Documentación de Grafana</title>
+    <link rel="canonical" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html/ceos-grafana-docs/7.5.x/paneles/editor-de-paneles.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html">
+        <img src="/ceos-grafana-docs/ceos-grafana-docs/7.5.x/_images/logo.png" width="100">
+        <span>| Documentación de Grafana<span>     
+      </a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ceos-grafana-docs" data-version="7.5.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Documentación de Grafana</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../comenzando/comenzando.html">Comenzando</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/con-grafana.html">Con Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/con-grafana-y-prometheus.html">Con Grafana y Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/series-de-tiempo.html">Series de tiempo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/dimensiones-de-las-series-de-tiempo.html">Dimensiones de las series de tiempo.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/glosario.html">Glosario</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../autenticacion/autenticacion.html">Autenticación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../autenticacion/autenticacion-de-grafana.html">Autenticación de Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../instalacion/instalacion.html">Instalación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/requisitos.html">Requisitos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/instalar-en-windows.html">Instalar en Windows</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/actualizar-grafana.html">Actualizar Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/reiniciar-grafana.html">Reiniciar Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/administracion.html">Administración</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/preferencias.html">Preferencias</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-nombre-y-correo-electronico.html">Cambiar nombre y correo electrónico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-el-tema-de-la-interfaz-de-usuario.html">Cambiar el tema de la interfaz de usuario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-tablero-de-inicio.html">Camniar tablero de inicio</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administracion/preferencias/cambiar-zona-horaria-predeterminada.adoc">Cambiar zona horaria predeterminada</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/ver-servidor.html">Ver servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/metricas-internas-de-grafana.html">Métricas internas de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/ver-configuracion-del-servidor.html">Ver configuración del servidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/ver-estadisticas-del-servidor.html">Ver estadísticas del servidor</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/configuracion.html">Configuración</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/cli-de-grafana.html">CLI de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/seguridad.html">Seguridad</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/administrar-usuarios.html">Administrar usuarios</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor.html">Tareas de administrador de servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-usuarios.html">Administrar usuarios</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-organizacion.html">Administrar organización</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-organizacion.html">Tareas de administrador de organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#administrar-usuarios/administar-equipos.adoc">Administrar equipos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario.html">Tareas de la cuenta de usuario</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario/perfil-de-cuenta-de-usuario.html">Perfil de cuenta de uruario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-su-contraseña">Cambiar su contraseña</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-organizacion">Cambiar organización</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../permisos/permisos.html">Permisos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/roles-de-la-organizacion.html">Roles de la organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-tablero-y-carpeta.html">Permiso de tablero y carpeta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#permisos/restringir-acceso">Restringit acceso</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-fuente-de-datos.html">Permisos de fuente de datos</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../fuentes-de-datos/fuentes-de-datos.html">Fuentes de datos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#fuentes-de-datos/agregar-una-fuente-de-datos.adoc">Agregar una fuente de datos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../fuentes-de-datos/loki.html">Loki</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../fuentes-de-datos/prometheus.html">Prometheus</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="paneles.html">Paneles</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="agregar-un-panel.html">Agregar un panel</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="editor-de-paneles.html">Editor de paneles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lista-de-calculos.html">Lista de cálculos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="consultas.html">Consultas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="umbrales.html">Umbrales</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="transformaciones.html">Transformaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="transformaciones/aplicar-transformaciones.html">Aplicar transformaciones</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="transformaciones/tipos-y-opciones-de-transformacion.html">Tipos y opciones de transformación</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="compartir-resultados-de-la-consulta.html">Compartir resultados de la consulta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="inspeccionar-un-panel.html">Inspeccionar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="opciones-de-campo-y-anulaciones.html">Opciones de campo y anulaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="opciones-de-campo-y-anulaciones/configurar-todos-los-campos.html">Configurar todos los campos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="opciones-de-campo-y-anulaciones/configurar-campos-especificos.html">Configurar campos específicos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="opciones-de-campo-y-anulaciones/opciones-de-campo-estandar.html">Opciones de campo estándar</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="visualizaciones.html">Visualizaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/opciones-de-leyenda-del-panel.html">Opciones de leyenda del panel</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/panel-de-lista-de-alertas.html">Panel de lista de alertas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/panel-de-medidor-de-barra.html">Panel de medidor de barra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/panel-de-lista-de-tableros.html">Panel de lista de tableros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/panel-de-medidor.html">Panel de medidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/panel-de-grafico.html">Panel de gráfico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/panel-de-mapa-de-calor.html">Panel de mapa de calor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/panel-de-registros.html">Panel de registros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-noticias">Panel de noticias</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-grafico-de-nodo.adoc">Panel de gráfico de nodo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/panel-de-grafico-circular.html">Panel de gráfico circular</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/panel-de-estadisticas.html">Panel de estadísticas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="visualizaciones/panel-de-tabla.html">Panel de tabla</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="visualizaciones/panel-de-tabla/opciones-de-campo-de-tabla.html">Opciones de campo de tabla</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="visualizaciones/panel-de-tabla/filtrar-columnas-de-la-tabla.html">Filtrar columnas de la tabla</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/panel-de-texto.html">Panel de texto</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="visualizaciones/panel-de-series-de-tiempo.html">Panel de series de tiempo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="visualizaciones/panel-de-series-de-tiempo/cambiar-visualizacion-del-eje.html">Cambiar visualización del eje</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="expresiones.html">Expresiones</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../tableros/tableros.html">Tableros</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../compartir/compartir.html">Compartir</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../explorar/explorar.html">Explorar</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alertas/alertas.html">Alertas</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../solucion-de-problemas/solucion-de-problemas.html">Solución de problemas</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentación de Grafana</span>
+    <span class="version">7.5.x</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Documentación de Grafana</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">7.5.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Documentación de Grafana</a></li>
+    <li><a href="paneles.html">Paneles</a></li>
+    <li><a href="editor-de-paneles.html">Editor de paneles</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/Aumandaris/ceos-grafana-docs/edit/master/modules/ROOT/pages/paneles/editor-de-paneles.adoc">Editar esta página</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Editor de paneles</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Esta página describe las partes del editor de paneles de Grafana y enlaces a donde puede encontrar más información.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/image34.png" alt="https://grafana.com/static/img/docs/panel-editor/panel-editor-7-0.png" width="624" height="358">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_abra_el_editor_de_paneles"><a class="anchor" href="#_abra_el_editor_de_paneles"></a>Abra el editor de paneles</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hay varias formas de acceder al editor del panel, también llamado pantalla <strong>Editar panel</strong>, <em>modo de edición</em> o <em>modo de edición de panel</em>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Haga clic en el icono <strong>Agregar panel</strong> en la parte superior de la pantalla y luego haga clic en <strong>Agregar nuevo panel</strong>. El nuevo panel se abre en el editor de paneles. Para obtener instrucciones detalladas sobre cómo agregar un panel, consulte <a href="agregar-un-panel.html" class="page">Agregar un panel</a>.</p>
+</li>
+<li>
+<p>Haga clic en el título de un panel existente y luego haga clic en <strong>Editar</strong>. El panel se abre en modo de edición.</p>
+</li>
+<li>
+<p>Haga clic en cualquier lugar de un panel existente y luego presione <strong>e</strong> en su teclado. El panel se abre en modo de edición.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cambiar_el_tamaño_de_las_secciones_del_editor_del_panel"><a class="anchor" href="#_cambiar_el_tamaño_de_las_secciones_del_editor_del_panel"></a>Cambiar el tamaño de las secciones del editor del panel</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Arrastre para cambiar el tamaño de las secciones del editor de paneles. Si el panel lateral se vuelve demasiado estrecho, las pestañas Panel, Campo y Anulaciones cambian a una lista desplegable.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/image35.gif" alt="https://grafana.com/static/img/docs/panel-editor/resize-panel-editor-panels-7-0.gif" width="624" height="415">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_partes_del_editor_de_paneles"><a class="anchor" href="#_partes_del_editor_de_paneles"></a>Partes del editor de paneles</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Esta sección describe las partes de la pantalla del editor del panel y un poco sobre los campos, opciones o tareas asociadas con cada parte. Algunas secciones de esta página enlazan con páginas en las que las secciones o tareas están documentadas de forma más completa.</p>
+</div>
+<div class="sect2">
+<h3 id="_encabezamiento"><a class="anchor" href="#_encabezamiento"></a>Encabezamiento</h3>
+<div class="paragraph">
+<p>La sección de encabezado enumera el nombre del tablero en el que se encuentra el panel y algunos comandos del tablero. También puede hacer clic en la flecha <strong>Regresar</strong> para regresar al tablero.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/image36.png" alt="https://grafana.com/static/img/docs/panel-editor/edit-panel-header-7-0.png" width="624" height="26">
+</div>
+</div>
+<div class="paragraph">
+<p>En el lado derecho del encabezado se encuentran las siguientes opciones:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Icono de configuración del panel (engranaje):</strong> haga clic para acceder a la configuración del tablero.</p>
+</li>
+<li>
+<p><strong>Descartar:</strong> descarta todos los cambios que ha realizado en el panel desde la última vez que guardó el tablero.</p>
+</li>
+<li>
+<p><strong>Guardar:</strong> guarda el tablero, incluidos todos los cambios que ha realizado en el editor de paneles.</p>
+</li>
+<li>
+<p><strong>Aplicar:</strong> aplica los cambios que realizó y luego cierra el editor del panel, lo que lo regresa al tablero. Tendrá que guardar el tablero para conservar los cambios aplicados.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vista_previa_de_visualización"><a class="anchor" href="#_vista_previa_de_visualización"></a>Vista previa de visualización</h3>
+<div class="paragraph">
+<p>La sección de vista previa de visualización contiene opciones de visualización, controles de rango de tiempo, la vista previa de visualización y (si corresponde) el título del panel, los ejes y la leyenda.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/image37.png" alt="https://grafana.com/static/img/docs/panel-editor/visualization-preview-7-0.png" width="624" height="157">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Rellenar:</strong> la vista previa de visualización llenará el espacio disponible en la parte de vista previa. Si cambia el ancho del panel lateral o la altura del panel inferior, la visualización se adaptará para llenar cualquier espacio disponible.</p>
+</li>
+<li>
+<p><strong>Ajustar:</strong> la vista previa de visualización llenará el espacio disponible pero conservará la relación de aspecto del panel.</p>
+</li>
+<li>
+<p><strong>Exacto:</strong> la vista previa de visualización tendrá el tamaño exacto que el tamaño en el tablero. Si no hay suficiente espacio disponible, la visualización se reducirá conservando la relación de aspecto.</p>
+</li>
+<li>
+<p><strong>Controles de rango de tiempo:</strong> para obtener más información, consulte <a href="../tableros/controles-de-rango-de-tiempo.html" class="page">Controles de rango de tiempo</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sección_de_datos_panel_inferior"><a class="anchor" href="#_sección_de_datos_panel_inferior"></a>Sección de datos (panel inferior)</h3>
+<div class="paragraph">
+<p>La sección contiene pestañas donde ingresa consultas, transforma sus datos y crea reglas de alerta (si corresponde).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/image38.png" alt="https://grafana.com/static/img/docs/panel-editor/data-section-7-0.png" width="624" height="170">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Pestaña Consultar:</strong> seleccione su fuente de datos e ingrese las consultas aquí. Para obtener más información, consulte <a href="consultas.html" class="page">Consultas</a>.</p>
+</li>
+<li>
+<p><strong>Pestaña Transformar:</strong> aplique transformaciones de datos. Para obtener más información, consulte <a href="transformaciones.html" class="page">Transformaciones</a>.</p>
+</li>
+<li>
+<p><strong>Pestaña Alertar:</strong> escriba reglas de alerta. Para obtener más información, consulte <a href="#alertas/crear-alertas.adoc" class="page unresolved">Crear alertas</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_opciones_de_panel_y_campo_panel_lateral"><a class="anchor" href="#_opciones_de_panel_y_campo_panel_lateral"></a>Opciones de panel y campo (panel lateral)</h3>
+<div class="paragraph">
+<p>La sección contiene pestañas donde controlas casi todos los aspectos de cómo se visualizan tus datos. No todas las pestañas están disponibles para cada visualización.</p>
+</div>
+<div class="paragraph">
+<p>Las funciones de estas pestañas se documentan en los siguientes temas:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="agregar-un-panel.html" class="page">Agregar un panel</a> describe la configuración básica del panel.</p>
+</li>
+<li>
+<p>Las opciones de <a href="visualizaciones.html" class="page">visualizaciones</a> varían ampliamente. Se describen en el tema de visualización individual.</p>
+</li>
+<li>
+<p>Las <a href="#paneles/opciones-de-campo.adoc" class="page unresolved">opciones de campo y anulaciones</a> le permiten controlar casi todos los aspectos de su visualización, incluidas las unidades, las asignaciones de valores y los <a href="umbrales.html" class="page">Umbrales</a>.</p>
+</li>
+<li>
+<p>Los <a href="#enlaces/enlaces-del-panel.adoc" class="page unresolved">Enlaces de panel</a> y los <a href="#enlaces/enlaces-de-datos.adoc" class="page unresolved">Enlaces de datos</a> le ayudan a conectar su visualización con otros recursos.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Esta página fue hecha usando la interfaz predeterminada de Antora.</p>
+  <p>El código de esta interfaz está licenciado bajo los términos de la licencia MPL-2.0.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

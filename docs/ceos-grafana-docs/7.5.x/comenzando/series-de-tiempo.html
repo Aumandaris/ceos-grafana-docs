@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Untitled :: Documentación de Grafana</title>
+    <link rel="canonical" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html/ceos-grafana-docs/7.5.x/comenzando/series-de-tiempo.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html">
+        <img src="/ceos-grafana-docs/ceos-grafana-docs/7.5.x/_images/logo.png" width="100">
+        <span>| Documentación de Grafana<span>     
+      </a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ceos-grafana-docs" data-version="7.5.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Documentación de Grafana</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="comenzando.html">Comenzando</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="con-grafana.html">Con Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="con-grafana-y-prometheus.html">Con Grafana y Prometheus</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="series-de-tiempo.html">Series de tiempo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dimensiones-de-las-series-de-tiempo.html">Dimensiones de las series de tiempo.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="glosario.html">Glosario</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../autenticacion/autenticacion.html">Autenticación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../autenticacion/autenticacion-de-grafana.html">Autenticación de Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../instalacion/instalacion.html">Instalación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/requisitos.html">Requisitos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/instalar-en-windows.html">Instalar en Windows</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/actualizar-grafana.html">Actualizar Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/reiniciar-grafana.html">Reiniciar Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/administracion.html">Administración</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/preferencias.html">Preferencias</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-nombre-y-correo-electronico.html">Cambiar nombre y correo electrónico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-el-tema-de-la-interfaz-de-usuario.html">Cambiar el tema de la interfaz de usuario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-tablero-de-inicio.html">Camniar tablero de inicio</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administracion/preferencias/cambiar-zona-horaria-predeterminada.adoc">Cambiar zona horaria predeterminada</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/ver-servidor.html">Ver servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/metricas-internas-de-grafana.html">Métricas internas de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/ver-configuracion-del-servidor.html">Ver configuración del servidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/ver-estadisticas-del-servidor.html">Ver estadísticas del servidor</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/configuracion.html">Configuración</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/cli-de-grafana.html">CLI de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/seguridad.html">Seguridad</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/administrar-usuarios.html">Administrar usuarios</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor.html">Tareas de administrador de servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-usuarios.html">Administrar usuarios</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-organizacion.html">Administrar organización</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-organizacion.html">Tareas de administrador de organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#administrar-usuarios/administar-equipos.adoc">Administrar equipos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario.html">Tareas de la cuenta de usuario</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario/perfil-de-cuenta-de-usuario.html">Perfil de cuenta de uruario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-su-contraseña">Cambiar su contraseña</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-organizacion">Cambiar organización</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../permisos/permisos.html">Permisos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/roles-de-la-organizacion.html">Roles de la organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-tablero-y-carpeta.html">Permiso de tablero y carpeta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#permisos/restringir-acceso">Restringit acceso</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-fuente-de-datos.html">Permisos de fuente de datos</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../fuentes-de-datos/fuentes-de-datos.html">Fuentes de datos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#fuentes-de-datos/agregar-una-fuente-de-datos.adoc">Agregar una fuente de datos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../fuentes-de-datos/loki.html">Loki</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../fuentes-de-datos/prometheus.html">Prometheus</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/paneles.html">Paneles</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/agregar-un-panel.html">Agregar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/editor-de-paneles.html">Editor de paneles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/lista-de-calculos.html">Lista de cálculos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/consultas.html">Consultas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/umbrales.html">Umbrales</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/transformaciones.html">Transformaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/transformaciones/aplicar-transformaciones.html">Aplicar transformaciones</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/transformaciones/tipos-y-opciones-de-transformacion.html">Tipos y opciones de transformación</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/compartir-resultados-de-la-consulta.html">Compartir resultados de la consulta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/inspeccionar-un-panel.html">Inspeccionar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones.html">Opciones de campo y anulaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/configurar-todos-los-campos.html">Configurar todos los campos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/configurar-campos-especificos.html">Configurar campos específicos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/opciones-de-campo-estandar.html">Opciones de campo estándar</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones.html">Visualizaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/opciones-de-leyenda-del-panel.html">Opciones de leyenda del panel</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-lista-de-alertas.html">Panel de lista de alertas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-medidor-de-barra.html">Panel de medidor de barra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-lista-de-tableros.html">Panel de lista de tableros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-medidor.html">Panel de medidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-grafico.html">Panel de gráfico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-mapa-de-calor.html">Panel de mapa de calor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-registros.html">Panel de registros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-noticias">Panel de noticias</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-grafico-de-nodo.adoc">Panel de gráfico de nodo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-grafico-circular.html">Panel de gráfico circular</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-estadisticas.html">Panel de estadísticas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla.html">Panel de tabla</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla/opciones-de-campo-de-tabla.html">Opciones de campo de tabla</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla/filtrar-columnas-de-la-tabla.html">Filtrar columnas de la tabla</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-texto.html">Panel de texto</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo.html">Panel de series de tiempo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/cambiar-visualizacion-del-eje.html">Cambiar visualización del eje</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/expresiones.html">Expresiones</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../tableros/tableros.html">Tableros</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../compartir/compartir.html">Compartir</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../explorar/explorar.html">Explorar</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alertas/alertas.html">Alertas</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../solucion-de-problemas/solucion-de-problemas.html">Solución de problemas</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentación de Grafana</span>
+    <span class="version">7.5.x</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Documentación de Grafana</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">7.5.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Documentación de Grafana</a></li>
+    <li><a href="comenzando.html">Comenzando</a></li>
+    <li><a href="series-de-tiempo.html">Series de tiempo</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/Aumandaris/ceos-grafana-docs/edit/master/modules/ROOT/pages/comenzando/series-de-tiempo.adoc">Editar esta página</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<div class="sect2">
+<h3 id="_series_de_tiempo"><a class="anchor" href="#_series_de_tiempo"></a>Series de tiempo</h3>
+<div class="sect3">
+<h4 id="_introducción_a_las_series_de_tiempo"><a class="anchor" href="#_introducción_a_las_series_de_tiempo"></a>Introducción a las series de tiempo</h4>
+<div class="paragraph">
+<p>Imagina que quisiera saber cómo cambia la temperatura exterior a lo largo del día. Una vez cada hora, revisaría el termómetro y anotaría la hora junto con la temperatura actual. Después de un tiempo, tendrías algo como esto:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tiempo</th>
+<th class="tableblock halign-left valign-top">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">09:00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">24°C</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10:00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">26°C</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11:00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">27°C</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Los datos de temperatura como este son un ejemplo de lo que llamamos una <em>serie de tiempo</em>: una secuencia de medidas, ordenadas en el tiempo. Cada fila de la tabla representa una medición individual en un momento específico.</p>
+</div>
+<div class="paragraph">
+<p>Las tablas son útiles cuando desea identificar medidas individuales pero dificultan ver el panorama general. Una visualización más común para las series de tiempo es el <em>gráfico</em>, que en su lugar coloca cada medición a lo largo de un eje de tiempo. Las representaciones visuales como el gráfico facilitan el descubrimiento de patrones y características de los datos que de otro modo serían difíciles de ver.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/image2.png" alt="https://grafana.com/static/img/docs/example_graph.png" width="624" height="159">
+</div>
+</div>
+<div class="paragraph">
+<p>Los datos de temperatura como el del ejemplo están lejos de ser el único ejemplo de una serie de tiempo. Otros ejemplos de series de tiempo son:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Uso de CPU y memoria</p>
+</li>
+<li>
+<p>Datos de sensor</p>
+</li>
+<li>
+<p>Índice del mercado de valores</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Si bien cada uno de estos ejemplos son secuencias de medidas ordenadas cronológicamente, también comparten otros atributos:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Los datos nuevos se agregan al final, a intervalos regulares, por ejemplo, cada hora a las 09:00, 10:00, 11:00, etc.</p>
+</li>
+<li>
+<p>Las mediciones rara vez se actualizan después de agregarlas; por ejemplo, la temperatura de ayer no cambia.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Las series de tiempo son poderosas, ayudan a comprender el pasado permitiéndole analizar el estado del sistema en cualquier momento. Las series de tiempo pueden indicarle que el servidor se bloqueó momentos después de que el espacio libre en disco se redujera a cero.</p>
+</div>
+<div class="paragraph">
+<p>Las series de tiempo también pueden ayudarlo a predecir el futuro al descubrir tendencias en sus datos. Por ejemplo, si el número de usuarios registrados ha aumentado mensualmente en un 4% durante los últimos meses, puede predecir qué tan grande será su base de usuarios al final del año.</p>
+</div>
+<div class="paragraph">
+<p>Algunas series de tiempo tienen patrones que se repiten durante un período conocido. Por ejemplo, la temperatura suele ser más alta durante el día, antes de bajar por la noche. Al identificar estas series de tiempo periódicas o <em>estacionales</em>, puede hacer predicciones confiables sobre el próximo período. Si sabemos que la carga del sistema alcanza su punto máximo todos los días alrededor de las 18:00, podemos agregar más máquinas justo antes.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_agregando_series_de_tiempo"><a class="anchor" href="#_agregando_series_de_tiempo"></a>Agregando series de tiempo</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dependiendo de lo que esté midiendo, los datos pueden variar mucho. ¿Y si quisiera comparar períodos más largos que el intervalo entre mediciones? Si midiera la temperatura una vez cada hora, terminaría con 24 puntos de datos por día. Para comparar la temperatura en agosto a lo largo de los años, tendría que combinar los 31 por 24 puntos de datos en uno.</p>
+</div>
+<div class="paragraph">
+<p>La combinación de una colección de medidas se llama <em>agregación</em>. Hay varias formas de agregar datos de series de tiempo. Éstos son algunos de los más comunes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Promedio</strong> devuelve la suma de todos los valores dividida por el número total de valores.</p>
+</li>
+<li>
+<p><strong>Min</strong> y <strong>Max</strong> devuelven el valor más pequeño y más grande de la colección.</p>
+</li>
+<li>
+<p><strong>Sum</strong> devuelve la suma de todos los valores de la colección.</p>
+</li>
+<li>
+<p><strong>Contar</strong> devuelve el número de valores de la colección.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Por ejemplo, al agregar los datos en un mes, puede determinar que agosto de 2017 fue, en promedio, más cálido que el año anterior. En cambio, para ver qué mes tuvo la temperatura más alta, compararía la temperatura máxima de cada mes.</p>
+</div>
+<div class="paragraph">
+<p>La forma en que elige agregar sus datos de series de tiempo es una decisión importante y depende de la historia que quiera contar con sus datos. Es común utilizar diferentes agregaciones para visualizar los mismos datos de series de tiempo de diferentes formas.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_monitoreo_y_series_de_tiempo"><a class="anchor" href="#_monitoreo_y_series_de_tiempo"></a>Monitoreo y series de tiempo</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>En la industria de TI, los datos de series de tiempo a menudo se recopilan para monitorear cosas como la infraestructura, el hardware o los eventos de las aplicaciones. Los datos de series de tiempo generados por máquinas generalmente se recopilan con intervalos cortos, lo que le permite reaccionar ante cualquier cambio inesperado, momentos después de que ocurran. Como consecuencia, los datos se acumulan a un ritmo rápido, por lo que es vital tener una forma de almacenar y consultar datos de manera eficiente. Como resultado, las bases de datos optimizadas para datos de series de tiempo han experimentado un aumento en popularidad en los últimos años.</p>
+</div>
+<div class="sect2">
+<h3 id="_bases_de_datos_de_series_de_tiempo"><a class="anchor" href="#_bases_de_datos_de_series_de_tiempo"></a>Bases de datos de series de tiempo</h3>
+<div class="paragraph">
+<p>Una base de datos de series de tiempo (TSDB) es una base de datos diseñada explícitamente para datos de series de tiempo. Si bien es posible utilizar cualquier base de datos normal para almacenar mediciones, una TSDB viene con algunas optimizaciones útiles.</p>
+</div>
+<div class="paragraph">
+<p>Las bases de datos de series de tiempo modernas aprovechan el hecho de que las mediciones solo se agregan y rara vez se actualizan o eliminan. Por ejemplo, las marcas de tiempo para cada medición cambian muy poco con el tiempo, lo que resulta en el almacenamiento de datos redundantes.</p>
+</div>
+<div class="paragraph">
+<p>Mire esta secuencia de marcas de tiempo de Unix:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>1572524345, 1572524375, 1572524404, 1572524434, 1572524464</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Al observar estas marcas de tiempo, todas comienzan con <code>1572524</code>, lo que conduce a un uso deficiente del espacio en disco. En su lugar, podríamos almacenar cada marca de tiempo subsiguiente como la diferencia, o delta, de la primera:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>1572524345, +30, +29, +30, +30</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Incluso podríamos dar un paso más, calculando los deltas de estos deltas:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>1572524345, +30, -1, +1, +0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Si se toman medidas a intervalos regulares, la mayoría de estos deltas-de-deltas serán 0. Debido a optimizaciones como estas, las TSDB usan drásticamente menos espacio que otras bases de datos.</p>
+</div>
+<div class="paragraph">
+<p>Otra característica de una TSDB es la capacidad de filtrar mediciones mediante <em>etiquetas</em>. Cada punto de datos está etiquetado con una etiqueta que agrega información de contexto, como dónde se tomó la medición. A continuación, se muestra un ejemplo del <a href="https://docs.influxdata.com/influxdb/v1.7/write_protocols/line_protocol_tutorial/#syntax">formato de datos de InfluxDB</a> que demuestra cómo se almacena cada medición.</p>
+</div>
+<div class="paragraph">
+<p>Estas son algunas de las TSDB compatibles con Grafana:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://graphiteapp.org/">Graphite</a></p>
+</li>
+<li>
+<p><a href="https://www.influxdata.com/products/influxdb-overview/">InfluxDB</a></p>
+</li>
+<li>
+<p><a href="https://prometheus.io/">Prometheus</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>weather,location=us-midwest temperature=82 1465839830100400200
+  |    -------------------- --------------  |
+  |             |             |             |
+  |             |             |             |
++-----------+--------+-+---------+-+---------+
+|measurement|,tag_set| |field_set| |timestamp|
++-----------+--------+-+---------+-+---------+</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_recopilación_de_datos_de_series_de_tiempo"><a class="anchor" href="#_recopilación_de_datos_de_series_de_tiempo"></a>Recopilación de datos de series de tiempo</h3>
+<div class="paragraph">
+<p>Ahora que tenemos un lugar para almacenar nuestra serie de tiempo, ¿cómo recopilamos las medidas? Para recopilar datos de series de tiempo, normalmente instalaría un <em>recopilador</em> en el dispositivo, la máquina o la instancia que desea monitorear. Algunos recopiladores se crean con una base de datos específica en mente y algunos admiten diferentes destinos de salida.</p>
+</div>
+<div class="paragraph">
+<p>A continuación, se muestran algunos ejemplos de recopiladores:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://collectd.org/">collectd</a></p>
+</li>
+<li>
+<p><a href="https://github.com/statsd/statsd">statsd</a></p>
+</li>
+<li>
+<p><a href="https://prometheus.io/docs/instrumenting/exporters/">Exportadores de Prometheus</a></p>
+</li>
+<li>
+<p><a href="https://github.com/influxdata/telegraf">Telegraf</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Un recopilador <em>envía</em> datos a una base de datos o permite que la base de datos <em>extraiga</em> los datos de ella. Ambos métodos tienen sus propios pros y contras:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Pros</th>
+<th class="tableblock halign-left valign-top">Contras</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enviar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Más fácil para replicar datos a múltiples destinos.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La TSDB no tiene control sobre la cantidad de datos que se envían.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extraer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mejor control sobre la cantidad de datos que se ingieren y su autenticidad.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Los cortafuegos, las VPN o los equilibradores de carga pueden dificultar el acceso a los agentes.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Dado que sería ineficaz escribir todas las mediciones en la base de datos, los recopiladores agregan previamente los datos y escriben en la base de datos de series de tiempo a intervalos regulares.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Esta página fue hecha usando la interfaz predeterminada de Antora.</p>
+  <p>El código de esta interfaz está licenciado bajo los términos de la licencia MPL-2.0.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Panel de gráfico :: Documentación de Grafana</title>
+    <link rel="canonical" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html/ceos-grafana-docs/7.5.x/paneles/visualizaciones/panel-de-grafico.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html">
+        <img src="/ceos-grafana-docs/ceos-grafana-docs/7.5.x/_images/logo.png" width="100">
+        <span>| Documentación de Grafana<span>     
+      </a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ceos-grafana-docs" data-version="7.5.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Documentación de Grafana</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../comenzando/comenzando.html">Comenzando</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../comenzando/con-grafana.html">Con Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../comenzando/con-grafana-y-prometheus.html">Con Grafana y Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../comenzando/series-de-tiempo.html">Series de tiempo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../comenzando/dimensiones-de-las-series-de-tiempo.html">Dimensiones de las series de tiempo.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../comenzando/glosario.html">Glosario</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../autenticacion/autenticacion.html">Autenticación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../autenticacion/autenticacion-de-grafana.html">Autenticación de Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../instalacion/instalacion.html">Instalación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../instalacion/requisitos.html">Requisitos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../instalacion/instalar-en-windows.html">Instalar en Windows</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../instalacion/actualizar-grafana.html">Actualizar Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../instalacion/reiniciar-grafana.html">Reiniciar Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../administracion/administracion.html">Administración</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../administracion/preferencias.html">Preferencias</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administracion/preferencias/cambiar-nombre-y-correo-electronico.html">Cambiar nombre y correo electrónico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administracion/preferencias/cambiar-el-tema-de-la-interfaz-de-usuario.html">Cambiar el tema de la interfaz de usuario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administracion/preferencias/cambiar-tablero-de-inicio.html">Camniar tablero de inicio</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administracion/preferencias/cambiar-zona-horaria-predeterminada.adoc">Cambiar zona horaria predeterminada</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../administracion/ver-servidor.html">Ver servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administracion/ver-servidor/metricas-internas-de-grafana.html">Métricas internas de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administracion/ver-servidor/ver-configuracion-del-servidor.html">Ver configuración del servidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administracion/ver-servidor/ver-estadisticas-del-servidor.html">Ver estadísticas del servidor</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../administracion/configuracion.html">Configuración</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../administracion/cli-de-grafana.html">CLI de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../administracion/seguridad.html">Seguridad</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../administrar-usuarios/administrar-usuarios.html">Administrar usuarios</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../administrar-usuarios/tareas-de-administrador-de-servidor.html">Tareas de administrador de servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-usuarios.html">Administrar usuarios</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-organizacion.html">Administrar organización</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../administrar-usuarios/tareas-de-administrador-de-organizacion.html">Tareas de administrador de organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#administrar-usuarios/administar-equipos.adoc">Administrar equipos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../administrar-usuarios/tareas-de-la-cuenta-de-usuario.html">Tareas de la cuenta de usuario</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administrar-usuarios/tareas-de-la-cuenta-de-usuario/perfil-de-cuenta-de-usuario.html">Perfil de cuenta de uruario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-su-contraseña">Cambiar su contraseña</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-organizacion">Cambiar organización</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../permisos/permisos.html">Permisos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../permisos/roles-de-la-organizacion.html">Roles de la organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../permisos/permisos-de-tablero-y-carpeta.html">Permiso de tablero y carpeta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#permisos/restringir-acceso">Restringit acceso</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../permisos/permisos-de-fuente-de-datos.html">Permisos de fuente de datos</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../fuentes-de-datos/fuentes-de-datos.html">Fuentes de datos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#fuentes-de-datos/agregar-una-fuente-de-datos.adoc">Agregar una fuente de datos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../fuentes-de-datos/loki.html">Loki</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../fuentes-de-datos/prometheus.html">Prometheus</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles.html">Paneles</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../agregar-un-panel.html">Agregar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../editor-de-paneles.html">Editor de paneles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../lista-de-calculos.html">Lista de cálculos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../consultas.html">Consultas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../umbrales.html">Umbrales</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../transformaciones.html">Transformaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../transformaciones/aplicar-transformaciones.html">Aplicar transformaciones</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../transformaciones/tipos-y-opciones-de-transformacion.html">Tipos y opciones de transformación</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../compartir-resultados-de-la-consulta.html">Compartir resultados de la consulta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../inspeccionar-un-panel.html">Inspeccionar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../opciones-de-campo-y-anulaciones.html">Opciones de campo y anulaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../opciones-de-campo-y-anulaciones/configurar-todos-los-campos.html">Configurar todos los campos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../opciones-de-campo-y-anulaciones/configurar-campos-especificos.html">Configurar campos específicos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../opciones-de-campo-y-anulaciones/opciones-de-campo-estandar.html">Opciones de campo estándar</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../visualizaciones.html">Visualizaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="opciones-de-leyenda-del-panel.html">Opciones de leyenda del panel</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="panel-de-lista-de-alertas.html">Panel de lista de alertas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="panel-de-medidor-de-barra.html">Panel de medidor de barra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="panel-de-lista-de-tableros.html">Panel de lista de tableros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="panel-de-medidor.html">Panel de medidor</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="panel-de-grafico.html">Panel de gráfico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="panel-de-mapa-de-calor.html">Panel de mapa de calor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="panel-de-registros.html">Panel de registros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-noticias">Panel de noticias</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-grafico-de-nodo.adoc">Panel de gráfico de nodo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="panel-de-grafico-circular.html">Panel de gráfico circular</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="panel-de-estadisticas.html">Panel de estadísticas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="panel-de-tabla.html">Panel de tabla</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="panel-de-tabla/opciones-de-campo-de-tabla.html">Opciones de campo de tabla</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="panel-de-tabla/filtrar-columnas-de-la-tabla.html">Filtrar columnas de la tabla</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="panel-de-texto.html">Panel de texto</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="panel-de-series-de-tiempo.html">Panel de series de tiempo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="panel-de-series-de-tiempo/cambiar-visualizacion-del-eje.html">Cambiar visualización del eje</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../expresiones.html">Expresiones</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../tableros/tableros.html">Tableros</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../compartir/compartir.html">Compartir</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../explorar/explorar.html">Explorar</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../alertas/alertas.html">Alertas</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../solucion-de-problemas/solucion-de-problemas.html">Solución de problemas</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentación de Grafana</span>
+    <span class="version">7.5.x</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Documentación de Grafana</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">7.5.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Documentación de Grafana</a></li>
+    <li><a href="../paneles.html">Paneles</a></li>
+    <li><a href="../visualizaciones.html">Visualizaciones</a></li>
+    <li><a href="panel-de-grafico.html">Panel de gráfico</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/Aumandaris/ceos-grafana-docs/edit/master/modules/ROOT/pages/paneles/visualizaciones/panel-de-grafico.adoc">Editar esta página</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Panel de gráfico</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Esta visualización es la más utilizada en el ecosistema Grafana. Se puede representar como una línea, una ruta de puntos o una serie de barras. Este tipo de gráfico es lo suficientemente versátil como para mostrar casi cualquier dato de series de tiempo.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_opciones_de_campo_y_datos"><a class="anchor" href="#_opciones_de_campo_y_datos"></a>Opciones de campo y datos</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Las visualizaciones de gráficos le permiten aplicar:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../alertas/alertas.html" class="page">Alertas</a>: este es el único tipo de visualización que le permite configurar alertas.</p>
+</li>
+<li>
+<p><a href="../transformaciones.html" class="page">Transformaciones de datos</a></p>
+</li>
+<li>
+<p><a href="../opciones-de-campo-y-anulaciones.html" class="page">Opciones de campo y anulaciones</a></p>
+</li>
+<li>
+<p><a href="../umbrales.html" class="page">Umbrales</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_opciones_de_pantalla"><a class="anchor" href="#_opciones_de_pantalla"></a>Opciones de pantalla</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Utilice esta configuración para refinar su visualización.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Barras:</strong> muestra los valores como un gráfico de barras.</p>
+</li>
+<li>
+<p><strong>Líneas:</strong> muestra los valores como un gráfico de líneas.</p>
+</li>
+<li>
+<p><strong>Ancho de línea:</strong> el ancho de la línea de una serie. (predeterminado 1).</p>
+</li>
+<li>
+<p><strong>Escalera:</strong> dibuja puntos adyacentes como escalera.</p>
+</li>
+<li>
+<p><strong>Relleno de área:</strong> cantidad de relleno de color para una serie. (predeterminado 1, 0 es ninguno)</p>
+</li>
+<li>
+<p><strong>Rellenar degradado:</strong> grado de degradado en el relleno del área. (0 es sin gradiente, 10 es un gradiente pronunciado. El valor predeterminado es 0).</p>
+</li>
+<li>
+<p><strong>Puntos:</strong> muestra puntos para valores.</p>
+</li>
+<li>
+<p><strong>Radio de punto:</strong> controla el tamaño de los puntos.</p>
+</li>
+<li>
+<p><strong>Umbrales de alerta:</strong> muestra los umbrales de alerta y las regiones en el panel.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_apilamiento_y_valor_nulo"><a class="anchor" href="#_apilamiento_y_valor_nulo"></a>Apilamiento y valor nulo</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Pila:</strong> cada serie se apila una encima de otra.</p>
+</li>
+<li>
+<p><strong>Porcentaje:</strong> disponible cuando se selecciona <strong>Pila</strong>. Cada serie se extrae como un porcentaje del total de todas las series.</p>
+</li>
+<li>
+<p><strong>Valor nulo:</strong> cómo se muestran los valores nulos. <em>Este es un escenario muy importante</em>. Vea la nota abajo.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>conectado:</strong> si hay un espacio en la serie, es decir, un valor o valores nulos, la línea saltará el espacio y se conectará al siguiente valor no nulo.</p>
+</li>
+<li>
+<p><strong>nulo:</strong> (predeterminado) si hay un espacio en la serie, es decir, un valor nulo, la línea del gráfico se romperá y mostrará el espacio.</p>
+</li>
+<li>
+<p><strong>nulo como cero:</strong> si hay un espacio en la serie, es decir, un valor nulo, se mostrará como un valor cero en el panel de gráficos.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Si está monitoreando la carga de la CPU de un servidor y la carga alcanza el 100%, entonces el servidor se bloqueará y el agente que envía las estadísticas no podrá recopilar la estadística de carga. Esto conduce a una brecha en las métricas y tener el valor predeterminado como nulo significa que Grafana mostrará las brechas e indicará que algo está mal. Si está configurado como conectado, sería fácil perder esta señal.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_información_sobre_herramientas_flotante"><a class="anchor" href="#_información_sobre_herramientas_flotante"></a>Información sobre herramientas flotante</h3>
+<div class="paragraph">
+<p>Utilice esta configuración para cambiar la apariencia de la información sobre herramientas que aparece cuando pasa el cursor sobre la visualización del gráfico.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Modo</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Todas las series:</strong> la información sobre herramientas flotante muestra todas las series en el gráfico. Grafana destaca la serie sobre la que se desplaza en negrita en la lista de series en la información sobre herramientas.</p>
+</li>
+<li>
+<p><strong>Único:</strong> la información sobre herramientas flotante muestra solo una serie única, la que está sobre la que se desplaza en el gráfico.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Orden de clasificación:</strong> ordena el orden de las series en la información sobre herramientas flotante si ha seleccionado el modo <strong>Todas las series</strong>. Cuando coloca el cursor sobre un gráfico, Grafana muestra los valores asociados con las líneas. Generalmente, los usuarios están más interesados ​​en los valores más altos o más bajos. Ordenar estos valores puede hacer que sea mucho más fácil encontrar los datos de interés.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Ninguno:</strong> el orden de las series en la información sobre herramientas está determinado por el orden de clasificación de la consulta. Por ejemplo, podrían ordenarse alfabéticamente por nombre de serie.</p>
+</li>
+<li>
+<p><strong>Creciente:</strong> las series en la información sobre herramientas flotantes se ordenan por valor y en orden creciente, con el valor más bajo en la parte superior de la lista.</p>
+</li>
+<li>
+<p><strong>Decreciente:</strong> las series en la información sobre herramientas flotantes se ordenan por valor y en orden decreciente, con el valor más alto en la parte superior de la lista.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_anulaciones_de_series"><a class="anchor" href="#_anulaciones_de_series"></a>Anulaciones de series</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Las anulaciones de series permiten que una serie en un panel de gráficos se represente de manera diferente a las demás. Puede personalizar las opciones de visualización en una base por serie o mediante el uso de reglas de expresiones regulares. Por ejemplo, una serie puede tener un ancho de línea más grueso para que se destaque o se mueva al eje Y derecho.</p>
+</div>
+<div class="paragraph">
+<p>Puede agregar varias modificaciones de series.</p>
+</div>
+<div class="paragraph">
+<p><strong>Agregar una anulación de serie</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Haga clic en <strong>Agregar anulación de serie</strong>.</p>
+</li>
+<li>
+<p>En <strong>Alias ​​o regex</strong>, escriba o seleccione una serie. Haga clic en el campo para ver una lista de las series disponibles.</p>
+<div class="paragraph">
+<p><strong>Ejemplo:</strong> <code>/Network.*/</code> coincidiría con dos series denominadas <code>Network out</code> y <code>Network in</code>.</p>
+</div>
+</li>
+<li>
+<p>Haga clic en <strong>+</strong> y luego seleccione un estilo para aplicarlo a la serie. Puede agregar varios estilos a cada entrada.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Barras:</strong> muestra la serie como un gráfico de barras.</p>
+</li>
+<li>
+<p><strong>Líneas:</strong> muestra la serie como gráfico lineal.</p>
+</li>
+<li>
+<p><strong>Relleno de línea:</strong> muestra un gráfico de líneas con relleno de área.</p>
+</li>
+<li>
+<p><strong>Gradiente de relleno:</strong> cantidad de gradiente de relleno del área.</p>
+</li>
+<li>
+<p><strong>Ancho de línea:</strong> establezca el ancho de línea.</p>
+</li>
+<li>
+<p><strong>Modo de punto nulo:</strong> opción para ignorar los valores nulos o reemplazarlos por cero. Importante si desea ignorar las lagunas en sus datos.</p>
+</li>
+<li>
+<p><strong>Rellenar a continuación para:</strong> rellenar el área entre dos series.</p>
+</li>
+<li>
+<p><strong>Línea de escalera:</strong> muestra la serie como una línea de escalera.</p>
+</li>
+<li>
+<p><strong>Guiones:</strong> muestra la línea con guiones.</p>
+</li>
+<li>
+<p><strong>Serie oculta:</strong> oculta la serie.</p>
+</li>
+<li>
+<p><strong>Longitud del guión:</strong> longitud de la línea discontinua.</p>
+</li>
+<li>
+<p><strong>Espacio de guión:</strong> espacio entre líneas discontinuas.</p>
+</li>
+<li>
+<p><strong>Puntos:</strong> muestra las series como puntos separados.</p>
+</li>
+<li>
+<p><strong>Radio de punto:</strong> radio para el renderizado de puntos.</p>
+</li>
+<li>
+<p><strong>Pila:</strong> establece el grupo de pila para la serie.</p>
+</li>
+<li>
+<p><strong>Color:</strong> establece el color de la serie.</p>
+</li>
+<li>
+<p><strong>Eje Y:</strong> establece el eje Y de la serie.</p>
+</li>
+<li>
+<p><strong>Índice Z:</strong> establece el índice Z de la serie (orden de representación). Importante al superponer diferentes estilos (gráficos de barras, gráficos de áreas).</p>
+</li>
+<li>
+<p><strong>Transformar:</strong> transforma el valor en negativo para renderizar debajo del eje y.</p>
+</li>
+<li>
+<p><strong>Leyenda:</strong> controla si una serie se muestra en la leyenda.</p>
+</li>
+<li>
+<p><strong>Ocultar en la información sobre herramientas:</strong> controle si se muestra una serie en la información sobre herramientas del gráfico.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ejes"><a class="anchor" href="#_ejes"></a>Ejes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Utilice estas opciones para controlar la pantalla de ejes en la visualización.</p>
+</div>
+<div class="sect2">
+<h3 id="_y_izquierdoy_derecho"><a class="anchor" href="#_y_izquierdoy_derecho"></a>Y izquierdo/Y derecho</h3>
+<div class="paragraph">
+<p>Las opciones son idénticas para ambos ejes Y.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Mostrar:</strong> haga clic para mostrar u ocultar el eje.</p>
+</li>
+<li>
+<p><strong>Unidad:</strong> la unidad de visualización del valor Y.</p>
+</li>
+<li>
+<p><strong>Escala:</strong> la escala que se utilizará para el valor Y, lineal o logarítmico. (lineal predeterminado)</p>
+</li>
+<li>
+<p><strong>Y-Min:</strong> el valor Y mínimo. (auto predeterminado)</p>
+</li>
+<li>
+<p><strong>Y-Max:</strong> el valor Y máximo. (autopredeterminado)</p>
+</li>
+<li>
+<p><strong>Decimales:</strong> define cuántos decimales se muestran para el valor Y. (auto predeterminado)</p>
+</li>
+<li>
+<p><strong>Etiqueta:</strong> la etiqueta del eje Y. (defecto "")</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ejes_y"><a class="anchor" href="#_ejes_y"></a>Ejes Y</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alinear:</strong> seleccione esta opción para alinear los ejes Y izquierdo y derecho por valor. (predeterminado sin marcar/falso)</p>
+</li>
+<li>
+<p><strong>Nivel:</strong> disponible cuando se selecciona <strong>Alinear</strong>. Valor que se utilizará para la alineación de los ejes Y izquierdo y derecho, comenzando desde Y=0. (predeterminado 0)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_eje_x"><a class="anchor" href="#_eje_x"></a>Eje X</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Mostrar:</strong> haga clic para mostrar u ocultar el eje.</p>
+</li>
+<li>
+<p><strong>Modo:</strong> el modo de visualización cambia completamente la visualización del panel de gráficos. Es como tres paneles en uno. El modo principal es el modo de serie temporal con el tiempo en el eje X. Los otros dos modos son un modo de gráfico de barras básico con series en el eje X en lugar de tiempo y un modo de histograma.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Tiempo:</strong> (predeterminado) El eje X representa el tiempo y los datos están agrupados por tiempo (por ejemplo, por hora o por minuto).</p>
+</li>
+<li>
+<p><strong>Serie:</strong> los datos se agrupan por series y no por tiempo. El eje Y todavía representa el valor.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Valor:</strong> el tipo de agregación que se utilizará para los valores. El valor predeterminado es total (sumando los valores).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Histograma:</strong> convierte el gráfico en un histograma. Un histograma es una especie de gráfico de barras que agrupa números en rangos, a menudo llamados cubos o contenedores. Las barras más altas muestran que más datos caen en ese rango.</p>
+<div class="paragraph">
+<p>Para obtener más información sobre histogramas, consulte Introducción a los histogramas y mapas de calor.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Cubos</strong>: la cantidad de cubos por los que agrupar los valores. Si se deja vacío, Grafana intenta calcular una cantidad adecuada de cubos.</p>
+</li>
+<li>
+<p><strong>X-Min:</strong> filtra los valores del histograma que están por debajo de este límite mínimo.</p>
+</li>
+<li>
+<p><strong>X-Max:</strong> filtra los valores que superan este límite máximo.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_leyenda"><a class="anchor" href="#_leyenda"></a>Leyenda</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Utilice esta configuración para refinar cómo aparece la leyenda en su visualización.</p>
+</div>
+<div class="sect2">
+<h3 id="_opciones"><a class="anchor" href="#_opciones"></a>Opciones</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Mostrar:</strong> desmarque para ocultar la leyenda. (por defecto marcado/verdadero)</p>
+</li>
+<li>
+<p><strong>Como tabla:</strong> marque para mostrar la leyenda en la tabla. (por defecto marcado/verdadero)</p>
+</li>
+<li>
+<p><strong>A la derecha:</strong> marque para mostrar la leyenda a la derecha.</p>
+</li>
+<li>
+<p><strong>Ancho:</strong> disponible cuando se selecciona <strong>A la derecha</strong>. Introduzca el ancho mínimo de la leyenda en píxeles.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_valores"><a class="anchor" href="#_valores"></a>Valores</h3>
+<div class="paragraph">
+<p>Se pueden mostrar valores adicionales junto a los nombres de las leyendas:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Min:</strong> mínimo de todos los valores devueltos por la consulta de métricas.</p>
+</li>
+<li>
+<p><strong>Max:</strong> máximo de todos los valores devueltos por la consulta de métricas.</p>
+</li>
+<li>
+<p><strong>Promedio:</strong> promedio de todos los valores devueltos por la consulta de métricas.</p>
+</li>
+<li>
+<p><strong>Actual:</strong> último valor devuelto por la consulta de métricas.</p>
+</li>
+<li>
+<p><strong>Total:</strong> suma de todos los valores devueltos por la consulta de métricas.</p>
+</li>
+<li>
+<p><strong>Decimales:</strong> controla cuántos decimales se muestran para los valores de leyenda y la información sobre herramientas flotante del gráfico.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Grafana calcula los valores de la leyenda en el lado del cliente y dependen del tipo de agregación o consolidación de puntos que utilice su consulta de métricas. Todos los valores de leyenda anteriores no pueden ser correctos al mismo tiempo.</p>
+</div>
+<div class="paragraph">
+<p>Por ejemplo, si traza una tasa como solicitudes/segundo, probablemente esté usando el promedio como un agregador, entonces el Total en la leyenda no representará el número total de solicitudes. Es solo la suma de todos los puntos de datos recibidos por Grafana.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ocultar_serie"><a class="anchor" href="#_ocultar_serie"></a>Ocultar serie</h3>
+<div class="paragraph">
+<p>Ocultar series cuando todos los valores de una serie de una consulta de métricas tienen un valor específico.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Con solo nulos:</strong> Valor nulo (predeterminado sin marcar)</p>
+</li>
+<li>
+<p><strong>Con solo ceros:</strong> Valo =cero (predeterminado sin marcar)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_regiones_de_tiempo"><a class="anchor" href="#_regiones_de_tiempo"></a>Regiones de tiempo</h3>
+<div class="paragraph">
+<p>Las regiones de tiempo le permiten resaltar ciertas regiones de tiempo del gráfico para que sea más fácil ver, por ejemplo, los fines de semana, el horario comercial y / o las horas libres. Todas las regiones horarias configuradas se refieren a la hora UTC.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Esta página fue hecha usando la interfaz predeterminada de Antora.</p>
+  <p>El código de esta interfaz está licenciado bajo los términos de la licencia MPL-2.0.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

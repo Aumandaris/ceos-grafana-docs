@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Usando Loki en Grafana :: Documentación de Grafana</title>
+    <link rel="canonical" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html/ceos-grafana-docs/7.5.x/fuentes-de-datos/loki.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html">
+        <img src="/ceos-grafana-docs/ceos-grafana-docs/7.5.x/_images/logo.png" width="100">
+        <span>| Documentación de Grafana<span>     
+      </a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ceos-grafana-docs" data-version="7.5.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Documentación de Grafana</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../comenzando/comenzando.html">Comenzando</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/con-grafana.html">Con Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/con-grafana-y-prometheus.html">Con Grafana y Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/series-de-tiempo.html">Series de tiempo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/dimensiones-de-las-series-de-tiempo.html">Dimensiones de las series de tiempo.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/glosario.html">Glosario</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../autenticacion/autenticacion.html">Autenticación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../autenticacion/autenticacion-de-grafana.html">Autenticación de Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../instalacion/instalacion.html">Instalación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/requisitos.html">Requisitos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/instalar-en-windows.html">Instalar en Windows</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/actualizar-grafana.html">Actualizar Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/reiniciar-grafana.html">Reiniciar Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/administracion.html">Administración</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/preferencias.html">Preferencias</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-nombre-y-correo-electronico.html">Cambiar nombre y correo electrónico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-el-tema-de-la-interfaz-de-usuario.html">Cambiar el tema de la interfaz de usuario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-tablero-de-inicio.html">Camniar tablero de inicio</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administracion/preferencias/cambiar-zona-horaria-predeterminada.adoc">Cambiar zona horaria predeterminada</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/ver-servidor.html">Ver servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/metricas-internas-de-grafana.html">Métricas internas de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/ver-configuracion-del-servidor.html">Ver configuración del servidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/ver-estadisticas-del-servidor.html">Ver estadísticas del servidor</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/configuracion.html">Configuración</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/cli-de-grafana.html">CLI de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/seguridad.html">Seguridad</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/administrar-usuarios.html">Administrar usuarios</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor.html">Tareas de administrador de servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-usuarios.html">Administrar usuarios</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-organizacion.html">Administrar organización</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-organizacion.html">Tareas de administrador de organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#administrar-usuarios/administar-equipos.adoc">Administrar equipos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario.html">Tareas de la cuenta de usuario</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario/perfil-de-cuenta-de-usuario.html">Perfil de cuenta de uruario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-su-contraseña">Cambiar su contraseña</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-organizacion">Cambiar organización</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../permisos/permisos.html">Permisos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/roles-de-la-organizacion.html">Roles de la organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-tablero-y-carpeta.html">Permiso de tablero y carpeta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#permisos/restringir-acceso">Restringit acceso</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-fuente-de-datos.html">Permisos de fuente de datos</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="fuentes-de-datos.html">Fuentes de datos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#fuentes-de-datos/agregar-una-fuente-de-datos.adoc">Agregar una fuente de datos</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="loki.html">Loki</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="prometheus.html">Prometheus</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/paneles.html">Paneles</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/agregar-un-panel.html">Agregar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/editor-de-paneles.html">Editor de paneles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/lista-de-calculos.html">Lista de cálculos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/consultas.html">Consultas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/umbrales.html">Umbrales</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/transformaciones.html">Transformaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/transformaciones/aplicar-transformaciones.html">Aplicar transformaciones</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/transformaciones/tipos-y-opciones-de-transformacion.html">Tipos y opciones de transformación</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/compartir-resultados-de-la-consulta.html">Compartir resultados de la consulta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/inspeccionar-un-panel.html">Inspeccionar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones.html">Opciones de campo y anulaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/configurar-todos-los-campos.html">Configurar todos los campos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/configurar-campos-especificos.html">Configurar campos específicos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/opciones-de-campo-estandar.html">Opciones de campo estándar</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones.html">Visualizaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/opciones-de-leyenda-del-panel.html">Opciones de leyenda del panel</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-lista-de-alertas.html">Panel de lista de alertas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-medidor-de-barra.html">Panel de medidor de barra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-lista-de-tableros.html">Panel de lista de tableros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-medidor.html">Panel de medidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-grafico.html">Panel de gráfico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-mapa-de-calor.html">Panel de mapa de calor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-registros.html">Panel de registros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-noticias">Panel de noticias</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-grafico-de-nodo.adoc">Panel de gráfico de nodo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-grafico-circular.html">Panel de gráfico circular</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-estadisticas.html">Panel de estadísticas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla.html">Panel de tabla</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla/opciones-de-campo-de-tabla.html">Opciones de campo de tabla</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla/filtrar-columnas-de-la-tabla.html">Filtrar columnas de la tabla</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-texto.html">Panel de texto</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo.html">Panel de series de tiempo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/cambiar-visualizacion-del-eje.html">Cambiar visualización del eje</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/expresiones.html">Expresiones</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../tableros/tableros.html">Tableros</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../compartir/compartir.html">Compartir</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../explorar/explorar.html">Explorar</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alertas/alertas.html">Alertas</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../solucion-de-problemas/solucion-de-problemas.html">Solución de problemas</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentación de Grafana</span>
+    <span class="version">7.5.x</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Documentación de Grafana</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">7.5.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Documentación de Grafana</a></li>
+    <li><a href="fuentes-de-datos.html">Fuentes de datos</a></li>
+    <li><a href="loki.html">Loki</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/Aumandaris/ceos-grafana-docs/edit/master/modules/ROOT/pages/fuentes-de-datos/loki.adoc">Editar esta página</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Usando Loki en Grafana</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Grafana se envía con soporte integrado para Loki, un sistema de agregación de registros de código abierto de Grafana Labs. Este tema explica opciones, variables, consultas y otras opciones específicas de esta fuente de datos.</p>
+</div>
+<div class="paragraph">
+<p>Agréguelo como fuente de datos y estará listo para crear tableros o consultar sus datos de registro en <a href="../explorar/explorar.html" class="page">Explorar</a>. Consulte <a href="#fuentes-de-datos/agregar-una-fuente-de-datos.adoc" class="page unresolved">Agregar una fuente de datos</a> para obtener instrucciones sobre cómo agregar una fuente de datos a Grafana. Solo los usuarios con el rol de administrador de la organización pueden agregar fuentes de datos.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Para solucionar problemas de configuración y otros problemas, consulte el archivo de registro ubicado en /var/log/grafana/grafana.log en sistemas Unix o en &lt;grafana_install_dir&gt;/data/log en otras plataformas e instalaciones manuales.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuración_de_loki"><a class="anchor" href="#_configuración_de_loki"></a>Configuración de Loki</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Para acceder a la configuración de Loki, haga clic en el icono de <strong>Configuración</strong> (engranaje), luego haga clic en <strong>Fuentes de datos</strong> y luego haga clic en la fuente de datos de Loki.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Nombre</th>
+<th class="tableblock halign-left valign-top">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">El nombre de la fuente de datos. Es así como se hace referencia a la fuente de datos en paneles, consultas y Explorar.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Default</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La fuente de datos predeterminada significa que se preseleccionará para nuevos paneles.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>URL</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La URL de la instancia de Loki, p. Ej. <code><a href="http://localhost:3100" class="bare">http://localhost:3100</a></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Whitelisted Cookies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Grafana Proxy elimina las cookies reenviadas de forma predeterminada. Especifique las cookies por nombre que deben enviarse a la fuente de datos.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Maximum lines</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Límite superior para el número de líneas de registro devueltas por Loki (el valor predeterminado es 1000). Reduzca este límite si su navegador es lento al mostrar registros en Explorar.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_campos_derivados"><a class="anchor" href="#_campos_derivados"></a>Campos derivados</h3>
+<div class="paragraph">
+<p>La configuración de Campos Derivados le permite:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Agregar campos analizados del mensaje de registro.</p>
+</li>
+<li>
+<p>Agregar un enlace que use el valor del campo.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Puede usar esta funcionalidad para vincular a su backend de seguimiento directamente desde sus registros, o vincular a una página de perfil de usuario si hay un userId presente en la línea de registro. Estos enlaces aparecen en los <a href="#explorar/integracion-de-registros.adoc#_etiquetas_y_campos_destacados" class="page unresolved">detalles del registro</a>.</p>
+</div>
+<div class="paragraph">
+<p>Cada campo derivado consta de:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Nombre:</strong> se muestra en los detalles del registro como una etiqueta.</p>
+</li>
+<li>
+<p><strong>Regex:</strong> un patrón Regex que se ejecuta en el mensaje de registro y captura parte de él como el valor del nuevo campo. Solo puede contener un único grupo de captura.</p>
+</li>
+<li>
+<p><strong>URL / consulta:</strong> si el enlace es externo, introduzca la URL completa del enlace. Si el enlace es un enlace interno, esta entrada sirve como consulta para la fuente de datos de destino. En ambos casos, puede interpolar el valor del campo con el macro <code>$\{__value.raw}</code>.</p>
+</li>
+<li>
+<p><strong>Enlace interno:</strong> seleccione si el enlace es interno o externo. En caso de un enlace interno, un selector de fuente de datos le permite seleccionar la fuente de datos de destino. Solo se admiten las fuentes de datos de seguimiento.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Puede usar una sección de depuración para ver qué extraen sus campos y cómo se interpola la URL. Haga clic en <strong>Mostrar mensaje de registro de ejemplo</strong> para mostrar el área de texto donde puede ingresar un mensaje de registro.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/image26.png" alt="Screenshot of the derived fields debugging" width="624" height="262">
+</div>
+</div>
+<div class="paragraph">
+<p>El nuevo campo con el enlace que se muestra en los detalles del registro:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/image27.png" alt="Detected fields link in Explore" width="624" height="239">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_editor_de_consultas_de_loki"><a class="anchor" href="#_editor_de_consultas_de_loki"></a>Editor de consultas de Loki</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Puede utilizar el editor de consultas de Loki para crear consultas de registro y métricas.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Nombre</th>
+<th class="tableblock halign-left valign-top">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Query expression</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expresión de consulta Loki, consulte la [documentación de LogQL] para obtener más información.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Query type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Elija el tipo de consulta a ejecutar. El tipo instantáneo realiza consultas en un solo punto en el tiempo. Estamos usando el tiempo "Hasta" del rango de tiempo. El tipo de rango consulta sobre el rango de tiempo seleccionado.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Line limit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Límite superior para el número de líneas de registro devueltas por consulta. El valor predeterminado es el límite máximo de líneas establecido en la configuración de Loki.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Legend</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disponible solo en Tablero. Controla el nombre de la serie temporal, mediante el nombre o el patrón. Por ejemplo, <code>{{hostname}}</code> se reemplaza con el valor de la etiqueta para la etiqueta <code>hostname</code>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_explorador_de_registros"><a class="anchor" href="#_explorador_de_registros"></a>Explorador de registros</h3>
+<div class="paragraph">
+<p>Con el navegador de registros de Loki, puede navegar fácilmente a través de su lista de etiquetas y valores además construir la consulta de su elección. El navegador de registros tiene una selección de varios pasos:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Elija las etiquetas que le gustaría considerar para su búsqueda.</p>
+</li>
+<li>
+<p>Elija los valores para las etiquetas seleccionadas. El navegador de registros admite la creación de facetas y, por lo tanto, solo muestra posibles combinaciones de etiquetas.</p>
+</li>
+<li>
+<p>Elija el tipo de consulta: consulta de registros o consulta de métricas de tasa. Además, también puede validar selector.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/image28.png" alt="Screenshot of the derived fields debugging" width="624" height="524">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_consultando_con_loki"><a class="anchor" href="#_consultando_con_loki"></a>Consultando con Loki</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hay dos tipos de consultas LogQL:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Consultas de registro: devuelven el contenido de las líneas de registro.</p>
+</li>
+<li>
+<p>Consultas de métricas: amplían las consultas de registros y calculan valores de muestra en función del contenido de los registros de una consulta de registros.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_consultas_de_registro"><a class="anchor" href="#_consultas_de_registro"></a>Consultas de registro</h3>
+<div class="paragraph">
+<p>La consulta y visualización de datos de registro de Loki está disponible a través de <a href="../explorar/explorar.html" class="page">Explorar</a> y con el <a href="../paneles/visualizaciones/panel-de-registros.html" class="page">panel de registros</a> en los tableros. Seleccione la fuente de datos de Loki y luego ingrese una consulta [LogQL] para mostrar sus registros.</p>
+</div>
+<div class="paragraph">
+<p>Una consulta de registro consta de dos partes: selector de flujo de registros y una canalización de registros. Por razones de rendimiento, comience eligiendo un flujo de registro seleccionando una etiqueta de registro.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_contexto_de_registro"><a class="anchor" href="#_contexto_de_registro"></a>Contexto de registro</h3>
+<div class="paragraph">
+<p>Cuando utilice una expresión de búsqueda como se detalla anteriormente, puede recuperar el contexto que rodea los resultados filtrados. Al hacer clic en el enlace <code>Show Context</code> en las filas filtradas, podrá investigar los mensajes de registro que vinieron antes y después del mensaje de registro que le interesa.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_seguimiento_en_vivo"><a class="anchor" href="#_seguimiento_en_vivo"></a>Seguimiento en vivo</h3>
+<div class="paragraph">
+<p>Loki admite el Seguimiento en vivo, que muestra registros en tiempo real. Esta función es compatible con <a href="../explorar/explorar.html" class="page">Explorar</a>.</p>
+</div>
+<div class="paragraph">
+<p>Tenga en cuenta que Seguimiento en Vivo se basa en dos conexiones Websocket: una entre navegador y el servidor Grafana, y otro entre el servidor Grafana y el servidor Loki. Si ejecuta proxies inversos, configúrelos en consecuencia. El siguiente ejemplo de Apache2 se puede utilizar para el proxy entre el navegador y el servidor Grafana:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ProxyPassMatch "^/(api/datasources/proxy/\d+/loki/api/v1/tail)" "ws://127.0.0.1:3000/$1"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>El siguiente ejemplo muestra la configuración básica del proxy NGINX. Se asume que el servidor Grafana está disponible en <code><a href="http://localhost:3000/" class="bare">http://localhost:3000/</a></code>, el servidor Loki se ejecuta localmente sin proxy y su sitio externo usa HTTPS. Si también aloja a Loki detrás del proxy NGINX, es posible que también desee repetir la siguiente configuración para Loki.</p>
+</div>
+<div class="paragraph">
+<p>En la sección <code>http</code> de la configuración de NGINX, agregue la siguiente definición de mapa:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>  map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+  }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>En su sección <code>server</code>, agregue la siguiente configuración:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>  location ~ /(api/datasources/proxy/\d+/loki/api/v1/tail) {
+      proxy_pass          http://localhost:3000$request_uri;
+      proxy_set_header    Host              $host;
+      proxy_set_header    X-Real-IP         $remote_addr;
+      proxy_set_header    X-Forwarded-for   $proxy_add_x_forwarded_for;
+      proxy_set_header    X-Forwarded-Proto "https";
+      proxy_set_header    Connection        $connection_upgrade;
+      proxy_set_header    Upgrade           $http_upgrade;
+  }
+
+  location / {
+      proxy_pass          http://localhost:3000/;
+      proxy_set_header    Host              $host;
+      proxy_set_header    X-Real-IP         $remote_addr;
+      proxy_set_header    X-Forwarded-for   $proxy_add_x_forwarded_for;
+      proxy_set_header    X-Forwarded-Proto "https";
+  }</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Esta función solo está disponible en Grafana v6.3 +.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_consultas_métricas"><a class="anchor" href="#_consultas_métricas"></a>Consultas métricas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>LogQL admite el empaquetado de una consulta de registro con funciones que permiten crear métricas a partir de los registros. Consulte la documentación de [LogQL] sobre cómo crear y utilizar consultas de métricas.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_plantillas"><a class="anchor" href="#_plantillas"></a>Plantillas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>En lugar de codificar cosas como el servidor, la aplicación y el nombre del sensor en sus consultas de métricas, puede usar variables en su lugar. Las variables se muestran como cuadros de selección desplegables en la parte superior del tablero. Estos cuadros desplegables facilitan el cambio de los datos que se muestran en su tablero.</p>
+</div>
+<div class="paragraph">
+<p>Consulte la documentación de creación de <a href="#plantillas-y-variables/plantillas-y-variables.adoc" class="page unresolved">Plantillas</a> para obtener una introducción a la función de creación de plantillas y los diferentes tipos de variables de plantilla.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_variable_de_consulta"><a class="anchor" href="#_variable_de_consulta"></a>Variable de consulta</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La variable del tipo <em>Consulta</em> le permite consultar a Loki para obtener etiquetas de lista o valores de etiqueta. El complemento de fuente de datos de Loki proporciona las siguientes funciones que puede utilizar en el campo de entrada <code>Query</code>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Nombre</th>
+<th class="tableblock halign-left valign-top">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>label_names()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Devuelve una lista de nombres de etiquetas.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>label_values(label)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Devuelve una lista de valores de etiqueta para <code>label</code> en cada métrica.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_anotaciones"><a class="anchor" href="#_anotaciones"></a>Anotaciones</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Puede utilizar cualquier consulta Loki no métrica como fuente de <a href="../tableros/anotaciones.html" class="page">anotaciones</a>. El contenido del registro se utilizará como texto de anotación y las etiquetas de su flujo de registro como etiquetas, por lo que no es necesario un mapeo adicional.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configurar_la_fuente_de_datos_con_aprovisionamiento"><a class="anchor" href="#_configurar_la_fuente_de_datos_con_aprovisionamiento"></a>Configurar la fuente de datos con aprovisionamiento</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Puede configurar la fuente de datos a través de archivos de configuración con el sistema de aprovisionamiento de Grafana. Puede leer más sobre cómo funciona y todas las configuraciones que puede establecer para las fuentes de datos en la <a href="#administracion/aprovisionamiento.adoc#_fuentes_de_datos" class="page unresolved">página de documentos de aprovisionamiento</a>.</p>
+</div>
+<div class="paragraph">
+<p>Aquí hay un ejemplo:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">apiVersion: 1
+
+datasources:
+  - name: Loki
+    type: loki
+    access: proxy
+    url: http://localhost:3100
+    jsonData:
+      maxLines: 1000</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Aquí hay otro con autenticación básica y campo derivado. Tenga en cuenta que el carácter <code>$</code> debe escaparse en los valores YAML, ya que se usa para interpolar variables de entorno:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">apiVersion: 1
+
+datasources:
+  - name: Loki
+    type: loki
+    access: proxy
+    url: http://localhost:3100
+    basicAuth: true
+    basicAuthUser: my_user
+    basicAuthPassword: test_password
+    jsonData:
+      maxLines: 1000
+      derivedFields:
+        # Field with internal link pointing to data source in Grafana.
+        # Right now, Grafana supports only Jaeger and Zipkin data sources as link targets.
+        # datasourceUid value can be anything, but it should be unique across all defined data source uids.
+        - datasourceUid: my_jaeger_uid
+          matcherRegex: "traceID=(\\w+)"
+          name: TraceID
+          # url will be interpreted as query for the datasource
+          url: '$${__value.raw}'
+
+        # Field with external link.
+        - matcherRegex: "traceID=(\\w+)"
+          name: TraceID
+          url: 'http://localhost:16686/trace/$${__value.raw}'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A continuación, se muestra un ejemplo de una fuente de datos de Jaeger que se corresponde con el ejemplo anterior. Tenga en cuenta que el valor de <code>uid</code> de Jaeger coincide con el valor de <code>datasourceUid</code> de Loki.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>datasources:
+    - name: Jaeger
+      type: jaeger
+      url: http://jaeger-tracing-query:16686/
+      access: proxy
+      # UID should match the datasourceUid in dervidedFields.
+      uid: my_jaeger_uid</pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Esta página fue hecha usando la interfaz predeterminada de Antora.</p>
+  <p>El código de esta interfaz está licenciado bajo los términos de la licencia MPL-2.0.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

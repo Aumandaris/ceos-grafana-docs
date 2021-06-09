@@ -1,0 +1,2745 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Configuración :: Documentación de Grafana</title>
+    <link rel="canonical" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html/ceos-grafana-docs/7.5.x/administracion/configuracion.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html">
+        <img src="/ceos-grafana-docs/ceos-grafana-docs/7.5.x/_images/logo.png" width="100">
+        <span>| Documentación de Grafana<span>     
+      </a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ceos-grafana-docs" data-version="7.5.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Documentación de Grafana</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../comenzando/comenzando.html">Comenzando</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/con-grafana.html">Con Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/con-grafana-y-prometheus.html">Con Grafana y Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/series-de-tiempo.html">Series de tiempo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/dimensiones-de-las-series-de-tiempo.html">Dimensiones de las series de tiempo.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/glosario.html">Glosario</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../autenticacion/autenticacion.html">Autenticación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../autenticacion/autenticacion-de-grafana.html">Autenticación de Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../instalacion/instalacion.html">Instalación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/requisitos.html">Requisitos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/instalar-en-windows.html">Instalar en Windows</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/actualizar-grafana.html">Actualizar Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/reiniciar-grafana.html">Reiniciar Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="administracion.html">Administración</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="preferencias.html">Preferencias</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="preferencias/cambiar-nombre-y-correo-electronico.html">Cambiar nombre y correo electrónico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="preferencias/cambiar-el-tema-de-la-interfaz-de-usuario.html">Cambiar el tema de la interfaz de usuario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="preferencias/cambiar-tablero-de-inicio.html">Camniar tablero de inicio</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administracion/preferencias/cambiar-zona-horaria-predeterminada.adoc">Cambiar zona horaria predeterminada</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="ver-servidor.html">Ver servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="ver-servidor/metricas-internas-de-grafana.html">Métricas internas de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="ver-servidor/ver-configuracion-del-servidor.html">Ver configuración del servidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="ver-servidor/ver-estadisticas-del-servidor.html">Ver estadísticas del servidor</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="configuracion.html">Configuración</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cli-de-grafana.html">CLI de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="seguridad.html">Seguridad</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/administrar-usuarios.html">Administrar usuarios</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor.html">Tareas de administrador de servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-usuarios.html">Administrar usuarios</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-organizacion.html">Administrar organización</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-organizacion.html">Tareas de administrador de organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#administrar-usuarios/administar-equipos.adoc">Administrar equipos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario.html">Tareas de la cuenta de usuario</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario/perfil-de-cuenta-de-usuario.html">Perfil de cuenta de uruario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-su-contraseña">Cambiar su contraseña</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-organizacion">Cambiar organización</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../permisos/permisos.html">Permisos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/roles-de-la-organizacion.html">Roles de la organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-tablero-y-carpeta.html">Permiso de tablero y carpeta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#permisos/restringir-acceso">Restringit acceso</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-fuente-de-datos.html">Permisos de fuente de datos</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../fuentes-de-datos/fuentes-de-datos.html">Fuentes de datos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#fuentes-de-datos/agregar-una-fuente-de-datos.adoc">Agregar una fuente de datos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../fuentes-de-datos/loki.html">Loki</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../fuentes-de-datos/prometheus.html">Prometheus</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/paneles.html">Paneles</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/agregar-un-panel.html">Agregar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/editor-de-paneles.html">Editor de paneles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/lista-de-calculos.html">Lista de cálculos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/consultas.html">Consultas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/umbrales.html">Umbrales</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/transformaciones.html">Transformaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/transformaciones/aplicar-transformaciones.html">Aplicar transformaciones</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/transformaciones/tipos-y-opciones-de-transformacion.html">Tipos y opciones de transformación</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/compartir-resultados-de-la-consulta.html">Compartir resultados de la consulta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/inspeccionar-un-panel.html">Inspeccionar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones.html">Opciones de campo y anulaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/configurar-todos-los-campos.html">Configurar todos los campos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/configurar-campos-especificos.html">Configurar campos específicos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/opciones-de-campo-estandar.html">Opciones de campo estándar</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones.html">Visualizaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/opciones-de-leyenda-del-panel.html">Opciones de leyenda del panel</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-lista-de-alertas.html">Panel de lista de alertas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-medidor-de-barra.html">Panel de medidor de barra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-lista-de-tableros.html">Panel de lista de tableros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-medidor.html">Panel de medidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-grafico.html">Panel de gráfico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-mapa-de-calor.html">Panel de mapa de calor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-registros.html">Panel de registros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-noticias">Panel de noticias</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-grafico-de-nodo.adoc">Panel de gráfico de nodo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-grafico-circular.html">Panel de gráfico circular</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-estadisticas.html">Panel de estadísticas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla.html">Panel de tabla</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla/opciones-de-campo-de-tabla.html">Opciones de campo de tabla</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla/filtrar-columnas-de-la-tabla.html">Filtrar columnas de la tabla</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-texto.html">Panel de texto</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo.html">Panel de series de tiempo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/cambiar-visualizacion-del-eje.html">Cambiar visualización del eje</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/expresiones.html">Expresiones</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../tableros/tableros.html">Tableros</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../compartir/compartir.html">Compartir</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../explorar/explorar.html">Explorar</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alertas/alertas.html">Alertas</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../solucion-de-problemas/solucion-de-problemas.html">Solución de problemas</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentación de Grafana</span>
+    <span class="version">7.5.x</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Documentación de Grafana</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">7.5.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Documentación de Grafana</a></li>
+    <li><a href="administracion.html">Administración</a></li>
+    <li><a href="configuracion.html">Configuración</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/Aumandaris/ceos-grafana-docs/edit/master/modules/ROOT/pages/administracion/configuracion.adoc">Editar esta página</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Configuración</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Grafana tiene una serie de opciones de configuración que puede especificar en un archivo de configuración <code>.ini</code> o especificar mediante variables de entorno.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Debe reiniciar Grafana para que se apliquen los cambios de configuración.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Para ver todas las configuraciones actualmente aplicadas al servidor Grafana, consulte <a href="ver-servidor/ver-configuracion-del-servidor.html" class="page">Ver configuración del servidor</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ubicaciones_del_archivo_de_configuración"><a class="anchor" href="#_ubicaciones_del_archivo_de_configuración"></a>Ubicaciones del archivo de configuración</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>¡<em>No</em> cambie <code>defaults.ini</code>! Los valores predeterminados de Grafana se almacenan en este archivo. Dependiendo de su sistema operativo, realice todos los cambios de configuración en <code>custom.ini</code> o <code>grafana.ini</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Configuración predeterminada desde <code>$WORKING_DIR/conf/defaults.ini</code></p>
+</li>
+<li>
+<p>Configuración personalizada desde <code>$WORKING_DIR/conf/custom.ini</code></p>
+</li>
+<li>
+<p>La ruta del archivo de configuración personalizada se puede anular mediante el parámetro <code>-–config</code></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_windows"><a class="anchor" href="#_windows"></a>Windows</h3>
+<div class="paragraph">
+<p><code>sample.ini</code> está en el mismo directorio que <code>defaults.ini</code> y contiene todas las configuraciones comentadas. Copie sample`.ini` y asígnele el nombre <code>custom.ini</code>.</p>
+</div>
+<div class="paragraph">
+<p>El punto y coma (el símbolo <code>;</code>) es la forma estándar de comentar líneas en un archivo <code>.ini</code>. Si desea cambiar una configuración, debe eliminar el punto y coma (<code>;</code>) delante de la configuración antes de que funcione.</p>
+</div>
+<div class="paragraph">
+<p><strong>Ejemplo</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># The HTTP port  to use
+;http_port = 3000</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Un problema común es olvidar descomentar una línea en el archivo <code>custom.ini</code> (o <code>grafana.ini</code>), lo que hace que se ignore la opción de configuración.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configurar_con_variables_de_entorno"><a class="anchor" href="#_configurar_con_variables_de_entorno"></a>Configurar con variables de entorno</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Todas las opciones en el archivo de configuración se pueden anular usando variables de entorno, usando la sintaxis:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">GF_&lt;SectionName&gt;_&lt;KeyName&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Donde el nombre de la sección es el texto entre corchetes. Todo debe estar en mayúsculas,<code>.</code> y <code>-</code> deben reemplazarse por <code>_</code>. Por ejemplo, si tiene estas opciones de configuración:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash"># default section
+instance_name = ${HOSTNAME}
+
+[security]
+admin_user = admin
+
+[auth.google]
+client_secret = 0ldS3cretKey
+
+[plugin.grafana-image-renderer]
+rendering_ignore_https_errors = true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Puede anularlos en máquinas Linux con:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">export GF_DEFAULT_INSTANCE_NAME=my-instance
+export GF_SECURITY_ADMIN_USER=owner
+export GF_AUTH_GOOGLE_CLIENT_SECRET=newS3cretKey
+export GF_PLUGIN_GRAFANA_IMAGE_RENDERER_RENDERING_IGNORE_HTTPS_ERRORS=true</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_expansión_variable"><a class="anchor" href="#_expansión_variable"></a>Expansión variable</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Solo disponible en Grafana 7.1+.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Si alguna de sus opciones contiene la expresión <code>$__&lt;provider&gt;\{&lt;argument&gt;}</code> o <code>$\{&lt;enviroment variable&gt;}</code>, serán procesadas por el expansor de variables de Grafana. El expansor ejecuta el proveedor con el argumento proporcionado para obtener el valor final de la opción.</p>
+</div>
+<div class="paragraph">
+<p>Hay tres proveedores: <code>env</code>, <code>file</code> y <code>vault</code>.</p>
+</div>
+<div class="sect2">
+<h3 id="_proveedor_de_env"><a class="anchor" href="#_proveedor_de_env"></a>Proveedor de env</h3>
+<div class="paragraph">
+<p>El proveedor <code>env</code> se puede utilizar para expandir una variable de entorno. Si establece una opción en <code>$__env{PORT}</code>, la variable de entorno <code>PORT</code> se utilizará en su lugar. Para las variables de entorno, también puede utilizar la sintaxis abreviada <code>${PORT}</code>. El directorio de registro de Grafana se establecería en el directorio <code>grafana</code> en el directorio detrás de la variable de entorno <code>LOGDIR</code> en el siguiente ejemplo.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Ini hljs" data-lang="Ini">[paths]
+logs = $__env{LOGDIR}/grafana</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_proveedor_de_archivos"><a class="anchor" href="#_proveedor_de_archivos"></a>Proveedor de archivos</h3>
+<div class="paragraph">
+<p><code>file</code> lee un archivo del sistema de archivos. Recorta los espacios en blanco desde el principio y el final de los archivos. La contraseña de la base de datos en el siguiente ejemplo sería reemplazada por el contenido del archivo <code>/etc/secrets/gf_sql_password</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Ini hljs" data-lang="Ini">[database]
+password = $__file{/etc/secrets/gf_sql_password}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_proveedor_de_bóveda"><a class="anchor" href="#_proveedor_de_bóveda"></a>Proveedor de bóveda</h3>
+<div class="paragraph">
+<p>El proveedor <code>vault</code> le permite administrar sus secretos con <a href="https://www.hashicorp.com/products/vault">Hashicorp Vault</a>.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>El proveedor Vault solo está disponible en Grafana Enterprise v7.1 +. Para obtener más información, consulte <a href="#grafana-enterprise/boveda.adoc" class="page unresolved">Integración de Vault</a> en <a href="#grafana-enterprise/grafana-enterprise.adoc" class="page unresolved">Grafana Enterprise</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_app_mode"><a class="anchor" href="#_app_mode"></a>app_mode</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Las opciones son <code>production</code> y <code>development</code>. El valor predeterminado es <code>production</code>. <em>No</em> cambie esta opción a menos que esté trabajando en el desarrollo de Grafana.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_instance_name"><a class="anchor" href="#_instance_name"></a>instance_name</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Establezca el nombre de la instancia de grafana-server. Se utiliza en registros, métricas internas e información de agrupación. El valor predeterminado es: <code>${HOSTNAME}</code>, que se reemplazará con la variable de entorno <code>HOSTNAME</code>, si está vacía o no existe, Grafana intentará usar llamadas al sistema para obtener el nombre de la máquina.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_paths"><a class="anchor" href="#_paths"></a>[paths]</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_data"><a class="anchor" href="#_data"></a>data</h3>
+<div class="paragraph">
+<p>Ruta de acceso a donde Grafana almacena la base de datos sqlite3 (si se usa), sesiones basadas en archivos (si se usan) y otros datos. Esta ruta generalmente se especifica a través de la línea de comando en el script init.d o en el archivo de servicio systemd.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_temp_data_lifetime"><a class="anchor" href="#_temp_data_lifetime"></a>temp_data_lifetime</h3>
+<div class="paragraph">
+<p>Cuánto tiempo se deben conservar las imágenes temporales en el directorio <code>data</code>. Predeterminado a: <code>24h</code>. Modificadores admitidos: <code>h</code> (horas),<code>m</code> (minutos), por ejemplo: <code>168h</code>, <code>30m</code>, <code>10h30m</code>.</p>
+</div>
+<div class="paragraph">
+<p>Utilice <code>0</code> para no limpiar nunca archivos temporales.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_logs"><a class="anchor" href="#_logs"></a>logs</h3>
+<div class="paragraph">
+<p>Ruta al lugar donde Grafana almacena los registros. Esta ruta generalmente se especifica a través de la línea de comando en el script init.d o en el archivo de servicio systemd. Puede anularlo en el archivo de configuración o en el archivo de variable de entorno predeterminado. Sin embargo, tenga en cuenta que al anular esto, la ruta de registro predeterminada se utilizará temporalmente hasta que Grafana se haya iniciado por completo.</p>
+</div>
+<div class="paragraph">
+<p>Anule la ruta del registro utilizando el argumento de línea de comando <code>cfg:default.paths.logs</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">./grafana-server --config /custom/config.ini --homepath /custom/homepath cfg:default.paths.logs=/custom/path</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_plugins"><a class="anchor" href="#_plugins"></a>plugins</h3>
+<div class="paragraph">
+<p>Directorio donde Grafana escanea y busca complementos automáticamente. Para obtener información sobre la instalación manual o automática de complementos, consulte <a href="#complementos/instalacion.adoc" class="page unresolved">Instalar complementos de Grafana</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_provisioning"><a class="anchor" href="#_provisioning"></a>provisioning</h3>
+<div class="paragraph">
+<p>Carpeta que contiene archivos de configuración de <a href="#administracion/aprovisionamiento.adoc" class="page unresolved">aprovisionamiento</a> que Grafana aplicará al inicio. Los tableros se volverán a cargar cuando cambien los archivos json.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_server"><a class="anchor" href="#_server"></a>[server]</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_protocol"><a class="anchor" href="#_protocol"></a>protocol</h3>
+<div class="paragraph">
+<p><code>http</code>, <code>https</code>, <code>h2</code> o <code>socket</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_http_addr"><a class="anchor" href="#_http_addr"></a>http_addr</h3>
+<div class="paragraph">
+<p>La dirección IP a la que enlazar. Si está vacío, se vinculará a todas las interfaces</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_http_port"><a class="anchor" href="#_http_port"></a>http_port</h3>
+<div class="paragraph">
+<p>El puerto al que se va a enlazar, por defecto es <code>3000</code>. Para usar el puerto 80, debe otorgar el permiso binario de Grafana, por ejemplo:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">$ sudo setcap 'cap_net_bind_service=+ep' /usr/sbin/grafana-server</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>O redirigir el puerto 80 al puerto de Grafana usando:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-Bash hljs" data-lang="Bash">$ sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3000</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Otra forma es poner un servidor web como Nginx o Apache frente a Grafana y hacer que hagan de proxy a las solicitudes hacia Grafana.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_domain"><a class="anchor" href="#_domain"></a>domain</h3>
+<div class="paragraph">
+<p>Esta configuración solo se usa como parte de la configuración <code>root_url</code> (ver más abajo). Importante si usa GitHub o Google OAuth.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_enforce_domain"><a class="anchor" href="#_enforce_domain"></a>enforce_domain</h3>
+<div class="paragraph">
+<p>Redirije al dominio correcto si el encabezado del host no coincide con el dominio. Evita los ataques de revinculación de DNS. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_root_url"><a class="anchor" href="#_root_url"></a>root_url</h3>
+<div class="paragraph">
+<p>Esta es la URL completa que se utiliza para acceder a Grafana desde un navegador web. Esto es importante si usa la autenticación de Google o GitHub OAuth (para que la URL de devolución de llamada sea correcta).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Esta configuración también es importante si tiene un proxy inverso frente a Grafana que lo expone a través de una subruta. En ese caso, agregue la subruta al final de esta configuración de URL.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_serve_from_sub_path"><a class="anchor" href="#_serve_from_sub_path"></a>serve_from_sub_path</h3>
+<div class="paragraph">
+<p>Sirve Grafana desde la subruta especificada en la configuración <code>root_url</code>. De forma predeterminada, se establece en <code>false</code> por razones de compatibilidad.</p>
+</div>
+<div class="paragraph">
+<p>Habilitando esta configuración y usando una subruta en <code>root_url</code> arriba, por Ej., <code>root_url = <a href="http://localhost:3000/grafana" class="bare">http://localhost:3000/grafana</a></code>, se puede acceder a Grafana en <code><a href="http://localhost:3000/grafana" class="bare">http://localhost:3000/grafana</a></code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_router_logging"><a class="anchor" href="#_router_logging"></a>router_logging</h3>
+<div class="paragraph">
+<p>Establézcalo en <code>true</code> para que Grafana registre todas las solicitudes HTTP (no solo los errores). Estos se registran como eventos de nivel de información en el registro de Grafana.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_static_root_path"><a class="anchor" href="#_static_root_path"></a>static_root_path</h3>
+<div class="paragraph">
+<p>La ruta al directorio donde se encuentran los archivos de la interfaz (archivos HTML, JS y CSS). El valor predeterminado es <code>public</code>, por lo que el binario de Grafana debe ejecutarse con el directorio de trabajo configurado en la ruta de instalación.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_enable_gzip"><a class="anchor" href="#_enable_gzip"></a>enable_gzip</h3>
+<div class="paragraph">
+<p>Establezca esta opción en <code>true</code> para habilitar la compresión HTTP, esto puede mejorar la velocidad de transferencia y la utilización del ancho de banda. Se recomienda que la mayoría de los usuarios lo establezcan como <code>true</code>. De forma predeterminada, se establece en <code>false</code> por razones de compatibilidad.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cert_file"><a class="anchor" href="#_cert_file"></a>cert_file</h3>
+<div class="paragraph">
+<p>Ruta al archivo de certificado (si <code>protocol</code> está configurado en <code>https</code> o <code>h2</code>).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cert_key"><a class="anchor" href="#_cert_key"></a>cert_key</h3>
+<div class="paragraph">
+<p>Ruta al archivo de la clave del certificado (si <code>protocol</code> está configurado en <code>https</code> o <code>h2</code>).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_socket"><a class="anchor" href="#_socket"></a>socket</h3>
+<div class="paragraph">
+<p>Ruta donde se debe crear el socket cuando <code>protocol=socket</code>. Asegúrese de que Grafana tenga los permisos adecuados antes de cambiar esta configuración.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cdn_url"><a class="anchor" href="#_cdn_url"></a>cdn_url</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Disponible en Grafana v7.4 y versiones posteriores.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Especifique una dirección URL HTTP completa a la raíz de sus activos de Grafana CDN. Grafana agregará rutas de edición y versión.</p>
+</div>
+<div class="paragraph">
+<p>Por ejemplo, dada una URL cdn como <code><a href="https://cdn.myserver.com" class="bare">https://cdn.myserver.com</a></code>, grafana intentará cargar un archivo javascript desde <code><a href="http://cdn.myserver.com/grafana-oss/7.4.0/public/build/app.%3chash%3e.js">http://cdn.myserver.com/grafana-oss/7.4.0/public/build/app.&lt;hash&gt;.js</a></code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_read_timeout"><a class="anchor" href="#_read_timeout"></a>read_timeout</h3>
+<div class="paragraph">
+<p>Establece el tiempo máximo usando un formato de duración (5s/5m/5ms) antes de que se agote el tiempo de lectura de una solicitud entrante y se cierren las conexiones inactivas. <code>0</code> significa que no hay tiempo de espera para leer la solicitud.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_database"><a class="anchor" href="#_database"></a>[database]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Grafana necesita una base de datos para almacenar usuarios y paneles (y otras cosas). De forma predeterminada, está configurado para usar <code>sqlite3</code>, que es una base de datos incrustada (incluida en el binario principal de Grafana).</p>
+</div>
+<div class="sect2">
+<h3 id="_type"><a class="anchor" href="#_type"></a>type</h3>
+<div class="paragraph">
+<p>Ya sea <code>mysql</code>, <code>postgres</code> o <code>sqlite3</code>, es su elección.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_host"><a class="anchor" href="#_host"></a>host</h3>
+<div class="paragraph">
+<p>Solo aplicable a MySQL o Postgres. Incluye IP o nombre de host y puerto o, en caso de sockets Unix, la ruta hacia él. Por ejemplo, para MySQL ejecutándose en el mismo host que Grafana: <code>host = 127.0.0.1:3306</code> o con sockets Unix: <code>host = /var/run/mysqld/mysqld.sock</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_name"><a class="anchor" href="#_name"></a>name</h3>
+<div class="paragraph">
+<p>El nombre de la base de datos de Grafana. Déjelo configurado en <code>grafana</code> o algún otro nombre.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user"><a class="anchor" href="#_user"></a>user</h3>
+<div class="paragraph">
+<p>El usuario de la base de datos (no aplicable para <code>sqlite3</code>).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_password"><a class="anchor" href="#_password"></a>Password</h3>
+<div class="paragraph">
+<p>La contraseña del usuario de la base de datos (no aplicable para <code>sqlite3</code>). Si la contraseña contiene <code>#</code> o <code>;</code> tiene que envolverlo con comillas triples. Por ejemplo, <code>"""#password;"""</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_url"><a class="anchor" href="#_url"></a>url</h3>
+<div class="paragraph">
+<p>Use la URL o los otros campos a continuación para configurar la base de datos Ejemplo: <code>mysql://user:secret@host:port/database</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_max_idle_conn"><a class="anchor" href="#_max_idle_conn"></a>max_idle_conn</h3>
+<div class="paragraph">
+<p>El número máximo de conexiones en el grupo de conexiones inactivas.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_max_open_conn"><a class="anchor" href="#_max_open_conn"></a>max_open_conn</h3>
+<div class="paragraph">
+<p>El número máximo de conexiones abiertas a la base de datos.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conn_max_lifetime"><a class="anchor" href="#_conn_max_lifetime"></a>conn_max_lifetime</h3>
+<div class="paragraph">
+<p>Establece la cantidad máxima de tiempo que se puede reutilizar una conexión. El valor predeterminado es 14400 (lo que significa 14400 segundos o 4 horas). Para MySQL, esta configuración debería ser más corta que la variable <code>wait_timeout</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_log_queries"><a class="anchor" href="#_log_queries"></a>log_queries</h3>
+<div class="paragraph">
+<p>Establézcalo en <code>true</code> para registrar las llamadas SQL y los tiempos de ejecución.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ssl_mode"><a class="anchor" href="#_ssl_mode"></a>ssl_mode</h3>
+<div class="paragraph">
+<p>Para Postgres, use <code>disable</code>, <code>require</code> o <code>verify-full</code>. Para MySQL, use <code>true</code>, <code>false</code> o <code>skip-verify</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_isolation_level"><a class="anchor" href="#_isolation_level"></a>isolation_level</h3>
+<div class="paragraph">
+<p>Solo el controlador MySQL admite niveles de aislamiento en Grafana. En caso de que el valor esté vacío, se aplica el nivel de aislamiento predeterminado del controlador. Las opciones disponibles son “READ-UNCOMMITED”, “READ-COMMITTED”, “REPEATABLE-READ” o “SERIALIZABLE”.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ca_cert_path"><a class="anchor" href="#_ca_cert_path"></a>ca_cert_path</h3>
+<div class="paragraph">
+<p>La ruta al certificado de CA que se utilizará. En muchos sistemas Linux, los certificados se pueden encontrar en <code>/etc/ssl/certs</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_client_key_path"><a class="anchor" href="#_client_key_path"></a>client_key_path</h3>
+<div class="paragraph">
+<p>La ruta a la clave del cliente. Solo si el servidor requiere autenticación de cliente.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_client_cert_path"><a class="anchor" href="#_client_cert_path"></a>client_cert_path</h3>
+<div class="paragraph">
+<p>La ruta al certificado de cliente. Solo si el servidor requiere autenticación de cliente.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_server_cert_name"><a class="anchor" href="#_server_cert_name"></a>server_cert_name</h3>
+<div class="paragraph">
+<p>El campo de nombre común del certificado utilizado por el servidor <code>mysql</code> o <code>postgres</code>. No es necesario si <code>ssl_mode</code> está configurado para <code>skip-verify</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_path"><a class="anchor" href="#_path"></a>path</h3>
+<div class="paragraph">
+<p>Solo aplicable para la base de datos <code>sqlite3</code>. La ruta del archivo donde se almacenará la base de datos.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cache_mode"><a class="anchor" href="#_cache_mode"></a>cache_mode</h3>
+<div class="paragraph">
+<p>Solo para "sqlite3". Configuración de <a href="https://www.sqlite.org/sharedcache.html">caché compartida</a> utilizada para conectarse a la base de datos. (privado, compartido) Por defecto es <code>private</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_remote_cache"><a class="anchor" href="#_remote_cache"></a>[remote_cache]</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_type_2"><a class="anchor" href="#_type_2"></a>type</h3>
+<div class="paragraph">
+<p><code>redis</code>, <code>memcached</code> o <code>database</code>. Predeterminado <code>database</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_connstr"><a class="anchor" href="#_connstr"></a>connstr</h3>
+<div class="paragraph">
+<p>La cadena de conexión de la caché remota. El formato depende del <code>type</code> de caché remota. Las opciones son <code>database</code>, <code>redis</code> y <code>memcache</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_database_2"><a class="anchor" href="#_database_2"></a>database</h3>
+<div class="paragraph">
+<p>Déjelo vacío cuando use <code>database</code>, ya que usará la base de datos primaria.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_redis"><a class="anchor" href="#_redis"></a>redis</h3>
+<div class="paragraph">
+<p>Ejemplo connstr: <code>addr=127.0.0.1:6379,pool_size=100,db=0,ssl=false</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addr</code> es el host <code>:</code> puerto del servidor redis.</p>
+</li>
+<li>
+<p><code>pool_size</code> (opcional) es el número de conexiones subyacentes que se pueden realizar a redis.</p>
+</li>
+<li>
+<p><code>db</code> (opcional) es el identificador de número de la base de datos redis que desea utilizar.</p>
+</li>
+<li>
+<p><code>ssl</code> (opcional) es si se debe usar SSL para conectarse al servidor redis. El valor puede ser <code>true</code>, <code>false</code> o <code>insecure</code>. Establecer el valor en <code>insecure</code> omite la verificación de la cadena de certificados y el nombre de host al realizar la conexión.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_memcache"><a class="anchor" href="#_memcache"></a>memcache</h3>
+<div class="paragraph">
+<p>Ejemplo connstr: <code>127.0.0.1:11211</code></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dataproxy"><a class="anchor" href="#_dataproxy"></a>[dataproxy]</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_logging"><a class="anchor" href="#_logging"></a>logging</h3>
+<div class="paragraph">
+<p>Esto habilita el registro del proxy de datos, el valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_timeout"><a class="anchor" href="#_timeout"></a>timeout</h3>
+<div class="paragraph">
+<p>Cuánto tiempo debe esperar el proxy de datos antes de que se agote el tiempo de espera. El valor predeterminado es 30 segundos.</p>
+</div>
+<div class="paragraph">
+<p>Esta configuración también se aplica a las fuentes de datos HTTP de backend centrales donde las solicitudes de consulta usan un cliente HTTP con un tiempo de espera establecido.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_keep_alive_seconds"><a class="anchor" href="#_keep_alive_seconds"></a>keep_alive_seconds</h3>
+<div class="paragraph">
+<p>Intervalo entre sondas de mantener vivo. El valor predeterminado es <code>30</code> segundos. Para obtener más detalles, consulte la documentación de <a href="https://golang.org/pkg/net/#Dialer.KeepAlive">Dialer.KeepAlive</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tls_handshake_timeout_seconds"><a class="anchor" href="#_tls_handshake_timeout_seconds"></a>tls_handshake_timeout_seconds</h3>
+<div class="paragraph">
+<p>El período de tiempo que Grafana esperará para un protocolo de enlace TLS exitoso con la fuente de datos. El valor predeterminado es <code>10</code> segundos. Para obtener más detalles, consulte la documentación de <a href="https://golang.org/pkg/net/http/#Transport.TLSHandshakeTimeout">Transport.TLSHandshakeTimeout</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_expect_continue_timeout_seconds"><a class="anchor" href="#_expect_continue_timeout_seconds"></a>expect_continue_timeout_seconds</h3>
+<div class="paragraph">
+<p>El tiempo que Grafana esperará los encabezados de la primera respuesta de una fuente de datos después de escribir los encabezados de la solicitud, si la solicitud tiene un encabezado "Expect: 100-continue". Un valor de <code>0</code> dará como resultado que el cuerpo se envíe inmediatamente. El valor predeterminado es <code>1</code> segundo. Para obtener más detalles, consulte la documentación de <a href="https://golang.org/pkg/net/http/#Transport.ExpectContinueTimeout">Transport.ExpectContinueTimeout</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_max_idle_connections"><a class="anchor" href="#_max_idle_connections"></a>max_idle_connections</h3>
+<div class="paragraph">
+<p>El número máximo de conexiones inactivas que mantendrá Grafana. El valor predeterminado es <code>100</code>. Para obtener más detalles, consulte la documentación de <a href="https://golang.org/pkg/net/http/#Transport.MaxIdleConns">Transport.MaxIdleConns</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_idle_conn_timeout_seconds"><a class="anchor" href="#_idle_conn_timeout_seconds"></a>idle_conn_timeout_seconds</h3>
+<div class="paragraph">
+<p>El tiempo que Grafana mantiene las conexiones inactivas antes de cerrarlas. El valor predeterminado es <code>90</code> segundos. Para obtener más detalles, consulte la documentación de <a href="https://golang.org/pkg/net/http/#Transport.IdleConnTimeout">Transport.IdleConnTimeout</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_send_user_header"><a class="anchor" href="#_send_user_header"></a>send_user_header</h3>
+<div class="paragraph">
+<p>Si está habilitado y el usuario no es anónimo, el proxy de datos agregará el encabezado X-Grafana-User con el nombre de usuario en la solicitud. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_analytics"><a class="anchor" href="#_analytics"></a>[analytics]</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_reporting_enabled"><a class="anchor" href="#_reporting_enabled"></a>reporting_enabled</h3>
+<div class="paragraph">
+<p>Cuando está habilitado, Grafana enviará estadísticas de uso anónimas a <code>stats.grafana.org</code>. No se rastrea ninguna dirección IP, solo contadores simples para rastrear instancias en ejecución, versiones, tablero y recuentos de errores. Es muy útil para nosotros, así que déjelo habilitado. Los contadores se envían cada 24 horas. El valor predeterminado es <code>true</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_check_for_updates"><a class="anchor" href="#_check_for_updates"></a>check_for_updates</h3>
+<div class="paragraph">
+<p>Configure en false para deshabilitar todas las comprobaciones en <a href="https://grafana.com" class="bare">https://grafana.com</a> para las nuevas versiones de los complementos instalados y en el repositorio de Grafana GitHub para buscar una versión más reciente de Grafana. La información de la versión se utiliza en algunas vistas de la interfaz de usuario para notificar que existe una nueva actualización de Grafana o una actualización de complemento. Esta opción no genera actualizaciones automáticas ni envía información confidencial. La verificación se realiza cada 10 minutos.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_google_analytics_ua_id"><a class="anchor" href="#_google_analytics_ua_id"></a>google_analytics_ua_id</h3>
+<div class="paragraph">
+<p>Si desea realizar un seguimiento del uso de Grafana a través de Google Analytics, especifique <em>su</em> ID de Universal Analytics aquí. De forma predeterminada, esta función está desactivada.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_google_tag_manager_id"><a class="anchor" href="#_google_tag_manager_id"></a>google_tag_manager_id</h3>
+<div class="paragraph">
+<p>ID de Google Tag Manager, solo habilitado si ingresa un ID aquí.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_security"><a class="anchor" href="#_security"></a>[security]</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_disable_initial_admin_creation"><a class="anchor" href="#_disable_initial_admin_creation"></a>disable_initial_admin_creation</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Solo disponible en Grafana v6.5 +.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Desactive la creación de un usuario administrador en el primer inicio de Grafana. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_admin_user"><a class="anchor" href="#_admin_user"></a>admin_user</h3>
+<div class="paragraph">
+<p>El nombre del usuario administrador de Grafana predeterminado, que tiene todos los permisos. El valor predeterminado es <code>admin</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_admin_password"><a class="anchor" href="#_admin_password"></a>admin_password</h3>
+<div class="paragraph">
+<p>La contraseña del administrador de Grafana predeterminado. Establecer una vez en la primera ejecución. El valor predeterminado es <code>admin</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_secret_key"><a class="anchor" href="#_secret_key"></a>secret_key</h3>
+<div class="paragraph">
+<p>Usado para firmar algunas configuraciones de fuentes de datos como secretos y contraseñas, el formato de encriptación usado es AES-256 en modo CFB. No se puede cambiar sin necesidad de actualizar la configuración de la fuente de datos para volver a codificarlos.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_disable_gravatar"><a class="anchor" href="#_disable_gravatar"></a>disable_gravatar</h3>
+<div class="paragraph">
+<p>Establézcalo en <code>true</code> para deshabilitar el uso de Gravatar para las imágenes de perfil de usuario. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_data_source_proxy_whitelist"><a class="anchor" href="#_data_source_proxy_whitelist"></a>data_source_proxy_whitelist</h3>
+<div class="paragraph">
+<p>Defina una lista blanca de direcciones IP o dominios permitidos, con puertos, que se utilizarán en las URL de origen de datos con el proxy de origen de datos de Grafana. Formato: <code>ip_or_domain:port</code> separado por espacios. Las fuentes de datos PostgreSQL, MySQL y MSSQL no utilizan el proxy y, por lo tanto, no se ven afectadas por esta configuración.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_disable_brute_force_login_protection"><a class="anchor" href="#_disable_brute_force_login_protection"></a>disable_brute_force_login_protection</h3>
+<div class="paragraph">
+<p>Configúrelo en <code>true</code> para deshabilitar la <a href="https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html#account-lockout">protección de inicio de sesión por fuerza bruta</a>. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cookie_secure"><a class="anchor" href="#_cookie_secure"></a>cookie_secure</h3>
+<div class="paragraph">
+<p>Establézcalo en <code>true</code> si aloja Grafana detrás de HTTPS. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cookie_samesite"><a class="anchor" href="#_cookie_samesite"></a>cookie_samesite</h3>
+<div class="paragraph">
+<p>Establece el atributo de cookie <code>SameSite</code> y evita que el navegador envíe esta cookie junto con solicitudes entre sitios. El objetivo principal es mitigar el riesgo de fuga de información de origen cruzado. Esta configuración también proporciona cierta protección contra ataques de falsificación de solicitudes entre sitios (CSRF). [Lea más sobre SameSite aquí]. Los valores válidos son <code>lax</code>, <code>strict</code>, <code>none</code> y <code>disabled</code>. El valor predeterminado es <code>lax</code>. El uso de valor <code>disabled</code> no agrega ningún atributo de <code>SameSite</code> a las cookies.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_allow_embedding"><a class="anchor" href="#_allow_embedding"></a>allow_embedding</h3>
+<div class="paragraph">
+<p>Cuando es <code>false</code>, el encabezado HTTP <code>X-Frame-Options: deny</code> se establecerá en las respuestas HTTP de Grafana, lo que indicará a los navegadores que no permitan renderizar Grafana en un <code>&lt;frame&gt;</code>, <code>&lt;iframe&gt;</code>, <code>&lt;embed&gt;</code> u <code>&lt;object&gt;</code>. El objetivo principal es mitigar el riesgo de <a href="https://www.owasp.org/index.php/Clickjacking">Clickjacking</a>. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_strict_transport_security"><a class="anchor" href="#_strict_transport_security"></a>strict_transport_security</h3>
+<div class="paragraph">
+<p>Establézcalo en <code>true</code> si desea habilitar el encabezado de respuesta HTTP <code>Strict-Transport-Security</code> (HSTS). Esto solo se envía cuando HTTPS está habilitado en esta configuración. HSTS les dice a los navegadores que solo se debe acceder al sitio mediante HTTPS.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_stric_transport_security_max_age_seconds"><a class="anchor" href="#_stric_transport_security_max_age_seconds"></a>stric_transport_security_max_age_seconds</h3>
+<div class="paragraph">
+<p>Establece cuánto tiempo un navegador debe almacenar en caché HSTS en segundos. Solo se aplica si strict_transport_security está habilitada. El valor predeterminado es <code>86400</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_strict_transport_security_preload"><a class="anchor" href="#_strict_transport_security_preload"></a>strict_transport_security_preload</h3>
+<div class="paragraph">
+<p>Establézcalo en <code>true</code> para habilitar la opción <code>preloading</code> de HSTS. Solo se aplica si strict_transport_security está habilitada. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_strict_transport_security_subdomains"><a class="anchor" href="#_strict_transport_security_subdomains"></a>strict_transport_security_subdomains</h3>
+<div class="paragraph">
+<p>Establézcalo en <code>true</code> si desea habilitar la opción HSTS includeSubDomains. Solo se aplica si strict_transport_security está habilitada. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_x_content_type_options"><a class="anchor" href="#_x_content_type_options"></a>x_content_type_options</h3>
+<div class="paragraph">
+<p>Establézcalo en <code>true</code> para habilitar el encabezado de respuesta X-Content-Type-Options. El encabezado HTTP de respuesta X-Content-Type-Options es un marcador utilizado por el servidor para indicar que los tipos MIME anunciados en los encabezados Content-Type no deben cambiarse y seguirse. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_x_xss_protection"><a class="anchor" href="#_x_xss_protection"></a>x_xss_protection</h3>
+<div class="paragraph">
+<p>Configúrelo en <code>false</code> para deshabilitar el encabezado X-XSS-Protection, que le dice a los navegadores que dejen de cargar las páginas cuando detectan ataques de scripts entre sitios (XSS) reflejados. El valor predeterminado es <code>false</code> hasta la próxima versión secundaria, <code>6.3</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_content_security_policy"><a class="anchor" href="#_content_security_policy"></a>content_security_policy</h3>
+<div class="paragraph">
+<p>Establézcalo en <code>true</code> para agregar el encabezado Content-Security-Policy a sus solicitudes. CSP permite controlar los recursos que el agente de usuario puede cargar y ayuda a prevenir ataques XSS.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_content_security_policy_template"><a class="anchor" href="#_content_security_policy_template"></a>content_security_policy_template</h3>
+<div class="paragraph">
+<p>Establezca la plantilla de Política de seguridad de contenido utilizada al agregar el encabezado Content-Security-Policy a sus solicitudes. <code>$NONCE</code> en la plantilla incluye un nonce aleatorio.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_snapshots"><a class="anchor" href="#_snapshots"></a>[snapshots]</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_external_enabled"><a class="anchor" href="#_external_enabled"></a>external_enabled</h3>
+<div class="paragraph">
+<p>Establézcalo en <code>false</code> para deshabilitar el punto final de publicación de instantáneas externas (el valor predeterminado es <code>true</code>).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_external_snapshot_url"><a class="anchor" href="#_external_snapshot_url"></a>external_snapshot_url</h3>
+<div class="paragraph">
+<p>Establezca la raiz URL en una instancia de Grafana donde desee publicar instantáneas externas (el valor predeterminado es <a href="https://snapshots-origin.raintank.io" class="bare">https://snapshots-origin.raintank.io</a>).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_external_snapshot_name"><a class="anchor" href="#_external_snapshot_name"></a>external_snapshot_name</h3>
+<div class="paragraph">
+<p>Establecer nombre para el botón de instantánea externa. El valor predeterminado es <code>Publish to snapshot.raintank.io</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_public_mode"><a class="anchor" href="#_public_mode"></a>public_mode</h3>
+<div class="paragraph">
+<p>Establézcalo en <code>true</code> para permitir que esta instancia de Grafana actúe como un servidor de instantáneas externo y permita solicitudes no autenticadas para crear y eliminar instantáneas. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_snapshot_remove_expired"><a class="anchor" href="#_snapshot_remove_expired"></a>snapshot_remove_expired</h3>
+<div class="paragraph">
+<p>Habilite esta opción para eliminar automáticamente las instantáneas caducadas. El valor predeterminado es <code>true</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dashboards"><a class="anchor" href="#_dashboards"></a>[dashboards]</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_versions_to_keep"><a class="anchor" href="#_versions_to_keep"></a>versions_to_keep</h3>
+<div class="paragraph">
+<p>Número de versiones del tablero para conservar (por tablero). Predeterminado: <code>20</code>, Mínimo: <code>1</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_min_refresh_interval"><a class="anchor" href="#_min_refresh_interval"></a>min_refresh_interval</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Solo disponible en Grafana v6.7 +.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Esta función evita que los usuarios establezcan el intervalo de actualización del tablero en un valor menor que un valor de intervalo dado. El valor de intervalo predeterminado es de 5 segundos. La cadena de intervalo es una secuencia posiblemente firmada de números decimales, seguida de un sufijo de unidad (ms, s, m, h, d), p. Ej. <code>30s</code> o <code>1m</code>.</p>
+</div>
+<div class="paragraph">
+<p>A partir de Grafana v7.3, esto también limita las opciones de intervalo de actualización en Explorar.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_default_home_dashboard_path"><a class="anchor" href="#_default_home_dashboard_path"></a>default_home_dashboard_path</h3>
+<div class="paragraph">
+<p>Ruta al tablero de inicio predeterminado. Si este valor está vacío, entonces Grafana usa StaticRootPath + “dashboards/home.json”</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_users"><a class="anchor" href="#_users"></a>[users]</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_allow_sign_up"><a class="anchor" href="#_allow_sign_up"></a>allow_sign_up</h3>
+<div class="paragraph">
+<p>Configúrelo en <code>false</code> para prohibir que los usuarios puedan registrarse/crear cuentas de usuario. El valor predeterminado es <code>false</code>. El usuario administrador aún puede crear usuarios desde las <a href="https://grafana.com/reference/admin">Páginas de Administrador de Grafana</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_allow_org_create"><a class="anchor" href="#_allow_org_create"></a>allow_org_create</h3>
+<div class="paragraph">
+<p>Configúrelo en <code>false</code> para prohibir a los usuarios crear nuevas organizaciones. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_auto_assign_org"><a class="anchor" href="#_auto_assign_org"></a>auto_assign_org</h3>
+<div class="paragraph">
+<p>Configúrelo en <code>true</code> para agregar automáticamente nuevos usuarios a la organización principal (id 1). Cuando se establece en <code>false</code>, los nuevos usuarios automáticamente hacen que se cree una nueva organización para ese nuevo usuario. El valor predeterminado es <code>true</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_auto_assign_org_id"><a class="anchor" href="#_auto_assign_org_id"></a>auto_assign_org_id</h3>
+<div class="paragraph">
+<p>Establezca este valor para agregar automáticamente nuevos usuarios a la organización proporcionada. Esto requiere que <code>auto_assign_org</code> se establezca en <code>true</code>. Asegúrese de que esta organización ya exista. El valor predeterminado es <code>1</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_auto_assign_org_role"><a class="anchor" href="#_auto_assign_org_role"></a>auto_assign_org_role</h3>
+<div class="paragraph">
+<p>El rol que se asignará a los nuevos usuarios en la organización principal (si la configuración anterior se establece en <code>true</code>). El valor predeterminado es <code>Viewer</code>, otras opciones válidas son <code>Admin</code> y `Editor`p. Ej.:</p>
+</div>
+<div class="paragraph">
+<p><code>auto_assign_org_role = Viewer</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_verify_email_enabled"><a class="anchor" href="#_verify_email_enabled"></a>verify_email_enabled</h3>
+<div class="paragraph">
+<p>Requiere validación por correo electrónico antes de que se complete el registro. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_login_hint"><a class="anchor" href="#_login_hint"></a>login_hint</h3>
+<div class="paragraph">
+<p>Texto utilizado como texto de marcador de posición en la página de inicio de sesión para la entrada de inicio de sesión/nombre de usuario.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_password_hint"><a class="anchor" href="#_password_hint"></a>password_hint</h3>
+<div class="paragraph">
+<p>Texto utilizado como texto de marcador de posición en la página de inicio de sesión para ingresar la contraseña.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_default_theme"><a class="anchor" href="#_default_theme"></a>default_theme</h3>
+<div class="paragraph">
+<p>Establezca el tema de la interfaz de usuario predeterminado: <code>dark</code> o <code>light</code>. El valor predeterminado es <code>dark</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_home_page"><a class="anchor" href="#_home_page"></a>home_page</h3>
+<div class="paragraph">
+<p>Ruta a una página de inicio personalizada. Los usuarios solo son redirigidos a esto si se usa el tablero de inicio predeterminado. Debe coincidir con una ruta de interfaz y contener una barra al principio.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gestión_de_usuarios_externos"><a class="anchor" href="#_gestión_de_usuarios_externos"></a>Gestión de usuarios externos</h3>
+<div class="paragraph">
+<p>Si administra usuarios de forma externa, puede reemplazar el botón de invitación de usuario para organizaciones con un enlace a un sitio externo junto con una descripción.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_viewers_can_edit"><a class="anchor" href="#_viewers_can_edit"></a>viewers_can_edit</h3>
+<div class="paragraph">
+<p>Los espectadores pueden acceder y utilizar <a href="../explorar/explorar.html" class="page">Explorar</a> y realizar ediciones temporales en los paneles de los tableros a los que tienen acceso. No pueden guardar sus cambios. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_editors_can_admin"><a class="anchor" href="#_editors_can_admin"></a>editors_can_admin</h3>
+<div class="paragraph">
+<p>Los editores pueden administrar tableros, carpetas y equipos que creen. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_invite_max_lifetime_duration"><a class="anchor" href="#_user_invite_max_lifetime_duration"></a>user_invite_max_lifetime_duration</h3>
+<div class="paragraph">
+<p>El tiempo que dura una invitación de usuario válida antes de caducar. Esta configuración debe expresarse como una duración. Ejemplos: 6h (horas), 2d (días), 1w (semana). El valor predeterminado es <code>24h</code> (24 horas). La duración mínima admitida es de <code>15m</code> (15 minutos).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hidden_users"><a class="anchor" href="#_hidden_users"></a>hidden_users</h3>
+<div class="paragraph">
+<p>Esta es una lista de nombres de usuario separados por comas. Los usuarios especificados aquí están ocultos en la interfaz de usuario de Grafana. Todavía son visibles para los administradores de Grafana y para ellos mismos.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_auth"><a class="anchor" href="#_auth"></a>[auth]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Grafana ofrece muchas formas de autenticar a los usuarios. Consulte la <a href="../autenticacion/autenticacion.html" class="page">Descripción general de la autenticación de Grafana</a> y otra documentación de autenticación para obtener instrucciones detalladas sobre cómo configurar la autenticación.</p>
+</div>
+<div class="sect2">
+<h3 id="_login_cookie_name"><a class="anchor" href="#_login_cookie_name"></a>login_cookie_name</h3>
+<div class="paragraph">
+<p>El nombre de la cookie para almacenar el token de autenticación. El valor predeterminado es <code>grafana_session</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_login_maximum_inactive_lifetime_duration"><a class="anchor" href="#_login_maximum_inactive_lifetime_duration"></a>login_maximum_inactive_lifetime_duration</h3>
+<div class="paragraph">
+<p>La vida máxima (duración) que un usuario autenticado puede estar inactivo antes de que se le solicite que inicie sesión en la próxima visita. El valor predeterminado es 7 días (7d). Esta configuración debe expresarse como una duración, p. Ej. 5m (minutos), 6h (horas), 10d (días), 2w (semanas), 1M (mes). La vida útil se restablece en cada rotación de token exitosa (token_rotation_interval_minutes).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_login_maximum_lifetime_duration"><a class="anchor" href="#_login_maximum_lifetime_duration"></a>login_maximum_lifetime_duration</h3>
+<div class="paragraph">
+<p>La vida máxima (duración) que un usuario autenticado puede estar dentro desde el tiempo de inicio de sesión antes de que se le solicite iniciar sesión. El valor predeterminado es 30 días (30d). Esta configuración debe expresarse como una duración, por ejemplo: 5m (minutos), 6h (horas), 10d (días), 2w (semanas), 1M (mes).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_token_rotation_interval_minutes"><a class="anchor" href="#_token_rotation_interval_minutes"></a>token_rotation_interval_minutes</h3>
+<div class="paragraph">
+<p>Con qué frecuencia se rotan los tokens de autenticación para usuarios autenticados cuando el usuario está activo. El valor predeterminado es cada 10 minutos.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_disable_login_form"><a class="anchor" href="#_disable_login_form"></a>disable_login_form</h3>
+<div class="paragraph">
+<p>Establézcalo en <code>true</code> para deshabilitar (ocultar) el formulario de inicio de sesión, útil si usa OAuth. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_disable_signout_menu"><a class="anchor" href="#_disable_signout_menu"></a>disable_signout_menu</h3>
+<div class="paragraph">
+<p>Configúrelo en <code>true</code> para deshabilitar el enlace de cierre de sesión en el menú lateral. Esto es útil si usa auth.proxy. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_signout_redirect_url"><a class="anchor" href="#_signout_redirect_url"></a>signout_redirect_url</h3>
+<div class="paragraph">
+<p>URL a la que redirigir al usuario después de cerrar la sesión.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_oauth_auto_login"><a class="anchor" href="#_oauth_auto_login"></a>oauth_auto_login</h3>
+<div class="paragraph">
+<p>Configure en <code>true</code> para intentar iniciar sesión con OAuth automáticamente, omitiendo la pantalla de inicio de sesión. Esta configuración se ignora si se configuran varios proveedores de OAuth. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_oauth_state_cookie_max_age"><a class="anchor" href="#_oauth_state_cookie_max_age"></a>oauth_state_cookie_max_age</h3>
+<div class="paragraph">
+<p>Cuántos segundos vive la cookie de estado de OAuth antes de ser eliminada. El valor predeterminado es <code>600</code> (segundos). Los administradores pueden aumentar este valor si experimentan errores de discrepancia en el estado de inicio de sesión de OAuth.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_api_key_max_seconds_to_live"><a class="anchor" href="#_api_key_max_seconds_to_live"></a>api_key_max_seconds_to_live</h3>
+<div class="paragraph">
+<p>Límite de segundos de vida de la clave API antes de su vencimiento. El valor predeterminado es <code>-1</code> (ilimitado).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sigv4_auth_enabled"><a class="anchor" href="#_sigv4_auth_enabled"></a>sigv4_auth_enabled</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Solo disponible en Grafana 7.3+.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Establézcalo en <code>true</code> para habilitar la opción de autenticación AWS Signature Version 4 para fuentes de datos basadas en HTTP. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_auth_anonymous"><a class="anchor" href="#_auth_anonymous"></a>[auth.anonymous]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Consulte <a href="../autenticacion/autenticacion-de-grafana.html#_autenticacion-anonima" class="page">Autenticación Anónima</a> para obtener instrucciones detalladas.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_auth_github"><a class="anchor" href="#_auth_github"></a>[auth.github]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Consulte la <a href="#autenticacion/autenticacion-de-github-oauth2.adoc" class="page unresolved">Autenticación de GitHub OAuth2</a> para obtener instrucciones detalladas.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_auth_gitlab"><a class="anchor" href="#_auth_gitlab"></a>[auth.gitlab]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Consulte la <a href="#autenticacion/autenticacion-de-gitlab-oauth2.adoc" class="page unresolved">Autenticación de Gitlab OAuth2</a> para obtener instrucciones detalladas.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_auth_google"><a class="anchor" href="#_auth_google"></a>[auth.google]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Consulte la <a href="#autenticacion/autenticacion-de-google-oauth2.adoc" class="page unresolved">Autenticación de Google OAuth2</a> para obtener instrucciones detalladas.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_auth_grafananet"><a class="anchor" href="#_auth_grafananet"></a>[auth.grafananet]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nombres de claves heredados, todavía en el archivo de configuración para que funcionen en variables env.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_auth_grafana_com"><a class="anchor" href="#_auth_grafana_com"></a>[auth.grafana_com]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nombres de claves heredados, todavía en el archivo de configuración para que funcionen en variables env.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_auth_azuread"><a class="anchor" href="#_auth_azuread"></a>[auth.azuread]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Consulte la <a href="#autenticacion/autenticacion-de-azure-ad-oauth2.adoc" class="page unresolved">Autenticación de Azure AD OAuth2</a> para obtener instrucciones detalladas.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_auth_okta"><a class="anchor" href="#_auth_okta"></a>[auth.okta]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Consulte la <a href="#autenticacion/autenticacion-okta-oauth2.adoc" class="page unresolved">Autenticación Okta OAuth2</a> para obtener instrucciones detalladas.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_auth_generic_oauth"><a class="anchor" href="#_auth_generic_oauth"></a>[auth.generic_oauth]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Consulte la <a href="#autenticacion/autenticacion-generica.adoc" class="page unresolved">Autenticación genética de OAuth</a> para obtener instrucciones detalladas.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_auth_basic"><a class="anchor" href="#_auth_basic"></a>[auth.basic]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Consulte <a href="#autenticacion/descripcion-general.adoc#_autenticacion_basica" class="page unresolved">Autenticación Básica</a> para obtener instrucciones detalladas.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_auth_proxy"><a class="anchor" href="#_auth_proxy"></a>[auth.proxy]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Consulte <a href="#autenticacion/proxy-de-autenticacion.adoc" class="page unresolved">Autenticación de Proxy</a> de Autenticación para obtener instrucciones detalladas.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_auth_ldap"><a class="anchor" href="#_auth_ldap"></a>[auth.ldap]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Consulte la <a href="#autenticacion/autenticacion-ldap.adoc" class="page unresolved">Autenticación LDAP</a> para obtener instrucciones detalladas.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_aws"><a class="anchor" href="#_aws"></a>[aws]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Puede configurar complementos de AWS principales y externos.</p>
+</div>
+<div class="sect2">
+<h3 id="_allowed_auth_providers"><a class="anchor" href="#_allowed_auth_providers"></a>allowed_auth_providers</h3>
+<div class="paragraph">
+<p>Especifique qué proveedores de autenticación permiten los complementos de AWS. Para obtener una lista de proveedores permitidos, consulte la página de configuración de la fuente de datos para un complemento determinado. Si configura un complemento mediante el aprovisionamiento, solo se permiten los proveedores que se especifican en <code>allowed_auth_providers</code>.</p>
+</div>
+<div class="paragraph">
+<p>Opciones: <code>default</code> (AWS SDK predeterminado), <code>keys</code> (acceso y clave secreta), <code>credentials</code> (archivo de credenciales), <code>ec2_iam_role</code> (rol EC2 IAM)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_assume_role_enabled"><a class="anchor" href="#_assume_role_enabled"></a>assume_role_enabled</h3>
+<div class="paragraph">
+<p>Establézcalo en <code>false</code> para deshabilitar la autenticación de AWS para que no use un rol asumido con credenciales de seguridad temporales. Para obtener detalles sobre asumir roles, consulte la documentación de referencia de la API de AWS sobre la operación <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>.</p>
+</div>
+<div class="paragraph">
+<p>Si esta opción está deshabilitada, los campos <strong>Assume Role</strong> y <strong>External Id</strong> se eliminan de la página de configuración de la fuente de datos de AWS. Si el complemento se configura mediante el aprovisionamiento, es posible utilizar un rol asumido siempre que <code>assume_role_enabled</code> esté establecido en <code>true</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_list_metrics_page_limit"><a class="anchor" href="#_list_metrics_page_limit"></a>list_metrics_page_limit</h3>
+<div class="paragraph">
+<p>Utilice la opción de <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">Lista de Métricas API</a> para cargar métricas para espacios de nombres personalizados en la fuente de datos de CloudWatch. De forma predeterminada, el límite de páginas es <code>500</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_auth_jwt"><a class="anchor" href="#_auth_jwt"></a>[auth.jwt]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Consulte la <a href="#autenticacion/autenticacion-jwt.adoc" class="page unresolved">Autenticación JWT</a> para obtener más información.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_smtp"><a class="anchor" href="#_smtp"></a>[smtp]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Configuración del servidor de correo electrónico.</p>
+</div>
+<div class="sect2">
+<h3 id="_enabled"><a class="anchor" href="#_enabled"></a>enabled</h3>
+<div class="paragraph">
+<p>Habilite esto para permitir que Grafana envíe correo electrónico. El valor predeterminado es <code>false</code>.</p>
+</div>
+<div class="paragraph">
+<p>Si la contraseña contiene <code>#</code> o <code>;</code>, entonces debe envolverla con comillas triples. Ejemplo: <code>“""#password;”""</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_host_2"><a class="anchor" href="#_host_2"></a>host</h3>
+<div class="paragraph">
+<p>El valor predeterminado es <code>localhost:25</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_2"><a class="anchor" href="#_user_2"></a>user</h3>
+<div class="paragraph">
+<p>En caso de autenticación SMTP, el valor predeterminado es <code>empty</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_password_2"><a class="anchor" href="#_password_2"></a>password</h3>
+<div class="paragraph">
+<p>En caso de autenticación SMTP, el valor predeterminado es <code>empty</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cert_file_2"><a class="anchor" href="#_cert_file_2"></a>cert_file</h3>
+<div class="paragraph">
+<p>Ruta de archivo a un archivo de certificado, el valor predeterminado es <code>empty</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_key_file"><a class="anchor" href="#_key_file"></a>key_file</h3>
+<div class="paragraph">
+<p>Ruta de archivo a un archivo de clave, el valor predeterminado es <code>empty</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_skip_verify"><a class="anchor" href="#_skip_verify"></a>skip_verify</h3>
+<div class="paragraph">
+<p>Verifique SSL para el servidor SMTP, el valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_from_address"><a class="anchor" href="#_from_address"></a>from_address</h3>
+<div class="paragraph">
+<p>Dirección utilizada al enviar correos electrónicos, la predeterminada es <code>admin@grafana.localhost</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_from_name"><a class="anchor" href="#_from_name"></a>from_name</h3>
+<div class="paragraph">
+<p>Nombre que se utilizará al enviar correos electrónicos, el predeterminado es <code>Grafana</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ehlo_identity"><a class="anchor" href="#_ehlo_identity"></a>ehlo_identity</h3>
+<div class="paragraph">
+<p>Nombre que se utilizará como identidad de cliente para EHLO en el cuadro de diálogo SMTP, el valor predeterminado es <code>&lt;instance_name&gt;</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_starttls_policy"><a class="anchor" href="#_starttls_policy"></a>startTLS_policy</h3>
+<div class="paragraph">
+<p>Ya sea "OpportunisticStartTLS", "MandatoryStartTLS", "NoStartTLS". El valor predeterminado es <code>empty</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_emails"><a class="anchor" href="#_emails"></a>[emails]</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_welcome_email_on_sign_up"><a class="anchor" href="#_welcome_email_on_sign_up"></a>welcome_email_on_sign_up</h3>
+<div class="paragraph">
+<p>El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_templates_pattern"><a class="anchor" href="#_templates_pattern"></a>templates_pattern</h3>
+<div class="paragraph">
+<p>El valor predeterminado es <code>emails/*.html</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_log"><a class="anchor" href="#_log"></a>[log]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Opciones de registro de Grafana.</p>
+</div>
+<div class="sect2">
+<h3 id="_mode"><a class="anchor" href="#_mode"></a>mode</h3>
+<div class="paragraph">
+<p>Las opciones son <code>console</code>, <code>file</code> y <code>syslog</code>. El valor predeterminado es <code>console</code> y <code>file</code>. Utilice espacios para separar varios modos, p. Ej. <code>console file</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_level"><a class="anchor" href="#_level"></a>level</h3>
+<div class="paragraph">
+<p>Las opciones son <code>debug</code>, <code>info</code>, <code>warn</code>, <code>error</code> y <code>critical</code>. El valor predeterminado es <code>info</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_filters"><a class="anchor" href="#_filters"></a>filters</h3>
+<div class="paragraph">
+<p>Configuraciones opcionales para establecer diferentes niveles para registradores específicos. Por ejemplo: <code>filters = sqlstore:debug</code></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_log_console"><a class="anchor" href="#_log_console"></a>[log.console]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Solo es aplicable cuando se utiliza <code>console</code> en modo <code>[log]</code>.</p>
+</div>
+<div class="sect2">
+<h3 id="_level_2"><a class="anchor" href="#_level_2"></a>level</h3>
+<div class="paragraph">
+<p>Las opciones son <code>debug</code>, <code>info</code>, <code>warn</code>, <code>error</code> y <code>critical</code>. El valor predeterminado se hereda del nivel <code>[log]</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_format"><a class="anchor" href="#_format"></a>format</h3>
+<div class="paragraph">
+<p>Formato de línea de registro, las opciones válidas son text, console y json. El valor predeterminado es la <code>console</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_log_file"><a class="anchor" href="#_log_file"></a>[log.file]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Solo se aplica cuando se utiliza file en el modo <code>[log]</code>.</p>
+</div>
+<div class="sect2">
+<h3 id="_level_3"><a class="anchor" href="#_level_3"></a>level</h3>
+<div class="paragraph">
+<p>Las opciones son <code>debug</code>, <code>info</code>, <code>warn</code>, <code>error</code> y <code>critical</code>. El valor predeterminado se hereda del nivel <code>[log]</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_format_2"><a class="anchor" href="#_format_2"></a>format</h3>
+<div class="paragraph">
+<p>Formato de línea de registro, las opciones válidas son text, console y json. El valor predeterminado es <code>text</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_log_rotate"><a class="anchor" href="#_log_rotate"></a>log_rotate</h3>
+<div class="paragraph">
+<p>Habilite la rotación automática de registros, las opciones válidas son <code>false</code> o <code>true</code>. El valor predeterminado es <code>true</code>. Cuando está habilitado use <code>max_lines</code>, <code>max_size_shift</code>, <code>daily_rotate</code> y <code>max_days</code> para configurar el comportamiento de la rotación del registro.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_max_lines"><a class="anchor" href="#_max_lines"></a>max_lines</h3>
+<div class="paragraph">
+<p>Máximo de líneas por archivo antes de rotarlo. El valor predeterminado es <code>1000000</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_max_size_shift"><a class="anchor" href="#_max_size_shift"></a>max_size_shift</h3>
+<div class="paragraph">
+<p>Tamaño máximo del archivo antes de rotarlo. El valor predeterminado es <code>28</code>, lo que significa <code>1 &lt;&lt; 28</code>, <code>256MB</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_daily_rotate"><a class="anchor" href="#_daily_rotate"></a>daily_rotate</h3>
+<div class="paragraph">
+<p>Habilite la rotación diaria de archivos, las opciones válidas son <code>false</code> o <code>true</code>. El valor predeterminado es <code>true</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_max_days"><a class="anchor" href="#_max_days"></a>max­_days</h3>
+<div class="paragraph">
+<p>Número máximo de días para mantener los archivos de registro. El valor predeterminado es <code>7</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_log_syslog"><a class="anchor" href="#_log_syslog"></a>[log.syslog]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Solo se aplica cuando se utiliza <code>syslog</code> en el modo <code>[log]</code>.</p>
+</div>
+<div class="sect2">
+<h3 id="_level_4"><a class="anchor" href="#_level_4"></a>level</h3>
+<div class="paragraph">
+<p>Las opciones son <code>debug</code>, <code>info</code>, <code>warn</code>, <code>error</code> y <code>critical</code>. El valor predeterminado se hereda del nivel <code>[log]</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_format_3"><a class="anchor" href="#_format_3"></a>format</h3>
+<div class="paragraph">
+<p>Formato de línea de registro, las opciones válidas son <code>text</code>, <code>console</code> y <code>json</code>. El valor predeterminado es <code>text</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_network_and_address"><a class="anchor" href="#_network_and_address"></a>network and address</h3>
+<div class="paragraph">
+<p>Tipo y dirección de red de Syslog. Puede ser UDP, TCP o UNIX. Si se deja en blanco, se utilizan los puntos finales de UNIX predeterminados.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_facility"><a class="anchor" href="#_facility"></a>facility</h3>
+<div class="paragraph">
+<p>Instalación de Syslog. Las opciones válidas son <code>user</code>, <code>daemon</code> o <code>local0</code> hasta <code>local7</code>. El valor predeterminado es <code>empty</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tag"><a class="anchor" href="#_tag"></a>tag</h3>
+<div class="paragraph">
+<p>Etiqueta de Syslog. De forma predeterminada, se utiliza el <code>argv[0]</code> del proceso.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_log_frontend"><a class="anchor" href="#_log_frontend"></a>[log.frontend]</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Esta función está disponible en Grafana 7.4+.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_enabled_2"><a class="anchor" href="#_enabled_2"></a>enabled</h3>
+<div class="paragraph">
+<p>Se inicializa el agente javascript de Sentry. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sentry_dsn"><a class="anchor" href="#_sentry_dsn"></a>sentry_dsn</h3>
+<div class="paragraph">
+<p>Sentry DSN si desea enviar eventos a Sentry</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_custom_endpoint"><a class="anchor" href="#_custom_endpoint"></a>custom_endpoint</h3>
+<div class="paragraph">
+<p>Punto final HTTP personalizado al que enviar eventos capturados por el agente Sentry. Por defecto, <code>/log</code>, registrará los eventos en stdout.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sample_rate"><a class="anchor" href="#_sample_rate"></a>sample_rate</h3>
+<div class="paragraph">
+<p>Tasa de eventos que se informarán entre <code>0</code> (ninguno) y <code>1</code> (todos, predeterminado), flotante.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_log_endpoint_requests_per_second_limit"><a class="anchor" href="#_log_endpoint_requests_per_second_limit"></a>log_endpoint_requests_per_second_limit</h3>
+<div class="paragraph">
+<p>Límite de solicitudes por segundo aplicado por un período prolongado, para el punto de conexión de ingestión de registros de backend de Grafana, <code>/log</code>. El valor predeterminado es <code>3</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_log_endpoint_burst_limit"><a class="anchor" href="#_log_endpoint_burst_limit"></a>log_endpoint_burst_limit</h3>
+<div class="paragraph">
+<p>Número máximo de solicitudes aceptadas por intervalo corto de tiempo para el punto de conexión de ingestión de registros de backend de Grafana, <code>/log</code>. El valor predeterminado es <code>15</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_quota"><a class="anchor" href="#_quota"></a>[quota]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Establezca cuotas en <code>-1</code> para hacer ilimitadas.</p>
+</div>
+<div class="sect2">
+<h3 id="_enabled_3"><a class="anchor" href="#_enabled_3"></a>enabled</h3>
+<div class="paragraph">
+<p>Habilite las cuotas de uso. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_org_user"><a class="anchor" href="#_org_user"></a>org_user</h3>
+<div class="paragraph">
+<p>Limite la cantidad de usuarios permitidos por organización. El valor predeterminado es <code>10</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_org_dashboard"><a class="anchor" href="#_org_dashboard"></a>org_dashboard</h3>
+<div class="paragraph">
+<p>Limite la cantidad de tableros permitidos por organización. El valor predeterminado es <code>100</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_org_data_source"><a class="anchor" href="#_org_data_source"></a>org_data_source</h3>
+<div class="paragraph">
+<p>Limite la cantidad de fuentes de datos permitidas por organización. El valor predeterminado es <code>10</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_org_api_key"><a class="anchor" href="#_org_api_key"></a>org_api_key</h3>
+<div class="paragraph">
+<p>Limite la cantidad de claves de API que se pueden ingresar por organización. El valor predeterminado es <code>10</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_org"><a class="anchor" href="#_user_org"></a>user_org</h3>
+<div class="paragraph">
+<p>Limite el número de organizaciones que puede crear un usuario. El valor predeterminado es <code>10</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_global_user"><a class="anchor" href="#_global_user"></a>global_user</h3>
+<div class="paragraph">
+<p>Establece un límite global de usuarios. El valor predeterminado es <code>-1</code> (ilimitado).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_global_org"><a class="anchor" href="#_global_org"></a>global_org</h3>
+<div class="paragraph">
+<p>Establece un límite global en el número de organizaciones que se pueden crear. El valor predeterminado es <code>-1</code> (ilimitado).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_global_dashboard"><a class="anchor" href="#_global_dashboard"></a>global_dashboard</h3>
+<div class="paragraph">
+<p>Establece un límite global en la cantidad de tableros que se pueden crear. El valor predeterminado es <code>-1</code> (ilimitado).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_global_api_key"><a class="anchor" href="#_global_api_key"></a>global_api_key</h3>
+<div class="paragraph">
+<p>Establece el límite global de claves API que se pueden ingresar. El valor predeterminado es <code>-1</code> (ilimitado).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_global_session"><a class="anchor" href="#_global_session"></a>global_session</h3>
+<div class="paragraph">
+<p>Establece un límite global en el número de usuarios que pueden iniciar sesión a la vez. El valor predeterminado es <code>-1</code> (ilimitado).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_alerting"><a class="anchor" href="#_alerting"></a>[alerting]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Para obtener más información sobre la función de Alertas en Grafana, consulte <a href="../alertas/alertas.html" class="page">Descripción general de las alertas</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_enabled_4"><a class="anchor" href="#_enabled_4"></a>enabled</h3>
+<div class="paragraph">
+<p>Configúrelo en <code>false</code> para deshabilitar el motor de alertas y ocultar las alertas en la interfaz de usuario de Grafana. El valor predeterminado es <code>true</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_execute_alerts"><a class="anchor" href="#_execute_alerts"></a>execute_alerts</h3>
+<div class="paragraph">
+<p>Desactiva la ejecución de reglas de alerta, pero las alertas siguen estando visibles en la interfaz de usuario de Grafana.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_error_or_timeout"><a class="anchor" href="#_error_or_timeout"></a>error_or_timeout</h3>
+<div class="paragraph">
+<p>Configuración predeterminada para nuevas reglas de alerta. De forma predeterminada, los errores y los tiempos de espera se clasifican como alertas. (alerting, keep_state)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_nodata_or_nullvalues"><a class="anchor" href="#_nodata_or_nullvalues"></a>nodata_or_nullvalues</h3>
+<div class="paragraph">
+<p>Define cómo Grafana maneja nodata o valores nulos en las alertas. Las opciones son <code>alerting</code>, <code>no_data</code>, <code>keep_state</code> y <code>ok</code>. El valor predeterminado es <code>no_data</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_concurrent_render_limit"><a class="anchor" href="#_concurrent_render_limit"></a>concurrent_render_limit</h3>
+<div class="paragraph">
+<p>Las notificaciones de alerta pueden incluir imágenes, pero la representación de muchas imágenes al mismo tiempo puede sobrecargar el servidor. Este límite protege al servidor de la sobrecarga de procesamiento y garantiza que las notificaciones se envíen rápidamente. El valor predeterminado es <code>5</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_evaluation_timeout_seconds"><a class="anchor" href="#_evaluation_timeout_seconds"></a>evaluation_timeout_seconds</h3>
+<div class="paragraph">
+<p>Establece el tiempo de espera del cálculo de la alerta. El valor predeterminado es <code>30</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_notification_timeout_seconds"><a class="anchor" href="#_notification_timeout_seconds"></a>notification_timeout_seconds</h3>
+<div class="paragraph">
+<p>Establece el tiempo de espera de la notificación de alerta. El valor predeterminado es <code>30</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_max_attempts"><a class="anchor" href="#_max_attempts"></a>max_attempts</h3>
+<div class="paragraph">
+<p>Establece un límite máximo de intentos de enviar notificaciones de alerta. El valor predeterminado es <code>3</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_min_interval_seconds"><a class="anchor" href="#_min_interval_seconds"></a>min_interval_seconds</h3>
+<div class="paragraph">
+<p>Establece el intervalo mínimo entre evaluaciones de reglas. El valor predeterminado es <code>1</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Esta configuración tiene prioridad sobre la frecuencia de cada regla individual. Si la frecuencia de una regla es menor que este valor, este valor se aplica.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_max_annotation_age"><a class="anchor" href="#_max_annotation_age"></a>max_annotation_age =</h3>
+<div class="paragraph">
+<p>Configura durante cuánto tiempo se almacenan las anotaciones de alerta. El valor predeterminado es 0, que los mantiene para siempre. Esta configuración debe expresarse como una duración. Ejemplos: 6h (horas), 10d (días), 2w (semanas), 1M (mes).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_max_annotations_to_keep"><a class="anchor" href="#_max_annotations_to_keep"></a>max_annotations_to_keep =</h3>
+<div class="paragraph">
+<p>Configura el número máximo de anotaciones de alerta que almacena Grafana. El valor predeterminado es <code>0</code>, que conserva todas las anotaciones de alerta.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_annotations"><a class="anchor" href="#_annotations"></a>[annotations]</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_cleanupjob_batchsize"><a class="anchor" href="#_cleanupjob_batchsize"></a>cleanupjob_batchsize</h3>
+<div class="paragraph">
+<p>Configura el tamaño del lote para el trabajo de limpieza de anotaciones. Esta configuración se utiliza para anotaciones de alertas, API y tableros.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_annotations_dashboard"><a class="anchor" href="#_annotations_dashboard"></a>[annotations.dashboard]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Las anotaciones del tablero significan que las anotaciones están asociadas con el tablero en el que se crean.</p>
+</div>
+<div class="sect2">
+<h3 id="_max_age"><a class="anchor" href="#_max_age"></a>max_age</h3>
+<div class="paragraph">
+<p>Configura cuánto tiempo se almacenan las anotaciones del tablero. El valor predeterminado es <code>0</code>, que los mantiene para siempre. Esta configuración debe expresarse como una duración. Ejemplos: 6h (horas), 10d (días), 2w (semanas), 1M (mes).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_max_annotations_to_keep_2"><a class="anchor" href="#_max_annotations_to_keep_2"></a>max_annotations_to_keep</h3>
+<div class="paragraph">
+<p>Configura el número máximo de anotaciones del tablero que almacena Grafana. El valor predeterminado es <code>0</code>, que conserva todas las anotaciones del tablero.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_annotations_api"><a class="anchor" href="#_annotations_api"></a>[annotations.api]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Las anotaciones de API significan que las anotaciones se han creado utilizando la API sin ninguna asociación con un tablero.</p>
+</div>
+<div class="sect2">
+<h3 id="_max_age_2"><a class="anchor" href="#_max_age_2"></a>max_age</h3>
+<div class="paragraph">
+<p>Configura cuánto tiempo Grafana almacena las anotaciones de la API. El valor predeterminado es <code>0</code>, que los mantiene para siempre. Esta configuración debe expresarse como una duración. Ejemplos: 6h (horas), 10d (días), 2w (semanas), 1M (mes).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_max_annotations_to_keep_3"><a class="anchor" href="#_max_annotations_to_keep_3"></a>max_annotations_to_keep</h3>
+<div class="paragraph">
+<p>Configura el número máximo de anotaciones de API que guarda Grafana. El valor predeterminado es <code>0</code>, que conserva todas las anotaciones de la API.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_explore"><a class="anchor" href="#_explore"></a>[explore]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Para obtener más información sobre esta función, consulte <a href="../explorar/explorar.html" class="page">Explorar</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_enabled_5"><a class="anchor" href="#_enabled_5"></a>enabled</h3>
+<div class="paragraph">
+<p>Habilite o deshabilite la sección Explorar. El valor predeterminado es <code>enabled</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_metrics"><a class="anchor" href="#_metrics"></a>[metrics]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Para obtener instrucciones detalladas, consulte las <a href="ver-servidor/metricas-internas-de-grafana.html" class="page">Métricas Internas de Grafana</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_enabled_6"><a class="anchor" href="#_enabled_6"></a>enabled</h3>
+<div class="paragraph">
+<p>Habilite los informes de métricas. El valor predeterminado es true. Disponible a través de HTTP API <code>&lt;URL&gt;/metrics</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_interval_seconds"><a class="anchor" href="#_interval_seconds"></a>interval_seconds</h3>
+<div class="paragraph">
+<p>Intervalo de descarga/escritura al enviar métricas a la TSDB externa. El valor predeterminado es <code>10</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_disable_total_stats"><a class="anchor" href="#_disable_total_stats"></a>disable_total_stats</h3>
+<div class="paragraph">
+<p>Si se establece en <code>true</code>, la generación de estadísticas totales (<code>stat_totals_*</code> metrics) está deshabilitada. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_basic_auth_username_y_basic_auth_password"><a class="anchor" href="#_basic_auth_username_y_basic_auth_password"></a>basic_auth_username y basic_auth_password</h3>
+<div class="paragraph">
+<p>Si ambos están configurados, entonces se requiere autenticación básica para acceder al punto final de métricas.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_metrics_environment_info"><a class="anchor" href="#_metrics_environment_info"></a>[metrics.environment_info]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Agrega dimensiones a la métrica <code>grafana_environment_info</code>, que puede mostrar más información sobre la instancia de Grafana.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>; exampleLabel1 = exampleValue1
+; exampleLabel2 = exampleValue2</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_metrics_graphite"><a class="anchor" href="#_metrics_graphite"></a>[metrics.graphite]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Utilice estas opciones si desea enviar métricas internas de Grafana a Graphite.</p>
+</div>
+<div class="sect2">
+<h3 id="_address"><a class="anchor" href="#_address"></a>address</h3>
+<div class="paragraph">
+<p>Habilitar configurando la dirección. El formato es <code>&lt;Hostname or ip&gt;</code>:port.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_prefix"><a class="anchor" href="#_prefix"></a>prefix</h3>
+<div class="paragraph">
+<p>Prefijo métrico de Graphite. El valor predeterminado es <code>prod.grafana.%(instance_name)s</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_grafana_net"><a class="anchor" href="#_grafana_net"></a>[grafana_net]</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_url_2"><a class="anchor" href="#_url_2"></a>url</h3>
+<div class="paragraph">
+<p>El valor predeterminado es <a href="https://grafana.com" class="bare">https://grafana.com</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_grafana_com"><a class="anchor" href="#_grafana_com"></a>[grafana_com]</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_url_3"><a class="anchor" href="#_url_3"></a>url</h3>
+<div class="paragraph">
+<p>El valor predeterminado es <a href="https://grafana.com" class="bare">https://grafana.com</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tracing_jaeger"><a class="anchor" href="#_tracing_jaeger"></a>[tracing.jaeger]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Configure el cliente Jaeger de Grafana para el seguimiento distribuido.</p>
+</div>
+<div class="paragraph">
+<p>También puede utilizar las variables de entorno <code>JAEGER_*</code> estándar para configurar Jaeger. Consulte la tabla al final de <a href="https://www.jaegertracing.io/docs/1.16/client-features/" class="bare">https://www.jaegertracing.io/docs/1.16/client-features/</a> para ver la lista completa. Las variables de entorno anularán cualquier configuración proporcionada aquí.</p>
+</div>
+<div class="sect2">
+<h3 id="_address_2"><a class="anchor" href="#_address_2"></a>address</h3>
+<div class="paragraph">
+<p>El host:port de destino para informes de intervalos. (ej: <code>localhost:6831</code>)</p>
+</div>
+<div class="paragraph">
+<p>Se puede configurar con las variables de entorno <code>JAEGER_AGENT_HOST</code> y <code>JAEGER_AGENT_PORT</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_always_included_tag"><a class="anchor" href="#_always_included_tag"></a>always_included_tag</h3>
+<div class="paragraph">
+<p>Lista de etiquetas separadas por comas para incluir en todos los tramos nuevos, como <code>tag1:value1,tag2:value2</code>.</p>
+</div>
+<div class="paragraph">
+<p>Se puede configurar con la variable de entorno <code>JAEGER_TAGS</code> (use <code>=</code> en lugar de <code>:</code> con la variable de entorno).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sampler_type"><a class="anchor" href="#_sampler_type"></a>sampler_type</h3>
+<div class="paragraph">
+<p>El valor predeterminado es <code>const</code>.</p>
+</div>
+<div class="paragraph">
+<p>Especifica el tipo de muestreador: <code>const</code>, <code>probabilistic</code>, <code>ratelimiting</code> o <code>remote</code>.</p>
+</div>
+<div class="paragraph">
+<p>Consulte <a href="https://www.jaegertracing.io/docs/1.16/sampling/#client-sampling-configuration" class="bare">https://www.jaegertracing.io/docs/1.16/sampling/#client-sampling-configuration</a> para obtener detalles sobre los diferentes tipos de rastreo.</p>
+</div>
+<div class="paragraph">
+<p>Se puede configurar con la variable de entorno <code>JAEGER_SAMPLER_TYPE</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sampler_param"><a class="anchor" href="#_sampler_param"></a>sampler_param</h3>
+<div class="paragraph">
+<p>El valor predeterminado es <code>1</code>.</p>
+</div>
+<div class="paragraph">
+<p>Este es el parámetro de configuración del muestreador. Dependiendo del valor de <code>sampler_type</code>, puede ser <code>0</code>, <code>1</code> o un valor decimal intermedio.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Para muestreador <code>const</code>, <code>0</code> o <code>1</code> para siempre <code>false</code>/<code>true</code> respectivamente</p>
+</li>
+<li>
+<p>Para el muestreador probabilistic, una probabilidad entre <code>0</code> y <code>1.0</code></p>
+</li>
+<li>
+<p>Para el muestreador <code>rateLimiting</code>, el número de intervalos por segundo</p>
+</li>
+<li>
+<p>Para el muestreador <code>remote</code>, param es el mismo que para el <code>probabilistic</code> e indica la frecuencia de muestreo inicial antes de que se reciba la real de la nave nodriza.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Puede establecerse con la variable de entorno <code>JAEGER_SAMPLER_PARAM</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sampling_server_url"><a class="anchor" href="#_sampling_server_url"></a>sampling_server_url</h3>
+<div class="paragraph">
+<p>sampling_server_url es la URL de un administrador de muestreo que proporciona una estrategia de muestreo.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_zipkin_propagation"><a class="anchor" href="#_zipkin_propagation"></a>zipkin_propagation</h3>
+<div class="paragraph">
+<p>El valor predeterminado es <code>false</code>.</p>
+</div>
+<div class="paragraph">
+<p>Controla si se utiliza o no el formato de propagación de intervalo de Zipkin (con encabezados HTTP <code>x-b3-</code>). De forma predeterminada, se utiliza el formato de Jaeger.</p>
+</div>
+<div class="paragraph">
+<p>Se puede configurar con la variable de entorno y el valor <code>JAEGER_PROPAGATION=b3</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_disable_shared_zipkin_spans"><a class="anchor" href="#_disable_shared_zipkin_spans"></a>disable_shared_zipkin_spans</h3>
+<div class="paragraph">
+<p>El valor predeterminado es <code>false</code>.</p>
+</div>
+<div class="paragraph">
+<p>Si se establece en <code>true</code>, se desactivan los intervalos de RPC compartidos. Dejar esto disponible es la configuración más común cuando se usa Zipkin en cualquier otro lugar de su infraestructura.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_external_image_storage"><a class="anchor" href="#_external_image_storage"></a>[external_image_storage]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Estas opciones controlan cómo se deben hacer públicas las imágenes para que puedan compartirse en servicios como Slack o mensajes de correo electrónico.</p>
+</div>
+<div class="sect2">
+<h3 id="_provider"><a class="anchor" href="#_provider"></a>provider</h3>
+<div class="paragraph">
+<p>Las opciones son s3, webdav, gcs, azure_blob, local). Si se deja vacío, Grafana ignora la acción de carga.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_external_image_storage_s3"><a class="anchor" href="#_external_image_storage_s3"></a>[external_image_storage.s3]</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_endpoint"><a class="anchor" href="#_endpoint"></a>endpoint</h3>
+<div class="paragraph">
+<p>URL de punto final opcional (nombre de host o URI completo) para anular el punto final S3 generado por defecto. Si desea mantener el valor predeterminado, déjelo vacío. Aún debe proporcionar un valor de <code>region</code> si especifica un punto final.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_path_style_access"><a class="anchor" href="#_path_style_access"></a>path_style_access</h3>
+<div class="paragraph">
+<p>Establezca esto en true para forzar el direccionamiento de estilo de ruta en las solicitudes de S3, es decir, <code><a href="http://s3.amazonaws.com/BUCKET/KEY" class="bare">http://s3.amazonaws.com/BUCKET/KEY</a></code>, en lugar del predeterminado, que es el direccionamiento de depósito alojado virtual cuando sea posible (<code><a href="http://BUCKET.s3.amazonaws.com/KEY" class="bare">http://BUCKET.s3.amazonaws.com/KEY</a></code>).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Esta opción es específica del servicio Amazon S3.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bucket_url"><a class="anchor" href="#_bucket_url"></a>bucket_url</h3>
+<div class="paragraph">
+<p>(Para compatibilidad con versiones anteriores, solo funciona cuando no hay ningún depósito o región configurados) URL del depósito para S3. La región de AWS se puede especificar dentro de la URL o su valor predeterminado es "us-east-1", p. Ej.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://grafana.s3.amazonaws.com/" class="bare">http://grafana.s3.amazonaws.com/</a></p>
+</li>
+<li>
+<p><a href="https://grafana.s3-ap-southeast-2.amazonaws.com/" class="bare">https://grafana.s3-ap-southeast-2.amazonaws.com/</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bucket"><a class="anchor" href="#_bucket"></a>bucket</h3>
+<div class="paragraph">
+<p>Nombre del segmento para S3. p.ej. grafana.snapshot.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_region"><a class="anchor" href="#_region"></a>region</h3>
+<div class="paragraph">
+<p>Nombre de la región para S3. p.ej. "Us-east-1", "cn-north-1", etc.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_path_2"><a class="anchor" href="#_path_2"></a>path</h3>
+<div class="paragraph">
+<p>Ruta adicional opcional dentro del depósito, útil para aplicar políticas de vencimiento.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_access_key"><a class="anchor" href="#_access_key"></a>access_key</h3>
+<div class="paragraph">
+<p>Clave de acceso, p. Ej. AAAAAAAAAAAAAAAAAAAA.</p>
+</div>
+<div class="paragraph">
+<p>La clave de acceso requiere permisos para el depósito S3 para las acciones "s3: PutObject" y "s3: PutObjectAcl".</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_secret_key_2"><a class="anchor" href="#_secret_key_2"></a>secret_key</h3>
+<div class="paragraph">
+<p>Clave secreta, p. Ej. AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_external_image_storage_webdav"><a class="anchor" href="#_external_image_storage_webdav"></a>[external_image_storage.webdav]</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_url_4"><a class="anchor" href="#_url_4"></a>url</h3>
+<div class="paragraph">
+<p>URL donde Grafana envía la solicitud PUT con imágenes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_username"><a class="anchor" href="#_username"></a>username</h3>
+<div class="paragraph">
+<p>Nombre de usuario de autenticación básico.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_password_3"><a class="anchor" href="#_password_3"></a>password</h3>
+<div class="paragraph">
+<p>Contraseña de autenticación básica.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_public_url"><a class="anchor" href="#_public_url"></a>public_url</h3>
+<div class="paragraph">
+<p>URL opcional para enviar a los usuarios en notificaciones. Si la cadena contiene la secuencia ${file}, se reemplaza con el nombre del archivo cargado. De lo contrario, el nombre del archivo se agrega a la parte de la ruta de la URL, sin modificar ninguna cadena de consulta.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_external_image_storage_gcs"><a class="anchor" href="#_external_image_storage_gcs"></a>[external_image_storage.gcs]</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_key_file_2"><a class="anchor" href="#_key_file_2"></a>key_file</h3>
+<div class="paragraph">
+<p>Ruta opcional al archivo de claves JSON asociado con una cuenta de servicio de Google para autenticar y autorizar. Si no se proporciona ningún valor, intente utilizar las <a href="https://cloud.google.com/docs/authentication/production#finding_credentials_automatically">credenciales predeterminadas de la aplicación</a>. Las claves de la cuenta de servicio se pueden crear y descargar desde <a href="https://console.developers.google.com/permissions/serviceaccounts" class="bare">https://console.developers.google.com/permissions/serviceaccounts</a>.</p>
+</div>
+<div class="paragraph">
+<p>La Cuenta de Servicio debe tener el rol de "Escritor de Objetos de Almacenamiento". El modelo de control de acceso del depósito debe ser "Establecer permisos a nivel de objeto y de cubo". Grafana mismo hará que las imágenes sean legibles para el público cuando las URL firmadas no estén habilitadas.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bucket_2"><a class="anchor" href="#_bucket_2"></a>bucket</h3>
+<div class="paragraph">
+<p>Nombre del cubo en Google Cloud Storage.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_path_3"><a class="anchor" href="#_path_3"></a>path</h3>
+<div class="paragraph">
+<p>Ruta adicional opcional dentro del cubo.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_enable_signed_urls"><a class="anchor" href="#_enable_signed_urls"></a>enable_signed_urls</h3>
+<div class="paragraph">
+<p>Si se establece en true, Grafana crea una <a href="https://cloud.google.com/storage/docs/access-control/signed-urls">URL firmada</a> para la imagen cargada en Google Cloud Storage.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_signed_url_expiration"><a class="anchor" href="#_signed_url_expiration"></a>signed_url_expiration</h3>
+<div class="paragraph">
+<p>Establece la caducidad de la URL firmada, cuyo valor predeterminado es de siete días.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_external_image_storage_azure_blob"><a class="anchor" href="#_external_image_storage_azure_blob"></a>[external_image_storage.azure_blob]</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_account_name"><a class="anchor" href="#_account_name"></a>account_name</h3>
+<div class="paragraph">
+<p>Nombre de la cuenta de almacenamiento.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_account_key"><a class="anchor" href="#_account_key"></a>account_key</h3>
+<div class="paragraph">
+<p>Clave de cuenta de almacenamiento</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_container_name"><a class="anchor" href="#_container_name"></a>container_name</h3>
+<div class="paragraph">
+<p>Nombre del contenedor donde almacenar imágenes "Blob" con nombres aleatorios. Es necesario crear el contenedor de blobs de antemano. Solo se admiten contenedores públicos.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_external_image_storage_local"><a class="anchor" href="#_external_image_storage_local"></a>[external_image_storage.local]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Esta opción no requiere ninguna configuración.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rendering"><a class="anchor" href="#_rendering"></a>[rendering]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Opciones para configurar un servicio de representación de imágenes HTTP remoto, ej: utilizando <a href="https://github.com/grafana/grafana-image-renderer" class="bare">https://github.com/grafana/grafana-image-renderer</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_server_url"><a class="anchor" href="#_server_url"></a>server_url</h3>
+<div class="paragraph">
+<p>URL a un servicio de representación de imágenes HTTP remoto, ej: <a href="http://localhost:8081/render" class="bare">http://localhost:8081/render</a>, permitirá a Grafana representar paneles y tableros en imágenes PNG mediante solicitudes HTTP a un servicio externo.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_callback_url"><a class="anchor" href="#_callback_url"></a>callback_url</h3>
+<div class="paragraph">
+<p>Si el servicio de renderizador de imágenes HTTP remoto se ejecuta en un servidor diferente al servidor de Grafana, es posible que deba configurarlo en una URL donde se pueda acceder a Grafana, ej: <a href="http://grafana.domain/" class="bare">http://grafana.domain/</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_concurrent_render_request_limit"><a class="anchor" href="#_concurrent_render_request_limit"></a>concurrent_render_request_limit</h3>
+<div class="paragraph">
+<p>El límite de solicitud de procesamiento simultáneo afecta cuando se usa el punto final HTTP /render. La representación de muchas imágenes al mismo tiempo puede sobrecargar el servidor, contra lo que esta configuración puede ayudar a proteger al permitir solo una cierta cantidad de solicitudes simultáneas. El valor predeterminado es <code>30</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_panels"><a class="anchor" href="#_panels"></a>[panels]</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_enable_alpha"><a class="anchor" href="#_enable_alpha"></a>enable_alpha</h3>
+<div class="paragraph">
+<p>Establézcalo en <code>true</code> si desea probar paneles alfa que aún no están listos para uso general. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_disable_sanitize_html"><a class="anchor" href="#_disable_sanitize_html"></a>disable_sanitize_html</h3>
+<div class="paragraph">
+<p>Si se establece en <code>true</code>, Grafana permitirá etiquetas de script en paneles de texto. No recomendado ya que habilita vulnerabilidades XSS. El valor predeterminado es <code>false</code>. Esta configuración se introdujo en Grafana v6.0.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_plugins_2"><a class="anchor" href="#_plugins_2"></a>[plugins]</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_enable_alpha_2"><a class="anchor" href="#_enable_alpha_2"></a>enable_alpha</h3>
+<div class="paragraph">
+<p>Establézcalo en <code>true</code> si desea probar los complementos alfa que aún no están listos para el uso general. El valor predeterminado es <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_allow_loading_unsigned_plugins"><a class="anchor" href="#_allow_loading_unsigned_plugins"></a>allow_loading_unsigned_plugins</h3>
+<div class="paragraph">
+<p>Ingrese una lista separada por comas de identificadores de complementos para identificar los complementos que pueden cargarse incluso si carecen de una firma válida.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_marketplace_url"><a class="anchor" href="#_marketplace_url"></a>marketplace_url</h3>
+<div class="paragraph">
+<p>url personalizado para instalar/aprender más para complementos empresariales. El valor predeterminado es <a href="https://grafana.com/grafana/plugins/" class="bare">https://grafana.com/grafana/plugins/</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_plugin_grafana_image_renderer"><a class="anchor" href="#_plugin_grafana_image_renderer"></a>[plugin.grafana-image-renderer]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Para obtener más información, consulte <a href="#administracion/renderización-de-imagenes">Renderización de imágenes</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_rendering_timezone"><a class="anchor" href="#_rendering_timezone"></a>rendering_timezone</h3>
+<div class="paragraph">
+<p>Indique a la instancia del navegador sin cabeza que use una zona horaria predeterminada cuando no la proporcione Grafana, por ejemplo: al renderizar la imagen del panel de alerta. Consulte <a href="https://cs.chromium.org/chromium/src/third_party/icu/source/data/misc/metaZones.txt">ICUs metaZones.txt</a> para obtener una lista de los ID de zona horaria admitidos. Recurre a la variable de entorno TZ si no se establece.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rendering_language"><a class="anchor" href="#_rendering_language"></a>rendering_language</h3>
+<div class="paragraph">
+<p>Indique a la instancia del navegador sin cabeza que utilice un idioma predeterminado cuando no lo proporcione Grafana, p. Ej. al renderizar la imagen del panel de alerta. Consulte el encabezado HTTP Accept-Language para comprender cómo formatear este valor, ej: ‘fr-CH, fr;q=0.9, en;q=0.8, de;q=0.7, *;q=0.5’.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rendering_viewport_device_scale_factor"><a class="anchor" href="#_rendering_viewport_device_scale_factor"></a>rendering_viewport_device_scale_factor</h3>
+<div class="paragraph">
+<p>Indique a la instancia del navegador sin cabeza que utilice un factor de escala de dispositivo predeterminado cuando no lo proporcione Grafana, p. Ej. al renderizar la imagen del panel de alerta. El valor predeterminado es <code>1</code>. El uso de un valor más alto producirá imágenes más detalladas (DPI más alto), pero requiere más espacio en disco para almacenar una imagen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rendering_ignore_https_errors"><a class="anchor" href="#_rendering_ignore_https_errors"></a>rendering_ignore_https_errors</h3>
+<div class="paragraph">
+<p>Indique a la instancia del navegador sin cabeza si debe ignorar los errores HTTPS durante la navegación. Los errores HTTPS predeterminados no se ignoran. Debido al riesgo de seguridad, no recomendamos que ignore los errores HTTPS.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rendering_verbose_logging"><a class="anchor" href="#_rendering_verbose_logging"></a>rendering_verbose_logging</h3>
+<div class="paragraph">
+<p>Indique a la instancia del navegador sin cabeza si debe capturar y registrar información detallada al renderizar una imagen. El valor predeterminado es <code>false</code> y solo capturará y registrará mensajes de error.</p>
+</div>
+<div class="paragraph">
+<p>Cuando está habilitado, los mensajes de depuración también se capturan y registran.</p>
+</div>
+<div class="paragraph">
+<p>Para que la información detallada se incluya en el registro del servidor Grafana, debe ajustar el nivel del registro de renderizado para depurar, configurar [log].filter = rendering:debug.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rendering_dumpio"><a class="anchor" href="#_rendering_dumpio"></a>rendering_dumpio</h3>
+<div class="paragraph">
+<p>Indique a la instancia del navegador sin cabeza si debe generar sus mensajes de error y depuración en el proceso en ejecución del servicio de representación remota. El valor predeterminado es <code>false</code>.</p>
+</div>
+<div class="paragraph">
+<p>Puede ser útil establecer esto en <code>true</code> al solucionar problemas.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rendering_args"><a class="anchor" href="#_rendering_args"></a>rendering_args</h3>
+<div class="paragraph">
+<p>Argumentos adicionales para pasar a la instancia del navegador sin cabeza. El valor predeterminado es <code>–no-sandbox</code>. La lista de indicadores de Chromium se puede encontrar en <a href="https://peter.sh/experiments/chromium-command-line-switches/" class="bare">https://peter.sh/experiments/chromium-command-line-switches/</a>. Separe varios argumentos con comas.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rendering_chrome_bin"><a class="anchor" href="#_rendering_chrome_bin"></a>rendering_chrome_bin</h3>
+<div class="paragraph">
+<p>Puede configurar el complemento para usar un binario de navegador diferente en lugar de la versión preempaquetada de Chromium.</p>
+</div>
+<div class="paragraph">
+<p>Tenga en cuenta que esto <em>no</em> es recomendable. Puede encontrar problemas si la versión instalada de Chrome/Chromium no es compatible con el complemento.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rendering_mode"><a class="anchor" href="#_rendering_mode"></a>rendering_mode</h3>
+<div class="paragraph">
+<p>Indique cómo se crean las instancias de navegador sin cabeza. El valor predeterminado es <code>default</code> y creará una nueva instancia de navegador en cada solicitud.</p>
+</div>
+<div class="paragraph">
+<p>El modo <code>clustered</code> se asegurará de que solo un máximo de navegadores/páginas de incógnito puedan ejecutarse al mismo tiempo.</p>
+</div>
+<div class="paragraph">
+<p>El modo <code>reusable</code> tendrá una instancia de navegador y creará una nueva página de incógnito en cada solicitud.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rendering_clustering_mode"><a class="anchor" href="#_rendering_clustering_mode"></a>rendering_clustering_mode</h3>
+<div class="paragraph">
+<p>Cuando rendering_mode = clustered, puede indicar cuántos navegadores o páginas de incógnito se pueden ejecutar al mismo tiempo. Por defecto es <code>browser</code> y se agrupará utilizando instancias de navegador.</p>
+</div>
+<div class="paragraph">
+<p>El modo <code>context</code> se agrupará utilizando páginas de incógnito.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rendering_clustering_max_concurrency"><a class="anchor" href="#_rendering_clustering_max_concurrency"></a>rendering_clustering_max_concurrency</h3>
+<div class="paragraph">
+<p>Cuando rendering_mode = clustered, puede definir el número máximo de instancias del navegador/páginas de incógnito que se pueden ejecutar al mismo tiempo.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rendering_viewport_max_width"><a class="anchor" href="#_rendering_viewport_max_width"></a>rendering_viewport_max_width</h3>
+<div class="paragraph">
+<p>Limite el ancho máximo de la ventana gráfica que se puede solicitar.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rendering_viewport_max_height"><a class="anchor" href="#_rendering_viewport_max_height"></a>rendering_viewport_max_height</h3>
+<div class="paragraph">
+<p>Limite la altura máxima de la ventana gráfica que se puede solicitar.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rendering_viewport_max_device_scale_factor"><a class="anchor" href="#_rendering_viewport_max_device_scale_factor"></a>rendering_viewport_max_device_scale_factor</h3>
+<div class="paragraph">
+<p>Limite el factor de escala máximo del dispositivo de ventana gráfica que se puede solicitar.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_grpc_host"><a class="anchor" href="#_grpc_host"></a>grpc_host</h3>
+<div class="paragraph">
+<p>Cambie el host de escucha del servidor gRPC. El host predeterminado es <code>127.0.0.1</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_grpc_port"><a class="anchor" href="#_grpc_port"></a>grpc_port</h3>
+<div class="paragraph">
+<p>Cambie el puerto de escucha del servidor gRPC. El puerto predeterminado es <code>0</code> y asignará automáticamente un puerto que no esté en uso.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_enterprise"><a class="anchor" href="#_enterprise"></a>[enterprise]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Para obtener más información sobre Grafana Enterprise, consulte <a href="#grafana-enterprise/grafana-enterprise.adoc" class="page unresolved">Grafana Enterprise</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_feature_toggles"><a class="anchor" href="#_feature_toggles"></a>[feature_toggles]</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_enable"><a class="anchor" href="#_enable"></a>enable</h3>
+<div class="paragraph">
+<p>Claves de funciones alfa para habilitar, separadas por espacio. Las características alfa disponibles son: <code>ngalert</code></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_date_formats"><a class="anchor" href="#_date_formats"></a>[date_formats]</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>listening port</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Las siguientes opciones de formato de fecha solo están disponibles en Grafana v7.2+.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Esta sección controla los valores predeterminados de todo el sistema para los formatos de fecha utilizados en rangos de tiempo, gráficos y cuadros de entrada de fecha.</p>
+</div>
+<div class="paragraph">
+<p>Los patrones de formato utilizan tokens de formato <a href="https://momentjs.com/docs/#/displaying/">Moment.js</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_full_date"><a class="anchor" href="#_full_date"></a>full_date</h3>
+<div class="paragraph">
+<p>Formato de fecha completa utilizado por el selector de rango de tiempo y en otros lugares donde se representa una fecha completa.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_intervals"><a class="anchor" href="#_intervals"></a>intervals</h3>
+<div class="paragraph">
+<p>Estos formatos de intervalos se utilizan en el gráfico para mostrar solo una fecha u hora parcial. Por ejemplo, si solo hay minutos entre las etiquetas de marca del eje Y, se utiliza el formato <code>interval_minute</code>.</p>
+</div>
+<div class="paragraph">
+<p>Predeterminados</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>interval_second = HH:mm:ss
+interval_minute = HH:mm
+interval_hour = MM/DD HH:mm
+interval_day = MM/DD
+interval_month = YYYY-MM
+interval_year = YYYY</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_use_browser_locale"><a class="anchor" href="#_use_browser_locale"></a>use_browser_locale</h3>
+<div class="paragraph">
+<p>Establezca esto en <code>true</code> para que los formatos de fecha se deriven automáticamente de la ubicación de su navegador. El valor predeterminado es <code>false</code>. Esta es una característica experimental.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_default_timezone"><a class="anchor" href="#_default_timezone"></a>default_timezone</h3>
+<div class="paragraph">
+<p>Se utiliza como zona horaria predeterminada para las preferencias del usuario. Puede ser <code>browser</code> para la zona horaria local del navegador o un nombre de zona horaria de la base de datos de la zona horaria de IANA, como <code>UTC</code> o <code>Europa/Amsterdam</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_expressions"><a class="anchor" href="#_expressions"></a>[expressions]</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Esta función está disponible en Grafana v7.4 y versiones posteriores.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_enabled_7"><a class="anchor" href="#_enabled_7"></a>enabled</h3>
+<div class="paragraph">
+<p>Establezca esto en <code>false</code> para deshabilitar expresiones y ocultarlas en la interfaz de usuario de Grafana. El valor predeterminado es <code>true</code>.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Esta página fue hecha usando la interfaz predeterminada de Antora.</p>
+  <p>El código de esta interfaz está licenciado bajo los términos de la licencia MPL-2.0.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

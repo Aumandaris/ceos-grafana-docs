@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Registros en Explorar :: Documentación de Grafana</title>
+    <link rel="canonical" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html/ceos-grafana-docs/7.5.x/explorar/registros-en-explorar.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html">
+        <img src="/ceos-grafana-docs/ceos-grafana-docs/7.5.x/_images/logo.png" width="100">
+        <span>| Documentación de Grafana<span>     
+      </a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ceos-grafana-docs" data-version="7.5.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Documentación de Grafana</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../comenzando/comenzando.html">Comenzando</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/con-grafana.html">Con Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/con-grafana-y-prometheus.html">Con Grafana y Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/series-de-tiempo.html">Series de tiempo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/dimensiones-de-las-series-de-tiempo.html">Dimensiones de las series de tiempo.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/glosario.html">Glosario</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../autenticacion/autenticacion.html">Autenticación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../autenticacion/autenticacion-de-grafana.html">Autenticación de Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../instalacion/instalacion.html">Instalación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/requisitos.html">Requisitos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/instalar-en-windows.html">Instalar en Windows</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/actualizar-grafana.html">Actualizar Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/reiniciar-grafana.html">Reiniciar Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/administracion.html">Administración</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/preferencias.html">Preferencias</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-nombre-y-correo-electronico.html">Cambiar nombre y correo electrónico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-el-tema-de-la-interfaz-de-usuario.html">Cambiar el tema de la interfaz de usuario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-tablero-de-inicio.html">Camniar tablero de inicio</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administracion/preferencias/cambiar-zona-horaria-predeterminada.adoc">Cambiar zona horaria predeterminada</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/ver-servidor.html">Ver servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/metricas-internas-de-grafana.html">Métricas internas de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/ver-configuracion-del-servidor.html">Ver configuración del servidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/ver-estadisticas-del-servidor.html">Ver estadísticas del servidor</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/configuracion.html">Configuración</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/cli-de-grafana.html">CLI de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/seguridad.html">Seguridad</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/administrar-usuarios.html">Administrar usuarios</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor.html">Tareas de administrador de servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-usuarios.html">Administrar usuarios</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-organizacion.html">Administrar organización</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-organizacion.html">Tareas de administrador de organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#administrar-usuarios/administar-equipos.adoc">Administrar equipos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario.html">Tareas de la cuenta de usuario</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario/perfil-de-cuenta-de-usuario.html">Perfil de cuenta de uruario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-su-contraseña">Cambiar su contraseña</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-organizacion">Cambiar organización</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../permisos/permisos.html">Permisos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/roles-de-la-organizacion.html">Roles de la organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-tablero-y-carpeta.html">Permiso de tablero y carpeta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#permisos/restringir-acceso">Restringit acceso</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-fuente-de-datos.html">Permisos de fuente de datos</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../fuentes-de-datos/fuentes-de-datos.html">Fuentes de datos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#fuentes-de-datos/agregar-una-fuente-de-datos.adoc">Agregar una fuente de datos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../fuentes-de-datos/loki.html">Loki</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../fuentes-de-datos/prometheus.html">Prometheus</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/paneles.html">Paneles</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/agregar-un-panel.html">Agregar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/editor-de-paneles.html">Editor de paneles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/lista-de-calculos.html">Lista de cálculos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/consultas.html">Consultas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/umbrales.html">Umbrales</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/transformaciones.html">Transformaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/transformaciones/aplicar-transformaciones.html">Aplicar transformaciones</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/transformaciones/tipos-y-opciones-de-transformacion.html">Tipos y opciones de transformación</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/compartir-resultados-de-la-consulta.html">Compartir resultados de la consulta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/inspeccionar-un-panel.html">Inspeccionar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones.html">Opciones de campo y anulaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/configurar-todos-los-campos.html">Configurar todos los campos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/configurar-campos-especificos.html">Configurar campos específicos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/opciones-de-campo-estandar.html">Opciones de campo estándar</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones.html">Visualizaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/opciones-de-leyenda-del-panel.html">Opciones de leyenda del panel</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-lista-de-alertas.html">Panel de lista de alertas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-medidor-de-barra.html">Panel de medidor de barra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-lista-de-tableros.html">Panel de lista de tableros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-medidor.html">Panel de medidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-grafico.html">Panel de gráfico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-mapa-de-calor.html">Panel de mapa de calor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-registros.html">Panel de registros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-noticias">Panel de noticias</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-grafico-de-nodo.adoc">Panel de gráfico de nodo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-grafico-circular.html">Panel de gráfico circular</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-estadisticas.html">Panel de estadísticas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla.html">Panel de tabla</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla/opciones-de-campo-de-tabla.html">Opciones de campo de tabla</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla/filtrar-columnas-de-la-tabla.html">Filtrar columnas de la tabla</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-texto.html">Panel de texto</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo.html">Panel de series de tiempo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/cambiar-visualizacion-del-eje.html">Cambiar visualización del eje</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/expresiones.html">Expresiones</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../tableros/tableros.html">Tableros</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../compartir/compartir.html">Compartir</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="explorar.html">Explorar</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alertas/alertas.html">Alertas</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../solucion-de-problemas/solucion-de-problemas.html">Solución de problemas</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentación de Grafana</span>
+    <span class="version">7.5.x</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Documentación de Grafana</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">7.5.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Documentación de Grafana</a></li>
+    <li><a href="registros-en-explorar.html">Registros en Explorar</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/Aumandaris/ceos-grafana-docs/edit/master/modules/ROOT/pages/explorar/registros-en-explorar.adoc">Editar esta página</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Registros en Explorar</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Junto con las métricas, Explorar le permite investigar sus registros en las siguientes fuentes de datos:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#fuentes-de-datos/elasticsearch.adoc" class="page unresolved">Elasticsearch</a></p>
+</li>
+<li>
+<p><a href="#fuentes-de-datos/influxdb.adoc" class="page unresolved">InfluxDB</a></p>
+</li>
+<li>
+<p><a href="../fuentes-de-datos/loki.html" class="page">Loki</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Durante el monitoreo de la infraestructura y la respuesta a incidentes, puede profundizar en las métricas y los registros para encontrar la causa. Explore también le permite correlacionar métricas y registros al verlos uno al lado del otro. Esto crea un nuevo flujo de trabajo de depuración:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Reciba una alerta.</p>
+</li>
+<li>
+<p>Profundice y examine las métricas.</p>
+</li>
+<li>
+<p>Vuelva a profundizar y busque registros relacionados con la métrica y el intervalo de tiempo (y, en el futuro, seguimientos distribuidos).</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_visualización_de_registros"><a class="anchor" href="#_visualización_de_registros"></a>Visualización de registros</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Los resultados de las consultas de registros se muestran como histogramas en el gráfico y los registros individuales se muestran a continuación. Si la fuente de datos no envía datos de histograma para el rango de tiempo solicitado, el modelo de registros calcula una serie de tiempo basada en los recuentos de filas de registros agrupados por un intervalo de tiempo calculado automáticamente y el inicio del histograma está anclado por la marca de tiempo de la primera fila de registros. del resultado. El final de la serie temporal está anclado al rango <strong>Hasta</strong> del selector de tiempo.</p>
+</div>
+<div class="sect2">
+<h3 id="_nivel_de_registro"><a class="anchor" href="#_nivel_de_registro"></a>Nivel de registro</h3>
+<div class="paragraph">
+<p>Para los registros donde se especifica una etiqueta de <strong>nivel</strong>, usamos el valor de la etiqueta para determinar el nivel del registro y actualizar el color en consecuencia. Si el registro no tiene una etiqueta de nivel especificada, analizamos el registro para averiguar si su contenido coincide con alguna de las expresiones admitidas (consulte a continuación para obtener más información). El nivel de registro siempre está determinado por la primera coincidencia. En caso de que Grafana no pueda determinar un nivel de registro, se visualizará con un nivel de registro <strong>desconocido</strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Niveles de registro admitidos y mapeo de abreviaturas y expresiones de nivel de registro:</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Expresiones admitidas</th>
+<th class="tableblock halign-left valign-top">Nivel de registro</th>
+<th class="tableblock halign-left valign-top">Color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">emerg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">crítico</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">púrpura</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fatal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">crítico</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">púrpura</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">alert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">crítica</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">púrpura</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">crit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">crítico</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">púrpura</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">critical</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">crítico</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">púrpura</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">err</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rojo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eror</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rojo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rojo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">warn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">advertencia</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">amarillo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">warning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">advertencia</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">amarillo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">info</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">info</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verde</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">información</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verde</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">notice</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">información</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verde</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dbug</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">depuración</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">azul</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">debug</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">depurar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">azul</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">trace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">traza</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">azul claro</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gris</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">desconocido</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_opciones_de_visualización"><a class="anchor" href="#_opciones_de_visualización"></a>Opciones de visualización</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Puede personalizar cómo se muestran los registros y seleccionar qué columnas se muestran.</p>
+</div>
+<div class="sect2">
+<h3 id="_hora"><a class="anchor" href="#_hora"></a>Hora</h3>
+<div class="paragraph">
+<p>Muestra u oculta la columna de tiempo. Esta es la marca de tiempo asociada con la línea de registro según lo informado desde la fuente de datos.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_etiquetas_únicas"><a class="anchor" href="#_etiquetas_únicas"></a>Etiquetas únicas</h3>
+<div class="paragraph">
+<p>Muestra u oculta la columna de etiquetas únicas que incluye solo etiquetas no comunes. Todas las etiquetas comunes se muestran arriba.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_envolver_líneas"><a class="anchor" href="#_envolver_líneas"></a>Envolver líneas</h3>
+<div class="paragraph">
+<p>Establezca esto en True si desea que la pantalla utilice el ajuste de línea. Si se establece en <code>False</code>, resultará en un desplazamiento horizontal.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deduplicación"><a class="anchor" href="#_deduplicación"></a>Deduplicación</h3>
+<div class="paragraph">
+<p>Los datos de registro pueden ser muy repetitivos y Explorar puede ayudar al ocultar líneas de registro duplicadas. Hay algunos algoritmos de deduplicación diferentes que puede utilizar:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Exacto:</strong> las coincidencias exactas se realizan en toda la línea, excepto en los campos de fecha.</p>
+</li>
+<li>
+<p><strong>Números:</strong> coincidencias en la línea después de eliminar números, como duraciones, direcciones IP, etc.</p>
+</li>
+<li>
+<p><strong>Firma:</strong> la deduplicación más agresiva, elimina todas las letras y números y coincide con el espacio en blanco y la puntuación restante.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_voltear_el_orden_de_los_resultados"><a class="anchor" href="#_voltear_el_orden_de_los_resultados"></a>Voltear el orden de los resultados</h3>
+<div class="paragraph">
+<p>Puede cambiar el orden de los registros recibidos del orden descendente predeterminado (el más reciente primero) al orden ascendente (el más antiguo primero).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_etiquetas_y_campos_detectados"><a class="anchor" href="#_etiquetas_y_campos_detectados"></a>Etiquetas y campos detectados</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cada fila de registro tiene un área extensible con sus etiquetas y campos detectados, para una interacción más robusta. Para todas las etiquetas, hemos agregado la capacidad de filtrar (filtro positivo) y filtrar (filtro negativo) las etiquetas seleccionadas. Cada campo o etiqueta también tiene un icono de estadísticas para mostrar estadísticas ad-hoc en relación con todos los registros mostrados.</p>
+</div>
+<div class="sect2">
+<h3 id="_vínculos_de_campos_derivados"><a class="anchor" href="#_vínculos_de_campos_derivados"></a>Vínculos de campos derivados</h3>
+<div class="paragraph">
+<p>Al utilizar los campos derivados, puede convertir cualquier parte de un mensaje de registro en un enlace interno o externo. El enlace creado es visible como un botón junto al campo Detectado en la vista Detalles del registro.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/image27.png" alt="Detected fields link in Explore" width="624" height="239">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_alternar_campos_detectados"><a class="anchor" href="#_alternar_campos_detectados"></a>Alternar campos detectados</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Disponible en Grafana 7.2 y versiones posteriores.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Si sus registros están estructurados en <code>json</code> o <code>logfmt</code>, puede mostrar u ocultar los campos detectados. Expanda una línea de registro y luego haga clic en el icono del ojo para mostrar u ocultar campos.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/image177.gif" alt="Toggling detected fields in Explore" width="624" height="351">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_funciones_específicas_de_loki"><a class="anchor" href="#_funciones_específicas_de_loki"></a>Funciones específicas de Loki</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Como se mencionó, una de las integraciones de registros es para el nuevo sistema de agregación de registros de código abierto de Grafana Labs - <a href="https://github.com/grafana/loki">Loki</a>. Loki está diseñado para ser muy rentable, ya que no indexa el contenido de los registros, sino un conjunto de etiquetas para cada flujo de registros. Los registros de Loki se consultan de forma similar a la consulta con selectores de etiquetas en Prometheus. Utiliza etiquetas para agrupar los flujos de registros que se pueden hacer para que coincidan con sus etiquetas de Prometheus. Para obtener más información sobre Grafana Loki, consulte <a href="https://github.com/grafana/loki">Grafana Loki</a> o la variante alojada de Grafana Labs: <a href="https://grafana.com/loki">Grafana Cloud Logs</a>.</p>
+</div>
+<div class="paragraph">
+<p>Para obtener más información, consulte la documentación de la fuente de datos de Loki sobre cómo consultar datos de registro.</p>
+</div>
+<div class="sect2">
+<h3 id="_cambiar_de_métricas_a_registros"><a class="anchor" href="#_cambiar_de_métricas_a_registros"></a>Cambiar de métricas a registros</h3>
+<div class="paragraph">
+<p>Si cambia de una consulta de Prometheus a una consulta de registros (puede hacer una división primero para tener sus métricas y registros uno al lado del otro), entonces mantendrá las etiquetas de su consulta que existen en los registros y las utilizará para consultar los flujos de registro. Por ejemplo, la siguiente consulta de Prometheus:</p>
+</div>
+<div class="paragraph">
+<p><code>grafana_alerting_active_alerts\{job="grafana"}</code></p>
+</div>
+<div class="paragraph">
+<p>después de cambiar a la fuente de datos de Registros, la consulta cambia a:</p>
+</div>
+<div class="paragraph">
+<p><code>{job="grafana"}</code></p>
+</div>
+<div class="paragraph">
+<p>Esto devolverá una parte de los registros en el rango de tiempo seleccionado que se pueden buscar por texto.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_seguimiento_en_vivo"><a class="anchor" href="#_seguimiento_en_vivo"></a>Seguimiento en vivo</h3>
+<div class="paragraph">
+<p>Utilice la función de seguimiento en vivo para ver registros en tiempo real en fuentes de datos compatibles.</p>
+</div>
+<div class="paragraph">
+<p>Haga clic en el botón <strong>En vivo</strong> en la barra de herramientas Explorar para cambiar a la vista de seguimiento en vivo.</p>
+</div>
+<div class="paragraph">
+<p>Mientras esté en la vista Seguimiento en vivo, los nuevos registros vendrán desde la parte inferior de la pantalla y tendrán un fondo de contraste que se desvanecerá para que pueda realizar un seguimiento de las novedades. Haga clic en el botón <strong>Pausa</strong> o desplácese por la vista de registros para pausar el seguimiento en vivo y explorar registros anteriores sin interrupción. Haga clic en el botón <strong>Reanudar</strong> para reanudar el seguimiento en vivo o haga clic en el botón <strong>Detener</strong> para salir del seguimiento en vivo y volver a la vista de exploración estándar.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/image178.gif" alt="Explore Live tailing in action" width="624" height="436">
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Esta página fue hecha usando la interfaz predeterminada de Antora.</p>
+  <p>El código de esta interfaz está licenciado bajo los términos de la licencia MPL-2.0.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Notificaciones de alertas :: Documentación de Grafana</title>
+    <link rel="canonical" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html/ceos-grafana-docs/7.5.x/alertas/notificaciones-de-alertas.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html">
+        <img src="/ceos-grafana-docs/ceos-grafana-docs/7.5.x/_images/logo.png" width="100">
+        <span>| Documentación de Grafana<span>     
+      </a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ceos-grafana-docs" data-version="7.5.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Documentación de Grafana</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../comenzando/comenzando.html">Comenzando</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/con-grafana.html">Con Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/con-grafana-y-prometheus.html">Con Grafana y Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/series-de-tiempo.html">Series de tiempo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/dimensiones-de-las-series-de-tiempo.html">Dimensiones de las series de tiempo.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/glosario.html">Glosario</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../autenticacion/autenticacion.html">Autenticación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../autenticacion/autenticacion-de-grafana.html">Autenticación de Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../instalacion/instalacion.html">Instalación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/requisitos.html">Requisitos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/instalar-en-windows.html">Instalar en Windows</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/actualizar-grafana.html">Actualizar Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/reiniciar-grafana.html">Reiniciar Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/administracion.html">Administración</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/preferencias.html">Preferencias</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-nombre-y-correo-electronico.html">Cambiar nombre y correo electrónico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-el-tema-de-la-interfaz-de-usuario.html">Cambiar el tema de la interfaz de usuario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-tablero-de-inicio.html">Camniar tablero de inicio</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administracion/preferencias/cambiar-zona-horaria-predeterminada.adoc">Cambiar zona horaria predeterminada</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/ver-servidor.html">Ver servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/metricas-internas-de-grafana.html">Métricas internas de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/ver-configuracion-del-servidor.html">Ver configuración del servidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/ver-estadisticas-del-servidor.html">Ver estadísticas del servidor</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/configuracion.html">Configuración</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/cli-de-grafana.html">CLI de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/seguridad.html">Seguridad</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/administrar-usuarios.html">Administrar usuarios</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor.html">Tareas de administrador de servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-usuarios.html">Administrar usuarios</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-organizacion.html">Administrar organización</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-organizacion.html">Tareas de administrador de organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#administrar-usuarios/administar-equipos.adoc">Administrar equipos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario.html">Tareas de la cuenta de usuario</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario/perfil-de-cuenta-de-usuario.html">Perfil de cuenta de uruario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-su-contraseña">Cambiar su contraseña</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-organizacion">Cambiar organización</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../permisos/permisos.html">Permisos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/roles-de-la-organizacion.html">Roles de la organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-tablero-y-carpeta.html">Permiso de tablero y carpeta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#permisos/restringir-acceso">Restringit acceso</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-fuente-de-datos.html">Permisos de fuente de datos</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../fuentes-de-datos/fuentes-de-datos.html">Fuentes de datos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#fuentes-de-datos/agregar-una-fuente-de-datos.adoc">Agregar una fuente de datos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../fuentes-de-datos/loki.html">Loki</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../fuentes-de-datos/prometheus.html">Prometheus</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/paneles.html">Paneles</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/agregar-un-panel.html">Agregar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/editor-de-paneles.html">Editor de paneles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/lista-de-calculos.html">Lista de cálculos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/consultas.html">Consultas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/umbrales.html">Umbrales</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/transformaciones.html">Transformaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/transformaciones/aplicar-transformaciones.html">Aplicar transformaciones</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/transformaciones/tipos-y-opciones-de-transformacion.html">Tipos y opciones de transformación</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/compartir-resultados-de-la-consulta.html">Compartir resultados de la consulta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/inspeccionar-un-panel.html">Inspeccionar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones.html">Opciones de campo y anulaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/configurar-todos-los-campos.html">Configurar todos los campos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/configurar-campos-especificos.html">Configurar campos específicos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/opciones-de-campo-estandar.html">Opciones de campo estándar</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones.html">Visualizaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/opciones-de-leyenda-del-panel.html">Opciones de leyenda del panel</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-lista-de-alertas.html">Panel de lista de alertas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-medidor-de-barra.html">Panel de medidor de barra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-lista-de-tableros.html">Panel de lista de tableros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-medidor.html">Panel de medidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-grafico.html">Panel de gráfico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-mapa-de-calor.html">Panel de mapa de calor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-registros.html">Panel de registros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-noticias">Panel de noticias</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-grafico-de-nodo.adoc">Panel de gráfico de nodo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-grafico-circular.html">Panel de gráfico circular</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-estadisticas.html">Panel de estadísticas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla.html">Panel de tabla</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla/opciones-de-campo-de-tabla.html">Opciones de campo de tabla</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla/filtrar-columnas-de-la-tabla.html">Filtrar columnas de la tabla</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-texto.html">Panel de texto</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo.html">Panel de series de tiempo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/cambiar-visualizacion-del-eje.html">Cambiar visualización del eje</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/expresiones.html">Expresiones</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../tableros/tableros.html">Tableros</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../compartir/compartir.html">Compartir</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../explorar/explorar.html">Explorar</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="alertas.html">Alertas</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../solucion-de-problemas/solucion-de-problemas.html">Solución de problemas</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentación de Grafana</span>
+    <span class="version">7.5.x</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Documentación de Grafana</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">7.5.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Documentación de Grafana</a></li>
+    <li><a href="notificaciones-de-alertas.html">Notificaciones de alertas</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/Aumandaris/ceos-grafana-docs/edit/master/modules/ROOT/pages/alertas/notificaciones-de-alertas.adoc">Editar esta página</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Notificaciones de alertas</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cuando una alerta cambia de estado, envía notificaciones. Cada regla de alerta puede tener varias notificaciones. Para agregar una notificación a una regla de alerta, primero debe agregar y configurar un canal de <code>notification</code> (puede ser correo electrónico, PagerDuty u otra integración).</p>
+</div>
+<div class="paragraph">
+<p>Esto se hace desde la página de Canales de Notificación.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Las alertas solo están disponibles en Grafana v4.0 y superior.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_agregar_un_canal_de_notificación"><a class="anchor" href="#_agregar_un_canal_de_notificación"></a>Agregar un canal de notificación</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>En la barra lateral de Grafana, pase el cursor sobre el icono de <strong>Alerta</strong> (campana) y luego haga clic en <strong>Canales de notificación</strong>.</p>
+</li>
+<li>
+<p>Haz clic en <strong>Agregar canal</strong>.</p>
+</li>
+<li>
+<p>Complete los campos o seleccione las opciones que se describen a continuación.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_nuevos_campos_de_canal_de_notificación"><a class="anchor" href="#_nuevos_campos_de_canal_de_notificación"></a>Nuevos campos de canal de notificación</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_predeterminado_enviar_en_todas_las_alertas"><a class="anchor" href="#_predeterminado_enviar_en_todas_las_alertas"></a>Predeterminado (enviar en todas las alertas)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Nombre:</strong> ingrese un nombre para este canal. Se mostrará cuando los usuarios agreguen notificaciones a las reglas de alerta.</p>
+</li>
+<li>
+<p><strong>Tipo:</strong> seleccione el tipo de canal. Consulte la <a href="#_lista_de_notificadores_admitidos">Lista de notificadores admitidos</a> para obtener más detalles.</p>
+</li>
+<li>
+<p><strong>Predeterminado (enviar en todas las alertas):</strong> cuando se selecciona, esta opción envía una notificación en este canal para todas las reglas de alerta.</p>
+</li>
+<li>
+<p><strong>Incluir imagen:</strong> consulte <a href="#_habilitar_imágenes_en_notificaciones">Habilitar imágenes en notificaciones</a> para obtener más detalles.</p>
+</li>
+<li>
+<p><strong>Desactivar mensaje de resolución:</strong> cuando se selecciona, esta opción desactiva el mensaje de resolución [OK] que se envía cuando el estado de alerta vuelve a ser falso.</p>
+</li>
+<li>
+<p><strong>Enviar recordatorios:</strong> cuando esta opción está marcada, se enviarán notificaciones adicionales (recordatorios) para las alertas activadas. Puede especificar la frecuencia con la que se deben enviar los recordatorios utilizando el número de segundos (s), minutos (m) u horas (h), por ejemplo, <code>30s</code>, <code>3m</code>, <code>5m</code> o <code>1h</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Importante:</strong> los recordatorios de alerta se envían después de evaluar las reglas. Por lo tanto, nunca se puede enviar un recordatorio con más frecuencia que un intervalo de evaluación de regla de alerta configurado.</p>
+</div>
+<div class="paragraph">
+<p>Estos ejemplos muestran con qué frecuencia y cuándo se envían recordatorios para una alerta activada.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Intervalo de evaluación de la regla de alerta</th>
+<th class="tableblock halign-left valign-top">Enviar recordatorios cada</th>
+<th class="tableblock halign-left valign-top">Recordatorio enviado cada (después de la última notificación de alerta)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>30s</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>15s</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">~30 segundos</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1m</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5m</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">~5 minutos</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5m</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>15m</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">~15 minutos</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>6m</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>20m</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">~24 minutos</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1h</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>15m</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">~1 hora</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1h</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>2h</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">~2 horas</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lista_de_notificadores_admitidos"><a class="anchor" href="#_lista_de_notificadores_admitidos"></a>Lista de notificadores admitidos</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Supports images</th>
+<th class="tableblock halign-left valign-top">Support alert rule tags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#DingDing">[DingDing]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dingding</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si, solo externamente</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Discord</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>discord</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Correo electróinico">[Correo electróinico]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>email</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Google Hangouts Chat">[Google Hangouts Chat]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>googlechat</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si, solo externamente</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hipchat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hipchat</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si, solo externamente</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Kafka">[Kafka]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>kafka</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si, solo externamente</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Line</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>line</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si, solo externamente</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft Teams</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>teams</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si, solo externamente</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Opsgenie">[Opsgenie]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>opsgenie</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si, solo externamente</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Pagerduty">[Pagerduty]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pagerduty</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si, solo externamente</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prometheus Alertmanager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>prometheus-alertmanager</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si, solo externamente</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Pushover">[Pushover]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pushover</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sensu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sensu</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si, solo externamente</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Sensu Go">[Sensu Go]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sensugo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si, solo externamente</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Slack">[Slack]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>slack</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Telegram</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>telegram</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Threema</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>threema</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si, solo externamente</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VictorOps</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>victorops</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si, solo externamente</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_webhook">Webhook</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>webhook</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si, solo externamente</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Zenduty">[Zenduty]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>webhook</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si, solo externamente</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">si</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_correo_electrónico"><a class="anchor" href="#_correo_electrónico"></a>Correo electrónico</h3>
+<div class="paragraph">
+<p>Para habilitar las notificaciones por correo electrónico, debe configurar la <a href="../administracion/configuracion.html#smtp" class="page">configuración de SMTP</a> en la configuración de Grafana. Las notificaciones por correo electrónico cargarán una imagen del gráfico de alerta en un destino de imagen externo, si está disponible, o un respaldo para adjuntar la imagen al correo electrónico. Tenga en cuenta que si utiliza el almacenamiento de imagen local, es posible que los servidores de correo electrónico y los clientes no puedan acceder a la imagen.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Las variables de plantilla no se admiten en las alertas de correo electrónico.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuración</th>
+<th class="tableblock halign-left valign-top">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Correo electrónico único</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Envíe un correo electrónico único a todos los destinatarios. Desactivado por defecto.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Direcciones</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Direcciones de correo electrónico de los destinatarios. Puede ingresar varias direcciones de correo electrónico con un ";" separador.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_webhook"><a class="anchor" href="#_webhook"></a>Webhook</h3>
+<div class="paragraph">
+<p>La notificación de webhook es una forma sencilla de enviar información sobre un cambio de estado a través de HTTP a un punto final personalizado. Con esta notificación, puede integrar Grafana en un sistema de su elección.</p>
+</div>
+<div class="paragraph">
+<p>Ejemplo de cuerpo json:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-JSON hljs" data-lang="JSON">{
+  "dashboardId":1,
+  "evalMatches":[
+    {
+      "value":1,
+      "metric":"Count",
+      "tags":{}
+    }
+  ],
+  "imageUrl":"https://grafana.com/assets/img/blog/mixed_styles.png",
+  "message":"Notification Message",
+  "orgId":1,
+  "panelId":2,
+  "ruleId":1,
+  "ruleName":"Panel Title alert",
+  "ruleUrl":"http://localhost:3000/d/hZ7BuVbWz/test-dashboard?fullscreen\u0026edit\u0026tab=alert\u0026panelId=2\u0026orgId=1",
+  "state":"alerting",
+  "tags":{
+    "tag name":"tag value"
+  },
+  "title":"[Alerting] Panel Title alert"
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>state</strong>: los valores posibles para el estado de alerta son: <code>ok</code>, <code>paused</code>, <code>alerting</code>, <code>pending</code>, <code>no_data</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_prometheus_alertmanager"><a class="anchor" href="#_prometheus_alertmanager"></a>Prometheus Alertmanager</h3>
+<div class="paragraph">
+<p>Alertmanager maneja las alertas enviadas por aplicaciones cliente como el servidor Prometheus o Grafana. Se encarga de deduplicarlos, agruparlos y enrutarlos al receptor correcto. Las notificaciones de Grafana se pueden enviar a Alertmanager a través de un simple webhook entrante. Consulte la <a href="https://prometheus.io/docs/alerting/alertmanager">documentación oficial de Prometheus Alertmanager</a> para obtener información sobre la configuración.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>En caso de una configuración de alta disponibilidad, no equilibre la carga del tráfico entre Grafana y Alertmanagers para mantener la coherencia entre todas sus instancias de Alertmanager. En su lugar, apunte a Grafana a una lista de todos los administradores de alertas, enumerando sus URL separadas por comas en la configuración del canal de notificación.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_habilitar_imágenes_en_notificaciones"><a class="anchor" href="#_habilitar_imágenes_en_notificaciones"></a>Habilitar imágenes en notificaciones</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Grafana puede representar el panel asociado con la regla de alerta como una imagen PNG e incluirlo en la notificación. Obtenga más información sobre los requisitos y cómo configurar la <a href="#administracion/renderizacion-de-imagenes.adoc" class="page unresolved">representación de imágenes</a>.</p>
+</div>
+<div class="paragraph">
+<p>Debe configurar un proveedor de <a href="../administracion/configuracion.html#_external_image_storage" class="page">almacenamiento de imágenes externo</a> para recibir imágenes en notificaciones de alerta. Si su canal de notificación requiere que la imagen sea de acceso público (por ejemplo, Slack, PagerDuty), configure un proveedor que cargue la imagen en un almacén de imágenes remoto como Amazon S3, Webdav, Google Cloud Storage o Azure Blob Storage. De lo contrario, se puede utilizar el proveedor local para entregar la imagen directamente desde Grafana.</p>
+</div>
+<div class="paragraph">
+<p>Los servicios de notificación que necesitan acceso a imágenes públicas están marcados como "solo externos".</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configure_el_enlace_de_regreso_a_grafana_desde_notificaciones_de_alerta"><a class="anchor" href="#_configure_el_enlace_de_regreso_a_grafana_desde_notificaciones_de_alerta"></a>Configure el enlace de regreso a Grafana desde notificaciones de alerta</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Todas las notificaciones de alerta contienen un enlace a la alerta activada en la instancia de Grafana. Esta URL se basa en la configuración del <a href="../administracion/configuracion.html#_domain" class="page">dominio</a> en Grafana.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_plantillas_de_notificaciones"><a class="anchor" href="#_plantillas_de_notificaciones"></a>Plantillas de notificaciones</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>La creación de plantillas de notificación de alerta solo está disponible en Grafana v7.4 y versiones posteriores.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>La función de plantilla de notificación de alerta le permite tomar el valor de la <a href="#conceptos-basicos-de-grafana/dimensiones-de-las-series-de-tiempo.adoc#_etiquetas" class="page unresolved">etiqueta</a> de una consulta de alerta e <a href="plantillas-de-notificaciones-de-alertas.html" class="page">inyectarlo en las notificaciones de alerta</a>.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Esta página fue hecha usando la interfaz predeterminada de Antora.</p>
+  <p>El código de esta interfaz está licenciado bajo los términos de la licencia MPL-2.0.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Inspeccionar un panel :: Documentación de Grafana</title>
+    <link rel="canonical" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html/ceos-grafana-docs/7.5.x/paneles/inspeccionar-un-panel.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html">
+        <img src="/ceos-grafana-docs/ceos-grafana-docs/7.5.x/_images/logo.png" width="100">
+        <span>| Documentación de Grafana<span>     
+      </a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ceos-grafana-docs" data-version="7.5.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Documentación de Grafana</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../comenzando/comenzando.html">Comenzando</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/con-grafana.html">Con Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/con-grafana-y-prometheus.html">Con Grafana y Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/series-de-tiempo.html">Series de tiempo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/dimensiones-de-las-series-de-tiempo.html">Dimensiones de las series de tiempo.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/glosario.html">Glosario</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../autenticacion/autenticacion.html">Autenticación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../autenticacion/autenticacion-de-grafana.html">Autenticación de Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../instalacion/instalacion.html">Instalación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/requisitos.html">Requisitos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/instalar-en-windows.html">Instalar en Windows</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/actualizar-grafana.html">Actualizar Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/reiniciar-grafana.html">Reiniciar Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/administracion.html">Administración</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/preferencias.html">Preferencias</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-nombre-y-correo-electronico.html">Cambiar nombre y correo electrónico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-el-tema-de-la-interfaz-de-usuario.html">Cambiar el tema de la interfaz de usuario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-tablero-de-inicio.html">Camniar tablero de inicio</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administracion/preferencias/cambiar-zona-horaria-predeterminada.adoc">Cambiar zona horaria predeterminada</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/ver-servidor.html">Ver servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/metricas-internas-de-grafana.html">Métricas internas de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/ver-configuracion-del-servidor.html">Ver configuración del servidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/ver-estadisticas-del-servidor.html">Ver estadísticas del servidor</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/configuracion.html">Configuración</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/cli-de-grafana.html">CLI de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/seguridad.html">Seguridad</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/administrar-usuarios.html">Administrar usuarios</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor.html">Tareas de administrador de servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-usuarios.html">Administrar usuarios</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-organizacion.html">Administrar organización</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-organizacion.html">Tareas de administrador de organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#administrar-usuarios/administar-equipos.adoc">Administrar equipos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario.html">Tareas de la cuenta de usuario</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario/perfil-de-cuenta-de-usuario.html">Perfil de cuenta de uruario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-su-contraseña">Cambiar su contraseña</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-organizacion">Cambiar organización</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../permisos/permisos.html">Permisos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/roles-de-la-organizacion.html">Roles de la organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-tablero-y-carpeta.html">Permiso de tablero y carpeta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#permisos/restringir-acceso">Restringit acceso</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-fuente-de-datos.html">Permisos de fuente de datos</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../fuentes-de-datos/fuentes-de-datos.html">Fuentes de datos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#fuentes-de-datos/agregar-una-fuente-de-datos.adoc">Agregar una fuente de datos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../fuentes-de-datos/loki.html">Loki</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../fuentes-de-datos/prometheus.html">Prometheus</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="paneles.html">Paneles</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="agregar-un-panel.html">Agregar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="editor-de-paneles.html">Editor de paneles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lista-de-calculos.html">Lista de cálculos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="consultas.html">Consultas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="umbrales.html">Umbrales</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="transformaciones.html">Transformaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="transformaciones/aplicar-transformaciones.html">Aplicar transformaciones</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="transformaciones/tipos-y-opciones-de-transformacion.html">Tipos y opciones de transformación</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="compartir-resultados-de-la-consulta.html">Compartir resultados de la consulta</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="inspeccionar-un-panel.html">Inspeccionar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="opciones-de-campo-y-anulaciones.html">Opciones de campo y anulaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="opciones-de-campo-y-anulaciones/configurar-todos-los-campos.html">Configurar todos los campos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="opciones-de-campo-y-anulaciones/configurar-campos-especificos.html">Configurar campos específicos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="opciones-de-campo-y-anulaciones/opciones-de-campo-estandar.html">Opciones de campo estándar</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="visualizaciones.html">Visualizaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/opciones-de-leyenda-del-panel.html">Opciones de leyenda del panel</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/panel-de-lista-de-alertas.html">Panel de lista de alertas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/panel-de-medidor-de-barra.html">Panel de medidor de barra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/panel-de-lista-de-tableros.html">Panel de lista de tableros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/panel-de-medidor.html">Panel de medidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/panel-de-grafico.html">Panel de gráfico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/panel-de-mapa-de-calor.html">Panel de mapa de calor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/panel-de-registros.html">Panel de registros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-noticias">Panel de noticias</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-grafico-de-nodo.adoc">Panel de gráfico de nodo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/panel-de-grafico-circular.html">Panel de gráfico circular</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/panel-de-estadisticas.html">Panel de estadísticas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="visualizaciones/panel-de-tabla.html">Panel de tabla</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="visualizaciones/panel-de-tabla/opciones-de-campo-de-tabla.html">Opciones de campo de tabla</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="visualizaciones/panel-de-tabla/filtrar-columnas-de-la-tabla.html">Filtrar columnas de la tabla</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="visualizaciones/panel-de-texto.html">Panel de texto</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="visualizaciones/panel-de-series-de-tiempo.html">Panel de series de tiempo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="visualizaciones/panel-de-series-de-tiempo/cambiar-visualizacion-del-eje.html">Cambiar visualización del eje</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="expresiones.html">Expresiones</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../tableros/tableros.html">Tableros</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../compartir/compartir.html">Compartir</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../explorar/explorar.html">Explorar</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alertas/alertas.html">Alertas</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../solucion-de-problemas/solucion-de-problemas.html">Solución de problemas</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentación de Grafana</span>
+    <span class="version">7.5.x</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Documentación de Grafana</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">7.5.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Documentación de Grafana</a></li>
+    <li><a href="paneles.html">Paneles</a></li>
+    <li><a href="inspeccionar-un-panel.html">Inspeccionar un panel</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/Aumandaris/ceos-grafana-docs/edit/master/modules/ROOT/pages/paneles/inspeccionar-un-panel.adoc">Editar esta página</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Inspeccionar un panel</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Esta documentación se refiere a una función que solo está disponible en Grafana 7.0+.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>El inspector de paneles lo ayuda a comprender y solucionar problemas de sus paneles. Puede inspeccionar los datos sin procesar de cualquier panel de Grafana, exportar esos datos a un archivo de valores separados por comas (CSV), ver solicitudes de consulta y exportar paneles y datos JSON.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_interfaz_de_usuario_del_inspector_de_paneles"><a class="anchor" href="#_interfaz_de_usuario_del_inspector_de_paneles"></a>Interfaz de usuario del inspector de paneles</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>El inspector del panel muestra Inspeccionar: en la parte superior del panel. Haga clic en la flecha de la esquina superior derecha para expandir o reducir el panel.</p>
+</div>
+<div class="paragraph">
+<p>El inspector del panel consta de cuatro pestañas:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Pestaña Datos:</strong> muestra los datos sin procesar devueltos por la consulta con las transformaciones aplicadas. Las opciones de campo, como anulaciones y asignaciones de valores, no se aplican de forma predeterminada.</p>
+</li>
+<li>
+<p><strong>Pestaña Estadísticas:</strong> muestra cuánto tiempo tarda la consulta y cuánto devuelve.</p>
+</li>
+<li>
+<p><strong>Pestaña JSON:</strong> le permite ver y copiar el JSON del panel, el JSON de datos del panel y el JSON de estructura del marco de datos. Esto es útil si está aprovisionando o administrando Grafana.</p>
+</li>
+<li>
+<p><strong>Pestaña Consulta:</strong> muestra las solicitudes enviadas al servidor cuando Grafana consulta la fuente de datos.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>No todos los tipos de paneles incluyen las cuatro pestañas. Por ejemplo, los paneles de lista del tablero no tienen datos sin procesar para inspeccionar, por lo que no muestran las pestañas Estadísticas, Datos o Consulta.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tareas_del_inspector_de_paneles"><a class="anchor" href="#_tareas_del_inspector_de_paneles"></a>Tareas del inspector de paneles</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Las tareas que puede realizar en el inspector de paneles se describen a continuación.</p>
+</div>
+<div class="sect2">
+<h3 id="_abra_el_inspector_del_panel"><a class="anchor" href="#_abra_el_inspector_del_panel"></a>Abra el inspector del panel</h3>
+<div class="paragraph">
+<p>Puede inspeccionar cualquier panel que pueda ver.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>En Grafana, navegue hasta el tablero que contiene el panel que desea inspeccionar.</p>
+</li>
+<li>
+<p>Haga clic en el título del panel que desea inspeccionar y luego haga clic en <strong>Inspeccionar</strong>. O bien, coloque el cursor sobre el título del panel y luego presione <strong>i</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>El panel del inspector del panel se abre en el lado derecho de la pantalla.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_inspeccionar_los_resultados_de_la_consulta_sin_procesar"><a class="anchor" href="#_inspeccionar_los_resultados_de_la_consulta_sin_procesar"></a>Inspeccionar los resultados de la consulta sin procesar</h3>
+<div class="paragraph">
+<p>Vea los resultados de la consulta sin procesar en una tabla. Estos son los datos devueltos por la consulta con las transformaciones aplicadas y antes de que el panel aplique opciones de campo o anulaciones de opciones de campo.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Abra el inspector del panel y luego haga clic en la pestaña <strong>Datos</strong> o en el menú del panel haga clic en <strong>Inspeccionar &gt; Datos</strong>.</p>
+</li>
+<li>
+<p>Si su panel contiene múltiples consultas o consultas múltiples nodos, entonces tiene opciones adicionales.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Seleccionar resultado:</strong> elija qué datos del conjunto de resultados desea ver.</p>
+</li>
+<li>
+<p><strong>Transformar datos</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Únir por tiempo:</strong> vea los datos sin procesar de todas sus consultas a la vez, un conjunto de resultados por columna. Haga clic en el encabezado de una columna para reordenar los datos.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Vea los resultados de la consulta sin procesar en una tabla con opciones de campo y anulaciones de opciones aplicadas:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Abra la pestaña <strong>Datos</strong> en el inspector de paneles.</p>
+</li>
+<li>
+<p>Haga clic en <strong>Opciones de visualización de datos</strong> encima de la tabla.</p>
+</li>
+<li>
+<p>Haga clic en el botón de alternancia <strong>Aplicar configuración de campo</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_descargar_resultados_de_consultas_sin_procesar_como_csv"><a class="anchor" href="#_descargar_resultados_de_consultas_sin_procesar_como_csv"></a>Descargar resultados de consultas sin procesar como CSV</h3>
+<div class="paragraph">
+<p>Grafana genera un archivo CSV en la ubicación de descarga predeterminada de su navegador. Puede abrirlo en el visor de su elección.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Abra el inspector de paneles.</p>
+</li>
+<li>
+<p>Inspeccione los resultados de la consulta sin procesar como se describe arriba. Ajuste la configuración hasta que vea los datos sin procesar que desea exportar.</p>
+</li>
+<li>
+<p>Haga clic en <strong>Descargar CSV</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Para descargar un archivo CSV específicamente formateado para Excel, expanda el panel de <strong>Opciones de datos</strong> y habilite la opción <strong>Descargar para Excel</strong> antes de hacer clic en <strong>Descargar CSV</strong>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_inspeccionar_el_rendimiento_de_las_consultas"><a class="anchor" href="#_inspeccionar_el_rendimiento_de_las_consultas"></a>Inspeccionar el rendimiento de las consultas</h3>
+<div class="paragraph">
+<p>La pestaña Estadísticas muestra estadísticas que le indican cuánto tiempo tarda su consulta, cuántas consultas envía y la cantidad de filas devueltas. Esta información puede ayudarlo a solucionar problemas con sus consultas, especialmente si alguno de los números es inesperadamente alto o bajo.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Abra el inspector de paneles.</p>
+</li>
+<li>
+<p>Navega a la pestaña Estadísticas.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Las estadísticas se muestran en formato de solo lectura.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ver_modelo_json_del_panel"><a class="anchor" href="#_ver_modelo_json_del_panel"></a>Ver modelo JSON del panel</h3>
+<div class="paragraph">
+<p>Explore y exporte paneles, datos de panel y modelos JSON de marco de datos.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Abra el inspector del panel y luego haga clic en la pestaña <strong>JSON</strong> o en el menú del panel haga clic en <strong>Inspeccionar &gt; Panel JSON</strong>.</p>
+</li>
+<li>
+<p>En Seleccionar fuente, elija una de las siguientes opciones:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Panel JSON:</strong> muestra un objeto JSON que representa el panel.</p>
+</li>
+<li>
+<p><strong>Datos del panel:</strong> muestra un objeto JSON que representa los datos que se pasaron al panel.</p>
+</li>
+<li>
+<p><strong>Estructura de DataFrame</strong>: muestra el conjunto de resultados sin procesar con las transformaciones, la configuración de campo y la configuración de anulaciones aplicadas.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Puede expandir o contraer partes del JSON para explorarlo, o puede hacer clic en <strong>Copiar al portapapeles y</strong> pegar el JSON en otra aplicación.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ver_solicitud_y_respuesta_sin_procesar_a_la_fuente_de_datos"><a class="anchor" href="#_ver_solicitud_y_respuesta_sin_procesar_a_la_fuente_de_datos"></a>Ver solicitud y respuesta sin procesar a la fuente de datos</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Abra el inspector del panel y luego haga clic en la pestaña <strong>Consulta</strong> o, en el menú del panel, haga clic en <strong>Inspeccionar &gt; Consulta</strong>.</p>
+</li>
+<li>
+<p>Haga clic en <strong>Actualizar</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Grafana envía una consulta al servidor para recopilar información y luego muestra el resultado. Ahora puede profundizar en partes específicas de la consulta, expandirla o contraerla, o copiar los datos al portapapeles para usarlos en otras aplicaciones.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Esta página fue hecha usando la interfaz predeterminada de Antora.</p>
+  <p>El código de esta interfaz está licenciado bajo los términos de la licencia MPL-2.0.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Fuente de datos Prometheus :: Documentación de Grafana</title>
+    <link rel="canonical" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html/ceos-grafana-docs/7.5.x/fuentes-de-datos/prometheus.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html">
+        <img src="/ceos-grafana-docs/ceos-grafana-docs/7.5.x/_images/logo.png" width="100">
+        <span>| Documentación de Grafana<span>     
+      </a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ceos-grafana-docs" data-version="7.5.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Documentación de Grafana</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../comenzando/comenzando.html">Comenzando</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/con-grafana.html">Con Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/con-grafana-y-prometheus.html">Con Grafana y Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/series-de-tiempo.html">Series de tiempo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/dimensiones-de-las-series-de-tiempo.html">Dimensiones de las series de tiempo.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../comenzando/glosario.html">Glosario</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../autenticacion/autenticacion.html">Autenticación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../autenticacion/autenticacion-de-grafana.html">Autenticación de Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../instalacion/instalacion.html">Instalación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/requisitos.html">Requisitos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/instalar-en-windows.html">Instalar en Windows</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/actualizar-grafana.html">Actualizar Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../instalacion/reiniciar-grafana.html">Reiniciar Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/administracion.html">Administración</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/preferencias.html">Preferencias</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-nombre-y-correo-electronico.html">Cambiar nombre y correo electrónico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-el-tema-de-la-interfaz-de-usuario.html">Cambiar el tema de la interfaz de usuario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/preferencias/cambiar-tablero-de-inicio.html">Camniar tablero de inicio</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administracion/preferencias/cambiar-zona-horaria-predeterminada.adoc">Cambiar zona horaria predeterminada</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administracion/ver-servidor.html">Ver servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/metricas-internas-de-grafana.html">Métricas internas de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/ver-configuracion-del-servidor.html">Ver configuración del servidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administracion/ver-servidor/ver-estadisticas-del-servidor.html">Ver estadísticas del servidor</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/configuracion.html">Configuración</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/cli-de-grafana.html">CLI de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administracion/seguridad.html">Seguridad</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/administrar-usuarios.html">Administrar usuarios</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor.html">Tareas de administrador de servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-usuarios.html">Administrar usuarios</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-servidor/administrar-organizacion.html">Administrar organización</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-administrador-de-organizacion.html">Tareas de administrador de organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#administrar-usuarios/administar-equipos.adoc">Administrar equipos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario.html">Tareas de la cuenta de usuario</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../administrar-usuarios/tareas-de-la-cuenta-de-usuario/perfil-de-cuenta-de-usuario.html">Perfil de cuenta de uruario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-su-contraseña">Cambiar su contraseña</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-organizacion">Cambiar organización</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../permisos/permisos.html">Permisos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/roles-de-la-organizacion.html">Roles de la organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-tablero-y-carpeta.html">Permiso de tablero y carpeta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#permisos/restringir-acceso">Restringit acceso</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../permisos/permisos-de-fuente-de-datos.html">Permisos de fuente de datos</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="fuentes-de-datos.html">Fuentes de datos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#fuentes-de-datos/agregar-una-fuente-de-datos.adoc">Agregar una fuente de datos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="loki.html">Loki</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="prometheus.html">Prometheus</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/paneles.html">Paneles</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/agregar-un-panel.html">Agregar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/editor-de-paneles.html">Editor de paneles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/lista-de-calculos.html">Lista de cálculos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/consultas.html">Consultas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/umbrales.html">Umbrales</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/transformaciones.html">Transformaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/transformaciones/aplicar-transformaciones.html">Aplicar transformaciones</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/transformaciones/tipos-y-opciones-de-transformacion.html">Tipos y opciones de transformación</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/compartir-resultados-de-la-consulta.html">Compartir resultados de la consulta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/inspeccionar-un-panel.html">Inspeccionar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones.html">Opciones de campo y anulaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/configurar-todos-los-campos.html">Configurar todos los campos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/configurar-campos-especificos.html">Configurar campos específicos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/opciones-de-campo-y-anulaciones/opciones-de-campo-estandar.html">Opciones de campo estándar</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones.html">Visualizaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/opciones-de-leyenda-del-panel.html">Opciones de leyenda del panel</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-lista-de-alertas.html">Panel de lista de alertas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-medidor-de-barra.html">Panel de medidor de barra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-lista-de-tableros.html">Panel de lista de tableros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-medidor.html">Panel de medidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-grafico.html">Panel de gráfico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-mapa-de-calor.html">Panel de mapa de calor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-registros.html">Panel de registros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-noticias">Panel de noticias</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-grafico-de-nodo.adoc">Panel de gráfico de nodo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-grafico-circular.html">Panel de gráfico circular</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-estadisticas.html">Panel de estadísticas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla.html">Panel de tabla</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla/opciones-de-campo-de-tabla.html">Opciones de campo de tabla</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-tabla/filtrar-columnas-de-la-tabla.html">Filtrar columnas de la tabla</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-texto.html">Panel de texto</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo.html">Panel de series de tiempo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../paneles/visualizaciones/panel-de-series-de-tiempo/cambiar-visualizacion-del-eje.html">Cambiar visualización del eje</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../paneles/expresiones.html">Expresiones</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../tableros/tableros.html">Tableros</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../compartir/compartir.html">Compartir</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../explorar/explorar.html">Explorar</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../alertas/alertas.html">Alertas</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../solucion-de-problemas/solucion-de-problemas.html">Solución de problemas</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentación de Grafana</span>
+    <span class="version">7.5.x</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Documentación de Grafana</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">7.5.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Documentación de Grafana</a></li>
+    <li><a href="fuentes-de-datos.html">Fuentes de datos</a></li>
+    <li><a href="prometheus.html">Prometheus</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/Aumandaris/ceos-grafana-docs/edit/master/modules/ROOT/pages/fuentes-de-datos/prometheus.adoc">Editar esta página</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Fuente de datos Prometheus</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Grafana incluye soporte integrado para Prometheus. Este tema explica opciones, variables, consultas y otras opciones específicas de la fuente de datos de Prometheus. Consulte <a href="#fuentes-de-datos/agregar-una-fuente-de-datos.adoc" class="page unresolved">Agregar una fuente de datos</a> para obtener instrucciones sobre cómo agregar una fuente de datos a Grafana. Solo los usuarios con el rol de administrador de la organización pueden agregar fuentes de datos.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuración_de_prometheus"><a class="anchor" href="#_configuración_de_prometheus"></a>Configuración de Prometheus</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Para acceder a la configuración de Prometheus, coloque el mouse sobre el ícono de <strong>Configuración</strong> (engranaje), luego haga clic en <strong>Fuentes de datos</strong> y luego en la fuente de datos de Prometheus.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Nombre</th>
+<th class="tableblock halign-left valign-top">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">El nombre de la fuente de datos. Así es como se hace referencia a la fuente de datos en paneles y consultas.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Default</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fuente de datos predeterminada significa que se preseleccionará para nuevos paneles.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Url</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La URL de su servidor Prometheus, p. Ej. <code><a href="http://prometheus.example.org:9090" class="bare">http://prometheus.example.org:9090</a></code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Access</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Servidor de acceso (predeterminado) = URL debe ser accesible desde el servidor/backend de Grafana, Navegador = URL debe ser accesible desde el navegador.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Basic Auth</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Active la autenticación básica en la fuente de datos de Prometheus.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>User</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nombre de usuario para autenticación básica.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Password</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contraseña para autenticación básica.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Scrape interval</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ajústelo al intervalo típico de raspado y evaluación configurado en Prometheus. El valor predeterminado es 15 segundos.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>HTTP method</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Utilice el método HTTP POST o GET para consultar su fuente de datos. POST es el método recomendado y preseleccionado ya que permite consultas más grandes. Cámbielo a GET si tiene una versión de Prometheus anterior a la 2.1 o si las solicitudes POST están restringidas en su red.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Disable metrics lookup</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Al marcar esta opción, se inhabilitará el selector de métricas y la compatibilidad con métricas / etiquetas en el autocompletado del campo de consulta. Esto ayuda si tiene problemas de rendimiento con instancias de Prometheus más grandes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Custom Query Parameters</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Agregue parámetros personalizados a la URL de consulta de Prometheus. Por ejemplo, <code>timeout</code>, <code>partial_response</code>, <code>dedup</code> o <code>max_source_resolution</code>. Se deben concatenar varios parámetros junto con un "&amp;".</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Label name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Agregue el nombre del campo en el objeto de etiqueta.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>URL</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Si el enlace es externo, introduzca la URL completa del enlace. Puede interpolar el valor del campo con el macro <code>${__value.raw }</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Internal link</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Seleccione si el enlace es interno o externo. En el caso de un enlace interno, un selector de fuente de datos le permite seleccionar la fuente de datos de destino. Solo admite el seguimiento de fuentes de datos.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_editor_de_consultas_de_prometheus"><a class="anchor" href="#_editor_de_consultas_de_prometheus"></a>Editor de consultas de Prometheus</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A continuación, puede encontrar información y opciones para el editor de consultas de Prometheus en el tablero y en Explorar.</p>
+</div>
+<div class="sect2">
+<h3 id="_editor_de_consultas_en_tableros"><a class="anchor" href="#_editor_de_consultas_en_tableros"></a>Editor de consultas en tableros</h3>
+<div class="paragraph">
+<p>Abra un gráfico en el modo de edición haciendo clic en el título &gt; Editar (o presionando la tecla <code>e</code> mientras se desplaza sobre el panel).</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Nombre</th>
+<th class="tableblock halign-left valign-top">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Query expression</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expresión de consulta de Prometheus, consulte la <a href="http://prometheus.io/docs/querying/basics/">Documentación de Prometheus</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Legend format</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Controla el nombre de la serie temporal mediante el nombre o el patrón. Por ejemplo, <code>\{{hostname}}</code> se reemplaza con el valor de la etiqueta para la etiqueta <code>hostname</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Min step</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Un límite inferior adicional para el parámetro <code>step</code> de las [consultas de rango de Prometheus] y para las variables <code>$<em>interval</code> y <code>$</em>rate_interval</code>. El límite es absoluto, no se puede modificar con la configuración de <em>Resolución</em>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Resolution</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1/1</code> establece tanto la variable <code>$<em>interval</code> como el parámetro <code>step</code> de las <a href="https://prometheus.io/docs/prometheus/latest/querying/api/#range-queries">consultas de rango de Prometheus</a> de modo que cada píxel corresponda a un punto de datos. Para un mejor rendimiento, se pueden elegir resoluciones más bajas. <code>1/2</code> solo recupera un punto de datos por cada dos píxeles y <code>1/10</code> recupera un punto de datos por cada 10 píxeles. Tenga en cuenta que tanto el <em>intervalo de tiempo mínimo</em> como el <em>paso mínimo</em> limitan el valor final de <code>$</em>interval</code> y <code>step</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Metric lookup</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Busque nombres de métricas en este campo de entrada.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Format as</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cambiar entre <code>Table</code>, <code>Time series</code> o <code>Heatmap</code>. <code>Table</code> solo funcionará en el panel Tabla. <code>Heatmap</code> es adecuado para mostrar métricas del tipo Histograma en un panel de Mapa de calor. Debajo del capó, convierte histogramas acumulativos en regulares y clasifica las series según el límite del cubo.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Instant</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Realice una consulta “instantánea” para devolver solo el último valor que Prometheus ha extraído para la serie de tiempo solicitada. Las consultas instantáneas devuelven resultados mucho más rápido que las consultas de rango normales. Úselos para buscar conjuntos de etiquetas.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Min time interval</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Este valor multiplicado por el denominador de la configuración de Resolution establece un límite inferior tanto para la variable <code>$<em>_interval</code> como para el parámetro <code>step</code> de las [consultas de rango de Prometheus]. De forma predeterminada, el _Intervalo de extracción</em> se establece en las opciones de origen de datos.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Exemplars</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ejecute y muestre ejemplos en el gráfico.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Grafana modifica las fechas de solicitud de consultas para alinearlas con el paso calculado dinámicamente. Esto asegura una visualización consistente de los datos de las métricas, pero puede resultar en una pequeña brecha de datos en el borde derecho de un gráfico.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_consultas_instantáneas_en_tableros"><a class="anchor" href="#_consultas_instantáneas_en_tableros"></a>Consultas instantáneas en tableros</h3>
+<div class="paragraph">
+<p>La fuente de datos de Prometheus le permite ejecutar consultas "instantáneas", que consultan solo el valor más reciente. Puede visualizar los resultados en un panel de tabla para ver todas las etiquetas disponibles de una serie temporal.</p>
+</div>
+<div class="paragraph">
+<p>Los resultados de las consultas instantáneas se componen de un solo punto de datos por serie, pero se pueden mostrar en el panel de gráficos con la ayuda de <a href="#paneles/visualizaciones/panel-de-graficos.adoc#_anulaciones_de_series" class="page unresolved">anulaciones de series</a>. Para mostrarlos en el gráfico como un último punto de valor, agregue una anulación de serie y seleccione <code>Points &gt; true</code>. Para mostrar una línea horizontal a través del gráfico completo, agregue una anulación de serie y seleccione <code>Transforma &gt; constant</code>.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>El soporte para anulaciones de series constantes está disponible en Grafana v6.4</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_editor_de_consultas_en_explorar"><a class="anchor" href="#_editor_de_consultas_en_explorar"></a>Editor de consultas en Explorar</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Nombre</th>
+<th class="tableblock halign-left valign-top">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Query expression</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expresión de consulta de Prometheus, consulte la <a href="http://prometheus.io/docs/querying/basics/">documentación de Prometheus</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Step</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parámetro <code>step</code> de las <a href="https://prometheus.io/docs/prometheus/latest/querying/api/#range-queries">consultas de rango de Prometheus</a>. Las unidades de tiempo se pueden utilizar aquí, por ejemplo: 5s, 1m, 3h, 1d, 1y. La unidad predeterminada si ninguna unidad especificada es <code>s</code> (segundos).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Query type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Range</code>, <code>Instant</code> o <code>Both</code>. Al ejecutar la <strong>Consulta de rango</strong>, el resultado de la consulta se muestra en un gráfico y una tabla. La consulta instantánea devuelve solo el último valor que Prometheus ha extraído para la serie de tiempo solicitada y se muestra en la tabla. Cuando se selecciona <strong>Ambos</strong>, se ejecutan tanto la consulta instantánea como la consulta de rango. El resultado de la consulta de rango se muestra en un gráfico y el resultado de la consulta instantánea se muestra en la tabla.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Exemplars</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ejecute y muestre ejemplares en el gráfico.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_plantillas"><a class="anchor" href="#_plantillas"></a>Plantillas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>En lugar de codificar cosas como el servidor, la aplicación y el nombre del sensor en sus consultas de métricas, puede usar variables en su lugar. Las variables se muestran como cuadros de selección desplegables en la parte superior del tablero. Estos menús desplegables facilitan el cambio de los datos que se muestran en su tablero.</p>
+</div>
+<div class="paragraph">
+<p>Consulte la documentación de creación de <a href="#plantillas-y-variables/plantillas-y-variables.adoc" class="page unresolved">Plantillas</a> para obtener una introducción a la función de creación de plantillas y los diferentes tipos de variables de plantilla.</p>
+</div>
+<div class="sect2">
+<h3 id="_variable_de_consulta"><a class="anchor" href="#_variable_de_consulta"></a>Variable de consulta</h3>
+<div class="paragraph">
+<p>La variable del tipo <em>Consulta</em> le permite consultar a Prometheus para obtener una lista de métricas, etiquetas o valores de etiquetas. El complemento de fuente de datos de Prometheus proporciona las siguientes funciones que puede utilizar en el campo de entrada <code>Query</code>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Nombre</th>
+<th class="tableblock halign-left valign-top">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>label_names()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Devuelve una lista de nombres de etiquetas.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>label_values​​(label)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Devuelve una lista de valores de etiqueta para <code>label</code> en cada métrica.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>label_values​​(metric, label)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Devuelve una lista de valores de etiqueta para <code>label</code> en la métrica especificada.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>metrics(metric)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Devuelve una lista de métricas que coinciden con la expresión regular de <code>metric</code> especificada.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>query_result(query)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Devuelve una lista de los resultados de la consulta de Prometheus para la <code>query</code>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Para obtener detalles sobre los <em>nombres de las métricas</em>, los <em>nombres de las etiquetas</em> y los <em>valores de las etiquetas</em>, consulte la <a href="http://prometheus.io/docs/concepts/data_model/#metric-names-and-labels">documentación de Prometheus</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_usar_variables_de_intervalo_y_rango"><a class="anchor" href="#_usar_variables_de_intervalo_y_rango"></a>Usar variables de intervalo y rango</h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Soporte para <code>$<em>range</code>, <code>$</em>range_s</code> y <code>$__range_ms</code> solo disponible en Grafana v5.3</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Puede utilizar algunas variables globales integradas en las variables de consulta; <code>$<em>interval</code>, <code>$</em>interval_ms</code>, <code>$<em>range</code>, <code>$</em>range_s</code> y <code>$__range_ms</code>, consulte [Variables integradas globales] para obtener más información. Estos pueden ser convenientes de usar junto con la función <code>query_result</code> cuando necesite filtrar consultas de variables, ya que la función <code>label_values</code> no admite consultas.</p>
+</div>
+<div class="paragraph">
+<p>Asegúrese de configurar el activador <code>refresh</code> de la variable en <code>On Time Range Change</code> para obtener las instancias correctas al cambiar el rango de tiempo en el tablero.</p>
+</div>
+<div class="paragraph">
+<p><strong>Uso de ejemplo:</strong></p>
+</div>
+<div class="paragraph">
+<p>Complete una variable0 con las 5 instancias de solicitud más ocupadas según el QPS promedio durante el rango de tiempo que se muestra en el tablero:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Query: query_result(topk(5, sum(rate(http_requests_total[$__range])) by (instance)))
+Regex: /"([^"]+)"/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Complete una variable con las instancias que tienen un estado determinado en el rango de tiempo que se muestra en el tablero, usando <code>$__range_s</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Query: query_result(max_over_time(&lt;metric&gt;[${__range_s}s]) != &lt;state&gt;)
+Regex:</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_usando_la_variable_rate_interval"><a class="anchor" href="#_usando_la_variable_rate_interval"></a>Usando la variable <code>$__rate_interval</code></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Disponible en Grafana 7.2 y superior</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>La variable <code>$<em>rate_interval</code> está destinada a utilizarse en la función de tasa. Se define como max(<code>$</em>interval</code> + <em>intervalo de raspado</em>, 4 * <em>intervalo de raspado</em>), donde intervalo de raspado es la configuración del paso mínimo (también conocido como intervalo de consulta, una configuración por consulta PromQL), si se establece alguno, <em>y de lo contrario el intervalo _Scrape</em> como se establece la fuente de datos de Prometheus (pero ignorando cualquier ajuste de intervalo mínimo en el panel, porque este último es modificado por el ajuste de resolución).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_usar_variables_en_consultas"><a class="anchor" href="#_usar_variables_en_consultas"></a>Usar variables en consultas</h3>
+<div class="paragraph">
+<p>Hay dos sintaxis:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>$&lt;varname&gt;</code> Ejemplo: rate(http_requests_total\{job=~"$job"}[5m])</p>
+</li>
+<li>
+<p><code><a id="varname"></a></code> Ejemplo: rate(http_requests_total\{job=~"<a id="job"></a>"}[5m])</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>¿Por qué de dos formas? La primera sintaxis es más fácil de leer y escribir, pero no le permite usar una variable en medio de una palabra. Cuando las opciones <em>Multi-valor</em> o <em>Incluir todos los valores</em> están habilitadas, Grafana convierte las etiquetas de texto sin formato a una cadena compatible con expresiones regulares. Lo que significa que debe usar <code>=~</code> en lugar de <code>=</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_variable_de_filtros_ad_hoc"><a class="anchor" href="#_variable_de_filtros_ad_hoc"></a>Variable de filtros ad hoc</h3>
+<div class="paragraph">
+<p>Prometheus admite el tipo de variable especial de <a href="#plantillas-y-variables/tipos-de-variables/filtros-ad-hoc.adoc" class="page unresolved">filtros ad hoc</a>. Le permite especificar cualquier número de filtros de etiqueta/valor sobre la marcha. Estos filtros se aplican automáticamente a todas sus consultas de Prometheus.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_anotaciones"><a class="anchor" href="#_anotaciones"></a>Anotaciones</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Las <a href="../tableros/anotaciones.html" class="page">anotaciones</a> le permiten superponer rica información de eventos en la parte superior de los gráficos. Puede agregar consultas de anotaciones a través del menú Tablero / Vista de anotaciones.</p>
+</div>
+<div class="paragraph">
+<p>Prometheus admite dos formas de consultar anotaciones.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Una consulta de métrica regular</p>
+</li>
+<li>
+<p>Una consulta de Prometheus para alertas pendientes y activadas (para obtener más detalles, consulte <a href="https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/#inspecting-alerts-during-runtime">Inspección de alertas durante el tiempo de ejecución</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>La opción de paso es útil para limitar la cantidad de eventos devueltos por su consulta.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_obtenga_métricas_de_grafana_en_prometheus"><a class="anchor" href="#_obtenga_métricas_de_grafana_en_prometheus"></a>Obtenga métricas de Grafana en Prometheus</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Grafana expone métricas para Prometheus en el punto final <code>/metrics</code>. También incluimos un tablero dentro de Grafana para que pueda comenzar a ver sus métricas más rápido. Puede importar el tablero incluido yendo a la página de edición de la fuente de datos y haciendo clic en la pestaña del tablero. Allí puede encontrar un panel para Grafana y uno para Prometheus. ¡Importe y comience a ver todas las métricas!</p>
+</div>
+<div class="paragraph">
+<p>Para obtener instrucciones detalladas, consulte las <a href="#administracion/ver-servidor/metricas-internas.adoc" class="page unresolved">métricas internas de Grafana</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_api_de_prometheus"><a class="anchor" href="#_api_de_prometheus"></a>API de Prometheus</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La fuente de datos de Prometheus funciona con otros proyectos que implementan la <a href="https://prometheus.io/docs/prometheus/latest/querying/api/">API de consultas de Prometheus</a>, que incluyen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://cortexmetrics.io/docs/">Cortex</a></p>
+</li>
+<li>
+<p><a href="https://thanos.io/v0.17/components/query.md/">Thanos</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Para obtener más información sobre cómo consultar otros proyectos compatibles con Prometheus de Grafana, consulte la documentación del proyecto específico.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_aprovisionar_la_fuente_de_datos_de_prometheus"><a class="anchor" href="#_aprovisionar_la_fuente_de_datos_de_prometheus"></a>Aprovisionar la fuente de datos de Prometheus</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Puede configurar fuentes de datos utilizando archivos de configuración con el sistema de aprovisionamiento de Grafana. Lea más sobre cómo funciona y todas las configuraciones que puede establecer para las fuentes de datos en la página de <a href="#administracion/aprovisionamiento/fuentes-de-datos.adoc" class="page unresolved">documentos de aprovisionamiento</a>.</p>
+</div>
+<div class="paragraph">
+<p>A continuación, se muestran algunos ejemplos de aprovisionamiento para esta fuente de datos:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">apiVersion: 1
+
+datasources:
+  - name: Prometheus
+    type: prometheus
+    # Access mode - proxy (server in the UI) or direct (browser in the UI).
+    access: proxy
+    httpMethod: POST
+    url: http://localhost:9090
+    jsonData:
+      exemplarTraceIdDestinations:
+        # Field with internal link pointing to data source in Grafana.
+        # datasourceUid value can be anything, but it should be unique across all defined data source uids.
+        - datasourceUid: my_jaeger_uid
+          name: traceID
+
+        # Field with external link.
+        - name: traceID
+          url: 'http://localhost:3000/explore?orgId=1&amp;left=%5B%22now-1h%22,%22now%22,%22Jaeger%22,%7B%22query%22:%22$${__value.raw}%22%7D%5D'</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configurando_ejemplares"><a class="anchor" href="#_configurando_ejemplares"></a>Configurando ejemplares</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Esta función está disponible en Prometheus 2.26+ y Grafana 7.4+.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Grafana 7.4 y versiones posteriores tienen la capacidad de mostrar datos ejemplares junto con una métrica tanto en Explorar como en Tableros. Los ejemplares son una forma de asociar metadatos de cardinalidad más alta de un evento específico con datos de series temporales tradicionales.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/image29.png" alt="Screenshot showing the detail window of an Exemplar" width="624" height="285">
+</div>
+</div>
+<div class="paragraph">
+<p>Configure ejemplares en la configuración de la fuente de datos agregando enlaces externos o internos.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/image30.png" alt="Screenshot of the Exemplars configuration" width="624" height="217">
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Esta página fue hecha usando la interfaz predeterminada de Antora.</p>
+  <p>El código de esta interfaz está licenciado bajo los términos de la licencia MPL-2.0.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

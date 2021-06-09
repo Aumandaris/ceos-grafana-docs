@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Administrar usuarios como Administrador de Servidor :: Documentación de Grafana</title>
+    <link rel="canonical" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html/ceos-grafana-docs/7.5.x/administrar-usuarios/tareas-de-administrador-de-servidor/administrar-usuarios.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://aumandaris.github.io/ceos-grafana-docs/ceos-grafana-docs/7.5.x/index.html">
+        <img src="/ceos-grafana-docs/ceos-grafana-docs/7.5.x/_images/logo.png" width="100">
+        <span>| Documentación de Grafana<span>     
+      </a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ceos-grafana-docs" data-version="7.5.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Documentación de Grafana</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../comenzando/comenzando.html">Comenzando</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../comenzando/con-grafana.html">Con Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../comenzando/con-grafana-y-prometheus.html">Con Grafana y Prometheus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../comenzando/series-de-tiempo.html">Series de tiempo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../comenzando/dimensiones-de-las-series-de-tiempo.html">Dimensiones de las series de tiempo.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../comenzando/glosario.html">Glosario</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../autenticacion/autenticacion.html">Autenticación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../autenticacion/autenticacion-de-grafana.html">Autenticación de Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../instalacion/instalacion.html">Instalación</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../instalacion/requisitos.html">Requisitos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../instalacion/instalar-en-windows.html">Instalar en Windows</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../instalacion/actualizar-grafana.html">Actualizar Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../instalacion/reiniciar-grafana.html">Reiniciar Grafana</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../administracion/administracion.html">Administración</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../administracion/preferencias.html">Preferencias</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administracion/preferencias/cambiar-nombre-y-correo-electronico.html">Cambiar nombre y correo electrónico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administracion/preferencias/cambiar-el-tema-de-la-interfaz-de-usuario.html">Cambiar el tema de la interfaz de usuario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administracion/preferencias/cambiar-tablero-de-inicio.html">Camniar tablero de inicio</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administracion/preferencias/cambiar-zona-horaria-predeterminada.adoc">Cambiar zona horaria predeterminada</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../administracion/ver-servidor.html">Ver servidor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administracion/ver-servidor/metricas-internas-de-grafana.html">Métricas internas de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administracion/ver-servidor/ver-configuracion-del-servidor.html">Ver configuración del servidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../administracion/ver-servidor/ver-estadisticas-del-servidor.html">Ver estadísticas del servidor</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../administracion/configuracion.html">Configuración</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../administracion/cli-de-grafana.html">CLI de Grafana</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../administracion/seguridad.html">Seguridad</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../administrar-usuarios.html">Administrar usuarios</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tareas-de-administrador-de-servidor.html">Tareas de administrador de servidor</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="administrar-usuarios.html">Administrar usuarios</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="administrar-organizacion.html">Administrar organización</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tareas-de-administrador-de-organizacion.html">Tareas de administrador de organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#administrar-usuarios/administar-equipos.adoc">Administrar equipos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tareas-de-la-cuenta-de-usuario.html">Tareas de la cuenta de usuario</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tareas-de-la-cuenta-de-usuario/perfil-de-cuenta-de-usuario.html">Perfil de cuenta de uruario</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-su-contraseña">Cambiar su contraseña</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#administrar-usuarios/tareas-de-la-cuenta-de-usuario/cambiar-organizacion">Cambiar organización</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../permisos/permisos.html">Permisos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../permisos/roles-de-la-organizacion.html">Roles de la organización</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../permisos/permisos-de-tablero-y-carpeta.html">Permiso de tablero y carpeta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#permisos/restringir-acceso">Restringit acceso</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../permisos/permisos-de-fuente-de-datos.html">Permisos de fuente de datos</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../fuentes-de-datos/fuentes-de-datos.html">Fuentes de datos</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#fuentes-de-datos/agregar-una-fuente-de-datos.adoc">Agregar una fuente de datos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../fuentes-de-datos/loki.html">Loki</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../fuentes-de-datos/prometheus.html">Prometheus</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../paneles/paneles.html">Paneles</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../paneles/agregar-un-panel.html">Agregar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../paneles/editor-de-paneles.html">Editor de paneles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../paneles/lista-de-calculos.html">Lista de cálculos</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../paneles/consultas.html">Consultas</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../paneles/umbrales.html">Umbrales</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../paneles/transformaciones.html">Transformaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../paneles/transformaciones/aplicar-transformaciones.html">Aplicar transformaciones</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../paneles/transformaciones/tipos-y-opciones-de-transformacion.html">Tipos y opciones de transformación</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../paneles/compartir-resultados-de-la-consulta.html">Compartir resultados de la consulta</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../paneles/inspeccionar-un-panel.html">Inspeccionar un panel</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../paneles/opciones-de-campo-y-anulaciones.html">Opciones de campo y anulaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../paneles/opciones-de-campo-y-anulaciones/configurar-todos-los-campos.html">Configurar todos los campos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../paneles/opciones-de-campo-y-anulaciones/configurar-campos-especificos.html">Configurar campos específicos</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../paneles/opciones-de-campo-y-anulaciones/opciones-de-campo-estandar.html">Opciones de campo estándar</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../paneles/visualizaciones.html">Visualizaciones</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../paneles/visualizaciones/opciones-de-leyenda-del-panel.html">Opciones de leyenda del panel</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../paneles/visualizaciones/panel-de-lista-de-alertas.html">Panel de lista de alertas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../paneles/visualizaciones/panel-de-medidor-de-barra.html">Panel de medidor de barra</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../paneles/visualizaciones/panel-de-lista-de-tableros.html">Panel de lista de tableros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../paneles/visualizaciones/panel-de-medidor.html">Panel de medidor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../paneles/visualizaciones/panel-de-grafico.html">Panel de gráfico</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../paneles/visualizaciones/panel-de-mapa-de-calor.html">Panel de mapa de calor</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../paneles/visualizaciones/panel-de-registros.html">Panel de registros</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-noticias">Panel de noticias</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#paneles/visualizaciones/panel-de-grafico-de-nodo.adoc">Panel de gráfico de nodo</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../paneles/visualizaciones/panel-de-grafico-circular.html">Panel de gráfico circular</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../paneles/visualizaciones/panel-de-estadisticas.html">Panel de estadísticas</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../paneles/visualizaciones/panel-de-tabla.html">Panel de tabla</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../paneles/visualizaciones/panel-de-tabla/opciones-de-campo-de-tabla.html">Opciones de campo de tabla</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../paneles/visualizaciones/panel-de-tabla/filtrar-columnas-de-la-tabla.html">Filtrar columnas de la tabla</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../paneles/visualizaciones/panel-de-texto.html">Panel de texto</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../paneles/visualizaciones/panel-de-series-de-tiempo.html">Panel de series de tiempo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../paneles/visualizaciones/panel-de-series-de-tiempo/graficar-series-de-tiempo-como-lineas.html">Graficar series de tiempo como líneas</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../paneles/visualizaciones/panel-de-series-de-tiempo/cambiar-visualizacion-del-eje.html">Cambiar visualización del eje</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../paneles/expresiones.html">Expresiones</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../tableros/tableros.html">Tableros</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../compartir/compartir.html">Compartir</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../explorar/explorar.html">Explorar</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../alertas/alertas.html">Alertas</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../solucion-de-problemas/solucion-de-problemas.html">Solución de problemas</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentación de Grafana</span>
+    <span class="version">7.5.x</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Documentación de Grafana</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">7.5.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Documentación de Grafana</a></li>
+    <li><a href="../administrar-usuarios.html">Administrar usuarios</a></li>
+    <li><a href="../tareas-de-administrador-de-servidor.html">Tareas de administrador de servidor</a></li>
+    <li><a href="administrar-usuarios.html">Administrar usuarios</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/Aumandaris/ceos-grafana-docs/edit/master/modules/ROOT/pages/administrar-usuarios/tareas-de-administrador-de-servidor/administrar-usuarios.adoc">Editar esta página</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Administrar usuarios como Administrador de Servidor</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Este tema explica las tareas de administración de usuarios realizadas por los administradores de Grafana Server.</p>
+</div>
+<div class="paragraph">
+<p>Para realizar cualquiera de estas tareas, debe iniciar sesión en Grafana en una cuenta con permisos de administrador de Grafana Server. Para obtener más información sobre los permisos de administrador de Grafana, consulte <a href="../../permisos/permisos.html#_rol_de_administrador_de_servidor_de_grafana" class="page">rol de Administrador de Servidor de Grafana</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>La función de administrador del servidor Grafana no existe en Grafana Cloud. Los usuarios de Grafana Cloud no pueden realizar las tareas enumeradas en esta sección.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ver_la_lista_de_cuentas_de_usuario_del_servidor"><a class="anchor" href="#_ver_la_lista_de_cuentas_de_usuario_del_servidor"></a>Ver la lista de cuentas de usuario del servidor</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vea una lista completa de usuarios con cuentas en su servidor Grafana.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Pase el cursor sobre el icono de <strong>Administrador del Servidor</strong> (escudo) hasta que aparezca un menú.</p>
+</li>
+<li>
+<p>Haga clic en <strong>Usuarios</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Grafana muestra todas las cuentas de usuario en el servidor, enumeradas en orden alfabético por nombre de usuario. La siguiente información es mostrada:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Inicio de sesión:</strong> el valor en el campo <strong>Nombre de usuario</strong> de la cuenta.</p>
+</li>
+<li>
+<p><strong>Correo electrónico:</strong> el correo electrónico asociado con la cuenta de usuario.</p>
+</li>
+<li>
+<p><strong>Nombre:</strong> el valor en el campo <strong>Nombre</strong> de la cuenta.</p>
+</li>
+<li>
+<p><strong>Visto:</strong> cuánto tiempo hace que el usuario inició sesión. Si nunca ha iniciado sesión, se muestra el tiempo más largo predeterminado (10 años).</p>
+</li>
+<li>
+<p><strong>Estado del administrador del servidor:</strong> si la cuenta de usuario tiene configurada la opción de <strong>administrador de Grafana</strong>, se muestra un icono de escudo.</p>
+</li>
+<li>
+<p><strong>Estado de la cuenta:</strong> si la cuenta está deshabilitada, se muestra la etiqueta <strong>Deshabilitada</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../_images/image6.png" alt="Server Admin user list" width="624" height="281">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ver_detalles_de_la_cuenta_de_usuario"><a class="anchor" href="#_ver_detalles_de_la_cuenta_de_usuario"></a>Ver detalles de la cuenta de usuario</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ver todos los detalles asociados con una cuenta de usuario específica.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Pase el cursor sobre el icono de <strong>Administrador de Servidor</strong> (escudo) hasta que aparezca un menú.</p>
+</li>
+<li>
+<p>Haz clic en <strong>Usuarios</strong>.</p>
+</li>
+<li>
+<p>Haga clic en la cuenta de usuario que desea ver. Si es necesario, use el campo de búsqueda en la parte superior de la pestaña para buscar la cuenta de usuario específica que necesita.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Cada cuenta de usuario contiene las siguientes secciones.</p>
+</div>
+<div class="sect2">
+<h3 id="_información_del_usuario"><a class="anchor" href="#_información_del_usuario"></a>Información del usuario</h3>
+<div class="paragraph">
+<p>Esta sección de la cuenta contiene información básica del usuario. Los usuarios pueden cambiar los valores en estos campos por su propia cuenta.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Nombre</p>
+</li>
+<li>
+<p>Correo electrónico</p>
+</li>
+<li>
+<p>Nombre de usuario</p>
+</li>
+<li>
+<p>Contraseña</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../_images/image7.png" alt="Server Admin user information section" width="624" height="224">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_permisos"><a class="anchor" href="#_permisos"></a>Permisos</h3>
+<div class="paragraph">
+<p>Esto indica si la cuenta de usuario tiene la marca de administrador de Grafana aplicada o no. Si es <strong>Sí</strong>, entonces el usuario es un administrador de Grafana Server.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../_images/image8.png" alt="Server Admin Permissions section" width="624" height="80">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_organizaciones"><a class="anchor" href="#_organizaciones"></a>Organizaciones</h3>
+<div class="paragraph">
+<p>Esta sección enumera las organizaciones a las que pertenece la cuenta de usuario y los roles que desempeñan dentro de cada organización.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../_images/image9.png" alt="Server Admin Organizations section" width="624" height="130">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sesiones"><a class="anchor" href="#_sesiones"></a>Sesiones</h3>
+<div class="paragraph">
+<p>Vea las sesiones recientes en las que el usuario inició sesión, incluso cuándo inició sesión e información sobre el sistema con el que inició sesión. Puede forzar cierres de sesión si es necesario.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../_images/image10.png" alt="Server Admin Sessions section" width="624" height="125">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_agregar_una_cuenta_de_usuario"><a class="anchor" href="#_agregar_una_cuenta_de_usuario"></a>Agregar una cuenta de usuario</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cree una nueva cuenta de usuario a nivel de servidor.</p>
+</div>
+<div class="paragraph">
+<p>Pase el cursor sobre el icono de <strong>Server Admin</strong> (escudo) hasta que aparezca un menú.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Haz clic en <strong>Usuarios</strong>.</p>
+</li>
+<li>
+<p>Haga clic en <strong>Nuevo usuario</strong>.</p>
+</li>
+<li>
+<p>Ingrese la siguiente información: - <strong>Nombre</strong> - Requerido. - <strong>Correo electrónico</strong>: opcional si se ingresa un nombre de usuario. - Nombre de usuario: opcional si se ingresa un <strong>correo electrónico</strong>. – <strong>Contraseña</strong> - Requerido.</p>
+</li>
+<li>
+<p>Haga clic en <strong>Crear usuario</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>El usuario puede cambiar toda esta información después de iniciar sesión. Para obtener instrucciones, consulte el <a href="#administrar-usuarios/tareas-de-cuenta-de-usuario/perfil-de-cuenta-de-usuario.adoc" class="page unresolved">perfil de la cuenta de usuario de Grafana</a> y <a href="#administrar-usuarios/tareas-de-cuenta-de-usuario/cambie-su-contraseña.adoc" class="page unresolved">cambie su contraseña</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_editar_una_cuenta_de_usuario"><a class="anchor" href="#_editar_una_cuenta_de_usuario"></a>Editar una cuenta de usuario</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cambie la información o la configuración en una cuenta de usuario individual.</p>
+</div>
+<div class="sect2">
+<h3 id="_editar_la_información_de_usuario"><a class="anchor" href="#_editar_la_información_de_usuario"></a>Editar la información de usuario</h3>
+<div class="paragraph">
+<p>Edite la información de una cuenta de usuario existente, incluido el nombre, correo electrónico, nombre de usuario y contraseña.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Haga clic en la cuenta de usuario que desea editar. Si es necesario, use el campo de búsqueda para encontrar la cuenta.</p>
+</li>
+<li>
+<p>En la sección Información del usuario, haga clic en <strong>Editar</strong> junto al campo que desea cambiar.</p>
+</li>
+<li>
+<p>Ingrese el nuevo valor y luego haga clic en <strong>Guardar</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cambiar_la_contraseña_en_una_cuenta_de_usuario"><a class="anchor" href="#_cambiar_la_contraseña_en_una_cuenta_de_usuario"></a>Cambiar la contraseña en una cuenta de usuario</h3>
+<div class="paragraph">
+<p>Los usuarios pueden cambiar sus propias contraseñas, pero los administradores del servidor también pueden cambiar las contraseñas de los usuarios.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Haga clic en la cuenta de usuario que desea editar. Si es necesario, use el campo de búsqueda para encontrar la cuenta.</p>
+</li>
+<li>
+<p>En la sección Información del usuario, haga clic en <strong>Editar</strong> junto al campo <strong>Contraseña</strong>.</p>
+</li>
+<li>
+<p>Ingrese el nuevo valor y luego haga clic en <strong>Guardar</strong>. Grafana requiere un valor de al menos cuatro caracteres en este campo.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_eliminar_una_cuenta_de_usuario"><a class="anchor" href="#_eliminar_una_cuenta_de_usuario"></a>Eliminar una cuenta de usuario</h3>
+<div class="paragraph">
+<p>Elimina permanentemente una cuenta de usuario del servidor.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Haga clic en la cuenta de usuario que desea editar. Si es necesario, use el campo de búsqueda para encontrar la cuenta.</p>
+</li>
+<li>
+<p>Haga clic en <strong>Eliminar usuario</strong>.</p>
+</li>
+<li>
+<p>Haga clic en <strong>Eliminar usuario</strong> para confirmar la acción.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_habilitar_o_deshabilitar_una_cuenta_de_usuario"><a class="anchor" href="#_habilitar_o_deshabilitar_una_cuenta_de_usuario"></a>Habilitar o deshabilitar una cuenta de usuario</h3>
+<div class="paragraph">
+<p>Active o desactive temporalmente el acceso a la cuenta, pero no elimine la cuenta del servidor.</p>
+</div>
+<div class="sect3">
+<h4 id="_deshabilitar_cuenta_de_usuario"><a class="anchor" href="#_deshabilitar_cuenta_de_usuario"></a>Deshabilitar cuenta de usuario</h4>
+<div class="paragraph">
+<p>Evite que un usuario inicie sesión con esta cuenta, pero no elimine la cuenta. Puede desactivar una cuenta si un colega se toma un año sabático.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Haga clic en la cuenta de usuario que desea editar. Si es necesario, use el campo de búsqueda para encontrar la cuenta.</p>
+</li>
+<li>
+<p>Haga clic en <strong>Desactivar usuario</strong>.</p>
+</li>
+<li>
+<p>Haga clic en <strong>Deshabilitar usuario</strong> para confirmar la acción.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_habilitar_una_cuenta_de_usuario"><a class="anchor" href="#_habilitar_una_cuenta_de_usuario"></a>Habilitar una cuenta de usuario</h4>
+<div class="paragraph">
+<p>Reactivar una cuenta de usuario deshabilitada.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Haga clic en la cuenta de usuario que desea editar. Si es necesario, use el campo de búsqueda para encontrar la cuenta.</p>
+</li>
+<li>
+<p>Haga clic en <strong>Habilitar usuario</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_agregareliminar_la_bandera_de_administrador_de_grafana"><a class="anchor" href="#_agregareliminar_la_bandera_de_administrador_de_grafana"></a>Agregar/eliminar la bandera de administrador de Grafana</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Otorgue o elimine la función de administrador del servidor Grafana de una cuenta de usuario.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Haga clic en la cuenta de usuario que desea editar. Si es necesario, use el campo de búsqueda para encontrar la cuenta.</p>
+</li>
+<li>
+<p>En la sección Permisos, haga clic en <strong>Cambiar</strong>.</p>
+</li>
+<li>
+<p>Haga clic en <strong>Sí</strong> o <strong>No</strong>, dependiendo de si desea o no que esta cuenta de usuario tenga el rol de Administrador de servidor de grafana.</p>
+</li>
+<li>
+<p>Haga clic en <strong>Cambiar</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>La próxima vez que este usuario inicie sesión, se actualizarán sus permisos.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_agregar_un_usuario_a_una_organización"><a class="anchor" href="#_agregar_un_usuario_a_una_organización"></a>Agregar un usuario a una organización</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Agregue una cuenta de usuario a una organización existente. Las cuentas de usuario pueden pertenecer a varias organizaciones, pero cada cuenta de usuario debe pertenecer al menos a una organización.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Haga clic en la cuenta de usuario que desea editar. Si es necesario, use el campo de búsqueda para encontrar la cuenta.</p>
+</li>
+<li>
+<p>En la sección Organizaciones, haga clic en <strong>Agregar usuario a la organización</strong>.</p>
+</li>
+<li>
+<p>En la ventana <strong>Agregar a una organización</strong>, seleccione la <strong>Organización</strong> a la que está agregando el usuario.</p>
+</li>
+<li>
+<p>Seleccione el <strong>rol</strong> que debe tener el usuario en la organización.</p>
+</li>
+<li>
+<p>Haga clic en <strong>Agregar a la organización</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_eliminar_un_usuario_de_una_organización"><a class="anchor" href="#_eliminar_un_usuario_de_una_organización"></a>Eliminar un usuario de una organización</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Elimine una cuenta de usuario de una organización a la que está asignada actualmente.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Haga clic en la cuenta de usuario que desea editar. Si es necesario, use el campo de búsqueda para encontrar la cuenta.</p>
+</li>
+<li>
+<p>En la sección Organizaciones, haga clic en <strong>Eliminar de la organización</strong> junto a la organización de la que desea eliminar al usuario.</p>
+</li>
+<li>
+<p>Haz clic en <strong>Confirmar eliminación</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cambiar_el_rol_de_organización"><a class="anchor" href="#_cambiar_el_rol_de_organización"></a>Cambiar el rol de organización</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cambie el rol de organización asignado a una cuenta de usuario.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Haga clic en la cuenta de usuario que desea editar. Si es necesario, use el campo de búsqueda para encontrar la cuenta.</p>
+</li>
+<li>
+<p>En la sección Organizaciones, haga clic en <strong>Cambiar rol</strong> junto a la organización para la que desea cambiar la función de usuario.</p>
+</li>
+<li>
+<p>Seleccione el nuevo rol y luego haga clic en <strong>Guardar</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ver_y_administrar_sesiones_de_usuario"><a class="anchor" href="#_ver_y_administrar_sesiones_de_usuario"></a>Ver y administrar sesiones de usuario</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vea cuándo un usuario inició sesión por última vez e información sobre cómo inició sesión. También puede forzar a la cuenta a cerrar sesión en Grafana.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Haga clic en la cuenta de usuario que desea editar. Si es necesario, use el campo de búsqueda para encontrar la cuenta.</p>
+</li>
+<li>
+<p>Desplácese hacia abajo hasta la sección Sesiones para ver las sesiones asociadas con esta cuenta de usuario.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_obligar_a_un_usuario_a_cerrar_sesión_en_grafana"><a class="anchor" href="#_obligar_a_un_usuario_a_cerrar_sesión_en_grafana"></a>Obligar a un usuario a cerrar sesión en Grafana</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Si sospecha que una cuenta de usuario está comprometida o ya no está autorizada para acceder al servidor de Grafana, puede forzar el cierre de sesión de la cuenta.</p>
+</div>
+<div class="sect2">
+<h3 id="_forzar_el_cierre_de_sesión_de_un_dispositivo"><a class="anchor" href="#_forzar_el_cierre_de_sesión_de_un_dispositivo"></a>Forzar el cierre de sesión de un dispositivo</h3>
+<div class="paragraph">
+<p>Cierre la cuenta de usuario de un dispositivo específico que haya iniciado sesión en Grafana.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Haga clic en la cuenta de usuario que desea editar. Si es necesario, use el campo de búsqueda para encontrar la cuenta.</p>
+</li>
+<li>
+<p>Desplácese hacia abajo hasta la sección Sesiones.</p>
+</li>
+<li>
+<p>Haga clic en <strong>Forzar cierre de sesión</strong> junto a la entrada de la sesión que desea cerrar sesión en Grafana.</p>
+</li>
+<li>
+<p>Haga clic en <strong>Confirmar cierre de sesión</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_forzar_el_cierre_de_sesión_de_todos_los_dispositivos"><a class="anchor" href="#_forzar_el_cierre_de_sesión_de_todos_los_dispositivos"></a>Forzar el cierre de sesión de todos los dispositivos</h3>
+<div class="paragraph">
+<p>Cierre la cuenta de usuario de todos los dispositivos que estén conectados a Grafana.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Haga clic en la cuenta de usuario que desea editar. Si es necesario, use el campo de búsqueda para encontrar la cuenta.</p>
+</li>
+<li>
+<p>Desplácese hacia abajo hasta la sección Sesiones.</p>
+</li>
+<li>
+<p>Haga clic en <strong>Forzar cierre de sesión de todos los dispositivos</strong>.</p>
+</li>
+<li>
+<p>Haga clic en <strong>Forzar cierre de sesión</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Esta página fue hecha usando la interfaz predeterminada de Antora.</p>
+  <p>El código de esta interfaz está licenciado bajo los términos de la licencia MPL-2.0.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
