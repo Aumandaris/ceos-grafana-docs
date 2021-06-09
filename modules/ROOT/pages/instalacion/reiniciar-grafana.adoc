@@ -2,7 +2,7 @@
 
 Los usuarios a menudo necesitan reiniciar Grafana después de haber realizado cambios de configuración. Este tema proporciona instrucciones detalladas sobre cómo reiniciar en los sistemas operativos compatibles con Grafana.
 
-=== Windows
+== Windows
 
 Para reiniciar Grafana:
 

@@ -4,7 +4,7 @@
 
 Traducción de la https://grafana.com/docs/grafana/latest/[documentación de Grafana].
 
-== Versión 1.2
+== Versión 1.1
 
 * Versión de Grafana 7.5.x
 
